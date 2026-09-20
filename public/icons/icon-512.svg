@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-label="Salliha icon">
+  <rect width="512" height="512" rx="128" fill="#1f6f62"/>
+  <circle cx="118" cy="392" r="154" fill="#c9a968" opacity="0.28"/>
+  <path d="M288 122c-80 5-134 59-134 136 0 85 64 136 147 136 40 0 78-11 104-32" fill="none" stroke="#fffaf0" stroke-width="42" stroke-linecap="round"/>
+  <path d="M242 208h109c29 0 48 19 48 45s-19 45-48 45H250" fill="none" stroke="#fffaf0" stroke-width="38" stroke-linecap="round"/>
+</svg>

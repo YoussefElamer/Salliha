@@ -1,0 +1,45 @@
+{
+  "name": "salliha",
+  "version": "0.1.0",
+  "private": true,
+  "description": "صَلِّها — Salliha: تطبيق إسلامي مجاني، بلا إعلانات، Offline-first قدر الإمكان.",
+  "type": "module",
+  "scripts": {
+    "data:build": "node scripts/build-data.mjs",
+    "validate:quran": "node scripts/validate-quran.mjs",
+    "validate:data": "node scripts/validate-data.mjs",
+    "test": "vitest run",
+    "lint": "tsc --noEmit",
+    "build": "npm run data:build && npm run validate:quran && npm run validate:data && npm run lint && vite build",
+    "dev": "vite --host 0.0.0.0",
+    "cap:sync": "npm run build && npx cap sync",
+    "cap:android": "npm run build && node scripts/ensure-cap-platform.mjs android && npx cap sync android",
+    "cap:ios": "npm run build && node scripts/ensure-cap-platform.mjs ios && npx cap sync ios",
+    "android:debug": "npm run cap:android && cd android && ./gradlew assembleDebug",
+    "ios:simulator": "npm run cap:ios && xcodebuild -workspace ios/App/App.xcworkspace -scheme App -configuration Debug -sdk iphonesimulator -derivedDataPath build/ios CODE_SIGNING_ALLOWED=NO build"
+  },
+  "dependencies": {
+    "@capacitor/android": "^8.5.2",
+    "@capacitor/core": "^8.5.2",
+    "@capacitor/ios": "^8.5.2",
+    "@vitejs/plugin-react": "latest",
+    "lucide-react": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "vite": "latest"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "^8.5.2",
+    "@testing-library/jest-dom": "latest",
+    "@testing-library/react": "latest",
+    "@types/node": "latest",
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
+    "jsdom": "latest",
+    "typescript": "latest",
+    "vitest": "latest"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
