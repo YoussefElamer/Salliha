@@ -49,7 +49,7 @@ jobs:
         uses: actions/setup-java@v4
         with:
           distribution: temurin
-          java-version: '17'
+          java-version: '21'
 
       - name: Setup Android SDK
         uses: android-actions/setup-android@v3
@@ -107,8 +107,11 @@ jobs:
 
       - name: Build iOS Simulator app without code signing
         run: |
+          # Capacitor 8 generates the iOS project with Swift Package Manager
+          # (CapApp-SPM/Package.swift), not CocoaPods, so there is no
+          # App.xcworkspace — only App.xcodeproj. Build the project directly.
           xcodebuild \
-            -workspace ios/App/App.xcworkspace \
+            -project ios/App/App.xcodeproj \
             -scheme App \
             -configuration Debug \
             -sdk iphonesimulator \
