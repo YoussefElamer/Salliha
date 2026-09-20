@@ -219,6 +219,15 @@ export function AudioProvider({ children }: { children: ReactNode }) {
     const onTime = () => {
       setPosition(audio.currentTime);
       if (audio.buffered.length) setBuffered(audio.buffered.end(audio.buffered.length - 1));
+      // شريط التقدم داخل إشعار النظام (مثل مشغلات الأغاني) يحتاج حالة الموضع.
+      const mediaSession = navigator.mediaSession;
+      if (mediaSession?.setPositionState && Number.isFinite(audio.duration) && audio.duration > 0) {
+        try {
+          mediaSession.setPositionState({ duration: audio.duration, playbackRate: audio.playbackRate, position: Math.min(audio.currentTime, audio.duration) });
+        } catch {
+          // بعض المتصفحات ترفض المواضع غير الصحيحة — نتجاهل بهدوء.
+        }
+      }
     };
     const onDuration = () => setDuration(Number.isFinite(audio.duration) ? audio.duration : 0);
     const onWaiting = () => setLoading(true);
