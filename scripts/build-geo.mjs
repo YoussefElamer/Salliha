@@ -158,6 +158,7 @@ function main() {
   const arabicCityNames = buildArabicCityNames();
 
   const rows = cities.map((city) => [
+    Number(city.id),
     city.name,
     arabicCityNames.get(`${normalizeCityKey(city.name)}|${city.countryCode}`) ?? '',
     city.countryCode,
@@ -186,9 +187,12 @@ function main() {
       sourceUrl: 'https://www.geonames.org/',
       license: 'GeoNames CC BY 4.0 — tz-lookup MIT — countries-list MIT',
       generatedFrom: 'scripts/build-geo.mjs',
+      countryCount: Object.keys(countryTable).length,
+      cityCount: cities.length,
+      timezoneCount: timezones.length,
       generatedAt: new Date().toISOString().slice(0, 10),
       minimumPopulation: MIN_POPULATION,
-      fields: ['name', 'nameAr', 'countryCode', 'lat', 'lon', 'timezoneIndex', 'population', 'isCapital'],
+      fields: ['geonamesId', 'name', 'nameAr', 'countryCode', 'lat', 'lon', 'timezoneIndex', 'population', 'isCapital'],
       note: 'أسماء الدول بالعربية ومفاتيح المدن العربية بيانات مُنسّقة داخل المشروع في data/geo. المواقيت تُحسب محليًا على الجهاز.'
     },
     countries: countryTable,

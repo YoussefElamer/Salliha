@@ -2,6 +2,7 @@ import { bookmarkRepository } from '../bookmarks/BookmarkRepository';
 import { hifzRepository } from '../hifz/HifzRepository';
 import { adhkarRepository } from '../adhkar/AdhkarRepository';
 import { prayerRepository } from '../prayer/PrayerRepository';
+import { locationLabel } from '../geo/cities';
 import { quranRepository } from '../quran/QuranRepository';
 
 export interface UserStats {
@@ -18,6 +19,7 @@ export class StatsRepository {
     const last = bookmarkRepository.getReadingPosition();
     const prayerSettings = prayerRepository.getSettings();
     const next = prayerRepository.getNextPrayer();
+    const locationInfo = prayerRepository.getLocation();
     const adhkarItems = adhkarRepository.list();
     // countersUsed: how many adhkar ids have non-zero counter
     let countersUsed = 0;
@@ -32,7 +34,7 @@ export class StatsRepository {
       },
       hifz: hifzRepository.getStats(),
       prayer: {
-        city: prayerSettings.cityId,
+        city: locationLabel(locationInfo),
         nextPrayer: next.name,
         notificationsEnabled: prayerSettings.notificationsEnabled,
       },

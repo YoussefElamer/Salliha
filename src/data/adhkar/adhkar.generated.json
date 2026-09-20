@@ -1,18 +1,32 @@
 {
   "meta": {
-    "sourceName": "Seen-Arabic/Morning-And-Evening-Adhkar-DB",
+    "sourceName": "Seen-Arabic/Morning-And-Evening-Adhkar-DB + Hisn al-Muslim (حصن المسلم)",
     "sourceVersion": "29d7623fede52eca835a789025dfda866e8cfe44",
     "sourceUrl": "https://github.com/Seen-Arabic/Morning-And-Evening-Adhkar-DB",
-    "license": "MIT",
+    "license": "MIT (morning/evening dataset) + CC-BY-4.0 (Hisn al-Muslim data via npm @kazishariar/hisnul-muslim-data)",
+    "attribution": "أذكار الصباح والمساء: Seen-Arabic/Morning-And-Evening-Adhkar-DB (MIT). أذكار وأدعية المواضع: «حصن المسلم» — بيانات @kazishariar/hisnul-muslim-data (CC-BY-4.0).",
     "sourceSha256": "9e0dd6a10d26ddc0e2b36b94098c287644996c7f81b707f8ad24f1ce40b8c821",
-    "generatedFrom": "data/sources/adhkar/morning-evening-ar.json",
-    "note": "Arabic text, counts and references are copied from the source dataset. The generator adds app categories only."
+    "hisnSourceSha256": "b1e3c35e377d3159cd80254d8de365c232dc54bea891d6ad1b7b5639b5534d27",
+    "hisnSourcePath": "data/sources/adhkar/hisnul-muslim-ar.json",
+    "generatedFrom": "data/sources/adhkar/morning-evening-ar.json + data/sources/adhkar/hisnul-muslim-ar.json",
+    "note": "Arabic text, counts and references are copied from the source datasets. The generator adds app categories only."
   },
   "categories": [
     "أذكار الصباح",
     "أذكار المساء",
     "أذكار الصباح والمساء",
-    "الاستغفار"
+    "أذكار النوم",
+    "أذكار الاستيقاظ",
+    "أذكار الصلاة",
+    "المنزل والوضوء",
+    "المسجد والأذان",
+    "الطعام والشراب",
+    "السفر والحل والترحال",
+    "المرض والموتى",
+    "الدعاء والهموم",
+    "الاستغفار",
+    "المناسبات",
+    "الأدعية الجامعية"
   ],
   "items": [
     {
@@ -608,6 +622,4711 @@
       "audioUrl": "https://www.hisnmuslim.com/audio/ar/91.mp3",
       "hadithText": "حَدَّثَنِي مُحَمَّدُ بْنُ عَبْدِ الْمَلِكِ الْأُمَوِيُّ، حَدَّثَنَا عَبْدُ الْعَزِيزِ بْنُ الْمُخْتَارِ، عَنْ سُهَيْلٍ، عَنْ سُمَيٍّ، عَنْ أَبِي صَالِحٍ، عَنْ أَبِي هُرَيْرَةَ، قَالَ: قَالَ رَسُولُ اللَّهِ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ: \"مَنْ قَالَ حِينَ يُصْبِحُ وَحِينَ يُمْسِي: سُبْحَانَ اللَّهِ وَبِحَمْدِهِ. مِائَةَ مَرَّةٍ - لَمْ يَأْتِ أَحَدٌ يَوْمَ الْقِيَامَةِ بِأَفْضَلَ مِمَّا جَاءَ بِهِ، إِلَّا أَحَدٌ قَالَ مِثْلَ مَا قَالَ، أَوْ زَادَ عَلَيْهِ\".",
       "vocabulary": null
+    },
+    {
+      "id": "hisn-001",
+      "order": 1000,
+      "content": "الحَمْدُ لله الذِي أحْيَانا بَعْدَ مَا أمَاتَنَا* وإلَيْهِ النَشُور*",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — أذكار الاستيقاظ من النوم",
+      "sourceType": 3,
+      "categories": [
+        "أذكار الاستيقاظ"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_19",
+      "section": "أذكار الاستيقاظ من النوم"
+    },
+    {
+      "id": "hisn-002",
+      "order": 1001,
+      "content": "الحَمْدُ لله الذِي عَافَانِي في جَسَدِي ورَدَّ عَلَيَّ رُوحِي، وأَذِنَ لي بِذِكْرهِ",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — أذكار الاستيقاظ من النوم",
+      "sourceType": 3,
+      "categories": [
+        "أذكار الاستيقاظ"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_20",
+      "section": "أذكار الاستيقاظ من النوم"
+    },
+    {
+      "id": "hisn-003",
+      "order": 1002,
+      "content": "قال رسول الله صلى الله عليه وسلم مَنْ تَعَارَ مِنَ اللَّيْل* فقال حين يستيقظ : لا إلَهَ إلاَّ الله وحْدَهُ لا شَرِيكَ لَهُ، لَهُ المُلْكُ ولَهُ الحَمْدُ وهُوَ على كلِّ شيءٍ قَدير،سُبْحانَ الله والحَمْدُ لله ولا إله إلا الله والله أكبر ولا حَولَ ولا قُوةَ إلا بالله العلي العظيم ثم دعا: اللَّهُمَّ اغْفِرْ لي، غُفِرَ له ، قال الوليد: أو قال: دعا استُجيبَ لهُ، فإن قام فتوضأَ ثم صَلّى قُبِلَتْ صَلاتُهُ .",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — أذكار الاستيقاظ من النوم",
+      "sourceType": 3,
+      "categories": [
+        "أذكار الاستيقاظ"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_21",
+      "section": "أذكار الاستيقاظ من النوم"
+    },
+    {
+      "id": "hisn-004",
+      "order": 1003,
+      "content": "{إِنَّ فِي خَلْقِ السَّمَاوَاتِ وَالأَرْضِ وَاخْتِلاَفِ اللَّيْلِ وَالنَّهَارِ لآيَاتٍ لِّأُوْلِي الألْبَابِ *الَّذِينَ يَذْكُرُونَ اللّهَ قِيَاماً وَقُعُوداً وَعَلَىَ جُنُوبِهِمْ وَيَتَفَكَّرُونَ فِي خَلْقِ السَّمَاوَاتِ وَالأَرْضِ رَبَّنَا مَا خَلَقْتَ هَذا بَاطِلاً سُبْحَانَكَ فَقِنَا عَذَابَ النَّارِ*رَبَّنَا إِنَّكَ مَن تُدْخِلِ النَّارَ فَقَدْ أَخْزَيْتَهُ وَمَا لِلظَّالِمِينَ مِنْ أَنصَارٍ *رَّبَّنَا إِنَّنَا سَمِعْنَا مُنَادِياً يُنَادِي لِلإِيمَانِ أَنْ آمِنُواْ بِرَبِّكُمْ فَآمَنَّا رَبَّنَا فَاغْفِرْ لَنَا ذُنُوبَنَا وَكَفِّرْ عَنَّا سَيِّئَاتِنَا وَتَوَفَّنَا مَعَ الأبْرَارِ * رَبَّنَا وَآتِنَا مَا وَعَدتَّنَا عَلَى رُسُلِكَ وَلاَ تُخْزِنَا يَوْمَ الْقِيَامَةِ إِنَّكَ لاَ تُخْلِفُ الْمِيعَادَ *فَاسْتَجَابَ لَهُمْ رَبُّهُمْ أَنِّي لاَ أُضِيعُ عَمَلَ عَامِلٍ مِّنكُم مِّن ذَكَرٍ أَوْ أُنثَى بَعْضُكُم مِّن بَعْضٍ فَالَّذِينَ هَاجَرُواْ وَأُخْرِجُواْ مِن دِيَارِهِمْ وَأُوذُواْ فِي سَبِيلِي وَقَاتَلُواْ وَقُتِلُواْ لأُكَفِّرَنَّ عَنْهُمْ سَيِّئَاتِهِمْ وَلأُدْخِلَنَّهُمْ جَنَّاتٍ تَجْرِي مِن تَحْتِهَا الأَنْهَارُ ثَوَاباً مِّن عِندِ اللّهِ وَاللّهُ عِندَهُ حُسْنُ الثَّوَابِ *لاَ يَغُرَّنَّكَ تَقَلُّبُ الَّذِينَ كَفَرُواْ فِي الْبِلاَدِ *مَتَاعٌ قَلِيلٌ ثُمَّ مَأْوَاهُمْ جَهَنَّمُ وَبِئْسَ الْمِهَادُ *لَكِنِ الَّذِينَ اتَّقَوْاْ رَبَّهُمْ لَهُمْ جَنَّاتٌ تَجْرِي مِن تَحْتِهَا الأَنْهَارُ خَالِدِينَ فِيهَا نُزُلاً مِّنْ عِندِ اللّهِ وَمَا عِندَ اللّهِ خَيْرٌ لِّلأَبْرَارِ * وَإِنَّ مِنْ أَهْلِ الْكِتَابِ لَمَن يُؤْمِنُ بِاللّهِ وَمَا أُنزِلَ إِلَيْكُمْ وَمَا أُنزِلَ إِلَيْهِمْ خَاشِعِينَ لِلّهِ لاَ يَشْتَرُونَ بِآيَاتِ اللّهِ ثَمَناً قَلِيلاً أُوْلَئِكَ لَهُمْ أَجْرُهُمْ عِندَ رَبِّهِمْ إِنَّ اللّهَ سَرِيعُ الْحِسَابِ *يَا أَيُّهَا الَّذِينَ آمَنُواْ اصْبِرُواْ وَصَابِرُواْ وَرَابِطُواْ وَاتَّقُواْ اللّهَ لَعَلَّكُمْ تُفْلِحُونَ }",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — أذكار الاستيقاظ من النوم",
+      "sourceType": 3,
+      "categories": [
+        "أذكار الاستيقاظ"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_22",
+      "section": "أذكار الاستيقاظ من النوم"
+    },
+    {
+      "id": "hisn-005",
+      "order": 1004,
+      "content": "مَنْ لَبِسَ ثَوْباًً فقال: الحَمْدُ لله الذِي كَساني هذا( الثوب ) ورَزَقَنِيه مِنْ غَيْرِ حَوْلٍ مِنّي ولا قُوةٍ",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — دعاء لبس الثوب",
+      "sourceType": 3,
+      "categories": [
+        "المنزل والوضوء"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_23",
+      "section": "دعاء لبس الثوب"
+    },
+    {
+      "id": "hisn-006",
+      "order": 1005,
+      "content": "اللَّهُمَّ لَكَ الحَمْدُ أَنْتَ كَسَوتَنِيه،أسْألك مِنْ خَيرِهِ وخَيْرَ ما صُنع لَهُ،وأعُوذُ بِكَ مِنْ شرِّه وشَرَّ ما صُنِعَ لَهُ",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — دعاء لبس الثوب الجديد",
+      "sourceType": 3,
+      "categories": [
+        "المنزل والوضوء"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_24",
+      "section": "دعاء لبس الثوب الجديد"
+    },
+    {
+      "id": "hisn-007",
+      "order": 1006,
+      "content": "إلبِسْ جَدِيداً وعِشْ حميداً ومُتْ شهيداً",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — الدعاء لمن لبس ثوباً جديداً",
+      "sourceType": 3,
+      "categories": [
+        "الأدعية الجامعية"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_25",
+      "section": "الدعاء لمن لبس ثوباً جديداً"
+    },
+    {
+      "id": "hisn-008",
+      "order": 1007,
+      "content": "تُبْلي ويَخْلِفُ الله تعالى",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — الدعاء لمن لبس ثوباً جديداً",
+      "sourceType": 3,
+      "categories": [
+        "الأدعية الجامعية"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_26",
+      "section": "الدعاء لمن لبس ثوباً جديداً"
+    },
+    {
+      "id": "hisn-009",
+      "order": 1008,
+      "content": "سِتْرُ ما بَيْنَ أعْيُن الجِنِّ وَعَوْرَاتِ بَني آدَمَ إذا وَضَعَ أحدُهُمْ ثَوْبَهُ أنْ يقول: بِسم الله",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — ما يقول إذا وضع الثوب",
+      "sourceType": 3,
+      "categories": [
+        "المنزل والوضوء"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_27",
+      "section": "ما يقول إذا وضع الثوب"
+    },
+    {
+      "id": "hisn-010",
+      "order": 1009,
+      "content": "{بسم الله}، اللهُمَّ إنّي أعُوذُ بِكَ مِنَ الخُبْثِ والخبائِثِ",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — دعاء دخول الخلاء",
+      "sourceType": 3,
+      "categories": [
+        "المنزل والوضوء"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_28",
+      "section": "دعاء دخول الخلاء"
+    },
+    {
+      "id": "hisn-011",
+      "order": 1010,
+      "content": "غُفْرانَكَ",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — دعاء الخروج من الخلاء",
+      "sourceType": 3,
+      "categories": [
+        "المنزل والوضوء"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_29",
+      "section": "دعاء الخروج من الخلاء"
+    },
+    {
+      "id": "hisn-012",
+      "order": 1011,
+      "content": "بسم الله",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — الذكر قبل الوضوء",
+      "sourceType": 3,
+      "categories": [
+        "المنزل والوضوء"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_30",
+      "section": "الذكر قبل الوضوء"
+    },
+    {
+      "id": "hisn-013",
+      "order": 1012,
+      "content": "أشهد أن لا إله إلا الله وحده لا شريك له ، وأشهد أن محمداً عبده ورسوله",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — الذكر بعد الفراغ من الوضوء",
+      "sourceType": 3,
+      "categories": [
+        "المنزل والوضوء"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_31",
+      "section": "الذكر بعد الفراغ من الوضوء"
+    },
+    {
+      "id": "hisn-014",
+      "order": 1013,
+      "content": "وزاد الترمذي بعد ذكر الشهادتين :اللهم اجعلني من التوابين واجعلني من المتطهرين",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — الذكر بعد الفراغ من الوضوء",
+      "sourceType": 3,
+      "categories": [
+        "المنزل والوضوء"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_32",
+      "section": "الذكر بعد الفراغ من الوضوء"
+    },
+    {
+      "id": "hisn-015",
+      "order": 1014,
+      "content": "سبحانك اللهم وبحمدك أشهد أن لا إله إلا أنت أستغفرك وأتوب إليك",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — الذكر بعد الفراغ من الوضوء",
+      "sourceType": 3,
+      "categories": [
+        "المنزل والوضوء"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_33",
+      "section": "الذكر بعد الفراغ من الوضوء"
+    },
+    {
+      "id": "hisn-016",
+      "order": 1015,
+      "content": "بسم الله ، توكَّلْتُ على الله ، ولا حَوْلَ ولا قُوةَ إلا بالله",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — الذكر عند الخروج من المنزل",
+      "sourceType": 3,
+      "categories": [
+        "المنزل والوضوء"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_34",
+      "section": "الذكر عند الخروج من المنزل"
+    },
+    {
+      "id": "hisn-017",
+      "order": 1016,
+      "content": "اللهُمَ إني أعُوذُ بِكَ أن أَضِلَّ أوْ أُضَلَّ أَوْ أزِلَّ، أو أُزَلَّ، أوْ أظلِم أوْ أُظْلَم، أوْ أَجْهَلَ أوْ يُجْهَلَ عَلَيَّ",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — الذكر عند الخروج من المنزل",
+      "sourceType": 3,
+      "categories": [
+        "المنزل والوضوء"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_35",
+      "section": "الذكر عند الخروج من المنزل"
+    },
+    {
+      "id": "hisn-018",
+      "order": 1017,
+      "content": "بسم الله ولجنا ،وبسم الله خرجنا ، وعلى ربنا توكلنا ، ثم ليسلم على أهله",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — الذكر عند الدخول المنزل",
+      "sourceType": 3,
+      "categories": [
+        "المنزل والوضوء"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_36",
+      "section": "الذكر عند الدخول المنزل"
+    },
+    {
+      "id": "hisn-019",
+      "order": 1018,
+      "content": "اللهم اجعل في قلبي نوراً ، وفي لساني نوراً ، وفي سمعي نوراً ، وفي بصري نوراً ، ومن فوقي نوراً ، ومن تحتي نوراً ، وعن يميني نوراً ، وعن شمالي نوراً ، ومن أمامي نوراً ، ومن خلفي نوراً ، و اجعل في نفسي نوراً ، وأعظم لي نوراً ، وعظم لي نوراً ، واجعل لي نوراً ، واجعلني نوراً ، اللهم أعطني نوراً ، واجعل في عصبي نوراً ، وفي لحمي نوراً ، وفي دمي نوراً ، وفي شعري نوراً ، وفي بشري نوراً",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — دعاء الذهاب إلى المسجد",
+      "sourceType": 3,
+      "categories": [
+        "المسجد والأذان"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_37",
+      "section": "دعاء الذهاب إلى المسجد"
+    },
+    {
+      "id": "hisn-020",
+      "order": 1019,
+      "content": "اللهم اجعل لي نوراً في قبري .. ونوراً في عظامي",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — دعاء الذهاب إلى المسجد",
+      "sourceType": 3,
+      "categories": [
+        "المسجد والأذان"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_38",
+      "section": "دعاء الذهاب إلى المسجد"
+    },
+    {
+      "id": "hisn-021",
+      "order": 1020,
+      "content": "وزدني نوراً ، وزدني نوراً ، وزدني نوراً",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — دعاء الذهاب إلى المسجد",
+      "sourceType": 3,
+      "categories": [
+        "المسجد والأذان"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_39",
+      "section": "دعاء الذهاب إلى المسجد"
+    },
+    {
+      "id": "hisn-022",
+      "order": 1021,
+      "content": "وهب لي نوراً على نوراً",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — دعاء الذهاب إلى المسجد",
+      "sourceType": 3,
+      "categories": [
+        "المسجد والأذان"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_40",
+      "section": "دعاء الذهاب إلى المسجد"
+    },
+    {
+      "id": "hisn-023",
+      "order": 1022,
+      "content": "أعوذ بالله العظيم ،وبوجهه الكريم ،وسلطانه القديم ،من الشيطان الرجيم",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — دعاء دخول المسجد",
+      "sourceType": 3,
+      "categories": [
+        "المسجد والأذان"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_41",
+      "section": "دعاء دخول المسجد"
+    },
+    {
+      "id": "hisn-024",
+      "order": 1023,
+      "content": "[ بسم الله ،والصلاة ] [ والسلام على رسول الله] ، اللهم افتح لي أبواب رحمتك",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — دعاء دخول المسجد",
+      "sourceType": 3,
+      "categories": [
+        "المسجد والأذان"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_42",
+      "section": "دعاء دخول المسجد"
+    },
+    {
+      "id": "hisn-025",
+      "order": 1024,
+      "content": "بسم الله والصلاة والسلام على رسول الله ،اللهم إني أسألك من فضلك، اللهم اعصمني من الشيطان الرجيم",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — دعاء الخروج من المسجد",
+      "sourceType": 3,
+      "categories": [
+        "المسجد والأذان"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_43",
+      "section": "دعاء الخروج من المسجد"
+    },
+    {
+      "id": "hisn-026",
+      "order": 1025,
+      "content": "يقول مثل ما يقول المؤذن إلا في حي على الصلاة ، وحي على الفلاح فيقول لا حول ولا قوة إلا بالله",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — أذكار الأذان",
+      "sourceType": 3,
+      "categories": [
+        "المسجد والأذان"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_44",
+      "section": "أذكار الأذان"
+    },
+    {
+      "id": "hisn-027",
+      "order": 1026,
+      "content": "يقول وأنا أشهد أن لا إله إلا الله ، وحده لا شريك له ، وأن محمد عبده ورسوله ، رضيت بالله رباً ، وبمحمداً رسولاً وبالإسلام ديناً (( يقول ذلك عقب تشهد المؤذن))",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — أذكار الأذان",
+      "sourceType": 3,
+      "categories": [
+        "المسجد والأذان"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_45",
+      "section": "أذكار الأذان"
+    },
+    {
+      "id": "hisn-028",
+      "order": 1027,
+      "content": "يصلي على النبي صلى الله عليه وسلم بعد فراغه من إجابة المؤذن",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — أذكار الأذان",
+      "sourceType": 3,
+      "categories": [
+        "المسجد والأذان"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_46",
+      "section": "أذكار الأذان"
+    },
+    {
+      "id": "hisn-029",
+      "order": 1028,
+      "content": "اللهم رب هذه الدعوة التامة ،والصلاة القائمة، آت محمداً الوسيلة والفضيلة، وأبعثه مقاماً محموداً الذي وعدته، [ إنك لا تخلف الميعاد ]",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — أذكار الأذان",
+      "sourceType": 3,
+      "categories": [
+        "المسجد والأذان"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_47",
+      "section": "أذكار الأذان"
+    },
+    {
+      "id": "hisn-030",
+      "order": 1029,
+      "content": "يدعو لنفسه بين الأذان والإقامة فإن الدعاء حينئذٍ لا يرد",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — أذكار الأذان",
+      "sourceType": 3,
+      "categories": [
+        "المسجد والأذان"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_48",
+      "section": "أذكار الأذان"
+    },
+    {
+      "id": "hisn-031",
+      "order": 1030,
+      "content": "اللهم باعد بيني وبين خطاياي كما باعدت بين المشرق والمغرب ، اللهم نقني من خطاياي كما ينقى الثوب الأبيض من الدنس اللهم اغسلني من خطاياي بالماء والثلج والبرد",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — دعاء الاستفتاح",
+      "sourceType": 3,
+      "categories": [
+        "أذكار الصلاة"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_49",
+      "section": "دعاء الاستفتاح"
+    },
+    {
+      "id": "hisn-032",
+      "order": 1031,
+      "content": "سبحانك اللهم وبحمد ك وتبارك اسمك وتعالى جدك، ولا أ له غيرك",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — دعاء الاستفتاح",
+      "sourceType": 3,
+      "categories": [
+        "أذكار الصلاة"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_50",
+      "section": "دعاء الاستفتاح"
+    },
+    {
+      "id": "hisn-033",
+      "order": 1032,
+      "content": "وجهت وجهي للذي فطر السموات والأرض حنيفاً وما أنا من المشركين ،إن صلاتي ونُسُكي ومحياي ومماتي لله رب العالمين ، لا شريك له وبذلك أمرت وأنا من المسلمين اللهم أنت الملك لا إله إلا أنت ، أنت ربي وأنا عبدك ، ظلمت نفسي ، واعترفت بذنبي ، فاغفر لي ذنوبي جميعاً ، إنه لا يغفر الذنوب إلا أنت ، واهدني لأحسن الأخلاق، لا يهدي لأحسنها إلا أنت ، واصرف عني سيئها لا يصرف عني سيئها إلا أنت لبيك وسعديك والخير كله بيديك ، والشر ليس إليك ، أنا بك وإليك ، تباركت وتعاليت أستغفرك وأتوب إليك",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — دعاء الاستفتاح",
+      "sourceType": 3,
+      "categories": [
+        "أذكار الصلاة"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_51",
+      "section": "دعاء الاستفتاح"
+    },
+    {
+      "id": "hisn-034",
+      "order": 1033,
+      "content": "اللهم رب جبرائيل وميكائيل وإسرافيل ، فاطر السموات والأرض ، عالم الغيب والشهادة ، أنت تحكم بين عبادك فيما كانوا فيه يختلفون اهدني لما اختلف فيه من الحق بإذنك إنك تهدي من تشاء إلى صراط مستقيم",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — دعاء الاستفتاح",
+      "sourceType": 3,
+      "categories": [
+        "أذكار الصلاة"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_52",
+      "section": "دعاء الاستفتاح"
+    },
+    {
+      "id": "hisn-035",
+      "order": 1034,
+      "content": "الله اكبر كبيرا، الله اكبر كبيرا، الله اكبر كبيرا، والحمد لله كثيرا، والحمد لله كثيرا، والحمد لله كثيرا، وسبحان الله بكرةً وأصيلا ثلاثا أعوذ بالله من الشيطان الرجيم : من نفخه، ونفثه ،و همزه",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — دعاء الاستفتاح",
+      "sourceType": 3,
+      "categories": [
+        "أذكار الصلاة"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_53",
+      "section": "دعاء الاستفتاح"
+    },
+    {
+      "id": "hisn-036",
+      "order": 1035,
+      "content": "كان النبي صلى الله عليه وسلم إذا قام من الليل يتهجد قال: اللهم لك الحمد أنت نور السموات والأرض ومن فيهن ، ولك الحمد أنت قيمُ السموات والأرض ومن فيهن [ ولك الحمد أنت رب السموات والأرض ومن فيهن ]، [ ولك الحمد لك ملك السموات والأرض ومن فيهن ] [ ولك الحمد أنت ملك السموات والأرض] [ ولك الحمد] أنت الحق ، ووعدك الحق ، وقولك الحق ،ولقاؤك الحق ، والجنة حق ، والنار حق ، والنبيّون حق ومحمد صلى الله عليه وسلم حق والساعة حق ] [اللهم لك أسلمت ، وعليك توكلت ، وبك آمنت ، وإليك أنبت ، وبك خاصمت ، وإليك حاكمت ، فاغفر لي ما قدمت وما أخرت ، وأسررت، وما أعلنت ] [ أنت المقدم ،وأنت المؤخر لا إله إلا أنت ] [أنت إلهي لا إله إلا أنت]",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — دعاء الاستفتاح",
+      "sourceType": 3,
+      "categories": [
+        "أذكار الصلاة"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_54",
+      "section": "دعاء الاستفتاح"
+    },
+    {
+      "id": "hisn-037",
+      "order": 1036,
+      "content": "سبحان ربي العظيم ثلاث مرات",
+      "count": 3,
+      "countDescription": "ثلاث مرات",
+      "benefit": "",
+      "source": "حصن المسلم — دعاء الركوع",
+      "sourceType": 3,
+      "categories": [
+        "أذكار الصلاة"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_55",
+      "section": "دعاء الركوع"
+    },
+    {
+      "id": "hisn-038",
+      "order": 1037,
+      "content": "سبحانك اللهم ربنا وبحمدك ، اللهم اغفر لي",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — دعاء الركوع",
+      "sourceType": 3,
+      "categories": [
+        "أذكار الصلاة"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_56",
+      "section": "دعاء الركوع"
+    },
+    {
+      "id": "hisn-039",
+      "order": 1038,
+      "content": "سبوح قدوس رب الملائكة والروح",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — دعاء الركوع",
+      "sourceType": 3,
+      "categories": [
+        "أذكار الصلاة"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_57",
+      "section": "دعاء الركوع"
+    },
+    {
+      "id": "hisn-040",
+      "order": 1039,
+      "content": "اللهم لك ركعت وبك آمنت ،ولك أسلمت خشع لك سمعي وبصري ودمي ولحمي وعظمي وعصبي،وما استقل به قدمي",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — دعاء الركوع",
+      "sourceType": 3,
+      "categories": [
+        "أذكار الصلاة"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_58",
+      "section": "دعاء الركوع"
+    },
+    {
+      "id": "hisn-041",
+      "order": 1040,
+      "content": "سبحان ذي الجبروت والملكوت والكبرياء والعظمة",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — دعاء الركوع",
+      "sourceType": 3,
+      "categories": [
+        "أذكار الصلاة"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_59",
+      "section": "دعاء الركوع"
+    },
+    {
+      "id": "hisn-042",
+      "order": 1041,
+      "content": "سمع الله لمن حمده",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — دعاء الرفع من الركوع",
+      "sourceType": 3,
+      "categories": [
+        "أذكار الصلاة"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_60",
+      "section": "دعاء الرفع من الركوع"
+    },
+    {
+      "id": "hisn-043",
+      "order": 1042,
+      "content": "ربنا ولك الحمد ، حمداً كثيراً طيباً مباركاً فيه",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — دعاء الرفع من الركوع",
+      "sourceType": 3,
+      "categories": [
+        "أذكار الصلاة"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_61",
+      "section": "دعاء الرفع من الركوع"
+    },
+    {
+      "id": "hisn-044",
+      "order": 1043,
+      "content": "....ملء السموات وملء الأرض وما بينهما ، وملء ما شئت من شئ بعد .أهل الثناء والمجد،أحق ما قال العبد، وكلنا لك عبد ، اللهم لا مانع لما أعطيت ولا معطي لما منعت ولا ينفع ذا الجد منك الجد",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — دعاء الرفع من الركوع",
+      "sourceType": 3,
+      "categories": [
+        "أذكار الصلاة"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_62",
+      "section": "دعاء الرفع من الركوع"
+    },
+    {
+      "id": "hisn-045",
+      "order": 1044,
+      "content": "سبحان ربي الأعلى ، ثلاث مرات .",
+      "count": 3,
+      "countDescription": "ثلاث مرات",
+      "benefit": "",
+      "source": "حصن المسلم — دعاء السجود",
+      "sourceType": 3,
+      "categories": [
+        "أذكار الصلاة"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_63",
+      "section": "دعاء السجود"
+    },
+    {
+      "id": "hisn-046",
+      "order": 1045,
+      "content": "سبحانك اللهم ربنا وبحمدك ، اللهم اغفر لي",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — دعاء السجود",
+      "sourceType": 3,
+      "categories": [
+        "أذكار الصلاة"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_64",
+      "section": "دعاء السجود"
+    },
+    {
+      "id": "hisn-047",
+      "order": 1046,
+      "content": "سبوح قدوس رب الملائكة والروح",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — دعاء السجود",
+      "sourceType": 3,
+      "categories": [
+        "أذكار الصلاة"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_65",
+      "section": "دعاء السجود"
+    },
+    {
+      "id": "hisn-048",
+      "order": 1047,
+      "content": "اللهم لك سجدت وبك آمنت ولك أسلمت،سجد وجهي للذي خلقه وصوره وشق سمعه وبصره تبارك الله أحسن الخالقين",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — دعاء السجود",
+      "sourceType": 3,
+      "categories": [
+        "أذكار الصلاة"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_66",
+      "section": "دعاء السجود"
+    },
+    {
+      "id": "hisn-049",
+      "order": 1048,
+      "content": "سبحان ذي الجبروت والملكوت ، والكبرياء والعظمة",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — دعاء السجود",
+      "sourceType": 3,
+      "categories": [
+        "أذكار الصلاة"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_67",
+      "section": "دعاء السجود"
+    },
+    {
+      "id": "hisn-050",
+      "order": 1049,
+      "content": "اللهم اغفر لي ذنبي كله ، دقه وجله ،وأوله وآخره ،وعلانيته وسره",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — دعاء السجود",
+      "sourceType": 3,
+      "categories": [
+        "أذكار الصلاة"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_68",
+      "section": "دعاء السجود"
+    },
+    {
+      "id": "hisn-051",
+      "order": 1050,
+      "content": "اللهم إني أعوذ برضاك من سخطك وبمعافاتك من عقوبتك،وأعوذ بك منك لا أحصي ثناء عليك أنت كما أثنيت على نفسك",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — دعاء السجود",
+      "sourceType": 3,
+      "categories": [
+        "أذكار الصلاة"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_69",
+      "section": "دعاء السجود"
+    },
+    {
+      "id": "hisn-052",
+      "order": 1051,
+      "content": "رب اغفر لي رب اغفر لي",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — دعاء الجلسة بين السجدتين",
+      "sourceType": 3,
+      "categories": [
+        "أذكار الصلاة"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_70",
+      "section": "دعاء الجلسة بين السجدتين"
+    },
+    {
+      "id": "hisn-053",
+      "order": 1052,
+      "content": "اللهم اغفر لي ، وارحمني ،واهدني ، واجبرني، وعافني،وارزقني ، وارفعني",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — دعاء الجلسة بين السجدتين",
+      "sourceType": 3,
+      "categories": [
+        "أذكار الصلاة"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_71",
+      "section": "دعاء الجلسة بين السجدتين"
+    },
+    {
+      "id": "hisn-054",
+      "order": 1053,
+      "content": "سجد وجهي للذي خلقه ، وشق سمعه وبصره بحوله وقوته { فتبارك الله أحسن الخالقين }",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — دعاء سجود التلاوة",
+      "sourceType": 3,
+      "categories": [
+        "أذكار الصلاة"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_72",
+      "section": "دعاء سجود التلاوة"
+    },
+    {
+      "id": "hisn-055",
+      "order": 1054,
+      "content": "اللهم أكتب لي بها عندك أجراً ، وضع عني بها وزراً ، واجعلها لي عندك ذخراً ، وتقبلها مني كما تقبلتها من عبدك داود",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — دعاء سجود التلاوة",
+      "sourceType": 3,
+      "categories": [
+        "أذكار الصلاة"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_73",
+      "section": "دعاء سجود التلاوة"
+    },
+    {
+      "id": "hisn-056",
+      "order": 1055,
+      "content": "التحيات لله ، والصلوات ، والطيبات ، السلام عليك أيها النبي ورحمة الله وبركاته ، السلام علينا وعلى عباد الله الصالحين ،أشهد أن لا إله إلا الله ، وأشهد أن محمداً عبده ورسوله",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — التشهد",
+      "sourceType": 3,
+      "categories": [
+        "أذكار الصلاة"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_74",
+      "section": "التشهد"
+    },
+    {
+      "id": "hisn-057",
+      "order": 1056,
+      "content": "اللهم صل على محمد وعلى آل محمد ، كما صليت على إبراهيم ، وعلى آل إبراهيم ، إنك حميد مجيد ، اللهم بارك على محمد وعلى آل محمد كما باركت على إبراهيم ، وعلى آل إبراهيم إنك حميد مجيد",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — الصلاة على النبي صلى الله عليه وسلم بعد التشهد",
+      "sourceType": 3,
+      "categories": [
+        "أذكار الصلاة"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_75",
+      "section": "الصلاة على النبي صلى الله عليه وسلم بعد التشهد"
+    },
+    {
+      "id": "hisn-058",
+      "order": 1057,
+      "content": "اللهم صل على محمد وعلى أزواجه وذريته،كما صليت على آل إبراهيم، وبارك على محمد وعلى أزواجه وذريته كما باركت على آل إبراهيم إنك حميد مجيد",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — الصلاة على النبي صلى الله عليه وسلم بعد التشهد",
+      "sourceType": 3,
+      "categories": [
+        "أذكار الصلاة"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_76",
+      "section": "الصلاة على النبي صلى الله عليه وسلم بعد التشهد"
+    },
+    {
+      "id": "hisn-059",
+      "order": 1058,
+      "content": "اللهم إني أعوذ بك من عذاب القبر،ومن عذاب جهنم،ومن فتنة المحيا والممات ،ومن شر فتنة المسيح الدجال",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — الدعاء بعد التشهد الأخير وقبل السلام",
+      "sourceType": 3,
+      "categories": [
+        "أذكار الصلاة"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_77",
+      "section": "الدعاء بعد التشهد الأخير وقبل السلام"
+    },
+    {
+      "id": "hisn-060",
+      "order": 1059,
+      "content": "اللهم إني أعوذ بك من عذاب القبر،وأعوذ بك من فتنة المسيح الدجال،وأعوذ بك من فتنة المحيا والممات، اللهم إني أعوذ بك من المأثم والمغرم",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — الدعاء بعد التشهد الأخير وقبل السلام",
+      "sourceType": 3,
+      "categories": [
+        "أذكار الصلاة"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_78",
+      "section": "الدعاء بعد التشهد الأخير وقبل السلام"
+    },
+    {
+      "id": "hisn-061",
+      "order": 1060,
+      "content": "اللهم إني ظلمت نفسي ظلماً كثيراً ، ولا يغفر الذنوب إلا أنت ، فاغفر لي مغفرة من عندك وارحمني إنك أنت الغفور الرحيم",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — الدعاء بعد التشهد الأخير وقبل السلام",
+      "sourceType": 3,
+      "categories": [
+        "أذكار الصلاة"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_79",
+      "section": "الدعاء بعد التشهد الأخير وقبل السلام"
+    },
+    {
+      "id": "hisn-062",
+      "order": 1061,
+      "content": "اللهم اغفر لي ما قدمت وما أخرت وما أسررت وما أعلنت وما أسرفت وما أنت أعلم به مني أنت المقدم وأنت المؤخر لا إله إلا أنت",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — الدعاء بعد التشهد الأخير وقبل السلام",
+      "sourceType": 3,
+      "categories": [
+        "أذكار الصلاة"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_80",
+      "section": "الدعاء بعد التشهد الأخير وقبل السلام"
+    },
+    {
+      "id": "hisn-063",
+      "order": 1062,
+      "content": "اللهم أعني على ذكرك ، وشكرك وحسن عبادتك",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — الدعاء بعد التشهد الأخير وقبل السلام",
+      "sourceType": 3,
+      "categories": [
+        "أذكار الصلاة"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_81",
+      "section": "الدعاء بعد التشهد الأخير وقبل السلام"
+    },
+    {
+      "id": "hisn-064",
+      "order": 1063,
+      "content": "اللهم إني أعوذ بك من البخل وأعوذ بك من الجبن ، وأعوذ بك من أن أرد إلى أرذل العمر ، وأعوذ بك من فتنة الدنيا وأعوذ بك من عذاب القبر",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — الدعاء بعد التشهد الأخير وقبل السلام",
+      "sourceType": 3,
+      "categories": [
+        "أذكار الصلاة"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_82",
+      "section": "الدعاء بعد التشهد الأخير وقبل السلام"
+    },
+    {
+      "id": "hisn-065",
+      "order": 1064,
+      "content": "اللهم إني أسألك الجنة وأعوذ بك من النار",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — الدعاء بعد التشهد الأخير وقبل السلام",
+      "sourceType": 3,
+      "categories": [
+        "أذكار الصلاة"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_83",
+      "section": "الدعاء بعد التشهد الأخير وقبل السلام"
+    },
+    {
+      "id": "hisn-066",
+      "order": 1065,
+      "content": "اللهم بعلمك الغيب وقدرتك على الخلق أحيني ما علمت الحياة خيراً لي وتوفني إذا علمت الوفاة خيراً لي ، اللهم إني أسألك خشيتك في الغيب والشهادة ، وأسألك كلمة الحق في الرضا والغضب ، وأسألك القصد في الغنى والفقر ، وأسألك نعيماً لا ينفد ، وأسألك قرة عين لا تنقطع ، وأسألك الرضا بعد القضاء ، وأسألك برد العيش بعد الموت ، وأسألك لذة النظر إلى وجهك والشوق إلى لقائك من غير ضرَّاء مضرة ولا فتنة مضلة ، اللهم زينا بزينة الإيمان ، واجعلنا هداة مهتدين",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — الدعاء بعد التشهد الأخير وقبل السلام",
+      "sourceType": 3,
+      "categories": [
+        "أذكار الصلاة"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_84",
+      "section": "الدعاء بعد التشهد الأخير وقبل السلام"
+    },
+    {
+      "id": "hisn-067",
+      "order": 1066,
+      "content": "اللهم إني أسألك يا الله بأنك الواحد الأحد الصمد الذي لم يلد ولم يولد ولم يكن له كفواً أحد أن تغفر لي ذنوبي إنك أنت الغفور الرحيم",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — الدعاء بعد التشهد الأخير وقبل السلام",
+      "sourceType": 3,
+      "categories": [
+        "أذكار الصلاة"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_85",
+      "section": "الدعاء بعد التشهد الأخير وقبل السلام"
+    },
+    {
+      "id": "hisn-068",
+      "order": 1067,
+      "content": "اللهم إني أسألك بأن لك الحمد ، لا إله إلا أنت وحدك لا شريك لك ، المنان ، يا بديع السموات والأرض يا ذا الجلال والإكرام يا حي يا قيوم إني أسألك الجنة وأعوذ بك من النار",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — الدعاء بعد التشهد الأخير وقبل السلام",
+      "sourceType": 3,
+      "categories": [
+        "أذكار الصلاة"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_86",
+      "section": "الدعاء بعد التشهد الأخير وقبل السلام"
+    },
+    {
+      "id": "hisn-069",
+      "order": 1068,
+      "content": "اللهم إني أسألك بأني أشهد أنك أنت الله لا إله إلا أنت،الأحد الصمد الذي لم يلد ولم يولد ولم يكن له كفواً أحد",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — الدعاء بعد التشهد الأخير وقبل السلام",
+      "sourceType": 3,
+      "categories": [
+        "أذكار الصلاة"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_87",
+      "section": "الدعاء بعد التشهد الأخير وقبل السلام"
+    },
+    {
+      "id": "hisn-070",
+      "order": 1069,
+      "content": "أستغفر الله ثلاثاً .. اللهم أنت السلام ، ومنك السلام ، تباركت يا ذا الجلال والإكرام",
+      "count": 3,
+      "countDescription": "ثلاث مرات",
+      "benefit": "",
+      "source": "حصن المسلم — الأذكار بعد السلام من الصلاة",
+      "sourceType": 3,
+      "categories": [
+        "أذكار الصلاة"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_88",
+      "section": "الأذكار بعد السلام من الصلاة"
+    },
+    {
+      "id": "hisn-071",
+      "order": 1070,
+      "content": "لَا إِلَهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ اللَّهُمَّ لَا مَانِعَ لِمَا أَعْطَيْتَ وَلَا مُعْطِيَ لِمَا مَنَعْتَ وَلَا يَنْفَعُ ذَا الْجَدِّ مِنْكَ الْجَدُّ",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — الأذكار بعد السلام من الصلاة",
+      "sourceType": 3,
+      "categories": [
+        "أذكار الصلاة"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_89",
+      "section": "الأذكار بعد السلام من الصلاة"
+    },
+    {
+      "id": "hisn-072",
+      "order": 1071,
+      "content": "لا إله إلا الله وحده لا شريك له،له الملك وله الحمد وهو على كل شئ قدير،لا حول ولا قوة إلا بالله،لا إله إلا الله،ولا نعبد إلا إياه ، له النعمة وله الفضل ،وله الثناء الحسن،لا إله إلا الله مخلصين له الدين ولو كره الكافرون",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — الأذكار بعد السلام من الصلاة",
+      "sourceType": 3,
+      "categories": [
+        "أذكار الصلاة"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_90",
+      "section": "الأذكار بعد السلام من الصلاة"
+    },
+    {
+      "id": "hisn-073",
+      "order": 1072,
+      "content": "سبحان الله ، والحمد لله ، والله أكبر ( ثلاثاً وثلاثين ) لا إله إلا الله وحده لا شريك له ، له الملك وله الحمد وهو على كل شيء قدير",
+      "count": 33,
+      "countDescription": "33 مرة",
+      "benefit": "",
+      "source": "حصن المسلم — الأذكار بعد السلام من الصلاة",
+      "sourceType": 3,
+      "categories": [
+        "أذكار الصلاة"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_91",
+      "section": "الأذكار بعد السلام من الصلاة"
+    },
+    {
+      "id": "hisn-074",
+      "order": 1073,
+      "content": "بسم الله الرحمن الرحيم{ قُلْ هُوَ اللَّهُ أَحَدٌ*اللَّهُ الصَّمَدُ*لَمْ يَلِدْ وَلَمْ يُولَدْ * وَلَمْ يَكُن لَّهُ كُفُواً أَحَدٌ} بسم الله الرحمن الرحيم {قُلْ أَعُوذُ بِرَبِّ الْفَلَقِ * مِن شَرِّ مَا خَلَقَ *وَمِن شَرِّ غَاسِقٍ إِذَا وَقَبَ * وَمِن شَرِّ النَّفَّاثَاتِ فِي الْعُقَدِ * وَمِن شَرِّ حَاسِدٍ إِذَا حَسَدَ } بسم الله الرحمن الرحيم{ قُلْ أَعُوذُ بِرَبِّ النَّاسِ * مَلِكِ النَّاسِ * إِلَهِ النَّاسِ *مِن شَرِّ الْوَسْوَاسِ الْخَنَّاسِ * الَّذِي يُوَسْوِسُ فِي صُدُورِ النَّاسِ * مِنَ الْجِنَّةِ وَالنَّاسِ }بعد كل صلاة مرة واحدة , وبعد صلاة المغرب والفجر ثلاث مرات",
+      "count": 3,
+      "countDescription": "ثلاث مرات",
+      "benefit": "",
+      "source": "حصن المسلم — الأذكار بعد السلام من الصلاة",
+      "sourceType": 3,
+      "categories": [
+        "أذكار الصلاة"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_92",
+      "section": "الأذكار بعد السلام من الصلاة"
+    },
+    {
+      "id": "hisn-075",
+      "order": 1074,
+      "content": "{ اللّهُ لاَ إِلَهَ إِلاَّ هُوَ الْحَيُّ الْقَيُّومُ لاَ تَأْخُذُهُ سِنَةٌ وَلاَ نَوْمٌ لَّهُ مَا فِي السَّمَاوَاتِ وَمَا فِي الأَرْضِ مَن ذَا الَّذِي يَشْفَعُ عِنْدَهُ إِلاَّ بِإِذْنِهِ يَعْلَمُ مَا بَيْنَ أَيْدِيهِمْ وَمَا خَلْفَهُمْ وَلاَ يُحِيطُونَ بِشَيْءٍ مِّنْ عِلْمِهِ إِلاَّ بِمَا شَاء وَسِعَ كُرْسِيُّهُ السَّمَاوَاتِ وَالأَرْضَ وَلاَ يَؤُودُهُ حِفْظُهُمَا وَهُوَ الْعَلِيُّ الْعَظِيمُ }عقب كل صلاة",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — الأذكار بعد السلام من الصلاة",
+      "sourceType": 3,
+      "categories": [
+        "أذكار الصلاة"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_93",
+      "section": "الأذكار بعد السلام من الصلاة"
+    },
+    {
+      "id": "hisn-076",
+      "order": 1075,
+      "content": "لا إله إلا الله وحده لا شريك له ، له الملك وله الحمد ، يحيي ويميت وهو على كل شئ قدير عشر مرات بعد صلاة المغرب والصبح",
+      "count": 10,
+      "countDescription": "عشر مرات",
+      "benefit": "",
+      "source": "حصن المسلم — الأذكار بعد السلام من الصلاة",
+      "sourceType": 3,
+      "categories": [
+        "أذكار الصلاة"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_94",
+      "section": "الأذكار بعد السلام من الصلاة"
+    },
+    {
+      "id": "hisn-077",
+      "order": 1076,
+      "content": "اللهم إني أسألك علماً نافعاً ، ورزقاً طيباً ، وعملاً متقبلاً بعد السلام من صلاة الفجر",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — الأذكار بعد السلام من الصلاة",
+      "sourceType": 3,
+      "categories": [
+        "أذكار الصلاة"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_95",
+      "section": "الأذكار بعد السلام من الصلاة"
+    },
+    {
+      "id": "hisn-078",
+      "order": 1077,
+      "content": "قال جابر بن عبد الله رضي الله عنهما : كان رسول الله صلى الله عليه وسلم ، يُعلمنا الاستخارة في الأمور كلها كما يعلمُنا السورة من القرآن ، يقول : إذا هم أحدكم بالأمر فليركع ركعتين من غير الفريضة ، ثم ليقل : اللهم إني أستخيرك بعلمك ، وأستقدرك بقدرتك ، وأسألك من فضلك العظيم فإنك تقدِرُ ولا أقدِرُ ، وتعلم ولا أعلم ، وأنت علام الغيوب ، اللهم إن كنت تعلم أن هذا الأمر -يسمي حاجته خير لي في ديني ومعاشي وعاقبة أمري أو قال : عاجلة وآجله فاقدره لي ويسره لي ، ثم بارك لي فيه ، وإن كنت تعلم أن هذا الأمر شر لي في ديني ومعاشي وعاقبة أمري أو قال : عاجله وآجله فاصرفه عني واصرفني عنه ، واقدر لي الخير حيث كان ، ثم ارضني به",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — دعاء صلاة الاستخارة",
+      "sourceType": 3,
+      "categories": [
+        "أذكار الصلاة"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_96",
+      "section": "دعاء صلاة الاستخارة"
+    },
+    {
+      "id": "hisn-079",
+      "order": 1078,
+      "content": "وما ندم من استخار الخالق ، وشاور المخلوقين المؤمنين وتثبت في أمره ، فقد قال سبحانه{ وَشَاوِرْهُمْ فِي الأَمْرِ فَإِذَا عَزَمْتَ فَتَوَكَّلْ عَلَى اللّهِ}",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — دعاء صلاة الاستخارة",
+      "sourceType": 3,
+      "categories": [
+        "أذكار الصلاة"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_97",
+      "section": "دعاء صلاة الاستخارة"
+    },
+    {
+      "id": "hisn-080",
+      "order": 1079,
+      "content": "الحمد لله وحده ، والصلاة والسلام على من لا نبي بعده",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — أذكار الصباح والمساء",
+      "sourceType": 3,
+      "categories": [
+        "أذكار الصباح",
+        "أذكار المساء"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_98",
+      "section": "أذكار الصباح والمساء"
+    },
+    {
+      "id": "hisn-081",
+      "order": 1080,
+      "content": "أعوذ بالله من الشيطان الرجيم { اللّهُ لاَ إِلَهَ إِلاَّ هُوَ الْحَيُّ الْقَيُّومُ لاَ تَأْخُذُهُ سِنَةٌ وَلاَ نَوْمٌ لَّهُ مَا فِي السَّمَاوَاتِ وَمَا فِي الأَرْضِ مَن ذَا الَّذِي يَشْفَعُ عِنْدَهُ إِلاَّ بِإِذْنِهِ يَعْلَمُ مَا بَيْنَ أَيْدِيهِمْ وَمَا خَلْفَهُمْ وَلاَ يُحِيطُونَ بِشَيْءٍ مِّنْ عِلْمِهِ إِلاَّ بِمَا شَاء وَسِعَ كُرْسِيُّهُ السَّمَاوَاتِ وَالأَرْضَ وَلاَ يَؤُودُهُ حِفْظُهُمَا وَهُوَ الْعَلِيُّ الْعَظِيمُ }",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — أذكار الصباح والمساء",
+      "sourceType": 3,
+      "categories": [
+        "أذكار الصباح",
+        "أذكار المساء"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_99",
+      "section": "أذكار الصباح والمساء"
+    },
+    {
+      "id": "hisn-082",
+      "order": 1081,
+      "content": "بسم الله الرحمن الرحيم{ قُلْ هُوَ اللَّهُ أَحَدٌ*اللَّهُ الصَّمَدُ*لَمْ يَلِدْ وَلَمْ يُولَدْ * وَلَمْ يَكُن لَّهُ كُفُواً أَحَدٌ} بسم الله الرحمن الرحيم {قُلْ أَعُوذُ بِرَبِّ الْفَلَقِ * مِن شَرِّ مَا خَلَقَ *وَمِن شَرِّ غَاسِقٍ إِذَا وَقَبَ * وَمِن شَرِّ النَّفَّاثَاتِ فِي الْعُقَدِ * وَمِن شَرِّ حَاسِدٍ إِذَا حَسَدَ } بسم الله الرحمن الرحيم{ قُلْ أَعُوذُ بِرَبِّ النَّاسِ * مَلِكِ النَّاسِ * إِلَهِ النَّاسِ *مِن شَرِّ الْوَسْوَاسِ الْخَنَّاسِ * الَّذِي يُوَسْوِسُ فِي صُدُورِ النَّاسِ * مِنَ الْجِنَّةِ وَالنَّاسِ }( ثلاث مرات )",
+      "count": 3,
+      "countDescription": "ثلاث مرات",
+      "benefit": "",
+      "source": "حصن المسلم — أذكار الصباح والمساء",
+      "sourceType": 3,
+      "categories": [
+        "أذكار الصباح",
+        "أذكار المساء"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_100",
+      "section": "أذكار الصباح والمساء"
+    },
+    {
+      "id": "hisn-083",
+      "order": 1082,
+      "content": "أصبحنا وأصبح الملك لله ، والحمد لله، لا إله إلا الله وحده لا شريك له، له الملك وله الحمد وهو على كل شيء قدير، ربِّ أسألك خير ما في هذا اليوم وخير ما بعده وأعوذ بك من شر ما في هذا اليوم وشر ما بعده ربِّ أعوذ بك من الكسل وسوء الكبر، ربَّ أعوذ بك من عذابٍ في النار وعذاب في القبر وإذا أمسي قال ذلك أيضا : أمسينا وأمسي الملك لله .",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — أذكار الصباح والمساء",
+      "sourceType": 3,
+      "categories": [
+        "أذكار الصباح",
+        "أذكار المساء"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_101",
+      "section": "أذكار الصباح والمساء"
+    },
+    {
+      "id": "hisn-084",
+      "order": 1083,
+      "content": "اللهم بك أصبحنا وبك أمسينا وبك نحيا وبك نموت وإليك النشور وإذا أمسي فليقل : اللهم بك أمسينا، وبك أصبحنا، وبك نحيا وبك نموت، وإليك المصير .",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — أذكار الصباح والمساء",
+      "sourceType": 3,
+      "categories": [
+        "أذكار الصباح",
+        "أذكار المساء"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_102",
+      "section": "أذكار الصباح والمساء"
+    },
+    {
+      "id": "hisn-085",
+      "order": 1084,
+      "content": "اللهم أنت ربي لا إله إلا أنت خَلَقتني وأنا عَبْدُك وأنا على عهدك ووعدك ما استطعت أعوذ بك من شر ما صنعت أبوء لك بنعمتك علي وأبوء بذنبي فاغفر لي فإنه لا يغفر الذنوب إلا أنت",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — أذكار الصباح والمساء",
+      "sourceType": 3,
+      "categories": [
+        "أذكار الصباح",
+        "أذكار المساء"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_103",
+      "section": "أذكار الصباح والمساء"
+    },
+    {
+      "id": "hisn-086",
+      "order": 1085,
+      "content": "اللهم إني أصبحت أشهدك وأشهد حملة عرشك ، وملائكتك وجميع خلقك ، أنك أنت الله لا إله إلا أنت وحدك لا شريك لك ، وأن محمداً عبدك ورسولك ( أربع مرات )",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — أذكار الصباح والمساء",
+      "sourceType": 3,
+      "categories": [
+        "أذكار الصباح",
+        "أذكار المساء"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_104",
+      "section": "أذكار الصباح والمساء"
+    },
+    {
+      "id": "hisn-087",
+      "order": 1086,
+      "content": "اللهم ما أصبح بي من نعمة أو بأحد من خلقك فمنك وحدك لا شريك لك ، فلك الحمد ولك الشكر",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — أذكار الصباح والمساء",
+      "sourceType": 3,
+      "categories": [
+        "أذكار الصباح",
+        "أذكار المساء"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_105",
+      "section": "أذكار الصباح والمساء"
+    },
+    {
+      "id": "hisn-088",
+      "order": 1087,
+      "content": "اللهم عافني في بَدَني، اللهم عافني في سمعي، اللهم عافني في بصري، لا إله إلا أنت .اللهم إني أعوذ بك من الكفر، والفقر، اللهم إني أعوذ بك من عذاب القبر لا إله إلا أنت ( ثلاث مرات )",
+      "count": 3,
+      "countDescription": "ثلاث مرات",
+      "benefit": "",
+      "source": "حصن المسلم — أذكار الصباح والمساء",
+      "sourceType": 3,
+      "categories": [
+        "أذكار الصباح",
+        "أذكار المساء"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_106",
+      "section": "أذكار الصباح والمساء"
+    },
+    {
+      "id": "hisn-089",
+      "order": 1088,
+      "content": "حسبي الله لا إله إلا هو عليه توكلت وهو رب العرش العظيم (سبع مرات )",
+      "count": 7,
+      "countDescription": "سبع مرات",
+      "benefit": "",
+      "source": "حصن المسلم — أذكار الصباح والمساء",
+      "sourceType": 3,
+      "categories": [
+        "أذكار الصباح",
+        "أذكار المساء"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_107",
+      "section": "أذكار الصباح والمساء"
+    },
+    {
+      "id": "hisn-090",
+      "order": 1089,
+      "content": "اللهم إني أسألك العفو والعافية في الدنيا والآخرة، اللهم إني أسألك العفو والعافية في ديني ودنياي وأهلي ومالي،اللهم استر عوراتي وآمن روعاتي، اللهم احفظني من بين يديَّ ومن خلفي وعن يميني وعن شمالي ومن فوقي وأعوذ بعظمتك أن أغتال من تحتي",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — أذكار الصباح والمساء",
+      "sourceType": 3,
+      "categories": [
+        "أذكار الصباح",
+        "أذكار المساء"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_108",
+      "section": "أذكار الصباح والمساء"
+    },
+    {
+      "id": "hisn-091",
+      "order": 1090,
+      "content": "اللهم عَالِمَ الغيب والشَّهادة، فاطر السموات والأرض، رب كل شيء ومليكه، أشهد أن لا إله إلا أنت أعوذ بك من شر نفسي ومن شر الشيطان وشركه وأن اقترف على نفسي سوءًا أو أجُره إلى مسلم",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — أذكار الصباح والمساء",
+      "sourceType": 3,
+      "categories": [
+        "أذكار الصباح",
+        "أذكار المساء"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_109",
+      "section": "أذكار الصباح والمساء"
+    },
+    {
+      "id": "hisn-092",
+      "order": 1091,
+      "content": "بسم الله الذي لا يضرُّ مع اسمه شيء في الأرض ولا في السماء وهو السميع العليم ( ثلاث مرات )",
+      "count": 3,
+      "countDescription": "ثلاث مرات",
+      "benefit": "",
+      "source": "حصن المسلم — أذكار الصباح والمساء",
+      "sourceType": 3,
+      "categories": [
+        "أذكار الصباح",
+        "أذكار المساء"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_110",
+      "section": "أذكار الصباح والمساء"
+    },
+    {
+      "id": "hisn-093",
+      "order": 1092,
+      "content": "رضيت بالله رباً ، وبالإسلام ديناً وبمحمد صلى الله عليه وسلم نبياً ( ثلاث مرات )",
+      "count": 3,
+      "countDescription": "ثلاث مرات",
+      "benefit": "",
+      "source": "حصن المسلم — أذكار الصباح والمساء",
+      "sourceType": 3,
+      "categories": [
+        "أذكار الصباح",
+        "أذكار المساء"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_111",
+      "section": "أذكار الصباح والمساء"
+    },
+    {
+      "id": "hisn-094",
+      "order": 1093,
+      "content": "يا حي يا قيوم برحمتك أستغيث أصلح لي شأني كُله ولا تَكِلْني إلى نفسي طرفة عين",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — أذكار الصباح والمساء",
+      "sourceType": 3,
+      "categories": [
+        "أذكار الصباح",
+        "أذكار المساء"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_112",
+      "section": "أذكار الصباح والمساء"
+    },
+    {
+      "id": "hisn-095",
+      "order": 1094,
+      "content": "أصبحنا وأصبح الملك لله رب العالمين ، اللهم إني أسألك خير هذا اليوم : فتحه، ونصره ،ونوره ،وبركته، وهداه، وأعوذ بك من شر ما فيه وشر ما بعده",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — أذكار الصباح والمساء",
+      "sourceType": 3,
+      "categories": [
+        "أذكار الصباح",
+        "أذكار المساء"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_113",
+      "section": "أذكار الصباح والمساء"
+    },
+    {
+      "id": "hisn-096",
+      "order": 1095,
+      "content": "أصبحنا على فطرة الإسلام وعلى كلمة الإخلاص، وعلى دين نبيَّنا محمد صلى الله عليه وسلم وعلى ملَّة أبينا إبراهيم حنيفاً مسلماً وما كان من المشركين",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — أذكار الصباح والمساء",
+      "sourceType": 3,
+      "categories": [
+        "أذكار الصباح",
+        "أذكار المساء"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_114",
+      "section": "أذكار الصباح والمساء"
+    },
+    {
+      "id": "hisn-097",
+      "order": 1096,
+      "content": "من قال :سبحان الله وبحمده( مائة مرة )",
+      "count": 100,
+      "countDescription": "مئة مرة",
+      "benefit": "",
+      "source": "حصن المسلم — أذكار الصباح والمساء",
+      "sourceType": 3,
+      "categories": [
+        "أذكار الصباح",
+        "أذكار المساء"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_115",
+      "section": "أذكار الصباح والمساء"
+    },
+    {
+      "id": "hisn-098",
+      "order": 1097,
+      "content": "لا إله إلا الله وحده لا شريك له ،له الملك وله الحمد وهو على كل شيء قدير( عشر مرات) ( أو مرة واحدة عند الكسل)",
+      "count": 10,
+      "countDescription": "عشر مرات",
+      "benefit": "",
+      "source": "حصن المسلم — أذكار الصباح والمساء",
+      "sourceType": 3,
+      "categories": [
+        "أذكار الصباح",
+        "أذكار المساء"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_116",
+      "section": "أذكار الصباح والمساء"
+    },
+    {
+      "id": "hisn-099",
+      "order": 1098,
+      "content": "لا إله إلا الله وحده لا شريك له ،له الملك وله الحمد وهو على كل شيء قدير(مائة مرة إذا أصبح )",
+      "count": 100,
+      "countDescription": "مئة مرة",
+      "benefit": "",
+      "source": "حصن المسلم — أذكار الصباح والمساء",
+      "sourceType": 3,
+      "categories": [
+        "أذكار الصباح",
+        "أذكار المساء"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_117",
+      "section": "أذكار الصباح والمساء"
+    },
+    {
+      "id": "hisn-100",
+      "order": 1099,
+      "content": "سبحان الله وبحمده عدد خلقهِ ورِضَا نفسِهِ وزِنُة عَرشِهِ ومِداد كلماته( ثلاث مرات إذا أصبح )",
+      "count": 3,
+      "countDescription": "ثلاث مرات",
+      "benefit": "",
+      "source": "حصن المسلم — أذكار الصباح والمساء",
+      "sourceType": 3,
+      "categories": [
+        "أذكار الصباح",
+        "أذكار المساء"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_118",
+      "section": "أذكار الصباح والمساء"
+    },
+    {
+      "id": "hisn-101",
+      "order": 1100,
+      "content": "اللهم إني أسألك علماً نافعاً ، ورزقاً طيباً ، وعملاً متقبلاً ( إذا أصبح )",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — أذكار الصباح والمساء",
+      "sourceType": 3,
+      "categories": [
+        "أذكار الصباح",
+        "أذكار المساء"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_119",
+      "section": "أذكار الصباح والمساء"
+    },
+    {
+      "id": "hisn-102",
+      "order": 1101,
+      "content": "أستغفر الله وأتوب إليه (مائة مرة في اليوم )",
+      "count": 100,
+      "countDescription": "مئة مرة",
+      "benefit": "",
+      "source": "حصن المسلم — أذكار الصباح والمساء",
+      "sourceType": 3,
+      "categories": [
+        "أذكار الصباح",
+        "أذكار المساء"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_120",
+      "section": "أذكار الصباح والمساء"
+    },
+    {
+      "id": "hisn-103",
+      "order": 1102,
+      "content": "أعوذ بكلمات الله التامات من شر ما خلق ( ثلاث مرات إذا أمسى)",
+      "count": 3,
+      "countDescription": "ثلاث مرات",
+      "benefit": "",
+      "source": "حصن المسلم — أذكار الصباح والمساء",
+      "sourceType": 3,
+      "categories": [
+        "أذكار الصباح",
+        "أذكار المساء"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_121",
+      "section": "أذكار الصباح والمساء"
+    },
+    {
+      "id": "hisn-104",
+      "order": 1103,
+      "content": "اللهم صل وسلم على نبينا محمد (عشر مرات )",
+      "count": 10,
+      "countDescription": "عشر مرات",
+      "benefit": "",
+      "source": "حصن المسلم — أذكار الصباح والمساء",
+      "sourceType": 3,
+      "categories": [
+        "أذكار الصباح",
+        "أذكار المساء"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_122",
+      "section": "أذكار الصباح والمساء"
+    },
+    {
+      "id": "hisn-105",
+      "order": 1104,
+      "content": "يجمع كفيه ثم ينفث فيهما فيقرأ:بسم الله الرحمن الرحيم { قُلْ هُوَ اللَّهُ أَحَدٌ*اللَّهُ الصَّمَدُ*لَمْ يَلِدْ وَلَمْ يُولَدْ*وَلَمْ يَكُن لَّهُ كُفُواً أَحَدٌ} بسم الله الرحمن الرحيم {قُلْ أَعُوذُ بِرَبِّ الْفَلَقِ*مِن شَرِّ مَا خَلَقَ*وَمِن شَرِّ غَاسِقٍ إِذَا وَقَبَ*وَمِن شَرِّ النَّفَّاثَاتِ فِي الْعُقَدِ * وَمِن شَرِّ حَاسِدٍ إِذَا حَسَدَ } بسم الله الرحمن الرحيم { قُلْ أَعُوذُ بِرَبِّ النَّاسِ * مَلِكِ النَّاسِ * إِلَهِ النَّاسِ *مِن شَرِّ الْوَسْوَاسِ الْخَنَّاسِ * الَّذِي يُوَسْوِسُ فِي صُدُورِ النَّاسِ * مِنَ الْجِنَّةِ وَالنَّاسِ } ثم يمسح بهما ما استطاع من جسده يبدأبهما على رأسه ووجهه وما أقبل من جسده ( يفعل ذلك ثلاث مرات )",
+      "count": 3,
+      "countDescription": "ثلاث مرات",
+      "benefit": "",
+      "source": "حصن المسلم — أذكار النوم",
+      "sourceType": 3,
+      "categories": [
+        "أذكار النوم"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_123",
+      "section": "أذكار النوم"
+    },
+    {
+      "id": "hisn-106",
+      "order": 1105,
+      "content": "{ اللّهُ لاَ إِلَهَ إِلاَّ هُوَ الْحَيُّ الْقَيُّومُ لاَ تَأْخُذُهُ سِنَةٌ وَلاَ نَوْمٌ لَّهُ مَا فِي السَّمَاوَاتِ وَمَا فِي الأَرْضِ مَن ذَا الَّذِي يَشْفَعُ عِنْدَهُ إِلاَّ بِإِذْنِهِ يَعْلَمُ مَا بَيْنَ أَيْدِيهِمْ وَمَا خَلْفَهُمْ وَلاَ يُحِيطُونَ بِشَيْءٍ مِّنْ عِلْمِهِ إِلاَّ بِمَا شَاء وَسِعَ كُرْسِيُّهُ السَّمَاوَاتِ وَالأَرْضَ وَلاَ يَؤُودُهُ حِفْظُهُمَا وَهُوَ الْعَلِيُّ الْعَظِيمُ }",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — أذكار النوم",
+      "sourceType": 3,
+      "categories": [
+        "أذكار النوم"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_124",
+      "section": "أذكار النوم"
+    },
+    {
+      "id": "hisn-107",
+      "order": 1106,
+      "content": "{ آمَنَ الرَّسُولُ بِمَا أُنزِلَ إِلَيْهِ مِن رَّبِّهِ وَالْمُؤْمِنُونَ كُلٌّ آمَنَ بِاللّهِ وَمَلآئِكَتِهِ وَكُتُبِهِ وَرُسُلِهِ لاَ نُفَرِّقُ بَيْنَ أَحَدٍ مِّن رُّسُلِهِ وَقَالُواْ سَمِعْنَا وَأَطَعْنَا غُفْرَانَكَ رَبَّنَا وَإِلَيْكَ الْمَصِيرُ * لاَ يُكَلِّفُ اللّهُ نَفْساً إِلاَّ وُسْعَهَا لَهَا مَا كَسَبَتْ وَعَلَيْهَا مَا اكْتَسَبَتْ رَبَّنَا لاَ تُؤَاخِذْنَا إِن نَّسِينَا أَوْ أَخْطَأْنَا رَبَّنَا وَلاَ تَحْمِلْ عَلَيْنَا إِصْراً كَمَا حَمَلْتَهُ عَلَى الَّذِينَ مِن قَبْلِنَا رَبَّنَا وَلاَ تُحَمِّلْنَا مَا لاَ طَاقَةَ لَنَا بِهِ وَاعْفُ عَنَّا وَاغْفِرْ لَنَا وَارْحَمْنَا أَنتَ مَوْلاَنَا فَانصُرْنَا عَلَى الْقَوْمِ الْكَافِرِينَ }",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — أذكار النوم",
+      "sourceType": 3,
+      "categories": [
+        "أذكار النوم"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_125",
+      "section": "أذكار النوم"
+    },
+    {
+      "id": "hisn-108",
+      "order": 1107,
+      "content": "باسمك ربي وضعت جنبي وبك أرفعه إن أمسكت نفسي فارحمها، وإن أرسلتها فاحفظها بما تحفظ به عبادك الصالحين",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — أذكار النوم",
+      "sourceType": 3,
+      "categories": [
+        "أذكار النوم"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_126",
+      "section": "أذكار النوم"
+    },
+    {
+      "id": "hisn-109",
+      "order": 1108,
+      "content": "اللهم خَلَقْتَ نفسي وأنت توفَّاها لك مماتها ومَحْياها، إن أحييتها فاحفظها وإن أمتها فاغفر لها، اللهم إني أسألك العافية",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — أذكار النوم",
+      "sourceType": 3,
+      "categories": [
+        "أذكار النوم"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_127",
+      "section": "أذكار النوم"
+    },
+    {
+      "id": "hisn-110",
+      "order": 1109,
+      "content": "اللهم قني عذابك يوم تبعث عبادك ( ثلاث مرات )",
+      "count": 3,
+      "countDescription": "ثلاث مرات",
+      "benefit": "",
+      "source": "حصن المسلم — أذكار النوم",
+      "sourceType": 3,
+      "categories": [
+        "أذكار النوم"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_128",
+      "section": "أذكار النوم"
+    },
+    {
+      "id": "hisn-111",
+      "order": 1110,
+      "content": "باسمِكَ اللهم أموت وأحيا",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — أذكار النوم",
+      "sourceType": 3,
+      "categories": [
+        "أذكار النوم"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_129",
+      "section": "أذكار النوم"
+    },
+    {
+      "id": "hisn-112",
+      "order": 1111,
+      "content": "سبحان الله ( ثلاثاً وثلاثين ) والحمد لله ( ثلاثاً وثلاثين ) والله أكبر ( أربعاً وثلاثين )",
+      "count": 33,
+      "countDescription": "33 مرة",
+      "benefit": "",
+      "source": "حصن المسلم — أذكار النوم",
+      "sourceType": 3,
+      "categories": [
+        "أذكار النوم"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_130",
+      "section": "أذكار النوم"
+    },
+    {
+      "id": "hisn-113",
+      "order": 1112,
+      "content": "اللهم ربَّ السموات السبع،ورب العرش العظيم،ربنا ورب كل شيء، فالق الحب والنوى، ومُنزل التوراة والإنجيل والفرقان، أعوذ بك من شر كل شيء أنت آخذٌ بناصيته،اللهم أنت الأول فليس قبلك شيء،وأنت الآخر فليس بعدك شيء، وأنت الظاهر فليس فوقك شيء، وأنت الباطن فليس دونك شيء، اقض عنا الدَّيْنَ واغننا من الفقر",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — أذكار النوم",
+      "sourceType": 3,
+      "categories": [
+        "أذكار النوم"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_131",
+      "section": "أذكار النوم"
+    },
+    {
+      "id": "hisn-114",
+      "order": 1113,
+      "content": "الحمد لله الذي أطعمنا وسقانا وكفانا وآوانا فكم ممن لا كافي له ولا مؤوي",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — أذكار النوم",
+      "sourceType": 3,
+      "categories": [
+        "أذكار النوم"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_132",
+      "section": "أذكار النوم"
+    },
+    {
+      "id": "hisn-115",
+      "order": 1114,
+      "content": "اللهم عالم الغيب والشهادة، فاطر السموات والأرض، رب كل شيء ومليكه أشهد أن لا إله إلا أنت أعوذ بك من شر نفسي، ومن شر الشيطان وشركه وأن أقترف على نفسي سوءًا أو أجرَّه إلى مسلم",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — أذكار النوم",
+      "sourceType": 3,
+      "categories": [
+        "أذكار النوم"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_133",
+      "section": "أذكار النوم"
+    },
+    {
+      "id": "hisn-116",
+      "order": 1115,
+      "content": "يقرأ { ألم } تنزيل السجدة، و { تبارك الذي بيده الملك }",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — أذكار النوم",
+      "sourceType": 3,
+      "categories": [
+        "أذكار النوم"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_134",
+      "section": "أذكار النوم"
+    },
+    {
+      "id": "hisn-117",
+      "order": 1116,
+      "content": "اللهم أسلمت نفسي إليك، وفوضت أمري إليك وألجأت ظهري إليك رهبةً ورغبةً إليك، لا ملجأ ولا منجا منك إلا إليك، آمنت بكتابك الذي أنزلت وبنبيك الذي أرسلت",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — أذكار النوم",
+      "sourceType": 3,
+      "categories": [
+        "أذكار النوم"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_135",
+      "section": "أذكار النوم"
+    },
+    {
+      "id": "hisn-118",
+      "order": 1117,
+      "content": "لا إله إلا الله الواحد القهار، ربُّ السموات والأرض وما بينهما العزيز الغفار",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — الدعاء إذا تقلب ليلاً",
+      "sourceType": 3,
+      "categories": [
+        "أذكار النوم"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_136",
+      "section": "الدعاء إذا تقلب ليلاً"
+    },
+    {
+      "id": "hisn-119",
+      "order": 1118,
+      "content": "أعوذ بكلمات الله التَّامَّة من غضبه وعقابه، وشر عباده، ومن همزات الشياطين وأنْ يحضرون",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — دعاء القلق والفزع في النوم ومن بلي بالوحشة",
+      "sourceType": 3,
+      "categories": [
+        "أذكار النوم"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_137",
+      "section": "دعاء القلق والفزع في النوم ومن بلي بالوحشة"
+    },
+    {
+      "id": "hisn-120",
+      "order": 1119,
+      "content": "ينفث عن يساره ( ثلاثاً )",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — ما يفعل من رأى الرؤيا أو الحلم",
+      "sourceType": 3,
+      "categories": [
+        "أذكار النوم"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_138",
+      "section": "ما يفعل من رأى الرؤيا أو الحلم"
+    },
+    {
+      "id": "hisn-121",
+      "order": 1120,
+      "content": "يستعيذ بالله من الشيطان ومن شر ما رأى ( ثلاث مرات )",
+      "count": 3,
+      "countDescription": "ثلاث مرات",
+      "benefit": "",
+      "source": "حصن المسلم — ما يفعل من رأى الرؤيا أو الحلم",
+      "sourceType": 3,
+      "categories": [
+        "أذكار النوم"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_139",
+      "section": "ما يفعل من رأى الرؤيا أو الحلم"
+    },
+    {
+      "id": "hisn-122",
+      "order": 1121,
+      "content": "لا يحدث بها أحدا ً",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — ما يفعل من رأى الرؤيا أو الحلم",
+      "sourceType": 3,
+      "categories": [
+        "أذكار النوم"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_140",
+      "section": "ما يفعل من رأى الرؤيا أو الحلم"
+    },
+    {
+      "id": "hisn-123",
+      "order": 1122,
+      "content": "يتحول عن جنبه الذي كان عليه",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — ما يفعل من رأى الرؤيا أو الحلم",
+      "sourceType": 3,
+      "categories": [
+        "أذكار النوم"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_141",
+      "section": "ما يفعل من رأى الرؤيا أو الحلم"
+    },
+    {
+      "id": "hisn-124",
+      "order": 1123,
+      "content": "يقوم يصلي إن أراد ذلك",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — ما يفعل من رأى الرؤيا أو الحلم",
+      "sourceType": 3,
+      "categories": [
+        "أذكار النوم"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_142",
+      "section": "ما يفعل من رأى الرؤيا أو الحلم"
+    },
+    {
+      "id": "hisn-125",
+      "order": 1124,
+      "content": "اللهم اهدني فيمن هديت ، وعافني فيمن عافيت ، وتولني فيمن توليت ، وبارك لي فيما أعطيت ، وقني شر ما قضيت ، فإنك تقضي ولا يقضى عليك ، إنه لا يذل من واليت ،[ ولا يعز من عاديت ] تباركت ربنا وتعاليت",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — دعاء قنوت الوتر",
+      "sourceType": 3,
+      "categories": [
+        "أذكار الصلاة"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_143",
+      "section": "دعاء قنوت الوتر"
+    },
+    {
+      "id": "hisn-126",
+      "order": 1125,
+      "content": "اللهم إني أعوذ برضاك من سخطك وأعوذ بمعافاتك من عقوبتك ، وأعوذ بك منك لا أحصي ثناء عليك ، أنت كما أثنيت على نفسك",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — دعاء قنوت الوتر",
+      "sourceType": 3,
+      "categories": [
+        "أذكار الصلاة"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_144",
+      "section": "دعاء قنوت الوتر"
+    },
+    {
+      "id": "hisn-127",
+      "order": 1126,
+      "content": "اللهم إياك نعبد ، ولك نُصلي ونسجد ، وإليك نسعى ونحفدُ ، نرجُو رحمتك ، ونخشى عذابك ، إن عذابك بالكافرين ملحق ، اللهم إنا نستعينك ، ونستغفرك ، ونثني عليك الخير ، ولا نكفرك ، ونؤمن بك ونخضع لك ، ونخلع من يكفرك",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — دعاء قنوت الوتر",
+      "sourceType": 3,
+      "categories": [
+        "أذكار الصلاة"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_145",
+      "section": "دعاء قنوت الوتر"
+    },
+    {
+      "id": "hisn-128",
+      "order": 1127,
+      "content": "كان رسول الله صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ يقرأ في الوتر :( سَبِّحِ اسْمَ رَبِّكَ الْأَعْلَى ) و ( وَقُلْ يَا أَيُّهَا الْكَافِرُونَ ) و ( وَقُلْ هُوَ اللَّهُ أَحَدٌ ). فإذا سلم قال سبحان الملك القدوس [ رب الملائكة والروح ] ثلاث مرات والثالثة يجهر بها ويمد بها صوته",
+      "count": 3,
+      "countDescription": "ثلاث مرات",
+      "benefit": "",
+      "source": "حصن المسلم — الذكر عقب السلام من الوتر",
+      "sourceType": 3,
+      "categories": [
+        "أذكار الصلاة"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_146",
+      "section": "الذكر عقب السلام من الوتر"
+    },
+    {
+      "id": "hisn-129",
+      "order": 1128,
+      "content": "اللهم إني عبدك ابن عبدك ابن أمتك ناصيتي بيدك،ماضِ في حكمك ، عدل في قضاؤك ،أسألك بكل اسم هو لك سميت به نفسك أو أنزلته في كتابك ، أو علمته أحداً من خلقك أو استأثرت به في علم الغيب عندك أن تجعل القرآن ربيع قلبي ، ونور صدري ،وجلاء حزني وذهاب همي",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — دعاء الهم والحزن",
+      "sourceType": 3,
+      "categories": [
+        "الدعاء والهموم"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_147",
+      "section": "دعاء الهم والحزن"
+    },
+    {
+      "id": "hisn-130",
+      "order": 1129,
+      "content": "اللهم إني أعوذ بك من الهم والحزن ، والعجز والكسل والبخل والجبن ، وضلع الدين وغلبة الرجال",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — دعاء الهم والحزن",
+      "sourceType": 3,
+      "categories": [
+        "الدعاء والهموم"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_148",
+      "section": "دعاء الهم والحزن"
+    },
+    {
+      "id": "hisn-131",
+      "order": 1130,
+      "content": "لا إله إلا الله العظيم الحليم ، لا إله إلا الله رب العرش العظيم ، لا إله إلا الله رب السموات ورب العرش الكريم",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — دعاء الكرب",
+      "sourceType": 3,
+      "categories": [
+        "الدعاء والهموم"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_149",
+      "section": "دعاء الكرب"
+    },
+    {
+      "id": "hisn-132",
+      "order": 1131,
+      "content": "اللهم رحمتك أرجو فلا تكلني إلى نفسي طرفة عين ِ وأصلح لي شأني كله لا إله إلا أنت",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — دعاء الكرب",
+      "sourceType": 3,
+      "categories": [
+        "الدعاء والهموم"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_150",
+      "section": "دعاء الكرب"
+    },
+    {
+      "id": "hisn-133",
+      "order": 1132,
+      "content": "لا إله إلا أنت سبحانك إني كنت من الظالمين",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — دعاء الكرب",
+      "sourceType": 3,
+      "categories": [
+        "الدعاء والهموم"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_151",
+      "section": "دعاء الكرب"
+    },
+    {
+      "id": "hisn-134",
+      "order": 1133,
+      "content": "الله الله ربي لا أشرك به شيئاً",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — دعاء الكرب",
+      "sourceType": 3,
+      "categories": [
+        "الدعاء والهموم"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_152",
+      "section": "دعاء الكرب"
+    },
+    {
+      "id": "hisn-135",
+      "order": 1134,
+      "content": "اللهم إنا نجعلك في نحورهم ونعوذ بك من شرورهم",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — دعاء لقاء العدو وذي السلطان",
+      "sourceType": 3,
+      "categories": [
+        "الدعاء والهموم"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_153",
+      "section": "دعاء لقاء العدو وذي السلطان"
+    },
+    {
+      "id": "hisn-136",
+      "order": 1135,
+      "content": "اللهم أنت عضُدي وأنت نصيري ، بك أحولُ ،وبك أصولُ ، وبك أُقاتلُ",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — دعاء لقاء العدو وذي السلطان",
+      "sourceType": 3,
+      "categories": [
+        "الدعاء والهموم"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_154",
+      "section": "دعاء لقاء العدو وذي السلطان"
+    },
+    {
+      "id": "hisn-137",
+      "order": 1136,
+      "content": "حسبنا الله ونعم الوكيل",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — دعاء لقاء العدو وذي السلطان",
+      "sourceType": 3,
+      "categories": [
+        "الدعاء والهموم"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_155",
+      "section": "دعاء لقاء العدو وذي السلطان"
+    },
+    {
+      "id": "hisn-138",
+      "order": 1137,
+      "content": "اللهم رب السموات السبع ،ورب العرش العظيم ،كن لي جاراً من فلان بن فلان ، وأحزابه من خلائقك ؛ أن يفرط على أحد منهم أو يطغى ، عز جارك ،وجل ثناؤك ،ولا إله إلا أنت",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — دعاء من خاف ظلم السلطان",
+      "sourceType": 3,
+      "categories": [
+        "الدعاء والهموم"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_156",
+      "section": "دعاء من خاف ظلم السلطان"
+    },
+    {
+      "id": "hisn-139",
+      "order": 1138,
+      "content": "الله أكبر، الله أعز من خلقه جميعاً ، الله أعز مما أخاف وأحذر ،أعوذ بالله الذي لا إله إلا هو ، الممسك السموات السبع أن يقعن على الأرض إلا بإذنه ،من شر عبدك فلان ،وجنوده وأتباعه وأشياعه ، من الجن والأنس ، اللهم كن لي جاراً من شرهم ، جل ثناؤك وعز جارك ، وتبارك اسمك ، ولا إله غيرك ( ثلاث مرات )",
+      "count": 3,
+      "countDescription": "ثلاث مرات",
+      "benefit": "",
+      "source": "حصن المسلم — دعاء من خاف ظلم السلطان",
+      "sourceType": 3,
+      "categories": [
+        "الدعاء والهموم"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_157",
+      "section": "دعاء من خاف ظلم السلطان"
+    },
+    {
+      "id": "hisn-140",
+      "order": 1139,
+      "content": "اللهم منزل الكتاب ، سريع الحساب ،اهزم الأحزاب ،اللهم اهزمهم وزلزلهم",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — الدعاء على العدو",
+      "sourceType": 3,
+      "categories": [
+        "الدعاء والهموم"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_158",
+      "section": "الدعاء على العدو"
+    },
+    {
+      "id": "hisn-141",
+      "order": 1140,
+      "content": "اللهم اكفنيهم بما شئت",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — ما يقول من خاف قوماً",
+      "sourceType": 3,
+      "categories": [
+        "الدعاء والهموم"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_159",
+      "section": "ما يقول من خاف قوماً"
+    },
+    {
+      "id": "hisn-142",
+      "order": 1141,
+      "content": "يستعيذ بالله",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — دعاء من أصابه شك في الإيمان",
+      "sourceType": 3,
+      "categories": [
+        "الدعاء والهموم"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_160",
+      "section": "دعاء من أصابه شك في الإيمان"
+    },
+    {
+      "id": "hisn-143",
+      "order": 1142,
+      "content": "ينتهي عما شك فيه",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — دعاء من أصابه شك في الإيمان",
+      "sourceType": 3,
+      "categories": [
+        "الدعاء والهموم"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_161",
+      "section": "دعاء من أصابه شك في الإيمان"
+    },
+    {
+      "id": "hisn-144",
+      "order": 1143,
+      "content": "يقول آمنت بالله ورسله",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — دعاء من أصابه شك في الإيمان",
+      "sourceType": 3,
+      "categories": [
+        "الدعاء والهموم"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_162",
+      "section": "دعاء من أصابه شك في الإيمان"
+    },
+    {
+      "id": "hisn-145",
+      "order": 1144,
+      "content": "يقرأ قوله تعالى { هُوَ الْأَوَّلُ وَالْآخِرُ وَالظَّاهِرُ وَالْبَاطِنُ وَهُوَ بِكُلِّ شَيْءٍ عَلِيمٌ }",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — دعاء من أصابه شك في الإيمان",
+      "sourceType": 3,
+      "categories": [
+        "الدعاء والهموم"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_163",
+      "section": "دعاء من أصابه شك في الإيمان"
+    },
+    {
+      "id": "hisn-146",
+      "order": 1145,
+      "content": "اللهم اكفني بحلالك عن حرامك ، وأغنني بفضلك عمن سواك",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — الدعاء قضاء الدين",
+      "sourceType": 3,
+      "categories": [
+        "الدعاء والهموم"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_164",
+      "section": "الدعاء قضاء الدين"
+    },
+    {
+      "id": "hisn-147",
+      "order": 1146,
+      "content": "اللهم إني أعوذ بك من الهم والحزن ، والعجز والكسل ،والبخل والجبن وضلع الدين وغلبة الرجال",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — الدعاء قضاء الدين",
+      "sourceType": 3,
+      "categories": [
+        "الدعاء والهموم"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_165",
+      "section": "الدعاء قضاء الدين"
+    },
+    {
+      "id": "hisn-148",
+      "order": 1147,
+      "content": "أعوذ بالله من الشيطان الرجيم واتفل على يسارك ( ثلاثاً )",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — دعاء الوسوسة في الصلاة والقراءة",
+      "sourceType": 3,
+      "categories": [
+        "أذكار الصلاة"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_166",
+      "section": "دعاء الوسوسة في الصلاة والقراءة"
+    },
+    {
+      "id": "hisn-149",
+      "order": 1148,
+      "content": "اللهم لا سهل إلا ما جعلته سهلاً وأنت تجعل الحزن إذا شئت سهلاً",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — دعاء من استصعب عليه أمر",
+      "sourceType": 3,
+      "categories": [
+        "الدعاء والهموم"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_167",
+      "section": "دعاء من استصعب عليه أمر"
+    },
+    {
+      "id": "hisn-150",
+      "order": 1149,
+      "content": "ما من عبدٍ يذنب ذنباً فيحسن الطهور ، ثم يقوم فيصلي ركعتين ، ثم يستغفر الله إلا غفر الله لهُ",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — ما يقول ويفعل من أذنب ذنباً",
+      "sourceType": 3,
+      "categories": [
+        "الدعاء والهموم"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_168",
+      "section": "ما يقول ويفعل من أذنب ذنباً"
+    },
+    {
+      "id": "hisn-151",
+      "order": 1150,
+      "content": "الاستعاذة بالله منه",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — دعاء طرد الشيطان ووساوسه",
+      "sourceType": 3,
+      "categories": [
+        "الدعاء والهموم"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_169",
+      "section": "دعاء طرد الشيطان ووساوسه"
+    },
+    {
+      "id": "hisn-152",
+      "order": 1151,
+      "content": "الأذان",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — دعاء طرد الشيطان ووساوسه",
+      "sourceType": 3,
+      "categories": [
+        "الدعاء والهموم"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_170",
+      "section": "دعاء طرد الشيطان ووساوسه"
+    },
+    {
+      "id": "hisn-153",
+      "order": 1152,
+      "content": "الأذكار وقراءة القرآن",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — دعاء طرد الشيطان ووساوسه",
+      "sourceType": 3,
+      "categories": [
+        "الدعاء والهموم"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_171",
+      "section": "دعاء طرد الشيطان ووساوسه"
+    },
+    {
+      "id": "hisn-154",
+      "order": 1153,
+      "content": "قدر الله وما شاء فعل",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — الدعاء حينما يقع مالا يرضاه أو غلب على أمره",
+      "sourceType": 3,
+      "categories": [
+        "الدعاء والهموم"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_172",
+      "section": "الدعاء حينما يقع مالا يرضاه أو غلب على أمره"
+    },
+    {
+      "id": "hisn-155",
+      "order": 1154,
+      "content": "إذا غلبك أمر فقل : حسبي الله ونعم الوكيل",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — الدعاء حينما يقع مالا يرضاه أو غلب على أمره",
+      "sourceType": 3,
+      "categories": [
+        "الدعاء والهموم"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_173",
+      "section": "الدعاء حينما يقع مالا يرضاه أو غلب على أمره"
+    },
+    {
+      "id": "hisn-156",
+      "order": 1155,
+      "content": "بارك الله لك في الموهوب لك ،وشكرت الواهب، وبلغ أشدهُ، ورزقت برهُ .ويردُ عليه المهنأ فيقول : بارك الله لك وبارك عليك ، وجزاك الله خيراً ، ورزقك الله مثله، وأجزل ثوابك",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — تهنئة المولود له وجوابه",
+      "sourceType": 3,
+      "categories": [
+        "المناسبات"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_174",
+      "section": "تهنئة المولود له وجوابه"
+    },
+    {
+      "id": "hisn-157",
+      "order": 1156,
+      "content": "كان رسول الله صلى الله عليه وسلم يعوذ الحسن والحسين أعيذكما بكلمات الله التامة ، من كل شيطان وهامة ، ومن كل عينِ لامة",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — ما يعوذ به الأولاد",
+      "sourceType": 3,
+      "categories": [
+        "المناسبات"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_175",
+      "section": "ما يعوذ به الأولاد"
+    },
+    {
+      "id": "hisn-158",
+      "order": 1157,
+      "content": "لا بأس طهور إن شاء الله",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — الدعاء للمريض في عيادته",
+      "sourceType": 3,
+      "categories": [
+        "الأدعية الجامعية"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_176",
+      "section": "الدعاء للمريض في عيادته"
+    },
+    {
+      "id": "hisn-159",
+      "order": 1158,
+      "content": "أسأل الله العظيم رب العرش العظيم أن يشفيك ( سبع مرات )",
+      "count": 7,
+      "countDescription": "سبع مرات",
+      "benefit": "",
+      "source": "حصن المسلم — الدعاء للمريض في عيادته",
+      "sourceType": 3,
+      "categories": [
+        "الأدعية الجامعية"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_177",
+      "section": "الدعاء للمريض في عيادته"
+    },
+    {
+      "id": "hisn-160",
+      "order": 1159,
+      "content": "اللهم اغفر لي وارحمني والحقني بالرفيق الأعلى",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — دعاء المريض الذي يئس من حياته",
+      "sourceType": 3,
+      "categories": [
+        "المرض والموتى"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_179",
+      "section": "دعاء المريض الذي يئس من حياته"
+    },
+    {
+      "id": "hisn-161",
+      "order": 1160,
+      "content": "جعل النبي صلى الله عليه وسلم يدخل يديه في الماء فيمسح بهما وجههُ ويقول : لا إله إلا الله إن للموت لسكرات",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — دعاء المريض الذي يئس من حياته",
+      "sourceType": 3,
+      "categories": [
+        "المرض والموتى"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_180",
+      "section": "دعاء المريض الذي يئس من حياته"
+    },
+    {
+      "id": "hisn-162",
+      "order": 1161,
+      "content": "لا إله إلا الله والله أكبر ، لا إله إلا الله وحده ، لا إله إلا الله وحده لا شريك لهُ ، لا إله إلا الله لهُ الملك ولهُ الحمد ، لا إله إلا الله ولا حول ولا قوة إلا بالله",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — دعاء المريض الذي يئس من حياته",
+      "sourceType": 3,
+      "categories": [
+        "المرض والموتى"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_181",
+      "section": "دعاء المريض الذي يئس من حياته"
+    },
+    {
+      "id": "hisn-163",
+      "order": 1162,
+      "content": "من كان آخر كلامه لا إله إلا الله دخل الجنة",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — تلقين المحتضر",
+      "sourceType": 3,
+      "categories": [
+        "المرض والموتى"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_182",
+      "section": "تلقين المحتضر"
+    },
+    {
+      "id": "hisn-164",
+      "order": 1163,
+      "content": "إنا لله وإنا إليه راجعون اللهم أجرني في مصيبتي وأخلف لي خيراً منها",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — دعاء من أصيب بمصيبة",
+      "sourceType": 3,
+      "categories": [
+        "الأدعية الجامعية"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_183",
+      "section": "دعاء من أصيب بمصيبة"
+    },
+    {
+      "id": "hisn-165",
+      "order": 1164,
+      "content": "اللهم اغفر لفلان ( باسمه ) ورفع درجته في المهديين، واخلفه في عقبه في الغابرين، واغفر لنا وله يا رب العالمين ،وافسح له في قبره ونور له فيه",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — الدعاء عند إغماض الميت",
+      "sourceType": 3,
+      "categories": [
+        "المرض والموتى"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_184",
+      "section": "الدعاء عند إغماض الميت"
+    },
+    {
+      "id": "hisn-166",
+      "order": 1165,
+      "content": "اللهم اغفر له وارحمه، وعافه ،واعف عنه ،وأكرم نُزُله ، ووسع مُدخلهُ ، واغسله بالماء والثلج والبرد ، ونقه من الخطايا كما ينقى الثوب الأبيض من الدنس ، وأبدله داراً خيراً من داره ، وأهلاً خيراً من أهله وزوجاً خيراً من زوجه، وأدخله الجنة ،وأعذه من عذاب القبر ( ومن عذاب النار )",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — الدعاء للميت في الصلاة عليه",
+      "sourceType": 3,
+      "categories": [
+        "الأدعية الجامعية"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_185",
+      "section": "الدعاء للميت في الصلاة عليه"
+    },
+    {
+      "id": "hisn-167",
+      "order": 1166,
+      "content": "اللهم اغفر لحينا وميتنا ، وشاهدنا وغائبنا ، وصغيرنا وكبيرنا ، وذكرنا وأُنثانا ، اللهم من أحييته منا فأحيه على الإسلام ، ومن توفيته منا فتوفه على الإيمان ، اللهم لا تحرمنا أجره ولا تضلنا بعده",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — الدعاء للميت في الصلاة عليه",
+      "sourceType": 3,
+      "categories": [
+        "الأدعية الجامعية"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_186",
+      "section": "الدعاء للميت في الصلاة عليه"
+    },
+    {
+      "id": "hisn-168",
+      "order": 1167,
+      "content": "اللهم إن فلان بن فلان في ذمتك،وحبل جوارك،فقه من فتنة القبر وعذاب النار،وأنت أهل الوفاء والحق .فاغفر له وارحمهُ إنك أنت الغفور الرحيم",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — الدعاء للميت في الصلاة عليه",
+      "sourceType": 3,
+      "categories": [
+        "الأدعية الجامعية"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_187",
+      "section": "الدعاء للميت في الصلاة عليه"
+    },
+    {
+      "id": "hisn-169",
+      "order": 1168,
+      "content": "اللهم عبدك وابن عبدك وابن أمتك احتاج إلى رحمتك ،وأنت غني عن عذابه،إن كان مُحسناً فزده في حسناته، وإن كان مُسيئاً فتجاوز عنه",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — الدعاء للميت في الصلاة عليه",
+      "sourceType": 3,
+      "categories": [
+        "الأدعية الجامعية"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_188",
+      "section": "الدعاء للميت في الصلاة عليه"
+    },
+    {
+      "id": "hisn-170",
+      "order": 1169,
+      "content": "اللهم أعذه من عذاب القبر",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — الدعاء للفرط في الصلاة عليه",
+      "sourceType": 3,
+      "categories": [
+        "الأدعية الجامعية"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_189",
+      "section": "الدعاء للفرط في الصلاة عليه"
+    },
+    {
+      "id": "hisn-171",
+      "order": 1170,
+      "content": "أن قال : اللهم اجعله فرطاً وذخراً لوالديه ،وشفيعاً مجاباً .اللهم ثقل به موازينها وأعظم به أجورهما ، وألحقهُ بصالح المؤمنين ، واجعلهُ في كفالة إبراهيم ، وقه برحمتك عذاب الجحيم ، وأبدله داراً خيراً من داره ، وأهلاً خيراً من أهله ، اللهم اغفر لاسلافنا ، وأفراطنا ، ومن سبقنا بالإيمان فحسن",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — الدعاء للفرط في الصلاة عليه",
+      "sourceType": 3,
+      "categories": [
+        "الأدعية الجامعية"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_190",
+      "section": "الدعاء للفرط في الصلاة عليه"
+    },
+    {
+      "id": "hisn-172",
+      "order": 1171,
+      "content": "اللهم اجعله لنا فرطاً ،وسلفاً وأجراً",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — الدعاء للفرط في الصلاة عليه",
+      "sourceType": 3,
+      "categories": [
+        "الأدعية الجامعية"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_191",
+      "section": "الدعاء للفرط في الصلاة عليه"
+    },
+    {
+      "id": "hisn-173",
+      "order": 1172,
+      "content": "إن لله ما أخذ وله ما أعطى . وكل شيء عنده بأجل مُسمى ...فلتصبر ولتحتسب",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — دعاء التعزية",
+      "sourceType": 3,
+      "categories": [
+        "المرض والموتى"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_192",
+      "section": "دعاء التعزية"
+    },
+    {
+      "id": "hisn-174",
+      "order": 1173,
+      "content": "وإن قال : أعظم الله أجرك ،وأحسن عزاءك وغفر لميتك فحسن",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — دعاء التعزية",
+      "sourceType": 3,
+      "categories": [
+        "المرض والموتى"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_193",
+      "section": "دعاء التعزية"
+    },
+    {
+      "id": "hisn-175",
+      "order": 1174,
+      "content": "بسم الله وعلى سُنة رسول الله",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — الدعاء عند إدخال الميت القبر",
+      "sourceType": 3,
+      "categories": [
+        "المرض والموتى"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_194",
+      "section": "الدعاء عند إدخال الميت القبر"
+    },
+    {
+      "id": "hisn-176",
+      "order": 1175,
+      "content": "اللهم اغفر له اللهم ثبته",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — الدعاء بعد دفن الميت",
+      "sourceType": 3,
+      "categories": [
+        "المرض والموتى"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_195",
+      "section": "الدعاء بعد دفن الميت"
+    },
+    {
+      "id": "hisn-177",
+      "order": 1176,
+      "content": "السلام عليكم أهل الديار ، من المؤمنين والمسلمين، وإنا إن شاء الله بكم لاحقون [ ويرحم الله المُستقدمين منا والمستأخرين ] أسأل الله لنا ولكم العافية",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — دعاء زيارة القبور",
+      "sourceType": 3,
+      "categories": [
+        "المرض والموتى"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_196",
+      "section": "دعاء زيارة القبور"
+    },
+    {
+      "id": "hisn-178",
+      "order": 1177,
+      "content": "اللهم إني أسألك خيرها ، وأعوذ بك من شرها",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — دعاء الريح",
+      "sourceType": 3,
+      "categories": [
+        "الأدعية الجامعية"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_197",
+      "section": "دعاء الريح"
+    },
+    {
+      "id": "hisn-179",
+      "order": 1178,
+      "content": "اللهم إني أسألك خيرها ، وخير ما فيها ، وخير ما أُرسلت به ، وأعوذ بك من شرها وشر ما فيها وشر ما أرسلت به",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — دعاء الريح",
+      "sourceType": 3,
+      "categories": [
+        "الأدعية الجامعية"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_198",
+      "section": "دعاء الريح"
+    },
+    {
+      "id": "hisn-180",
+      "order": 1179,
+      "content": "سبحان الذي يُسبح الرعد بحمده والملائكة من خيفته",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — دعاء الرعد",
+      "sourceType": 3,
+      "categories": [
+        "الأدعية الجامعية"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_199",
+      "section": "دعاء الرعد"
+    },
+    {
+      "id": "hisn-181",
+      "order": 1180,
+      "content": "اللهم اسقنا غيثاً مغيثاً مريئاً مَريعاً نافعاً غير ضار ، عاجلاً غير آجل",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — من أدعية الاستسقاء",
+      "sourceType": 3,
+      "categories": [
+        "الأدعية الجامعية"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_200",
+      "section": "من أدعية الاستسقاء"
+    },
+    {
+      "id": "hisn-182",
+      "order": 1181,
+      "content": "اللهم أغثنا ، اللهم أغثنا ، اللهم أغثنا",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — من أدعية الاستسقاء",
+      "sourceType": 3,
+      "categories": [
+        "الأدعية الجامعية"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_201",
+      "section": "من أدعية الاستسقاء"
+    },
+    {
+      "id": "hisn-183",
+      "order": 1182,
+      "content": "اللهم اسق عبادك وبهائمك ، وانشر رحمتك وأحيي بلدك الميت",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — من أدعية الاستسقاء",
+      "sourceType": 3,
+      "categories": [
+        "الأدعية الجامعية"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_202",
+      "section": "من أدعية الاستسقاء"
+    },
+    {
+      "id": "hisn-184",
+      "order": 1183,
+      "content": "اللهم صيباً نافعاً",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — الدعاء إذا نزل المطر",
+      "sourceType": 3,
+      "categories": [
+        "الأدعية الجامعية"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_203",
+      "section": "الدعاء إذا نزل المطر"
+    },
+    {
+      "id": "hisn-185",
+      "order": 1184,
+      "content": "مُطرنا بفضل الله ورحمته",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — الذكر بعد نزول المطر",
+      "sourceType": 3,
+      "categories": [
+        "الأدعية الجامعية"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_204",
+      "section": "الذكر بعد نزول المطر"
+    },
+    {
+      "id": "hisn-186",
+      "order": 1185,
+      "content": "اللهم حوالينا ولا علينا ، اللهم على الآكامِ والظرابِ وبُطون الأودية ، ومنابت الشجر",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — من أدعية الاستصحاء",
+      "sourceType": 3,
+      "categories": [
+        "الأدعية الجامعية"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_205",
+      "section": "من أدعية الاستصحاء"
+    },
+    {
+      "id": "hisn-187",
+      "order": 1186,
+      "content": "الله أكبر ،اللهم أهلِه علينا بالأمن والإيمان ، والسلامة والإسلام ،والتوفيق لما تحب ربنا وترضى ، ربنا وربك الله",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — دعاء رؤية الهلال",
+      "sourceType": 3,
+      "categories": [
+        "الأدعية الجامعية"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_206",
+      "section": "دعاء رؤية الهلال"
+    },
+    {
+      "id": "hisn-188",
+      "order": 1187,
+      "content": "ذَهبَ الظَّمأُ، وابتلَّت العروقُ وثَبَتَ الأجرُ إنْ شاء الله",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — الدعاء عند إفطار الصائم",
+      "sourceType": 3,
+      "categories": [
+        "الطعام والشراب"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_207",
+      "section": "الدعاء عند إفطار الصائم"
+    },
+    {
+      "id": "hisn-189",
+      "order": 1188,
+      "content": "اللهم إني أسألك برحمتك التي وسعت كل شيءٍ أن تغفر لي",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — الدعاء عند إفطار الصائم",
+      "sourceType": 3,
+      "categories": [
+        "الطعام والشراب"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_208",
+      "section": "الدعاء عند إفطار الصائم"
+    },
+    {
+      "id": "hisn-190",
+      "order": 1189,
+      "content": "إذا أكل أحدكم الطعام فليقل: بِسم الله، فإن نسي في أوله فليقل: بِسمِ الله في أوله وآخره",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — الدعاء قبل الطعام",
+      "sourceType": 3,
+      "categories": [
+        "الطعام والشراب"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_209",
+      "section": "الدعاء قبل الطعام"
+    },
+    {
+      "id": "hisn-191",
+      "order": 1190,
+      "content": "من أطعمه الله الطعام فليقل: اللهم بارك لنا فيه وأطعمنا خيراً منه. ومن سقاه الله لبناً فليقل: اللهم بارك لنا فيه وزدنا منه",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — الدعاء قبل الطعام",
+      "sourceType": 3,
+      "categories": [
+        "الطعام والشراب"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_210",
+      "section": "الدعاء قبل الطعام"
+    },
+    {
+      "id": "hisn-192",
+      "order": 1191,
+      "content": "الحمد لله الذي أطعمني هذا ،وزرقنيه ،من غير حول مني ولا قوة",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — الدعاء عند الفراغ من الطعام",
+      "sourceType": 3,
+      "categories": [
+        "الطعام والشراب"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_211",
+      "section": "الدعاء عند الفراغ من الطعام"
+    },
+    {
+      "id": "hisn-193",
+      "order": 1192,
+      "content": "الحمدُ لله حمداً كثيراً طيباً مباركاً فيهِ، غيْرَ [مَكْفيٍّ ولا] مُوَدَّع، ولا مُستَغنَى عَنْهُ ربّنا",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — الدعاء عند الفراغ من الطعام",
+      "sourceType": 3,
+      "categories": [
+        "الطعام والشراب"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_212",
+      "section": "الدعاء عند الفراغ من الطعام"
+    },
+    {
+      "id": "hisn-194",
+      "order": 1193,
+      "content": "اللهُمَّ بَارِكْ لَهُم فيما رَزَقتهْمْ، واغْفِر لهم وارحَمْهُم",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — دعاء الضيف لصاحب الطعام",
+      "sourceType": 3,
+      "categories": [
+        "الطعام والشراب"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_213",
+      "section": "دعاء الضيف لصاحب الطعام"
+    },
+    {
+      "id": "hisn-195",
+      "order": 1194,
+      "content": "اللهُمَّ أَطْعِمْ مَنْ أطْعَمَني وأَسْقِ مَنْ سْقَاني",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — الدعاء لمن سقاه أو إذا أراد ذلك",
+      "sourceType": 3,
+      "categories": [
+        "الطعام والشراب"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_214",
+      "section": "الدعاء لمن سقاه أو إذا أراد ذلك"
+    },
+    {
+      "id": "hisn-196",
+      "order": 1195,
+      "content": "أَفطَر عِنْدَكُم الصائِمونَ ، وأكل طعامَكُمُ الأبْرارُ ، وصلت عليكُمُ الملائِكَةُ",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — الدعاء إذا أفطر عند أهل بيت",
+      "sourceType": 3,
+      "categories": [
+        "الطعام والشراب"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_215",
+      "section": "الدعاء إذا أفطر عند أهل بيت"
+    },
+    {
+      "id": "hisn-197",
+      "order": 1196,
+      "content": "إذا دُعي أحدكم فليجب ، فإن كان صائماً فليصل وإن كان مفطراً فليطعم ومعنى فليصل أي فليدع",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — دعاء الصائم إذا حضر الطعام ولم يفطر",
+      "sourceType": 3,
+      "categories": [
+        "الطعام والشراب"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_216",
+      "section": "دعاء الصائم إذا حضر الطعام ولم يفطر"
+    },
+    {
+      "id": "hisn-198",
+      "order": 1197,
+      "content": "إني صائم ، إني صائم",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — ما يقول الصائم إذا سابه أحد",
+      "sourceType": 3,
+      "categories": [
+        "الطعام والشراب"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_217",
+      "section": "ما يقول الصائم إذا سابه أحد"
+    },
+    {
+      "id": "hisn-199",
+      "order": 1198,
+      "content": "اللهم بارك لنا في ثمرنا ، وبارك لنا في مدينتنا وبارك لنا في صاعنا ، وبارك لنا في مدنا",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — الدعاء عند رؤية باكورة الثمر",
+      "sourceType": 3,
+      "categories": [
+        "الأدعية الجامعية"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_218",
+      "section": "الدعاء عند رؤية باكورة الثمر"
+    },
+    {
+      "id": "hisn-200",
+      "order": 1199,
+      "content": "إذا عطس أحدكم فليقل الحمد لله ،وليقل له أخوهُ أو صاحبهُ : يرحمك الله ،فإذا قال لهُ :يرحمك الله ،فليقل :يهديكم الله ويصلح بالكم",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — دعاء العطاس",
+      "sourceType": 3,
+      "categories": [
+        "الأدعية الجامعية"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_219",
+      "section": "دعاء العطاس"
+    },
+    {
+      "id": "hisn-201",
+      "order": 1200,
+      "content": "يهديكم الله ويصلح بالكم",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — ما يقالُ للكافر إذا عطس فحمد الله",
+      "sourceType": 3,
+      "categories": [
+        "الأدعية الجامعية"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_220",
+      "section": "ما يقالُ للكافر إذا عطس فحمد الله"
+    },
+    {
+      "id": "hisn-202",
+      "order": 1201,
+      "content": "بارك الله لك ، وبارك عليك ، وجمع بينكما في خير",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — الدعاء للمتزوج",
+      "sourceType": 3,
+      "categories": [
+        "الأدعية الجامعية"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_221",
+      "section": "الدعاء للمتزوج"
+    },
+    {
+      "id": "hisn-203",
+      "order": 1202,
+      "content": "إذا تزوج أحدكم امرأة ،أو إذا اشترى خادماً فليقل : اللهم إني أسألك خيرها وخير ما جبلتها عليه وأعوذ بك من شرها وشر ما جبلتها عليه ، وإذا اشترى بعيراً فليأخذ بذروة سنامه وليقل مثل ذلك",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — دعاء المتزوج لنفسه ودعاء شراء الدابة",
+      "sourceType": 3,
+      "categories": [
+        "المناسبات"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_222",
+      "section": "دعاء المتزوج لنفسه ودعاء شراء الدابة"
+    },
+    {
+      "id": "hisn-204",
+      "order": 1203,
+      "content": "بسم الله ، اللهم جنبنا الشيطان وجنب الشيطان ما رزقتنا",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — الدعاء قبل إتيان الزوجة",
+      "sourceType": 3,
+      "categories": [
+        "المناسبات"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_223",
+      "section": "الدعاء قبل إتيان الزوجة"
+    },
+    {
+      "id": "hisn-205",
+      "order": 1204,
+      "content": "أعوذ بالله من الشيطان الرجيم",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — دعاء الغضب",
+      "sourceType": 3,
+      "categories": [
+        "الدعاء والهموم"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_224",
+      "section": "دعاء الغضب"
+    },
+    {
+      "id": "hisn-206",
+      "order": 1205,
+      "content": "الحمد لله الذي عافاني مما ابتلاك به ، وفضلني على كثير ممن خلق تفضيلاً",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — دعاء من رأى مبتلى",
+      "sourceType": 3,
+      "categories": [
+        "الدعاء والهموم"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_225",
+      "section": "دعاء من رأى مبتلى"
+    },
+    {
+      "id": "hisn-207",
+      "order": 1206,
+      "content": "عن ابن عمر قال : كان يعد لرسول الله صلى الله عليه وسلم في المجلس الواحد مائة مرة من قبل أن يقوم رب اغفر لي وتب علي إنك أنت التواب الغفور",
+      "count": 100,
+      "countDescription": "مئة مرة",
+      "benefit": "",
+      "source": "حصن المسلم — ما يقال في المجلس",
+      "sourceType": 3,
+      "categories": [
+        "الأدعية الجامعية"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_226",
+      "section": "ما يقال في المجلس"
+    },
+    {
+      "id": "hisn-208",
+      "order": 1207,
+      "content": "سبحانك اللهم وبحمدك ، أشهد أن لا إله إلا أنت أستغفرك وأتوب إليك",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — كفارة المجلس ومايختم به المجالس",
+      "sourceType": 3,
+      "categories": [
+        "الأدعية الجامعية"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_227",
+      "section": "كفارة المجلس ومايختم به المجالس"
+    },
+    {
+      "id": "hisn-209",
+      "order": 1208,
+      "content": "ولك",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — الدعاء لمن قال غفر الله لك",
+      "sourceType": 3,
+      "categories": [
+        "الأدعية الجامعية"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_228",
+      "section": "الدعاء لمن قال غفر الله لك"
+    },
+    {
+      "id": "hisn-210",
+      "order": 1209,
+      "content": "جَزَاكَ الله خيراً",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — الدعاء لمن صنع إليك معروفاً",
+      "sourceType": 3,
+      "categories": [
+        "الأدعية الجامعية"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_229",
+      "section": "الدعاء لمن صنع إليك معروفاً"
+    },
+    {
+      "id": "hisn-211",
+      "order": 1210,
+      "content": "من حفظ عشر آيات من أول سورة الكهف عصم من الدجال والاستعاذة بالله من فتنتة عقب التشهد الأخير من كل صلاة",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — ما يعصم به من الدجال",
+      "sourceType": 3,
+      "categories": [
+        "الدعاء والهموم"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_230",
+      "section": "ما يعصم به من الدجال"
+    },
+    {
+      "id": "hisn-212",
+      "order": 1211,
+      "content": "أحبك الذي أحببتني له ُ",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — الدعاء لمن قال إني أحبك في الله",
+      "sourceType": 3,
+      "categories": [
+        "الأدعية الجامعية"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_231",
+      "section": "الدعاء لمن قال إني أحبك في الله"
+    },
+    {
+      "id": "hisn-213",
+      "order": 1212,
+      "content": "بارك الله لك في أهلك ومالك",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — الدعاء لمن عرض عليك ماله",
+      "sourceType": 3,
+      "categories": [
+        "الأدعية الجامعية"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_232",
+      "section": "الدعاء لمن عرض عليك ماله"
+    },
+    {
+      "id": "hisn-214",
+      "order": 1213,
+      "content": "بارك الله لك في أهلك ومالك إنما جزاء السلف الحمد والأداء",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — الدعاء لمن أقرض عند القضاء",
+      "sourceType": 3,
+      "categories": [
+        "الأدعية الجامعية"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_233",
+      "section": "الدعاء لمن أقرض عند القضاء"
+    },
+    {
+      "id": "hisn-215",
+      "order": 1214,
+      "content": "اللهم إني أعوذ بك أن أشرك بك وأنا أعلم ، وأستغفرك لما لا أعلم",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — دعاء الخوف من الشرك",
+      "sourceType": 3,
+      "categories": [
+        "الدعاء والهموم"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_234",
+      "section": "دعاء الخوف من الشرك"
+    },
+    {
+      "id": "hisn-216",
+      "order": 1215,
+      "content": "وفيك بارك الله",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — الدعاء لمن قال بارك الله فيك",
+      "sourceType": 3,
+      "categories": [
+        "الأدعية الجامعية"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_235",
+      "section": "الدعاء لمن قال بارك الله فيك"
+    },
+    {
+      "id": "hisn-217",
+      "order": 1216,
+      "content": "اللهم لا طير إلا طيرك ، ولا خير إلا خيرك ،ولا إله غيرك",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — دعاء كراهية الطيرة",
+      "sourceType": 3,
+      "categories": [
+        "الدعاء والهموم"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_236",
+      "section": "دعاء كراهية الطيرة"
+    },
+    {
+      "id": "hisn-218",
+      "order": 1217,
+      "content": "بسم الله. الحمد لله. {سُبْحانَ الَّذِي سَخَّرَ لَنَا هَذَا وَمَا كُنَّا لَهُ مُقْرِنِينَ * وَإِنَّا إِلَى رَبِّنَا لَمُنقَلِبُونَ} الحمد لله ، الحمد لله ، الحمد لله ، الله اكبر ، الله اكبر ، الله اكبر ، سبحانك اللهم إني ظلمت نفسي فاغفر لي ، فإنه لا يغفر الذنوب إلا أنت",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — دعاء ركوب الدابة",
+      "sourceType": 3,
+      "categories": [
+        "السفر والحل والترحال"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_237",
+      "section": "دعاء ركوب الدابة"
+    },
+    {
+      "id": "hisn-219",
+      "order": 1218,
+      "content": "الله أكبر، الله أكبر، الله أكبر،{سُبْحانَ الَّذِي سَخَّرَ لَنَا هَذَا وَمَا كُنَّا لَهُ مُقْرِنِينَ * وَإِنَّا إِلَى رَبِّنَا لَمُنقَلِبُونَ} اللهم إنا نسألُكَ في سفرنا هذا البرَّ والتقوى، ومن العمل ما ترضى، اللهم هون علينا سفرنا هذا واطو عنا بعده، اللهم أنت الصاحب في السفر، والخليفة في الأهل، اللهم إني أعوذ بك من وعْثاءِ السفر، وكآبة المنظر وسوء المنقلب في المال والأهل وإذا رجع قالهن وزاد فيهن آيبون، تائبون، عابدون، لربنا حامدون",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — دعاء السفر",
+      "sourceType": 3,
+      "categories": [
+        "السفر والحل والترحال"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_238",
+      "section": "دعاء السفر"
+    },
+    {
+      "id": "hisn-220",
+      "order": 1219,
+      "content": "اللهم رب السموات السبع وما أظللن ، ورب الأرضين السبع وما أقللن ،ورب الشياطين وما أضللن ، ورب الرياح وما ذرين.أسألك خير هذه القرية وخير أهلها ، وخير ما فيها،وأعوذ بك من شرها،وشر أهلها ، وشر ما فيها",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — دعاء دخول القرية أو البلدة",
+      "sourceType": 3,
+      "categories": [
+        "السفر والحل والترحال"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_239",
+      "section": "دعاء دخول القرية أو البلدة"
+    },
+    {
+      "id": "hisn-221",
+      "order": 1220,
+      "content": "لا إله إلا الله وحده لا شريك له ، له الملك وله الحمد ، يُحيي ويُميت ، وهو حي لا يموت ، بيده الخير وهو على كل شئ قدير",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — دعاء دخول السوق",
+      "sourceType": 3,
+      "categories": [
+        "السفر والحل والترحال"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_240",
+      "section": "دعاء دخول السوق"
+    },
+    {
+      "id": "hisn-222",
+      "order": 1221,
+      "content": "بسم الله",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — الدعاء إذا تعس المركوب",
+      "sourceType": 3,
+      "categories": [
+        "السفر والحل والترحال"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_241",
+      "section": "الدعاء إذا تعس المركوب"
+    },
+    {
+      "id": "hisn-223",
+      "order": 1222,
+      "content": "أستودعُكَ الله الذي لا تضيع ودائعه",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — دعاء المسافر للمقيم",
+      "sourceType": 3,
+      "categories": [
+        "السفر والحل والترحال"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_242",
+      "section": "دعاء المسافر للمقيم"
+    },
+    {
+      "id": "hisn-224",
+      "order": 1223,
+      "content": "أستودع الله دينك وأمانتك ،وخواتيم عملك",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — دعاء المقيم للمسافر",
+      "sourceType": 3,
+      "categories": [
+        "السفر والحل والترحال"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_243",
+      "section": "دعاء المقيم للمسافر"
+    },
+    {
+      "id": "hisn-225",
+      "order": 1224,
+      "content": "زوَّدك الله التقوى، وغفر ذْنبك ويسَّر لك الخير حيث ما كنت",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — دعاء المقيم للمسافر",
+      "sourceType": 3,
+      "categories": [
+        "السفر والحل والترحال"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_244",
+      "section": "دعاء المقيم للمسافر"
+    },
+    {
+      "id": "hisn-226",
+      "order": 1225,
+      "content": "قال جابر رضي الله عنه : كنا إذا صعدنا كبرنا ، وإذا نزلنا سبحنا",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — التكبير والتسبيح في سير السفر",
+      "sourceType": 3,
+      "categories": [
+        "السفر والحل والترحال"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_245",
+      "section": "التكبير والتسبيح في سير السفر"
+    },
+    {
+      "id": "hisn-227",
+      "order": 1226,
+      "content": "سَمعَ سَامعً بحمد الله وحُسنِ بلائه علينا، ربنا صاحبنا ، وأفضِل علينا عائذا بالله من النار",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — دعاء المسافر إذا أسحر",
+      "sourceType": 3,
+      "categories": [
+        "السفر والحل والترحال"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_246",
+      "section": "دعاء المسافر إذا أسحر"
+    },
+    {
+      "id": "hisn-228",
+      "order": 1227,
+      "content": "أعوذ بكلمات الله التامات من شر ما خلق",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — الدعاء إذا نزل منزلا في سفر أو غيره",
+      "sourceType": 3,
+      "categories": [
+        "السفر والحل والترحال"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_247",
+      "section": "الدعاء إذا نزل منزلا في سفر أو غيره"
+    },
+    {
+      "id": "hisn-229",
+      "order": 1228,
+      "content": "يكبر على كل شرف ثلاث تكبيرات ثم يقول : لا إله إلا الله وحده لا شريك لهُ ،لهُ الملك ، ولهُ الحمدُ وهو على كل شيءٍ قدير ، آيبون ،تائبون ، عابدون ، لربنا حامدون ،صدق الله وعده،ونصر عبده،وهزم الأحزاب وحده",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — ذكر الرجوع من السفر",
+      "sourceType": 3,
+      "categories": [
+        "السفر والحل والترحال"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_248",
+      "section": "ذكر الرجوع من السفر"
+    },
+    {
+      "id": "hisn-230",
+      "order": 1229,
+      "content": "كان صلى الله عليه وسلم إذا أتاه الأمر يسره قال : الحمد لله الذي بنعمته تتم الصالحات و إذا أتاه أمر يكرهه قال : الحمد لله على كل حال",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — ما يقول ويفعل من أتاه أمر يسره أو يكرهه",
+      "sourceType": 3,
+      "categories": [
+        "الدعاء والهموم"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_249",
+      "section": "ما يقول ويفعل من أتاه أمر يسره أو يكرهه"
+    },
+    {
+      "id": "hisn-231",
+      "order": 1230,
+      "content": "قال رسول الله صلى الله عليه وسلم : لا تدخلوا الجنة حتى تؤمنوا ، ولا تؤمنوا حتى تحابوا ، أو لا أدلكم على شيءٍ إذا فعلتموه تحاببتم ، أفشوا السلام بينكم",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — إفشاء السلام",
+      "sourceType": 3,
+      "categories": [
+        "الأدعية الجامعية"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_255",
+      "section": "إفشاء السلام"
+    },
+    {
+      "id": "hisn-232",
+      "order": 1231,
+      "content": "ثلاث من جمعهن فقد جمع الإيمان : الإنصاف من نفسك ، وبذل السلام للعالم ،والإنفاق من الإقتار",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — إفشاء السلام",
+      "sourceType": 3,
+      "categories": [
+        "الأدعية الجامعية"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_256",
+      "section": "إفشاء السلام"
+    },
+    {
+      "id": "hisn-233",
+      "order": 1232,
+      "content": "وعن عبد الله بن عمر رضي الله عنهما : أن رجلاً سأل النبي صلى الله عليه وسلم أي الإسلام خير قال : تطعم الطعام وتقرأ السلام على من عرفت ومن لم تعرف",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — إفشاء السلام",
+      "sourceType": 3,
+      "categories": [
+        "الأدعية الجامعية"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_257",
+      "section": "إفشاء السلام"
+    },
+    {
+      "id": "hisn-234",
+      "order": 1233,
+      "content": "إذا سلم عليكم أهل الكتاب فقولوا : وعليكم",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — كيف يرد السلام على الكافر إذا سلم",
+      "sourceType": 3,
+      "categories": [
+        "الأدعية الجامعية"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_258",
+      "section": "كيف يرد السلام على الكافر إذا سلم"
+    },
+    {
+      "id": "hisn-235",
+      "order": 1234,
+      "content": "إذا سمعتم صياح الديكة ، فاسألوا الله من فضله فإنها رأت ملكاً وإذا سمعتم نهيق الحمار ، فتعوذوا بالله من الشيطان فإنه رأى شيطاناً",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — دعاء صياح الديك ونهيق الحمار",
+      "sourceType": 3,
+      "categories": [
+        "الأدعية الجامعية"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_259",
+      "section": "دعاء صياح الديك ونهيق الحمار"
+    },
+    {
+      "id": "hisn-236",
+      "order": 1235,
+      "content": "إذا سمعتم نُباح الكلاب ونهيق الحمير بالليل فتعوذوا بالله منهن فإنهن يرين ما لا ترون",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — دعاء نباح الكلاب بالليل",
+      "sourceType": 3,
+      "categories": [
+        "أذكار النوم"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_260",
+      "section": "دعاء نباح الكلاب بالليل"
+    },
+    {
+      "id": "hisn-237",
+      "order": 1236,
+      "content": "قال صلى الله عليه وسلم: اللَّهُم فأيما مؤمن سببته فاجعل ذلك له قربة إليك يوم القيامة",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — الدعاء لمن سببته",
+      "sourceType": 3,
+      "categories": [
+        "الدعاء والهموم"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_261",
+      "section": "الدعاء لمن سببته"
+    },
+    {
+      "id": "hisn-238",
+      "order": 1237,
+      "content": "قال صلى الله عليه وسلم : إذا كان أحدكم مادحاً صاحبه لا محالة فليقل : أحسبُ فلاناً والله حسيبهُ ولا أزكي على الله أحداً ، أحسبهُ – إن كان يعلم ذاك – كذا وكذا",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — ما يقول المسلم إذا مدح المسلم",
+      "sourceType": 3,
+      "categories": [
+        "الأدعية الجامعية"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_262",
+      "section": "ما يقول المسلم إذا مدح المسلم"
+    },
+    {
+      "id": "hisn-239",
+      "order": 1238,
+      "content": "اللهم لا تؤاخذني بما يقولون ، واغفر لي مالا يعلمون [واجعلني خيراً مما يظنون]",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — ما يقول المسلم إذا زكي",
+      "sourceType": 3,
+      "categories": [
+        "الدعاء والهموم"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_263",
+      "section": "ما يقول المسلم إذا زكي"
+    },
+    {
+      "id": "hisn-240",
+      "order": 1239,
+      "content": "لبيك اللهم لبيك ، لبيك لا شريك لك لبيك ، إن الحمد والنعمة لك والملك ، لا شريك لك",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — كيف يلبي المحرم في الحج أو العمرة",
+      "sourceType": 3,
+      "categories": [
+        "الأدعية الجامعية"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_264",
+      "section": "كيف يلبي المحرم في الحج أو العمرة"
+    },
+    {
+      "id": "hisn-241",
+      "order": 1240,
+      "content": "طاف النبي صلى الله عليه وسلم بالبيت على بعير كلما أتي الركن أشار إليه بشيء عنده وكبر",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — التكبيرة إذا أتي الركن الأسود",
+      "sourceType": 3,
+      "categories": [
+        "الأدعية الجامعية"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_265",
+      "section": "التكبيرة إذا أتي الركن الأسود"
+    },
+    {
+      "id": "hisn-242",
+      "order": 1241,
+      "content": "{ رَبَّنَا آتِنَا فِي الدُّنْيَا حَسَنَةً وَفِي الآخِرَةِ حَسَنَةً وَقِنَا عَذَابَ النَّارِ}",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — الدعاء بين الركن اليماني والحجر الأسود",
+      "sourceType": 3,
+      "categories": [
+        "الأدعية الجامعية"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_266",
+      "section": "الدعاء بين الركن اليماني والحجر الأسود"
+    },
+    {
+      "id": "hisn-243",
+      "order": 1242,
+      "content": "فلما دنا صلى الله عليه وسلم من الصفا قرأ: { إِنَّ الصَّفَا وَالْمَرْوَةَ مِن شَعَآئِرِ اللّهِ } أبدأ بما بدأ الله به فبدأ بالصفا فرقي عليه حتى رأى البيت فاستقبل القبلة ، فوحد الله وكبره وقال : لا إله إلا الله وحده لا شريك لهُ ، لهُ الملك ولهُ الحمد وهو على كل شيءٍ قدير ، لا إله إلا الله وحده ، أنجز وعده ، ونصر عبده ، وهزم الأحزاب وحده ثم دعا بين ذلك . قال مثل هذا ثلاث مرات الحديث وفيه ففعل على المروة كما فعل على الصفا",
+      "count": 3,
+      "countDescription": "ثلاث مرات",
+      "benefit": "",
+      "source": "حصن المسلم — دعاء الوقوف على الصفا والمروة",
+      "sourceType": 3,
+      "categories": [
+        "الأدعية الجامعية"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_267",
+      "section": "دعاء الوقوف على الصفا والمروة"
+    },
+    {
+      "id": "hisn-244",
+      "order": 1243,
+      "content": "خير الدعاء دعاء يوم عرفة ، وخيرُ ما قلت أنا والنبيُّون من قبلي : لا إله إلا الله وحدهُ لا شريك لهُ ، لهُ الملكُ ولهُ الحمدُ وهو على كل شيء قدير",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — الدعاء يوم عرفة",
+      "sourceType": 3,
+      "categories": [
+        "الأدعية الجامعية"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_268",
+      "section": "الدعاء يوم عرفة"
+    },
+    {
+      "id": "hisn-245",
+      "order": 1244,
+      "content": "ركب صلى الله عليه وسلم القصواء حتى أتى المشعر الحرام فاستقبل القبلة ( فدعاه ُ، وكبرهُ ،وهللهُ ، ووحدهُ) فلم يزل واقفاً حتى أسفر جداً فدفع قبل أن تطلع الشمس",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — الذكر عند المشعر الحرام",
+      "sourceType": 3,
+      "categories": [
+        "السفر والحل والترحال"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_269",
+      "section": "الذكر عند المشعر الحرام"
+    },
+    {
+      "id": "hisn-246",
+      "order": 1245,
+      "content": "يكبر كلما رمى بحصاة عند الجمار الثلاث ثم يتقدم، ويقف يدعو مستقبل القبلة، رافعاً يديه بعد الجمرة الأولى والثانية، أما جمرة العقبة فيرميها ويكبر عند كل حصاة وينصرف ولا يقف عندها",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — التكبيرة عند رمي الجمار مع كل حصاة",
+      "sourceType": 3,
+      "categories": [
+        "الأدعية الجامعية"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_270",
+      "section": "التكبيرة عند رمي الجمار مع كل حصاة"
+    },
+    {
+      "id": "hisn-247",
+      "order": 1246,
+      "content": "سبحان الله",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — ما يقول عند التعجب والأمر السار",
+      "sourceType": 3,
+      "categories": [
+        "الأدعية الجامعية"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_271",
+      "section": "ما يقول عند التعجب والأمر السار"
+    },
+    {
+      "id": "hisn-248",
+      "order": 1247,
+      "content": "الله أكبر",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — ما يقول عند التعجب والأمر السار",
+      "sourceType": 3,
+      "categories": [
+        "الأدعية الجامعية"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_272",
+      "section": "ما يقول عند التعجب والأمر السار"
+    },
+    {
+      "id": "hisn-249",
+      "order": 1248,
+      "content": "كان النبي صلى الله عليه وسلم إذا أتاه أمر يسرهُ أو يسرُّ به خر ساجداً شكراً لله تبارك وتعالى",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — ما يفعل من أتاه أمر يسره",
+      "sourceType": 3,
+      "categories": [
+        "الدعاء والهموم"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_273",
+      "section": "ما يفعل من أتاه أمر يسره"
+    },
+    {
+      "id": "hisn-250",
+      "order": 1249,
+      "content": "ضع يدك على الذي تألم من جسدك وقل: بسم الله ، ثلاثاً وقل سبع مرات : أعوذ بالله وقدرته من شر ما أجد وأحاذر",
+      "count": 7,
+      "countDescription": "سبع مرات",
+      "benefit": "",
+      "source": "حصن المسلم — ما يقول من أحس وجعاً في جسده",
+      "sourceType": 3,
+      "categories": [
+        "أذكار النوم"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_274",
+      "section": "ما يقول من أحس وجعاً في جسده"
+    },
+    {
+      "id": "hisn-251",
+      "order": 1250,
+      "content": "إذا رأى أحدكم من أخيه ، أو من نفسه ، أومن ماله ما يعجبهُ [فليدع لهُ بالبركة ] فإن العين حقٌّ",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — دعاء من خشي أن يصيب شيئاً بعينه",
+      "sourceType": 3,
+      "categories": [
+        "الأدعية الجامعية"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_275",
+      "section": "دعاء من خشي أن يصيب شيئاً بعينه"
+    },
+    {
+      "id": "hisn-252",
+      "order": 1251,
+      "content": "لا إله إلا الله",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — ما يقال عند الفزع",
+      "sourceType": 3,
+      "categories": [
+        "أذكار النوم"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_276",
+      "section": "ما يقال عند الفزع"
+    },
+    {
+      "id": "hisn-253",
+      "order": 1252,
+      "content": "بسم الله والله أكبر [ اللهم منك ولك ] اللهم تقبل مني",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — ما يقول عند الذبح أو النحر",
+      "sourceType": 3,
+      "categories": [
+        "الأدعية الجامعية"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_277",
+      "section": "ما يقول عند الذبح أو النحر"
+    },
+    {
+      "id": "hisn-254",
+      "order": 1253,
+      "content": "أعوذ بكلمات الله التامات التي لا يجاوزهن بر ولا فاجر من شر ما خلق ، وبرأ وذرأ ومن شر ما ينزل من السماء ، ومن شر ما يعرج فيها ، ومن شر ما ذرأ في الأرض ، ومن شر ما يخرج منها ، ومن شر فتن الليل والنهار ، ومن شر كل طارق إلا طارقاً يطرق بخير يا رحمن",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — ما يقول لرد كيد مردة الشياطين",
+      "sourceType": 3,
+      "categories": [
+        "أذكار النوم"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_278",
+      "section": "ما يقول لرد كيد مردة الشياطين"
+    },
+    {
+      "id": "hisn-255",
+      "order": 1254,
+      "content": "قال رسول الله صلى الله عيه وسلم : والله إني لاستغفر الله وأتوب إليه في اليوم أكثر من سبعين مرة",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — الاستغفار والتوبة",
+      "sourceType": 3,
+      "categories": [
+        "الاستغفار"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_279",
+      "section": "الاستغفار والتوبة"
+    },
+    {
+      "id": "hisn-256",
+      "order": 1255,
+      "content": "وقال صلى الله عيه وسلم : يا أيها الناس توبوا إلى الله فإني أتوب في اليوم إليه مائة مرةً",
+      "count": 100,
+      "countDescription": "مئة مرة",
+      "benefit": "",
+      "source": "حصن المسلم — الاستغفار والتوبة",
+      "sourceType": 3,
+      "categories": [
+        "الاستغفار"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_280",
+      "section": "الاستغفار والتوبة"
+    },
+    {
+      "id": "hisn-257",
+      "order": 1256,
+      "content": "وقال صلى الله عيه وسلم : من قال أستغفر الله العظيم الذي لا إله إلا هو الحي القيوم وأتوب إليه ، غفر الله لهُ وإن كان فر من الزحف",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — الاستغفار والتوبة",
+      "sourceType": 3,
+      "categories": [
+        "الاستغفار"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_281",
+      "section": "الاستغفار والتوبة"
+    },
+    {
+      "id": "hisn-258",
+      "order": 1257,
+      "content": "وقال صلى الله عيه وسلم : أقرب ما يكون الربُّ من العبد في جوف الليل الآخر فإن استطعت أن تكون ممن يذكر الله في تلك الساعة فكن",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — الاستغفار والتوبة",
+      "sourceType": 3,
+      "categories": [
+        "الاستغفار"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_282",
+      "section": "الاستغفار والتوبة"
+    },
+    {
+      "id": "hisn-259",
+      "order": 1258,
+      "content": "وقال صلى الله عيه وسلم : أقرب ما يكون العبد من ربه وهو ساجد فأكثروا الدعاء",
+      "count": 1,
+      "countDescription": "مرة واحدة",
+      "benefit": "",
+      "source": "حصن المسلم — الاستغفار والتوبة",
+      "sourceType": 3,
+      "categories": [
+        "الاستغفار"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_283",
+      "section": "الاستغفار والتوبة"
+    },
+    {
+      "id": "hisn-260",
+      "order": 1259,
+      "content": "وقال صلى الله عيه وسلم : إنه ليغان على قلبي وإني لاستغفرُ الله في اليوم مائة مرة",
+      "count": 100,
+      "countDescription": "مئة مرة",
+      "benefit": "",
+      "source": "حصن المسلم — الاستغفار والتوبة",
+      "sourceType": 3,
+      "categories": [
+        "الاستغفار"
+      ],
+      "audioUrl": null,
+      "hadithText": null,
+      "vocabulary": null,
+      "sourceId": "hisn_284",
+      "section": "الاستغفار والتوبة"
     }
   ]
 }

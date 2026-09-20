@@ -79,3 +79,12 @@ npm run ios:simulator
 ```
 
 > تنبيه: أي بناء native يبدأ دائمًا بـ `npm run build`، وبالتالي لا يمكن تجاوز Quran Validation.
+
+## الأيقونة وشاشة البداية
+
+- الملفات المصدرية (SVG) في `resources/`: `icon.svg` (أيقونة كاملة بخلفية)، `icon-foreground.svg` (طبقة المقدمة للأيقونة التكيّفية)، `splash.svg` (شاشة البداية).
+- `npm run icons` يولّد:
+  - للويب/PWA: `public/icons/icon-96.png`، `icon-192.png`، `icon-512.png`، `icon-maskable-512.png`، `apple-touch-icon.png`، `favicon.png`.
+  - لأندرويد (إن وُجد مجلد `android/`): `mipmap-*/ic_launcher*.png` + `ic_launcher_foreground.png` + شاشات `drawable*/splash.png`، ولون خلفية الأيقونة التكيّفية `#1F6F62`.
+- `npm run cap:android` يشغّل البناء ثم يزامن المشروع ثم يولّد الأيقونات تلقائيًا، لذا لا حاجة لخطوات يدوية بعد إضافة المنصة.
+- اسم التطبيق على الجهاز يأتي من `capacitor.config.ts` (`appName: 'صليها'`) وينعكس في `strings.xml` و`Info.plist` بعد `cap sync`.

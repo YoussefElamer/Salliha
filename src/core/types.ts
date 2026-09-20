@@ -61,6 +61,10 @@ export interface AdhkarItem {
   audioUrl: string | null;
   hadithText: string | null;
   vocabulary: string | null;
+  /** موضع الذكر في المصدر الأصلي (مثل قسم «أذكار النوم» في حصن المسلم). */
+  section?: string;
+  /** المعرّف الأصلي في المصدر قبل إعادة الترقيم. */
+  sourceId?: string;
 }
 
 export interface AdhkarDataset {
@@ -72,6 +76,9 @@ export interface AdhkarDataset {
     sourceSha256: string;
     generatedFrom: string;
     note: string;
+    attribution?: string;
+    hisnSourceSha256?: string;
+    hisnSourcePath?: string;
   };
   categories: string[];
   items: AdhkarItem[];
@@ -87,21 +94,51 @@ export interface PrayerTime {
 }
 
 export type CalculationMethodId = 'mwl' | 'egyptian' | 'ummAlQura' | 'karachi' | 'dubai' | 'moonsighting';
+export type CalculationMethodChoice = CalculationMethodId | 'auto';
 export type Madhhab = 'shafi' | 'hanafi';
 
-export interface CityPreset {
+/** سجل مدينة من قاعدة البيانات المدمجة (كل دول العالم). */
+export interface GeoCity {
   id: string;
   name: string;
-  country: string;
+  nameAr: string;
+  countryCode: string;
+  countryAr: string;
+  countryEn: string;
   latitude: number;
   longitude: number;
   timezone: string;
+  population: number;
+  isCapital: boolean;
+  defaultMethod: CalculationMethodId;
+}
+
+/** نتيجة تحديد الموقع: إما GPS أو اشتقاق من المنطقة الزمنية للجهاز. */
+export interface ResolvedLocation {
+  cityId: string;
+  name: string;
+  countryCode: string;
+  countryAr: string;
+  latitude: number;
+  longitude: number;
+  timezone: string;
+  method: CalculationMethodId;
+  source: 'gps' | 'timezone' | 'manual';
+  distanceKm?: number;
+}
+
+export interface StoredLocation extends Omit<ResolvedLocation, 'distanceKm'> {
+  updatedAt: string;
 }
 
 export interface PrayerSettings {
+  /** 'auto' = تحديد الموقع تلقائيًا من الجهاز، 'manual' = مدينة مختارة يدويًا. */
+  locationMode: 'auto' | 'manual';
   cityId: string;
   coordinates: { latitude: number; longitude: number } | null;
-  calculationMethod: CalculationMethodId;
+  timezone: string | null;
+  resolved: StoredLocation | null;
+  calculationMethod: CalculationMethodChoice;
   madhhab: Madhhab;
   offsets: Record<PrayerName, number>;
   adhanEnabled: Record<PrayerName, boolean>;
@@ -109,35 +146,83 @@ export interface PrayerSettings {
   notificationsEnabled: boolean;
   silentMode: boolean;
   vibration: boolean;
+  hijriOffsetDays: number;
+}
+
+export type ReciterStyle = 'murattal' | 'mujawwad' | 'teaching';
+
+export interface Reciter {
+  id: string;
+  name: string;
+  /** ترجمة/وصف مختصر للقارئ. */
+  description: string;
+  source: string;
+  licenseNote: string;
+  editionIdentifier: string;
+  streamingOnly: boolean;
+  style: ReciterStyle;
+  /** هل تتوفر تسجيلات سورة كاملة (ملف واحد لكل سورة) على CDN؟ */
+  surahAudio: boolean;
+  bitrates: number[];
+  country?: string;
+}
+
+export type RepeatMode = 'off' | 'ayah' | 'range' | 'surah';
+export type PlaybackMode = 'ayah' | 'surah';
+
+export interface PlaybackSettings {
+  reciterId: string;
+  mode: PlaybackMode;
+  repeatMode: RepeatMode;
+  playbackRate: number;
+  bitrate: number;
+  /** نطاق التكرار (من/إلى) داخل سورة محددة. */
+  range: { surahId: number; fromAyah: number; toAyah: number } | null;
+  sleepTimerMinutes: number | null;
+  autoPlayNextSurah: boolean;
+}
+
+export interface ReadingSettings {
+  quranFontFamily: 'amiriQuran' | 'notoNaskh';
+  quranFontScale: number;
+  quranLineHeight: number;
+  viewMode: 'flow' | 'ayahList';
+  showTashkeel: boolean;
+  tafsirSourceId: string;
+}
+
+export interface AdhkarSettings {
+  hapticFeedback: boolean;
+  autoAdvance: boolean;
+  focusMode: boolean;
+  keepScreenAwake: boolean;
 }
 
 export interface AppSettings {
   theme: ThemeMode;
   language: 'ar' | 'en';
   fontScale: number;
-  quranFontScale: number;
   onboardingComplete: boolean;
-  defaultReciterId: string;
+  onboardingVersion: number;
   prayer: PrayerSettings;
-}
-
-export interface Reciter {
-  id: string;
-  name: string;
-  source: string;
-  licenseNote: string;
-  editionIdentifier: string;
-  streamingOnly: boolean;
+  playback: PlaybackSettings;
+  reading: ReadingSettings;
+  adhkar: AdhkarSettings;
+  /** حجم خط المصحف — محفوظ أيضًا للتوافق مع النسخ السابقة. */
+  quranFontScale: number;
+  defaultReciterId: string;
 }
 
 export interface SearchResult {
   id: string;
-  type: 'ayah' | 'surah' | 'adhkar' | 'reciter' | 'tafsir';
+  type: 'ayah' | 'surah' | 'adhkar' | 'reciter' | 'tafsir' | 'prayer';
   title: string;
   subtitle?: string;
   text?: string;
   score: number;
   payload: unknown;
+  /** مواضع المطابقة داخل النص للتمييز البصري. */
+  matches?: Array<{ start: number; end: number }>;
 }
 
 export interface TafsirEntry {
@@ -146,4 +231,22 @@ export interface TafsirEntry {
   surahId: number;
   ayahNumber: number;
   text: string;
+}
+
+export interface AdhkarProgress {
+  counts: Record<string, number>;
+  completedDates: Record<string, string[]>;
+  lastCategory: string;
+  lastItemId: string | null;
+  updatedAt: string;
+}
+
+export interface PlaybackSnapshot {
+  reciterId: string;
+  mode: PlaybackMode;
+  bitrate: number;
+  surahId: number;
+  ayahNumber: number;
+  positionSeconds: number;
+  updatedAt: string;
 }

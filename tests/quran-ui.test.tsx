@@ -1,14 +1,15 @@
 import { render, screen, fireEvent, act } from '@testing-library/react';
-import { describe, expect, it, beforeEach, vi, afterEach } from 'vitest';
+import { describe, expect, it, beforeEach, afterEach, vi } from 'vitest';
 import { QuranPage } from '../src/quran/QuranPage';
 import { VerseActionSheet } from '../src/quran/VerseActionSheet';
 import { AudioProvider } from '../src/audio/AudioProvider';
 import { quranRepository } from '../src/quran/QuranRepository';
+import { defaultSettings } from '../src/settings/defaults';
 import type { Ayah } from '../src/core/types';
 
 function renderQuranPage() {
   return render(
-    <AudioProvider defaultReciterId="ar.alafasy">
+    <AudioProvider>
       <QuranPage />
     </AudioProvider>
   );
@@ -17,6 +18,7 @@ function renderQuranPage() {
 describe('Quran UI — long press & VerseActionSheet', () => {
   beforeEach(() => {
     localStorage.clear();
+    localStorage.setItem('salliha:settings:v1', JSON.stringify({ ...defaultSettings, onboardingComplete: true }));
     vi.useFakeTimers();
   });
   afterEach(() => {
@@ -24,87 +26,83 @@ describe('Quran UI — long press & VerseActionSheet', () => {
     vi.restoreAllMocks();
   });
 
-  it('opens VerseActionSheet on long press (~420ms) and on context menu', async () => {
+  it('يفتح ورقة الخيارات بالضغط المطول وبقائمة السياق', async () => {
     renderQuranPage();
-    const ayahButtons = document.querySelectorAll('.ayah-block');
-    expect(ayahButtons.length).toBeGreaterThan(0);
-    const first = ayahButtons[0] as HTMLElement;
+    const ayahBlocks = document.querySelectorAll('.ayah-block');
+    expect(ayahBlocks.length).toBeGreaterThan(0);
+    const first = ayahBlocks[0] as HTMLElement;
 
-    // pointerDown without enough time should NOT open sheet
     fireEvent.pointerDown(first);
-    act(() => { vi.advanceTimersByTime(200); });
+    act(() => {
+      vi.advanceTimersByTime(200);
+    });
     expect(document.querySelector('[role="dialog"]')).toBeNull();
 
-    // advance to 420ms -> should open sheet
-    act(() => { vi.advanceTimersByTime(250); });
-    // flush
+    act(() => {
+      vi.advanceTimersByTime(250);
+    });
     expect(document.querySelector('[role="dialog"]')).not.toBeNull();
 
-    // close sheet
-    const closeBtn = screen.getByLabelText('إغلاق');
-    fireEvent.click(closeBtn);
+    fireEvent.click(screen.getByLabelText('إغلاق'));
     expect(document.querySelector('[role="dialog"]')).toBeNull();
 
-    // context menu should also open
     fireEvent.contextMenu(first);
     expect(document.querySelector('[role="dialog"]')).not.toBeNull();
   });
 
-  it('VerseActionSheet renders all action buttons', async () => {
+  it('يعرض كل خيارات الآية الجديدة', async () => {
     const ayah: Ayah = quranRepository.getAyah(1, 1)!;
-    const onClose = vi.fn();
-    const onPlay = vi.fn();
-    const onFindSimilar = vi.fn();
-    const onGoToAyah = vi.fn();
-    render(<VerseActionSheet ayah={ayah} onClose={onClose} onPlay={onPlay} onFindSimilar={onFindSimilar} onGoToAyah={onGoToAyah} />);
-    // header
+    render(
+      <AudioProvider>
+        <VerseActionSheet ayah={ayah} onClose={vi.fn()} onFindSimilar={vi.fn()} onGoToAyah={vi.fn()} />
+      </AudioProvider>
+    );
     expect(screen.getByText(/الفاتحة/)).toBeInTheDocument();
-    // snippet contains text (use class)
-    const snippet = document.querySelector('.quran-snippet');
-    expect(snippet).not.toBeNull();
-    expect(snippet!.textContent).toContain('بِسۡمِ');
-    expect(screen.getByText('تشغيل الآية')).toBeInTheDocument();
-    expect(screen.getByText('التفسير')).toBeInTheDocument();
-    expect(screen.getByText('إضافة للعلامات')).toBeInTheDocument();
-    expect(screen.getByText('نسخ')).toBeInTheDocument();
-    expect(screen.getByText('مشاركة')).toBeInTheDocument();
-    expect(screen.getByText('صورة مشاركة')).toBeInTheDocument();
-    expect(screen.getByText('تكرار')).toBeInTheDocument();
-    expect(screen.getByText('البحث عن آيات مشابهة')).toBeInTheDocument();
-    expect(screen.getByText('الانتقال إلى موضع الآية')).toBeInTheDocument();
+    const snippet = document.querySelector('.ayah-sheet-text');
+    expect(snippet?.textContent).toContain('بِسۡمِ');
+    for (const label of ['تشغيل من هذه الآية', 'تشغيل الآية وحدها', 'تكرار الآية', 'تشغيل السورة من هنا', 'التفسير', 'نسخ الآية', 'مشاركة نصية', 'مشاركة كصورة', 'إضافة للعلامات', 'البحث عن آيات مشابهة']) {
+      expect(screen.getByText(new RegExp(label))).toBeInTheDocument();
+    }
   });
 
-  it('pointerUp cancels long press', async () => {
+  it('يلغي الضغط المطول عند رفع الإصبع أو الخروج', async () => {
     renderQuranPage();
     const first = document.querySelector('.ayah-block') as HTMLElement;
     fireEvent.pointerDown(first);
     fireEvent.pointerUp(first);
-    act(() => { vi.advanceTimersByTime(600); });
+    act(() => {
+      vi.advanceTimersByTime(600);
+    });
     expect(document.querySelector('[role="dialog"]')).toBeNull();
-  });
 
-  it('pointerLeave cancels long press', async () => {
-    renderQuranPage();
-    const first = document.querySelector('.ayah-block') as HTMLElement;
     fireEvent.pointerDown(first);
     fireEvent.pointerLeave(first);
-    act(() => { vi.advanceTimersByTime(600); });
+    act(() => {
+      vi.advanceTimersByTime(600);
+    });
     expect(document.querySelector('[role="dialog"]')).toBeNull();
   });
 
-  it('font scale controls clamp 0.8..1.8', async () => {
+  it('أزرار حجم الخط تغيّر المتغير العام وتُحفظ في الإعدادات', async () => {
     renderQuranPage();
-    const minus = document.querySelector('[aria-label="تصغير الخط"]') as HTMLElement;
     const plus = document.querySelector('[aria-label="تكبير الخط"]') as HTMLElement;
-    expect(minus).toBeInTheDocument();
+    const minus = document.querySelector('[aria-label="تصغير الخط"]') as HTMLElement;
     expect(plus).toBeInTheDocument();
-    // clicking many times should not throw
-    for (let i = 0; i < 20; i++) fireEvent.click(plus);
-    for (let i = 0; i < 20; i++) fireEvent.click(minus);
-    const scale = parseFloat(document.documentElement.style.getPropertyValue('--quran-font-scale') || '1');
-    if (scale) {
-      expect(scale).toBeGreaterThanOrEqual(0.8);
-      expect(scale).toBeLessThanOrEqual(1.8);
-    }
+    expect(minus).toBeInTheDocument();
+    for (let index = 0; index < 30; index += 1) fireEvent.click(plus);
+    const afterPlus = JSON.parse(localStorage.getItem('salliha:settings:v1') ?? '{}').reading.quranFontScale;
+    expect(afterPlus).toBeLessThanOrEqual(2.2);
+    for (let index = 0; index < 40; index += 1) fireEvent.click(minus);
+    const afterMinus = JSON.parse(localStorage.getItem('salliha:settings:v1') ?? '{}').reading.quranFontScale;
+    expect(afterMinus).toBeGreaterThanOrEqual(0.85);
+  });
+
+  it('يبحث داخل المصحف ويعرض النتائج فورًا', async () => {
+    renderQuranPage();
+    const input = screen.getByLabelText('بحث في المصحف');
+    fireEvent.change(input, { target: { value: 'فاصبر صبرا جميلا' } });
+    const results = document.querySelectorAll('.search-results-mini button');
+    expect(results.length).toBeGreaterThan(0);
+    expect(results[0].textContent).toContain('المعارج');
   });
 });

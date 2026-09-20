@@ -2,7 +2,7 @@ import type { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
   appId: 'com.salliha.app',
-  appName: 'صَلِّها',
+  appName: 'صليها',
   webDir: 'dist',
   bundledWebRuntime: false,
   server: {
@@ -19,6 +19,7 @@ const config: CapacitorConfig = {
     SplashScreen: {
       launchShowDuration: 900,
       backgroundColor: '#1f6f62',
+      androidScaleType: 'CENTER_CROP',
       showSpinner: false
     }
   }

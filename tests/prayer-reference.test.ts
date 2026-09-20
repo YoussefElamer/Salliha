@@ -144,4 +144,76 @@ describe('Prayer reference validation', () => {
       expect(diff).toBe(offsetsShafi[name] * 60 * 1000);
     }
   });
+
+  it('يعطي أوقاتًا معقولة ومتتابعة في خطوط العرض العالية (Tromsø) دون NaN', () => {
+    const times = calculatePrayerTimes({
+      date: new Date('2026-06-21T12:00:00Z'),
+      latitude: 69.6492,
+      longitude: 18.9553,
+      timeZone: 'Europe/Oslo',
+      method: 'mwl',
+      madhhab: 'shafi',
+      offsets: zeroOffsets,
+      now: new Date('2026-06-21T00:00:00Z')
+    });
+    expect(times).toHaveLength(6);
+    for (const time of times) expect(Number.isNaN(time.time.getTime())).toBe(false);
+    const fajr = times.find((t) => t.name === 'الفجر')!.time.getTime();
+    const sunrise = times.find((t) => t.name === 'الشروق')!.time.getTime();
+    const dhuhr = times.find((t) => t.name === 'الظهر')!.time.getTime();
+    const isha = times.find((t) => t.name === 'العشاء')!.time.getTime();
+    expect(fajr).toBeLessThan(sunrise);
+    expect(sunrise).toBeLessThan(dhuhr);
+    expect(dhuhr).toBeLessThan(isha);
+  });
+
+  it('يتعامل مع التوقيت الصيفي في مصر (تغيير يوم ٢٤ أبريل ٢٠٢٦)', () => {
+    const before = calculatePrayerTimes({
+      date: new Date('2026-04-23T12:00:00Z'),
+      latitude: 30.0444,
+      longitude: 31.2357,
+      timeZone: 'Africa/Cairo',
+      method: 'egyptian',
+      madhhab: 'shafi',
+      offsets: zeroOffsets,
+      now: new Date('2026-04-23T00:00:00Z')
+    });
+    const after = calculatePrayerTimes({
+      date: new Date('2026-04-25T12:00:00Z'),
+      latitude: 30.0444,
+      longitude: 31.2357,
+      timeZone: 'Africa/Cairo',
+      method: 'egyptian',
+      madhhab: 'shafi',
+      offsets: zeroOffsets,
+      now: new Date('2026-04-25T00:00:00Z')
+    });
+    for (const time of [...before, ...after]) expect(Number.isNaN(time.time.getTime())).toBe(false);
+    const beforeDhuhr = formatHM(before.find((t) => t.name === 'الظهر')!.time, 'Africa/Cairo');
+    const afterDhuhr = formatHM(after.find((t) => t.name === 'الظهر')!.time, 'Africa/Cairo');
+    // قبل بدء التوقيت الصيفي (UTC+2) وبعده (UTC+3) — فرق ساعة كامل في التوقيت المحلي.
+    expect(beforeDhuhr).toBe('11:53');
+    expect(afterDhuhr).toBe('12:53');
+    // لحظتان مطلقتان بعد يومين: يجب أن يكون الفرق ≈ 48 ساعة + ساعة التوقيت الصيفي (لا نطرح ساعتين خطأً).
+    const gap = after.find((t) => t.name === 'الظهر')!.time.getTime() - before.find((t) => t.name === 'الظهر')!.time.getTime();
+    expect(gap).toBeGreaterThan(47 * 60 * 60 * 1000);
+    expect(gap).toBeLessThan(49 * 60 * 60 * 1000);
+  });
+
+  it('يتعامل مع نصف الكرة الجنوبي (أوكلاند)', () => {
+    const times = calculatePrayerTimes({
+      date: new Date('2026-09-21T09:00:00Z'),
+      latitude: -36.8485,
+      longitude: 174.7633,
+      timeZone: 'Pacific/Auckland',
+      method: 'mwl',
+      madhhab: 'shafi',
+      offsets: zeroOffsets,
+      now: new Date('2026-09-21T09:00:00Z')
+    });
+    const dhuhr = formatHM(times.find((t) => t.name === 'الظهر')!.time, 'Pacific/Auckland');
+    expect(dhuhr).toBe('12:14');
+    const maghrib = formatHM(times.find((t) => t.name === 'المغرب')!.time, 'Pacific/Auckland');
+    expect(hmToMinutes(maghrib)).toBeGreaterThan(hmToMinutes('18:00'));
+  });
 });
