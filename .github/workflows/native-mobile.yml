@@ -1,0 +1,129 @@
+name: Native Mobile Builds
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main, 'arena/**']
+    paths:
+      - 'src/**'
+      - 'public/**'
+      - 'data/**'
+      - 'scripts/**'
+      - 'package.json'
+      - 'package-lock.json'
+      - 'capacitor.config.ts'
+      - '.github/workflows/native-mobile.yml'
+  pull_request:
+    branches: [main]
+    paths:
+      - 'src/**'
+      - 'public/**'
+      - 'data/**'
+      - 'scripts/**'
+      - 'package.json'
+      - 'package-lock.json'
+      - 'capacitor.config.ts'
+      - '.github/workflows/native-mobile.yml'
+
+permissions:
+  contents: read
+
+env:
+  NODE_VERSION: '20'
+
+jobs:
+  android-debug-apk:
+    name: Android Debug APK
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Setup Android SDK
+        uses: android-actions/setup-android@v3
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build verified web app
+        run: npm run build
+
+      - name: Generate Capacitor Android project
+        run: node scripts/ensure-cap-platform.mjs android
+
+      - name: Sync web assets to Android
+        run: npx cap sync android
+
+      - name: Build debug APK
+        run: ./gradlew assembleDebug --stacktrace
+        working-directory: android
+
+      - name: Upload Android APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: salliha-android-debug-apk
+          path: android/app/build/outputs/apk/debug/*.apk
+          if-no-files-found: error
+          retention-days: 14
+
+  ios-simulator-app:
+    name: iOS Simulator App
+    runs-on: macos-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build verified web app
+        run: npm run build
+
+      - name: Generate Capacitor iOS project
+        run: node scripts/ensure-cap-platform.mjs ios
+
+      - name: Sync web assets to iOS
+        run: npx cap sync ios
+
+      - name: Build iOS Simulator app without code signing
+        run: |
+          xcodebuild \
+            -workspace ios/App/App.xcworkspace \
+            -scheme App \
+            -configuration Debug \
+            -sdk iphonesimulator \
+            -derivedDataPath build/ios \
+            CODE_SIGNING_ALLOWED=NO \
+            build
+
+      - name: Package iOS Simulator app
+        run: |
+          APP_PATH="build/ios/Build/Products/Debug-iphonesimulator/App.app"
+          test -d "$APP_PATH"
+          ditto -c -k --sequesterRsrc --keepParent "$APP_PATH" salliha-ios-simulator-app.zip
+
+      - name: Upload iOS Simulator app
+        uses: actions/upload-artifact@v4
+        with:
+          name: salliha-ios-simulator-app
+          path: salliha-ios-simulator-app.zip
+          if-no-files-found: error
+          retention-days: 14
