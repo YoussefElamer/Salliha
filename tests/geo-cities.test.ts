@@ -53,8 +53,13 @@ describe('قاعدة المدن والدول (Offline)', () => {
     const resolved = resolveAutoLocation({ timeZone: 'Africa/Cairo' });
     expect(resolved?.countryCode).toBe('EG');
     expect(resolved?.source).toBe('timezone');
+    // الأهم: القاهرة بالتحديد لا مدينة أصغر في نفس المنطقة الزمنية.
+    expect(resolved?.cityId).toBe('360630');
+    expect(resolved?.name).toBe('القاهرة');
+    expect(resolved?.method).toBe('egyptian');
     const riyadh = resolveAutoLocation({ timeZone: 'Asia/Riyadh' });
     expect(riyadh?.countryCode).toBe('SA');
+    expect(riyadh?.method).toBe('ummAlQura');
   });
 
   it('تقرأ المنطقة الزمنية للجهاز بدون فشل', () => {

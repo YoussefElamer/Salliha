@@ -102,18 +102,21 @@ export async function shareImage(blob: Blob, filename: string, options: { title?
   const { title = 'صليها — Salliha', text, dialogTitle = 'مشاركة صورة' } = options;
 
   if (isNativeApp()) {
+    const base64 = await blobToBase64(blob);
     try {
-      const base64 = await blobToBase64(blob);
       const written = await Filesystem.writeFile({
         path: filename,
         data: base64,
         directory: Directory.Cache,
         recursive: true
       });
-      await Share.share({ title, text, url: written.uri, dialogTitle, files: [written.uri] });
+      // على أندرويد/iOS نمرّر الملف عبر FileProvider (مجلد cache مُعلن في file_paths.xml).
+      await Share.share({ title, text, dialogTitle, files: [written.uri] });
       return { status: 'shared' };
     } catch (error) {
       if (isUserCancellation(error)) return { status: 'cancelled' };
+      // فشل المشاركة الأصلية → نحفظ الصورة في الاستوديو بدلًا من الفشل الصامت.
+      return saveImage(blob, filename);
     }
   }
 
