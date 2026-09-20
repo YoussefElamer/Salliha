@@ -1,7 +1,7 @@
-import { BookOpen, Clock3, Headphones, Home, Search, Settings, Sparkles } from 'lucide-react';
+import { BookOpen, Clock3, Headphones, Home, Search, Settings, Sparkles, GraduationCap, BarChart3 } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 
-export type AppRoute = 'home' | 'quran' | 'prayer' | 'audio' | 'adhkar' | 'search' | 'space' | 'settings';
+export type AppRoute = 'home' | 'quran' | 'prayer' | 'audio' | 'adhkar' | 'search' | 'space' | 'settings' | 'hifz' | 'stats';
 
 export interface NavItem {
   route: AppRoute;
@@ -19,5 +19,7 @@ export const mainNavItems: NavItem[] = [
 
 export const moreNavItems: NavItem[] = [
   { route: 'search', label: 'البحث', icon: Search },
+  { route: 'hifz', label: 'الحفظ', icon: GraduationCap },
+  { route: 'stats', label: 'الإحصائيات', icon: BarChart3 },
   { route: 'settings', label: 'الإعدادات', icon: Settings }
 ];

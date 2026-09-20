@@ -10,6 +10,8 @@ import { ProfilePage } from '../profile/ProfilePage';
 import { QuranPage } from '../quran/QuranPage';
 import { SearchPage } from '../search/SearchPage';
 import { SettingsPage } from '../settings/SettingsPage';
+import { HifzPage } from '../hifz/HifzPage';
+import { StatsPage } from '../stats/StatsPage';
 import { useSettings } from '../settings/useSettings';
 import { mainNavItems, moreNavItems, type AppRoute } from './navigation';
 
@@ -59,6 +61,8 @@ function renderRoute(route: AppRoute, navigate: (route: AppRoute) => void, setti
     case 'audio': return <AudioPage />;
     case 'adhkar': return <AdhkarPage />;
     case 'search': return <SearchPage navigate={navigate} />;
+    case 'hifz': return <HifzPage />;
+    case 'stats': return <StatsPage />;
     case 'space': return <ProfilePage />;
     case 'settings': return <SettingsPage settings={settings} setSettings={setSettings} />;
     default: return <HomePage navigate={navigate} />;

@@ -1,10 +1,11 @@
-import { BookOpen, Bookmark, Headphones, Search } from 'lucide-react';
+import { BookOpen, Bookmark, Headphones, Mic, Search } from 'lucide-react';
 import { useMemo, useState } from 'react';
 import type { Ayah, SearchResult } from '../core/types';
 import type { AppRoute } from '../app/navigation';
 import { appSearchRepository } from './searchRepository';
 import { useAudio } from '../audio/AudioProvider';
 import { bookmarkRepository } from '../bookmarks/BookmarkRepository';
+import { isVoiceSearchSupported, voiceSearchOnce } from './voiceSearch';
 
 const labels: Record<SearchResult['type'], string> = {
   ayah: 'آيات',
@@ -16,6 +17,8 @@ const labels: Record<SearchResult['type'], string> = {
 
 export function SearchPage({ navigate }: { navigate: (route: AppRoute) => void }) {
   const [query, setQuery] = useState('');
+  const [voiceError, setVoiceError] = useState('');
+  const [listening, setListening] = useState(false);
   const audio = useAudio();
   const results = useMemo(() => appSearchRepository.search(query), [query]);
   const grouped = results.reduce<Record<string, SearchResult[]>>((acc, result) => {
@@ -33,12 +36,28 @@ export function SearchPage({ navigate }: { navigate: (route: AppRoute) => void }
     }
   };
 
+  const startVoice = async () => {
+    setVoiceError('');
+    setListening(true);
+    try {
+      const result = await voiceSearchOnce({ lang: 'ar-SA' });
+      setQuery(result.transcript);
+    } catch (e) {
+      setVoiceError(e instanceof Error ? e.message : 'تعذر البحث الصوتي');
+    } finally {
+      setListening(false);
+    }
+  };
+
   return (
     <div className="page-grid">
       <section className="card full-span">
         <h1>البحث العام</h1>
         <p className="muted">البحث عن الآيات يعتمد حصراً على قاعدة بيانات القرآن المحلية، ويدعم البحث بدون تشكيل، اسم السورة، رقم السورة ورقم الآية. لا يخمّن التطبيق موضع آية.</p>
-        <div className="search-box large"><Search /><input autoFocus value={query} onChange={(event) => setQuery(event.target.value)} placeholder="مثال: فاصبر صبرا جميلا" /></div>
+        <div className="search-box large"><Search /><input autoFocus value={query} onChange={(event) => setQuery(event.target.value)} placeholder="مثال: فاصبر صبرا جميلا" />{isVoiceSearchSupported() && <button aria-label="بحث صوتي" className="icon-button" onClick={startVoice} disabled={listening}><Mic size={20} /></button>}</div>
+        {listening && <p className="state-note">يستمع... تحدث الآن</p>}
+        {voiceError && <p className="error-note">{voiceError}</p>}
+        {!isVoiceSearchSupported() && <p className="muted">البحث الصوتي غير مدعوم في هذا المتصفح — استخدم الكتابة.</p>}
       </section>
       {!query && <section className="card empty-state"><h2>اكتب ما تبحث عنه</h2><p>يمكنك البحث في القرآن، السور، الأذكار والقراء.</p></section>}
       {Object.entries(grouped).map(([type, group]) => (

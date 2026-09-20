@@ -6,6 +6,8 @@ import { cityPresets, getCityById } from './cities';
 import { calculationMethods } from './prayerCalculations';
 import { prayerRepository } from './PrayerRepository';
 import { notificationService } from '../notifications/NotificationService';
+import { nativeAdhanService } from '../notifications/NativeAdhanService';
+import { rescheduleAdhan } from '../notifications/adhanScheduler';
 
 const prayerNames: PrayerName[] = ['الفجر', 'الشروق', 'الظهر', 'العصر', 'المغرب', 'العشاء'];
 
@@ -42,15 +44,28 @@ export function PrayerPage() {
   };
 
   const requestNotifications = async () => {
-    const permission = await notificationService.requestPermission();
+    // Try native first, then browser fallback
+    const nativePerm = await nativeAdhanService.requestPermission().catch(() => 'unsupported' as const);
+    const permission = nativePerm !== 'unsupported' ? nativePerm : await notificationService.requestPermission();
     if (permission === 'granted') {
-      save({ ...settings, notificationsEnabled: true });
-      setPermissionMessage('تم تفعيل الإشعارات. دقة التنبيه في الخلفية تعتمد على نظام التشغيل والمتصفح.');
+      const nextEnabled = { ...settings, notificationsEnabled: true };
+      save(nextEnabled);
+      const msg = await rescheduleAdhan().catch(() => 'تم تفعيل الإشعارات.');
+      setPermissionMessage(msg || 'تم تفعيل الإشعارات. دقة التنبيه في الخلفية تعتمد على نظام التشغيل والمتصفح.');
     } else if (permission === 'unsupported') {
-      setPermissionMessage('الإشعارات غير مدعومة في هذا المتصفح.');
+      setPermissionMessage('الإشعارات غير مدعومة في هذا المتصفح. على Android ثبّت التطبيق عبر Capacitor للحصول على تنبيهات النظام.');
     } else {
       save({ ...settings, notificationsEnabled: false });
       setPermissionMessage('لم يتم منح إذن الإشعارات. سيظل التطبيق يعمل بدون تنبيهات.');
+    }
+  };
+
+  const toggleAdhan = async (name: PrayerName, checked: boolean) => {
+    const nextSettings = { ...settings, adhanEnabled: { ...settings.adhanEnabled, [name]: checked } };
+    save(nextSettings);
+    if (nextSettings.notificationsEnabled) {
+      const msg = await rescheduleAdhan().catch(() => '');
+      if (msg) setPermissionMessage(msg);
     }
   };
 
@@ -104,7 +119,7 @@ export function PrayerPage() {
           {prayerNames.filter((name) => name !== 'الشروق').map((name) => (
             <label key={name} className="toggle-row">
               <span>{name}</span>
-              <input type="checkbox" checked={settings.adhanEnabled[name]} onChange={(event) => save({ ...settings, adhanEnabled: { ...settings.adhanEnabled, [name]: event.target.checked } })} />
+              <input type="checkbox" checked={settings.adhanEnabled[name]} onChange={(event) => void toggleAdhan(name, event.target.checked)} />
             </label>
           ))}
         </div>
