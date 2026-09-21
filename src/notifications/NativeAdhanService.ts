@@ -69,7 +69,17 @@ class CapacitorAdhanService implements NativeAdhanService {
         await LN.cancel({ notifications: (pending as { notifications: Array<{ id: number }> }).notifications.map((n) => ({ id: n.id })) }).catch(() => {});
       }
 
-      const notifications: Array<{ title: string; body: string; id: number; schedule: { at: string }; sound?: string; smallIcon?: string }> = [];
+      const notifications: Array<{
+        title: string;
+        body: string;
+        id: number;
+        schedule: { at: string };
+        sound?: string;
+        smallIcon?: string;
+        channelId?: string;
+        isExactNotification?: boolean;
+        allowWhileIdle?: boolean;
+      }> = [];
       let idCounter = 1000;
       for (const prayer of times) {
         if (prayer.name === 'الشروق') continue;
