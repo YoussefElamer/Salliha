@@ -46,7 +46,8 @@ export const defaultSettings: AppSettings = {
     quranFontFamily: 'amiriQuran',
     quranFontScale: 1.35,
     quranLineHeight: 2.5,
-    viewMode: 'flow',
+    // الافتراضي: المصحف كاملًا في تمرير واحد متصل (يمكن العودة لعرض السورة الواحدة من الإعدادات).
+    viewMode: 'continuous',
     showTashkeel: true,
     tafsirSourceId: 'ar.muyassar'
   },

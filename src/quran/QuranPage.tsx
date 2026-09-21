@@ -8,10 +8,6 @@ import { settingsRepository } from '../settings/settingsRepository';
 import { quranRepository } from './QuranRepository';
 import { VerseActionSheet } from './VerseActionSheet';
 
-const TOTAL_SURAHS = 114;
-/** أقصى عدد سور تبقى معمرة في الصفحة معًا — يحافظ على سلاسة التمرير مع تلاوة متصلة. */
-const MAX_WINDOW_SPAN = 6;
-
 export interface QuranPageProps {
   /** آية مطلوب الانتقال إليها (من البحث أو العلامات). */
   target?: { surahId: number; ayahNumber: number } | null;
@@ -26,10 +22,9 @@ export interface QuranPageProps {
  *   مع حفظ موضع القراءة تلقائيًا أثناء التمرير.
  */
 export function QuranPage({ target, onTargetHandled }: QuranPageProps) {
-  // موضع القراءة الأخير يحدد نقطة البداية — والمصحف متصل من هناك.
-  const [initial] = useState(() => target ?? bookmarkRepository.getReadingPosition() ?? { surahId: 1, ayahNumber: 1 });
-  const [windowRange, setWindowRange] = useState<SurahWindow>(() => windowAround(initial.surahId));
-  const [activeSurahId, setActiveSurahId] = useState(initial.surahId);
+  const last = bookmarkRepository.getReadingPosition();
+  const initial = target ?? last ?? { surahId: 1, ayahNumber: 1 };
+  const [surahId, setSurahId] = useState(initial.surahId);
   const [selectedAyah, setSelectedAyah] = useState<Ayah | null>(null);
   const [query, setQuery] = useState('');
   const [browserOpen, setBrowserOpen] = useState(false);
@@ -47,6 +42,15 @@ export function QuranPage({ target, onTargetHandled }: QuranPageProps) {
   useEffect(() => {
     audioRef.current = audio;
   });
+
+  // خط القرآن متاح لكل الصفحة (يستفيد منه البحث والمشاركة أيضًا).
+  useEffect(() => {
+    const value = reading.quranFontFamily === 'amiriQuran' ? '"Amiri Quran", "Noto Naskh Arabic", serif' : '"Noto Naskh Arabic", "Amiri Quran", serif';
+    document.documentElement.style.setProperty('--quran-font-family', value);
+    return () => {
+      document.documentElement.style.removeProperty('--quran-font-family');
+    };
+  }, [reading.quranFontFamily]);
 
   const isContinuous = reading.viewMode === 'continuous';
   const surahs = useMemo(() => quranRepository.getSurahs(), []);
@@ -67,13 +71,13 @@ export function QuranPage({ target, onTargetHandled }: QuranPageProps) {
 
   const scrollToAyah = useCallback((surahNumber: number, ayahNumber: number, behavior: ScrollBehavior) => {
     requestAnimationFrame(() => {
-      document.getElementById(`ayah-${surahNumber}-${ayahNumber}`)?.scrollIntoView({ behavior, block: 'center' });
+      safeScrollIntoView(document.getElementById(`ayah-${surahNumber}-${ayahNumber}`), { behavior, block: 'center' });
     });
   }, []);
 
   const scrollToSurahHead = useCallback((surahNumber: number, behavior: ScrollBehavior) => {
     requestAnimationFrame(() => {
-      document.getElementById(`surah-head-${surahNumber}`)?.scrollIntoView({ behavior, block: 'start' });
+      safeScrollIntoView(document.getElementById(`surah-head-${surahNumber}`), { behavior, block: 'start' });
     });
   }, []);
 
@@ -87,7 +91,7 @@ export function QuranPage({ target, onTargetHandled }: QuranPageProps) {
         window.setTimeout(() => {
           if (scrollGoal.current !== goal) return;
           scrollGoal.current = null;
-          document.getElementById(`ayah-${goal.surahId}-${goal.ayahNumber}`)?.scrollIntoView({ behavior: goal.behavior, block: 'center' });
+          safeScrollIntoView(document.getElementById(`ayah-${goal.surahId}-${goal.ayahNumber}`), { behavior: goal.behavior, block: 'center' });
         }, 60);
       } else {
         setSurahId(destination.surahId);
@@ -129,7 +133,7 @@ export function QuranPage({ target, onTargetHandled }: QuranPageProps) {
     const position = bookmarkRepository.getReadingPosition() ?? { surahId: 1, ayahNumber: 1 };
     setVisibleSurahId(position.surahId);
     const timer = window.setTimeout(() => {
-      document.getElementById(`ayah-${position.surahId}-${position.ayahNumber}`)?.scrollIntoView({ behavior: 'auto', block: 'center' });
+      safeScrollIntoView(document.getElementById(`ayah-${position.surahId}-${position.ayahNumber}`), { behavior: 'auto', block: 'center' });
     }, 60);
     return () => window.clearTimeout(timer);
   }, [isContinuous]);
@@ -286,7 +290,6 @@ export function QuranPage({ target, onTargetHandled }: QuranPageProps) {
       </aside>
 
       <main
-        ref={containerRef}
         className={`mushaf-page card view-${reading.viewMode}`}
         aria-label={isContinuous ? 'المصحف كاملًا — عرض متصل' : `سورة ${surah.name}`}
         style={
@@ -484,7 +487,7 @@ const ContinuousMushaf = memo(function ContinuousMushaf({ surahs, showTashkeel, 
   return (
     <div className="mushaf-frame continuous-frame">
       {surahs.map((item) => (
-        <section key={item.surahId} className="surah-section" id={`surah-${item.surahId}`} aria-label={`سورة ${item.name}`}>
+        <section key={item.surahId} className="surah-section" id={`surah-${item.surahId}`} data-surah-id={item.surahId} aria-label={`سورة ${item.name}`}>
           <header className="mushaf-header surah-head" id={`surah-head-${item.surahId}`}>
             <span>{formatArabicNumber(item.surahId)}</span>
             <h2>سورة {item.name}</h2>
@@ -516,4 +519,10 @@ const ContinuousMushaf = memo(function ContinuousMushaf({ surahs, showTashkeel, 
 /** إخفاء التشكيل مع الحفاظ على الرسم القرآني (بدون تحويل الحروف). */
 function stripForDisplay(text: string): string {
   return stripArabicDiacritics(text);
+}
+
+/** تمرير آمن: بعض البيئات (مثل jsdom في الاختبارات) لا تنفّذ scrollIntoView. */
+function safeScrollIntoView(element: HTMLElement | null, options: ScrollIntoViewOptions): void {
+  if (!element || typeof element.scrollIntoView !== 'function') return;
+  element.scrollIntoView(options);
 }

@@ -80,9 +80,11 @@ describe('تطبيق صليها — فحص شامل للواجهة', () => {
     // الفاتحة كاملة (٧ آيات) داخل قسمها.
     const fatiha = document.querySelector('.surah-section[data-surah-id="1"]');
     expect(fatiha?.querySelectorAll('.ayah-block').length).toBe(7);
-    // والتلاوة متصلة: البقرة تأتي مباشرة بعد الفاتحة عند النزول.
+    // والتلاوة متصلة: المصحف كاملًا (١١٤ سورة) والبقرة تأتي مباشرة بعد الفاتحة عند النزول.
     const sections = [...document.querySelectorAll('.surah-section')].map((section) => Number((section as HTMLElement).dataset.surahId));
-    expect(sections).toEqual([1, 2]);
+    expect(sections.length).toBe(114);
+    expect(sections.slice(0, 2)).toEqual([1, 2]);
+    expect(sections[sections.length - 1]).toBe(114);
   });
 
   it('يعرض الأذكار بتصنيفات غير فارغة وعدّاد قابل للضغط', async () => {
