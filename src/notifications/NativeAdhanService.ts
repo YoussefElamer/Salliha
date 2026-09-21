@@ -33,9 +33,13 @@ class CapacitorAdhanService implements NativeAdhanService {
     try {
       const mod = await import('@capacitor/local-notifications');
       const result = await mod.LocalNotifications.requestPermissions();
-      // Capacitor returns { display: 'granted' | 'denied' }
       const granted = (result as { display?: string }).display === 'granted';
-      return granted ? 'granted' : 'denied';
+      if (!granted) return 'denied';
+      const exact = await mod.LocalNotifications.checkExactNotificationSetting().catch(() => ({ value: 'granted' }));
+      if ((exact as { value?: string }).value === 'denied') {
+        await mod.LocalNotifications.changeExactNotificationSetting().catch(() => {});
+      }
+      return 'granted';
     } catch {
       // fallback to web permission
       if (typeof window !== 'undefined' && 'Notification' in window) {
@@ -49,6 +53,15 @@ class CapacitorAdhanService implements NativeAdhanService {
     try {
       const mod = await import('@capacitor/local-notifications');
       const LN = mod.LocalNotifications;
+
+      await LN.createChannel({
+        id: `adhan-${getAdhanSettings().soundId}`,
+        name: 'أذان صليها',
+        description: 'تنبيهات مواقيت الصلاة بصوت الأذان المختار',
+        importance: 5,
+        visibility: 1,
+        sound: getAdhanSoundForPrayer(getAdhanSettings().soundId, 'الظهر')
+      }).catch(() => {});
 
       // Cancel previous
       const pending = await LN.getPending().catch(() => ({ notifications: [] as Array<{ id: number }> }));
@@ -72,6 +85,9 @@ class CapacitorAdhanService implements NativeAdhanService {
               id: idCounter++,
               schedule: { at: preAt.toISOString() },
               smallIcon: 'ic_stat_icon',
+              channelId: `adhan-${getAdhanSettings().soundId}`,
+              isExactNotification: true,
+              allowWhileIdle: true,
             });
           }
         }
