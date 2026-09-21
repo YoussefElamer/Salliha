@@ -12,6 +12,7 @@ import { scheduleSearchWarmUp } from '../quran/QuranRepository';
 import { SearchPage } from '../search/SearchPage';
 import { SettingsPage } from '../settings/SettingsPage';
 import { HifzPage } from '../hifz/HifzPage';
+import { QiblaPage } from '../qibla/QiblaPage';
 import { StatsPage } from '../stats/StatsPage';
 import { useSettings } from '../settings/useSettings';
 import { getGeoMetadata } from '../geo/cities';
@@ -22,7 +23,7 @@ interface BeforeInstallPromptEvent extends Event {
   userChoice: Promise<{ outcome: 'accepted' | 'dismissed' }>;
 }
 
-const ROUTE_PARAM_ROUTES: AppRoute[] = ['home', 'quran', 'prayer', 'audio', 'adhkar', 'search', 'space', 'settings', 'hifz', 'stats'];
+const ROUTE_PARAM_ROUTES: AppRoute[] = ['home', 'quran', 'prayer', 'audio', 'adhkar', 'search', 'space', 'settings', 'hifz', 'stats', 'qibla'];
 
 /** يقرأ ?route=quran من رابط التثبيت (اختصارات المانيفست) لعرض القسم المطلوب مباشرة. */
 function initialRoute(): RouteState {
@@ -222,6 +223,8 @@ function renderRoute(route: RouteState, navigate: (route: AppRoute, params?: Rou
       return <HifzPage />;
     case 'stats':
       return <StatsPage />;
+    case 'qibla':
+      return <QiblaPage />;
     case 'space':
       return <ProfilePage navigate={navigate} />;
     case 'settings':
