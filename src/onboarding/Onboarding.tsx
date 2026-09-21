@@ -1,8 +1,10 @@
-import { Bell, Check, Languages, LocateFixed, MapPin, Palette, ShieldCheck, Sun } from 'lucide-react';
+import { Bell, Check, Languages, LocateFixed, MapPin, Palette, ShieldCheck, Sun, Volume2 } from 'lucide-react';
 import { useState } from 'react';
 import type { AppSettings, ThemeMode } from '../core/types';
 import { deviceTimeZone, listCountries, searchCities } from '../geo/cities';
 import { prayerRepository } from '../prayer/PrayerRepository';
+import { nativeAdhanService } from '../notifications/NativeAdhanService';
+import { rescheduleAdhan } from '../notifications/adhanScheduler';
 
 const themes: Array<{ id: ThemeMode; label: string; icon: typeof Sun }> = [
   { id: 'light', label: 'فاتح', icon: Sun },
@@ -21,8 +23,38 @@ export function Onboarding({
 }) {
   const [query, setQuery] = useState('');
   const [locationMessage, setLocationMessage] = useState('');
+  const [permissionMessage, setPermissionMessage] = useState('');
   const detected = prayerRepository.getLocation();
   const results = query.trim().length >= 2 ? searchCities(query, { limit: 12 }) : [];
+
+  const requestLocation = () => {
+    setLocationMessage('جارٍ طلب إذن الموقع…');
+    if (!navigator.geolocation) {
+      setLocationMessage('تحديد الموقع غير مدعوم هنا — يمكنك اختيار المدينة يدويًا.');
+      return;
+    }
+    navigator.geolocation.getCurrentPosition(
+      (position) => {
+        const resolved = prayerRepository.refreshAutoLocation({ coordinates: { latitude: position.coords.latitude, longitude: position.coords.longitude } });
+        setSettings((current) => ({ ...current, prayer: { ...current.prayer, locationMode: 'auto', coordinates: { latitude: position.coords.latitude, longitude: position.coords.longitude }, resolved: { ...resolved, updatedAt: new Date().toISOString() } } }));
+        setLocationMessage(`تم السماح بالموقع: ${resolved.name} — ${resolved.countryAr}`);
+      },
+      () => setLocationMessage('لم يتم منح إذن الموقع. يمكنك الاستمرار واختيار مدينتك يدويًا.'),
+      { enableHighAccuracy: false, timeout: 12000, maximumAge: 30 * 60 * 1000 }
+    );
+  };
+
+  const requestNotifications = async () => {
+    setPermissionMessage('جارٍ طلب إذن الإشعارات…');
+    const permission = await nativeAdhanService.requestPermission().catch(() => 'unsupported' as const);
+    if (permission === 'granted') {
+      setSettings((current) => ({ ...current, prayer: { ...current.prayer, notificationsEnabled: true } }));
+      await rescheduleAdhan().catch(() => {});
+      setPermissionMessage('تم السماح بالإشعارات. يمكنك تعديل صوت الأذان ومواعيده من صفحة الصلاة.');
+    } else {
+      setPermissionMessage(permission === 'unsupported' ? 'الإشعارات غير متاحة في هذه البيئة. ثبّت التطبيق على الهاتف لتفعيل أذان النظام.' : 'لم يتم منح إذن الإشعارات. يمكنك تفعيله لاحقًا من صفحة الصلاة.');
+    }
+  };
 
   const useMyLocation = () => {
     setLocationMessage('جارٍ تحديد موقعك…');
@@ -105,8 +137,23 @@ export function Onboarding({
         </div>
 
         <div className="permission-note">
-          <Bell /> الإشعارات اختيارية تمامًا ويمكن تفعيلها لاحقًا من صفحة الصلاة، وكل الإعدادات متاحة داخل التطبيق في أي وقت.
+          <ShieldCheck /> الصلاحيات اختيارية: الموقع لحساب المواقيت بدقة، والإشعارات لتشغيل تنبيه/أذان الصلاة في الوقت المحدد. يمكنك رفض أي صلاحية واختيار المدينة يدويًا.
         </div>
+
+        <div className="onboarding-block">
+          <h2><LocateFixed size={18} /> صلاحية الموقع</h2>
+          <p className="muted">اضغط مرة واحدة للسماح للتطبيق باستخدام موقعك الحالي لحساب المواقيت. لا يتم رفع إحداثياتك إلى خادم.</p>
+          <button className="secondary-button" onClick={requestLocation}><LocateFixed size={18} /> السماح بتحديد موقعي</button>
+        </div>
+
+        <div className="onboarding-block">
+          <h2><Bell size={18} /> صلاحية الإشعارات والأذان</h2>
+          <p className="muted">على الهاتف نستخدم إشعارات النظام المجدولة حتى يعمل التنبيه بعد إغلاق التطبيق. لا يمكن للتطبيق تجاوز إعدادات النظام أو البطارية.</p>
+          <button className="secondary-button" onClick={() => void requestNotifications()}><Bell size={18} /> السماح بالإشعارات والأذان</button>
+        </div>
+
+        <div className="permission-note"><Volume2 /> بعد الدخول يمكنك اختيار صوت الأذان من مكتبة الأصوات وتجربته قبل اعتماده.</div>
+        {permissionMessage && <p className="state-note">{permissionMessage}</p>}
 
         <div className="inline-actions onboarding-actions">
           <button className="primary-button" onClick={finish}><Check /> ابدأ الاستخدام</button>
