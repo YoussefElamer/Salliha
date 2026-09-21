@@ -114,6 +114,7 @@ export function SettingsPage({
           >
             <option value="flow">صفحة متصلة (مصحف)</option>
             <option value="ayahList">آية في كل سطر</option>
+            <option value="continuous">المصحف كاملًا (تمرير متصل)</option>
           </select>
         </label>
         <p className="source-note"><Type size={14} /> الخطوط مدمجة داخل التطبيق (Amiri Quran و Cairo بترخيص SIL OFL) ولذلك لا تظهر مربعات فارغة بدل الحروف.</p>

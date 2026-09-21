@@ -186,7 +186,14 @@ export interface ReadingSettings {
   quranFontFamily: 'amiriQuran' | 'notoNaskh';
   quranFontScale: number;
   quranLineHeight: number;
-  viewMode: 'flow' | 'ayahList';
+  /**
+   * طريقة عرض المصحف:
+   * - `flow`: صفحة متصلة لسورة واحدة.
+   * - `ayahList`: آية في كل سطر لسورة واحدة.
+   * - `continuous`: المصحف كاملًا (114 سورة) في تمرير واحد متصل —
+   *   نهاية السورة يليها مباشرة مطلع السورة التي بعدها.
+   */
+  viewMode: 'flow' | 'ayahList' | 'continuous';
   showTashkeel: boolean;
   tafsirSourceId: string;
 }

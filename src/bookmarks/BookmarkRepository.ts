@@ -7,8 +7,17 @@ export interface BookmarkRepository {
   remove(id: string): void;
   rename(id: string, label: string): Bookmark[];
   isBookmarked(surahId: number, ayahNumber: number): boolean;
+  /**
+   * كل العلامات كمفاتيح «سورة:آية» دفعة واحدة — مناسب عند رسم آلاف الآيات
+   * (العرض المتصل للمصحف كاملًا) بدل قراءة التخزين مع كل آية.
+   */
+  bookmarkKeys(): Set<string>;
   saveReadingPosition(position: Omit<ReadingPosition, 'updatedAt'>): ReadingPosition;
   getReadingPosition(): ReadingPosition | null;
+}
+
+export function bookmarkKey(surahId: number, ayahNumber: number): string {
+  return `${surahId}:${ayahNumber}`;
 }
 
 const BOOKMARKS_KEY = 'bookmarks:v1';
@@ -40,6 +49,10 @@ export class LocalBookmarkRepository implements BookmarkRepository {
 
   isBookmarked(surahId: number, ayahNumber: number): boolean {
     return this.list().some((item) => item.surahId === surahId && item.ayahNumber === ayahNumber);
+  }
+
+  bookmarkKeys(): Set<string> {
+    return new Set(this.list().map((item) => bookmarkKey(item.surahId, item.ayahNumber)));
   }
 
   saveReadingPosition(position: Omit<ReadingPosition, 'updatedAt'>): ReadingPosition {

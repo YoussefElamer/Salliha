@@ -297,6 +297,25 @@ input[type='checkbox'] { width: auto; min-height: 0; accent-color: var(--primary
 }
 .view-flow .mushaf-frame { display: block; text-align: justify; text-align-last: center; line-height: var(--quran-line-height); }
 .view-ayahList .mushaf-frame { display: grid; gap: 0.5rem; }
+
+/* العرض المتصل: المصحف كاملًا (114 سورة) في تمرير واحد متصل */
+.view-continuous .mushaf-frame { display: block; }
+.continuous-frame .surah-text { display: block; text-align: justify; text-align-last: center; line-height: var(--quran-line-height); }
+.surah-section {
+  /* المتصفح يتجاهل رسم وتنسيق السور البعيدة عن الشاشة — ضروري لسلاسة تمرير 6236 آية على الجوال. */
+  content-visibility: auto;
+  contain-intrinsic-size: auto 42rem;
+  scroll-margin-top: calc(4.8rem + env(safe-area-inset-top, 0px));
+}
+.surah-head { scroll-margin-top: calc(4.8rem + env(safe-area-inset-top, 0px)); }
+.surah-section + .surah-section { margin-top: 1.6rem; }
+.surah-section .mushaf-header { margin-bottom: 0.6rem; }
+.mushaf-header h2 { margin: 0; font-size: 1.2rem; }
+.continuous-hint { margin: 0; font-size: 0.85rem; line-height: 1.7; }
+.mushaf-end-note {
+  text-align: center; margin: 1.6rem 0 0.4rem; color: color-mix(in srgb, var(--text), transparent 25%);
+  font-weight: 600;
+}
 .ayah-block {
   position: relative; display: inline; border: 0; background: transparent; color: var(--text);
   padding: 0.15rem 0.2rem; border-radius: 0.55rem; cursor: pointer; text-align: start;
