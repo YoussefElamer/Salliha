@@ -27,7 +27,7 @@ export function QiblaPage() {
   }, []);
 
   const requestCompass = async () => {
-    const DeviceOrientationEventWithPermission = DeviceOrientationEvent as typeof DeviceOrientationEvent & {
+    const DeviceOrientationEventWithPermission = (window.DeviceOrientationEvent) as typeof DeviceOrientationEvent & {
       requestPermission?: () => Promise<'granted' | 'denied'>;
     };
     if (typeof DeviceOrientationEventWithPermission.requestPermission === 'function') {
