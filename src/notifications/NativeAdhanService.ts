@@ -1,4 +1,6 @@
 import type { PrayerTime } from '../core/types';
+import { getAdhanSettings } from '../settings/adhanSettings';
+import { getAdhanSoundForPrayer } from '../audio/adhanSounds';
 
 /**
  * NativeAdhanService — جدولة الأذان عبر Capacitor Local Notifications مع fallback للمتصفح.
@@ -80,7 +82,7 @@ class CapacitorAdhanService implements NativeAdhanService {
             body: opts.silentMode ? 'الوضع الصامت مفعّل.' : `حان وقت صلاة ${prayer.name} — صَلِّها.`,
             id: idCounter++,
             schedule: { at: new Date(prayerTime).toISOString() },
-            sound: opts.silentMode ? undefined : 'adhan.mp3',
+            sound: opts.silentMode ? undefined : getAdhanSoundForPrayer(getAdhanSettings().soundId, prayer.name),
             smallIcon: 'ic_stat_icon',
           });
         }
@@ -97,7 +99,7 @@ class CapacitorAdhanService implements NativeAdhanService {
         platform: 'capacitor',
         message: toSchedule.length === 0
           ? 'لا توجد صلوات قادمة للجدولة.'
-          : `تمت جدولة ${toSchedule.length} تنبيهًا. على Android قد تحتاج للسماح بالتنبيهات الدقيقة وإلغاء تحسين البطارية. على iOS الحد 64 تنبيه ولا تُضمن الدقة في الخلفية.`,
+          : `تمت جدولة ${toSchedule.length} تنبيهًا بالأذان المختار. على Android قد تحتاج للسماح بالإشعارات الدقيقة وإلغاء تحسين البطارية. على iOS يعتمد التشغيل على صلاحيات النظام.`,
       };
     } catch (error) {
       return {
