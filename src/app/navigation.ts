@@ -1,7 +1,7 @@
-import { BarChart3, BookOpen, Clock3, GraduationCap, Headphones, Home, Search, Settings, Sparkles, UserRound } from 'lucide-react';
+import { BarChart3, BookOpen, Clock3, Compass, GraduationCap, Headphones, Home, Search, Settings, Sparkles, UserRound } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 
-export type AppRoute = 'home' | 'quran' | 'prayer' | 'audio' | 'adhkar' | 'search' | 'space' | 'settings' | 'hifz' | 'stats';
+export type AppRoute = 'home' | 'quran' | 'prayer' | 'audio' | 'adhkar' | 'search' | 'space' | 'settings' | 'hifz' | 'stats' | 'qibla';
 
 export interface NavItem {
   route: AppRoute;
@@ -33,6 +33,7 @@ export const moreNavItems: NavItem[] = [
   { route: 'search', label: 'البحث', icon: Search },
   { route: 'hifz', label: 'الحفظ والمراجعة', icon: GraduationCap },
   { route: 'stats', label: 'الإحصائيات', icon: BarChart3 },
+  { route: 'qibla', label: 'القبلة', icon: Compass },
   { route: 'space', label: 'مساحتي', icon: UserRound },
   { route: 'settings', label: 'الإعدادات', icon: Settings }
 ];
