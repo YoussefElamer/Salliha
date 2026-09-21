@@ -20,12 +20,9 @@ export async function rescheduleAdhan(opts?: { now?: Date }): Promise<string> {
   const today = prayerRepository.getTodayTimes(now);
   const tomorrow = prayerRepository.getTomorrowTimes(now);
   // جدولة اليوم المتبقي + الفجر غدًا على الأقل
-  const upcomingToday = today.filter((t) => t.time.getTime() > now.getTime());
-  const times: PrayerTime[] = upcomingToday.length > 0 ? upcomingToday : tomorrow.slice(0, 3);
-  // إذا كان الوقت بعد العشاء، نجدول فجر الغد فقط
-  const toSchedule = upcomingToday.length > 0 ? upcomingToday : [tomorrow.find((t) => t.name === 'الفجر')!].filter(Boolean);
-  // لكن الأفضل جدولة كل صلوات الغد أيضًا لتغطية اليوم كاملاً عند فتح الصباح
-  const allToSchedule = now.getHours() < 12 ? [...upcomingToday, ...tomorrow.filter((t) => t.name !== 'الشروق').slice(0, 2)] : toSchedule;
+  const upcomingToday = today.filter((t) => t.time.getTime() > now.getTime() && t.name !== 'الشروق');
+  const upcomingTomorrow = tomorrow.filter((t) => t.name !== 'الشروق');
+  const allToSchedule: PrayerTime[] = [...upcomingToday, ...upcomingTomorrow];
 
   const result = await nativeAdhanService.scheduleDaily(allToSchedule as PrayerTime[], {
     prePrayerMinutes: settings.prePrayerMinutes,
