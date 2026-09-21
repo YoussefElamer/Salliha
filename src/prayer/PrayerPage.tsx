@@ -1,4 +1,4 @@
-import { Bell, BellOff, CalendarDays, Compass, LocateFixed, MapPin, Moon, Search, Settings2, Smartphone, X } from 'lucide-react';
+import { Bell, BellOff, CalendarDays, Compass, LocateFixed, MapPin, Moon, Search, Settings2, Smartphone, Volume2, X } from 'lucide-react';
 import { useEffect, useMemo, useState } from 'react';
 import type { CalculationMethodChoice, PrayerName, PrayerSettings } from '../core/types';
 import { formatHijriDate, formatClock } from '../core/arabic';
@@ -8,6 +8,8 @@ import { prayerRepository } from './PrayerRepository';
 import { notificationService } from '../notifications/NotificationService';
 import { nativeAdhanService } from '../notifications/NativeAdhanService';
 import { rescheduleAdhan } from '../notifications/adhanScheduler';
+import { adhanSounds, getAdhanPreviewUrl } from '../audio/adhanSounds';
+import { getAdhanSettings, saveAdhanSettings } from '../settings/adhanSettings';
 
 const prayerNames: PrayerName[] = ['الفجر', 'الشروق', 'الظهر', 'العصر', 'المغرب', 'العشاء'];
 
@@ -19,6 +21,8 @@ export function PrayerPage() {
   const [pickerOpen, setPickerOpen] = useState(false);
   const [settingsOpen, setSettingsOpen] = useState(false);
   const [locationBusy, setLocationBusy] = useState(false);
+  const [adhanSoundId, setAdhanSoundId] = useState(() => getAdhanSettings().soundId);
+  const [previewingSound, setPreviewingSound] = useState<string | null>(null);
 
   useEffect(() => {
     const timer = window.setInterval(() => setTick(new Date()), 1000);
@@ -72,6 +76,24 @@ export function PrayerPage() {
       save({ ...settings, notificationsEnabled: false });
       setPermissionMessage('لم يتم منح إذن الإشعارات. سيظل التطبيق يعمل بدون تنبيهات.');
     }
+  };
+
+  const changeAdhanSound = async (soundId: string) => {
+    setAdhanSoundId(soundId);
+    saveAdhanSettings({ ...getAdhanSettings(), soundId });
+    if (settings.notificationsEnabled) {
+      const msg = await rescheduleAdhan().catch(() => '');
+      if (msg) setPermissionMessage(msg);
+    }
+  };
+
+  const previewAdhan = (soundId: string) => {
+    const url = getAdhanPreviewUrl(soundId, 'الظهر');
+    const audio = new Audio(url);
+    setPreviewingSound(soundId);
+    audio.onended = () => setPreviewingSound(null);
+    audio.onerror = () => setPreviewingSound(null);
+    void audio.play().catch(() => setPreviewingSound(null));
   };
 
   const toggleAdhan = async (name: PrayerName, checked: boolean) => {
