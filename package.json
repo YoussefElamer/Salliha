@@ -13,12 +13,14 @@
     "build": "npm run data:build && npm run validate:quran && npm run validate:data && npm run lint && vite build",
     "dev": "vite --host 0.0.0.0",
     "cap:sync": "npm run build && npx cap sync",
-    "cap:android": "npm run build && node scripts/ensure-cap-platform.mjs android && npx cap sync android && node scripts/build-icons.mjs",
-    "cap:ios": "npm run build && node scripts/ensure-cap-platform.mjs ios && npx cap sync ios",
+    "cap:android": "npm run build && node scripts/ensure-cap-platform.mjs android && npx cap sync android && node scripts/build-icons.mjs && npm run native:permissions && npm run native:adhan",
+    "cap:ios": "npm run build && node scripts/ensure-cap-platform.mjs ios && npx cap sync ios && npm run native:permissions && npm run native:adhan",
     "android:debug": "npm run cap:android && cd android && ./gradlew assembleDebug",
     "ios:simulator": "npm run cap:ios && xcodebuild -workspace ios/App/App.xcworkspace -scheme App -configuration Debug -sdk iphonesimulator -derivedDataPath build/ios CODE_SIGNING_ALLOWED=NO build",
     "icons": "node scripts/build-icons.mjs",
-    "cap:prepare": "node scripts/build-icons.mjs && node scripts/ensure-cap-platform.mjs android && npx cap sync android"
+    "cap:prepare": "node scripts/build-icons.mjs && node scripts/ensure-cap-platform.mjs android && npx cap sync android && npm run native:permissions && npm run native:adhan",
+    "native:permissions": "node scripts/prepare-native-permissions.mjs",
+    "native:adhan": "node scripts/prepare-native-adhan.mjs"
   },
   "dependencies": {
     "@capacitor/android": "^8.5.2",
