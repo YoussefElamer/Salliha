@@ -1,4 +1,4 @@
-import { Bell, BellOff, CalendarDays, Compass, LocateFixed, MapPin, Moon, Search, Settings2, Smartphone, X } from 'lucide-react';
+import { Bell, BellOff, BellRing, CalendarDays, Compass, LocateFixed, MapPin, Moon, Search, Settings2, Smartphone, Volume2, X } from 'lucide-react';
 import { useEffect, useMemo, useState } from 'react';
 import type { CalculationMethodChoice, PrayerName, PrayerSettings } from '../core/types';
 import { formatHijriDate, formatClock } from '../core/arabic';
@@ -8,6 +8,7 @@ import { prayerRepository } from './PrayerRepository';
 import { notificationService } from '../notifications/NotificationService';
 import { nativeAdhanService } from '../notifications/NativeAdhanService';
 import { rescheduleAdhan } from '../notifications/adhanScheduler';
+import { adhanSounds, playAdhanSound, sendTestNotification, stopAdhanSound } from '../notifications/adhanSounds';
 
 const prayerNames: PrayerName[] = ['الفجر', 'الشروق', 'الظهر', 'العصر', 'المغرب', 'العشاء'];
 
@@ -199,6 +200,32 @@ export function PrayerPage() {
           تنبيه قبل الصلاة بالدقائق
           <input type="number" min={0} max={60} value={settings.prePrayerMinutes} onChange={(event) => save({ ...settings, prePrayerMinutes: Number(event.target.value) })} />
         </label>
+        <label>
+          صوت الأذان
+          <select
+            value={settings.adhanSoundId}
+            onChange={(event) => {
+              stopAdhanSound();
+              const nextSettings = { ...settings, adhanSoundId: event.target.value };
+              save(nextSettings);
+              if (nextSettings.notificationsEnabled) void rescheduleAdhan().catch(() => '');
+            }}
+          >
+            {adhanSounds.map((sound) => (
+              <option key={sound.id} value={sound.id}>
+                {sound.name}
+              </option>
+            ))}
+          </select>
+        </label>
+        <div className="inline-actions">
+          <button className="secondary-button" onClick={() => void playAdhanSound(settings.adhanSoundId)}>
+            <Volume2 size={18} /> تجربة صوت الأذان
+          </button>
+          <button className="secondary-button" onClick={() => void sendTestNotification().then(setPermissionMessage)}>
+            <BellRing size={18} /> تجربة الإشعارات
+          </button>
+        </div>
         <div className="toggles-list">
           {adhanPrayers.map((name) => (
             <label key={name} className="toggle-row">

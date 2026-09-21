@@ -92,6 +92,8 @@ export function AudioProvider({ children }: { children: ReactNode }) {
 
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const previousBlobUrlRef = useRef<string | null>(null);
+  /** يحمي من رفض وعود `play()` القديمة عند تغيير المصدر بسرعة (AbortError). */
+  const playTokenRef = useRef(0);
   const reciter = useMemo(() => getReciter(reciterId), [reciterId]);
   const currentAyah = state.queue[state.currentIndex] ?? null;
   const currentSurah = currentAyah ? quranRepository.getSurah(currentAyah.surahId) ?? null : null;
@@ -181,11 +183,16 @@ export function AudioProvider({ children }: { children: ReactNode }) {
       return;
     }
     if (state.isPlaying) {
-      audio.play().catch(() => {
+      const token = ++playTokenRef.current;
+      audio.play().catch((error: unknown) => {
+        // تأخر هذا الوعد عن وقته (تغير المصدر/إيقاف أثناء البدء) — لا نعاقب التشغيل الحالي.
+        if (playTokenRef.current !== token) return;
+        if (error instanceof DOMException && error.name === 'AbortError') return;
         setError('تعذر بدء التشغيل. تحقق من الاتصال بالإنترنت.');
         dispatch({ type: 'PAUSE' });
       });
     } else {
+      playTokenRef.current += 1;
       audio.pause();
     }
   }, [currentAyah, state.isPlaying]);
@@ -245,9 +252,16 @@ export function AudioProvider({ children }: { children: ReactNode }) {
       dispatch({ type: 'PAUSE' });
     };
     const onEnded = () => {
-      if (stateRef.current.mode === 'surah') {
+      const current = stateRef.current;
+      // تكرار الآية: نعيد نفس الآية من بدايتها بدل الوقوف الصامت.
+      if (current.repeatMode === 'ayah') {
+        audio.currentTime = 0;
+        void audio.play().catch(() => dispatch({ type: 'PAUSE' }));
+        return;
+      }
+      if (current.mode === 'surah') {
         const settings = settingsRepository.getSettings();
-        if (stateRef.current.repeatMode === 'surah') {
+        if (current.repeatMode === 'surah') {
           audio.currentTime = 0;
           void audio.play();
           return;
@@ -261,6 +275,21 @@ export function AudioProvider({ children }: { children: ReactNode }) {
         }
         dispatch({ type: 'PAUSE' });
         return;
+      }
+      // وضع «آية بآية»: عند نهاية طابور سورة كاملة نكمل تلقائيًا للسورة التي بعدها.
+      const atQueueEnd = current.currentIndex >= current.queue.length - 1;
+      if (atQueueEnd && current.repeatMode === 'off') {
+        const settings = settingsRepository.getSettings();
+        const last = current.queue[current.queue.length - 1];
+        const first = current.queue[0];
+        const fullSurahQueue =
+          Boolean(last && first) &&
+          last.surahId === first.surahId &&
+          current.queue.length === (quranRepository.getSurah(last.surahId)?.ayahCount ?? -1);
+        if (settings.playback.autoPlayNextSurah && fullSurahQueue && last.surahId < quranRepository.getSurahs().length) {
+          playSurahInternal(last.surahId + 1, 1);
+          return;
+        }
       }
       dispatch({ type: 'NEXT' });
     };
@@ -320,6 +349,14 @@ export function AudioProvider({ children }: { children: ReactNode }) {
       pause: () => dispatch({ type: 'PAUSE' }),
       resume: () => dispatch({ type: 'PLAY' }),
       next: () => {
+        if (stateRef.current.repeatMode === 'ayah') {
+          const audio = audioRef.current;
+          if (audio) {
+            audio.currentTime = 0;
+            void audio.play().catch(() => dispatch({ type: 'PAUSE' }));
+          }
+          return;
+        }
         if (state.mode === 'surah' && currentAyah) {
           const settings = settingsRepository.getSettings();
           const nextSurahId = currentAyah.surahId + 1;

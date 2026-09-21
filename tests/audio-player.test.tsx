@@ -1,4 +1,4 @@
-import { render, screen, fireEvent, cleanup } from '@testing-library/react';
+import { render, screen, fireEvent, cleanup, act } from '@testing-library/react';
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { AudioProvider, useAudio } from '../src/audio/AudioProvider';
 import { AudioPage } from '../src/audio/AudioPage';
@@ -42,6 +42,101 @@ function Probe() {
     </div>
   );
 }
+
+function SequentialProbe() {
+  const audio = useAudio();
+  return (
+    <div>
+      <span data-testid="queue-length">{audio.queue.length}</span>
+      <span data-testid="current-ayah">{audio.currentAyah ? audio.currentAyah.ayahNumber : '-'}</span>
+      <span data-testid="current-surah">{audio.currentAyah ? audio.currentAyah.surahId : '-'}</span>
+      <span data-testid="playing">{String(audio.state.isPlaying)}</span>
+      <button onClick={() => audio.playQueue(quranRepository.getSurah(112)!.verses)}>شغّل الإخلاص</button>
+      <button onClick={() => audio.jumpTo(3)}>الآية الأخيرة</button>
+      <button onClick={() => audio.jumpTo(0)}>الآية الأولى</button>
+      <button onClick={() => audio.setRepeatMode('ayah')}>تكرار الآية</button>
+    </div>
+  );
+}
+
+/** يلتقط عنصر الصوت الداخلي الذي ينشئه المشغل حتى نستطيع محاكاة حدث «انتهى». */
+function captureAudioElement(): HTMLAudioElement[] {
+  const instances: HTMLAudioElement[] = [];
+  vi.spyOn(window, 'Audio').mockImplementation(
+    function (this: unknown) {
+      const element = document.createElement('audio');
+      instances.push(element);
+      return element;
+    } as unknown as typeof Audio
+  );
+  return instances;
+}
+
+function ended(element: HTMLAudioElement) {
+  act(() => {
+    element.dispatchEvent(new Event('ended'));
+  });
+}
+
+describe('التشغيل المتتالي للآيات', () => {
+  it('ينتقل للآية التالية تلقائيًا عند انتهاء الآية', () => {
+    const instances = captureAudioElement();
+    render(
+      <AudioProvider>
+        <SequentialProbe />
+      </AudioProvider>
+    );
+    fireEvent.click(screen.getByText('شغّل الإخلاص'));
+    expect(screen.getByTestId('current-ayah').textContent).toBe('1');
+
+    ended(instances[0]);
+    expect(screen.getByTestId('current-ayah').textContent).toBe('2');
+    ended(instances[0]);
+    expect(screen.getByTestId('current-ayah').textContent).toBe('3');
+    expect(screen.getByTestId('playing').textContent).toBe('true');
+  });
+
+  it('في وضع تكرار الآية يعيد نفس الآية بدل التوقف الصامت', () => {
+    const instances = captureAudioElement();
+    const playSpy = vi.fn(async () => undefined);
+    window.HTMLMediaElement.prototype.play = playSpy;
+    render(
+      <AudioProvider>
+        <SequentialProbe />
+      </AudioProvider>
+    );
+    fireEvent.click(screen.getByText('شغّل الإخلاص'));
+    fireEvent.click(screen.getByText('تكرار الآية'));
+
+    instances[0].currentTime = 5;
+    const playsBefore = playSpy.mock.calls.length;
+    ended(instances[0]);
+
+    expect(screen.getByTestId('current-ayah').textContent).toBe('1');
+    expect(instances[0].currentTime).toBe(0);
+    expect(playSpy.mock.calls.length).toBeGreaterThan(playsBefore);
+    expect(screen.getByTestId('playing').textContent).toBe('true');
+  });
+
+  it('بعد نهاية السورة ينتقل تلقائيًا للسورة التي بعدها', () => {
+    const instances = captureAudioElement();
+    render(
+      <AudioProvider>
+        <SequentialProbe />
+      </AudioProvider>
+    );
+    fireEvent.click(screen.getByText('شغّل الإخلاص'));
+    fireEvent.click(screen.getByText('الآية الأخيرة'));
+    expect(screen.getByTestId('current-surah').textContent).toBe('112');
+
+    ended(instances[0]);
+
+    // الإخلاص (112) → الفلق (113)
+    expect(screen.getByTestId('current-surah').textContent).toBe('113');
+    expect(screen.getByTestId('current-ayah').textContent).toBe('1');
+    expect(screen.getByTestId('playing').textContent).toBe('true');
+  });
+});
 
 describe('مشغل التلاوة', () => {
   it('يوفّر عشرين قارئًا على الأقل مع روابط صوت صحيحة', () => {

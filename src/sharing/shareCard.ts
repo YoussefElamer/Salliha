@@ -173,8 +173,33 @@ function roundRect(ctx: CanvasRenderingContext2D, x: number, y: number, width: n
 
 function toBlob(canvas: HTMLCanvasElement): Promise<Blob> {
   return new Promise((resolve, reject) => {
-    canvas.toBlob((blob) => (blob ? resolve(blob) : reject(new Error('تعذر إنشاء الصورة.'))), 'image/png', 0.95);
+    try {
+      canvas.toBlob((blob) => {
+        if (blob) return resolve(blob);
+        // بعض المتصفحات/WebView تعيد null من toBlob — نرجع لـ dataURL بدل الفشل.
+        try {
+          resolve(dataUrlToBlob(canvas.toDataURL('image/png')));
+        } catch {
+          reject(new Error('تعذر إنشاء الصورة.'));
+        }
+      }, 'image/png', 0.95);
+    } catch {
+      // متصفحات قديمة لا تدعم toBlob أصلًا.
+      try {
+        resolve(dataUrlToBlob(canvas.toDataURL('image/png')));
+      } catch {
+        reject(new Error('تعذر إنشاء الصورة.'));
+      }
+    }
   });
+}
+
+function dataUrlToBlob(dataUrl: string): Blob {
+  const base64 = dataUrl.split(',')[1] ?? '';
+  const binary = atob(base64);
+  const bytes = new Uint8Array(binary.length);
+  for (let index = 0; index < binary.length; index += 1) bytes[index] = binary.charCodeAt(index);
+  return new Blob([bytes], { type: 'image/png' });
 }
 
 export async function createAyahShareCard(ayah: Ayah, theme: ShareTheme = 'light', options: ShareCardOptions = {}): Promise<Blob> {

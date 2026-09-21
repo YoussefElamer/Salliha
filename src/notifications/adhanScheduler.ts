@@ -31,6 +31,7 @@ export async function rescheduleAdhan(opts?: { now?: Date }): Promise<string> {
     prePrayerMinutes: settings.prePrayerMinutes,
     enabled: settings.adhanEnabled as Record<string, boolean>,
     silentMode: settings.silentMode,
+    adhanSoundId: settings.adhanSoundId,
   });
   return result.message;
 }

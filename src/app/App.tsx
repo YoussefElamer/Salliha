@@ -16,6 +16,7 @@ import { StatsPage } from '../stats/StatsPage';
 import { useSettings } from '../settings/useSettings';
 import { getGeoMetadata } from '../geo/cities';
 import { mainNavItems, moreNavItems, type AppRoute, type RouteState } from './navigation';
+import { playBuiltInChime } from '../notifications/adhanSounds';
 
 interface BeforeInstallPromptEvent extends Event {
   prompt: () => Promise<void>;
@@ -43,6 +44,25 @@ function isStandaloneDisplay(): boolean {
   return window.matchMedia?.('(display-mode: standalone)').matches || (navigator as Navigator & { standalone?: boolean }).standalone === true;
 }
 
+/** يشغّل صوت «صَلِّ على محمد ﷺ» كل فترة مختارة أثناء فتح التطبيق. */
+function useSalawatReminder(salawat: { enabled: boolean; intervalMinutes: number }): void {
+  useEffect(() => {
+    if (!salawat.enabled) return;
+    const minutes = Math.min(180, Math.max(1, salawat.intervalMinutes || 15));
+    const play = () => {
+      try {
+        const audio = new Audio('/sounds/salawat.mp3');
+        const attempt = audio.play();
+        if (attempt) attempt.catch(() => playBuiltInChime());
+      } catch {
+        playBuiltInChime();
+      }
+    };
+    const timer = window.setInterval(play, minutes * 60_000);
+    return () => window.clearInterval(timer);
+  }, [salawat.enabled, salawat.intervalMinutes]);
+}
+
 export function App() {
   const { settings, setSettings } = useSettings();
   const [route, setRoute] = useState<RouteState>(() => initialRoute());
@@ -51,6 +71,8 @@ export function App() {
   const installPromptRef = useRef<BeforeInstallPromptEvent | null>(null);
   const [installPromptReady, setInstallPromptReady] = useState(false);
   const [installMessage, setInstallMessage] = useState('');
+
+  useSalawatReminder(settings.salawat);
 
   useEffect(() => {
     scheduleSearchWarmUp();

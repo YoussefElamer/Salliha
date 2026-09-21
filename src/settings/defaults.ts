@@ -29,7 +29,8 @@ export const defaultSettings: AppSettings = {
     notificationsEnabled: false,
     silentMode: false,
     vibration: true,
-    hijriOffsetDays: 0
+    hijriOffsetDays: 0,
+    adhanSoundId: 'adhan-misr'
   },
   playback: {
     reciterId: 'ar.alafasy',
@@ -54,6 +55,10 @@ export const defaultSettings: AppSettings = {
     autoAdvance: true,
     focusMode: true,
     keepScreenAwake: false
+  },
+  salawat: {
+    enabled: false,
+    intervalMinutes: 15
   }
 };
 

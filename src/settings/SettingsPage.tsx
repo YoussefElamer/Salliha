@@ -1,7 +1,8 @@
-import { Bell, Check, Download, Gauge, Info, Monitor, Moon, Palette, RotateCcw, ShieldCheck, Sun, Trash2, Type, Upload, Vibrate } from 'lucide-react';
+import { Bell, BellRing, Check, Download, Gauge, HeartHandshake, Info, Monitor, Moon, Palette, RotateCcw, ShieldCheck, Sun, Trash2, Type, Upload, Vibrate, Volume2 } from 'lucide-react';
 import { useRef, useState } from 'react';
 import type { AppRoute, RouteParams } from '../app/navigation';
 import type { AppSettings, ThemeMode } from '../core/types';
+import { adhanSounds, playAdhanSound, playSalawatSound, sendTestNotification } from '../notifications/adhanSounds';
 import { storage } from '../core/storage';
 import { getGeoMetadata, listCountries } from '../geo/cities';
 import { reciters } from '../audio/reciters';
@@ -118,6 +119,67 @@ export function SettingsPage({
           </select>
         </label>
         <p className="source-note"><Type size={14} /> الخطوط مدمجة داخل التطبيق (Amiri Quran و Cairo بترخيص SIL OFL) ولذلك لا تظهر مربعات فارغة بدل الحروف.</p>
+      </section>
+
+      <section className="card settings-panel">
+        <h2><BellRing size={18} /> اختبار الأذان والإشعارات</h2>
+        <label>
+          صوت الأذان
+          <select
+            value={settings.prayer.adhanSoundId}
+            onChange={(event) =>
+              setSettings((current) => ({ ...current, prayer: { ...current.prayer, adhanSoundId: event.target.value } }))
+            }
+          >
+            {adhanSounds.map((sound) => (
+              <option key={sound.id} value={sound.id}>
+                {sound.name}
+              </option>
+            ))}
+          </select>
+        </label>
+        <div className="inline-actions">
+          <button className="secondary-button" onClick={() => void playAdhanSound(settings.prayer.adhanSoundId)}>
+            <Volume2 size={18} /> جرّب صوت الأذان الآن
+          </button>
+          <button className="secondary-button" onClick={() => void sendTestNotification().then(setMessage)}>
+            <Bell size={18} /> أرسل إشعارًا تجريبيًا
+          </button>
+        </div>
+        <p className="muted">زر التجربة يشغّل الصوت فورًا، والإشعار التجريبي يظهر في شريط الإشعارات لتتأكد أن كل شيء يعمل على جهازك.</p>
+      </section>
+
+      <section className="card settings-panel">
+        <h2><HeartHandshake size={18} /> مُذكّر الصلاة على النبي ﷺ</h2>
+        <label className="toggle-row">
+          <span>تشغيل تذكير «صَلِّ على محمد ﷺ» كل فترة</span>
+          <input
+            type="checkbox"
+            checked={settings.salawat.enabled}
+            onChange={(event) => setSettings((current) => ({ ...current, salawat: { ...current.salawat, enabled: event.target.checked } }))}
+          />
+        </label>
+        <label>
+          الفترة بين كل تذكير
+          <select
+            value={settings.salawat.intervalMinutes}
+            onChange={(event) =>
+              setSettings((current) => ({ ...current, salawat: { ...current.salawat, intervalMinutes: Number(event.target.value) } }))
+            }
+          >
+            <option value={5}>كل ٥ دقائق</option>
+            <option value={10}>كل ١٠ دقائق</option>
+            <option value={15}>كل ١٥ دقيقة</option>
+            <option value={30}>كل ٣٠ دقيقة</option>
+            <option value={60}>كل ساعة</option>
+          </select>
+        </label>
+        <div className="inline-actions">
+          <button className="secondary-button" onClick={() => void playSalawatSound()}>
+            <Volume2 size={18} /> جرّب صوت التذكير
+          </button>
+        </div>
+        <p className="muted">يعمل المؤقت أثناء فتح التطبيق ويُشغِّل صوتًا يقول «صَلِّ على محمد ﷺ» كل فترة تختارها.</p>
       </section>
 
       <section className="card settings-panel">

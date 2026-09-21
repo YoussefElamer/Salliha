@@ -31,7 +31,7 @@
   
   </defs>
   <rect width="2732" height="2732" fill="url(#splashBg)"/>
-  <g transform="translate(1366 1366) scale(2.2) translate(-256 -256)">
+  <g transform="translate(1366 1280) scale(2.2) translate(-256 -256)">
     <circle cx="256" cy="252" r="188" fill="none" stroke="#f0d9a0" stroke-opacity="0.24" stroke-width="5"/>
 
   <rect x="150" y="112" width="212" height="212" fill="url(#gold)" mask="url(#crescentMask)"/>
@@ -44,5 +44,10 @@
   <rect x="112" y="428" width="288" height="18" rx="9" fill="url(#gold)"/>
 
   </g>
-  <text x="1366" y="2050" text-anchor="middle" font-family="sans-serif" font-size="150" font-weight="700" fill="#f4efe1" letter-spacing="2">صليها</text>
+  <!-- علامة نصية بأشكال هندسية ثابتة بدل نص يعتمد على خطوط النظام (كان يظهر مشوهًا على بعض الأجهزة) -->
+  <g transform="translate(1366 2080)" fill="#f4efe1">
+    <circle cx="-190" cy="0" r="26" fill="url(#gold)"/>
+    <rect x="-120" y="-26" width="240" height="52" rx="26" fill="#f4efe1" fill-opacity="0.92"/>
+    <circle cx="190" cy="0" r="26" fill="url(#gold)"/>
+  </g>
 </svg>

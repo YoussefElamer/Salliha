@@ -147,6 +147,14 @@ export interface PrayerSettings {
   silentMode: boolean;
   vibration: boolean;
   hijriOffsetDays: number;
+  /** صوت الأذان المختار (انظر سجل الأصوات في notifications/adhanSounds). */
+  adhanSoundId: string;
+}
+
+/** إعدادات مُذكّر الصلاة على النبي ﷺ الدوري. */
+export interface SalawatSettings {
+  enabled: boolean;
+  intervalMinutes: number;
 }
 
 export type ReciterStyle = 'murattal' | 'mujawwad' | 'teaching';
@@ -215,6 +223,8 @@ export interface AppSettings {
   playback: PlaybackSettings;
   reading: ReadingSettings;
   adhkar: AdhkarSettings;
+  /** مُذكّر «صَلِّ على محمد ﷺ» — صوت دوري أثناء فتح التطبيق. */
+  salawat: SalawatSettings;
   /** حجم خط المصحف — محفوظ أيضًا للتوافق مع النسخ السابقة. */
   quranFontScale: number;
   defaultReciterId: string;

@@ -30,6 +30,19 @@ const resize = (svg, size, background) => {
   return pipeline.png({ compressionLevel: 9 }).toBuffer();
 };
 
+/**
+ * نسخة بخلفية معتمة من لون العلامة — ضرورية لأيقونات النظام:
+ * الشفافية حول الزوايا كانت تظهر كمربعات سوداء/بيضاء في لانشر أندرويد
+ * وفي أيقونة iOS وفي الأيقونة القابلة للكمامة (maskable).
+ */
+const BRAND_BACKGROUND = { r: 31, g: 111, b: 98 };
+const resizeFlat = (svg, size) =>
+  sharp(svg, { density: 480 })
+    .resize(size, size, { fit: 'contain' })
+    .flatten({ background: BRAND_BACKGROUND })
+    .png({ compressionLevel: 9 })
+    .toBuffer();
+
 const results = [];
 
 /* ---------- PWA / الويب ---------- */
@@ -37,9 +50,10 @@ const publicIcons = path.join(root, 'public', 'icons');
 for (const size of [96, 192, 512]) {
   results.push(await write(await resize(iconSvg, size), path.join(publicIcons, `icon-${size}.png`)));
 }
-results.push(await write(await resize(iconSvg, 512), path.join(publicIcons, 'icon-maskable-512.png')));
-results.push(await write(await resize(iconSvg, 180), path.join(root, 'public', 'apple-touch-icon.png')));
-results.push(await write(await resize(iconSvg, 32), path.join(root, 'public', 'favicon.png')));
+// الأيقونة القابلة للكمامة وأيقونة iOS تحتاجان خلفية معتمة بالكامل (بلا شفافية).
+results.push(await write(await resizeFlat(iconSvg, 512), path.join(publicIcons, 'icon-maskable-512.png')));
+results.push(await write(await resizeFlat(iconSvg, 180), path.join(root, 'public', 'apple-touch-icon.png')));
+results.push(await write(await resizeFlat(iconSvg, 32), path.join(root, 'public', 'favicon.png')));
 
 /* ---------- Android ---------- */
 const androidRes = path.join(root, 'android', 'app', 'src', 'main', 'res');
@@ -53,9 +67,9 @@ const androidDensities = [
 
 if (fs.existsSync(androidRes)) {
   for (const density of androidDensities) {
-    const dir = path.join(androidRes, density.folder);
-    results.push(await write(await resize(iconSvg, density.launcher), path.join(dir, 'ic_launcher.png')));
-    results.push(await write(await resize(iconSvg, density.launcher), path.join(dir, 'ic_launcher_round.png')));
+  const dir = path.join(androidRes, density.folder);
+  results.push(await write(await resizeFlat(iconSvg, density.launcher), path.join(dir, 'ic_launcher.png')));
+  results.push(await write(await resizeFlat(iconSvg, density.launcher), path.join(dir, 'ic_launcher_round.png')));
     // الأيقونة التكيّفية (Android 8+): المقدمة شفافة وتُقص إلى 66% كحد أقصى، لذلك نرسم الفن داخل المنطقة الآمنة.
     results.push(await write(await resize(foregroundSvg, density.foreground), path.join(dir, 'ic_launcher_foreground.png')));
   }
@@ -91,7 +105,7 @@ if (fs.existsSync(path.join(root, 'ios'))) {
     { name: 'icon-1024.png', size: 1024 }
   ];
   for (const entry of iosSizes) {
-    results.push(await write(await resize(iconSvg, entry.size), path.join(iosIconDir, entry.name)));
+    results.push(await write(await resizeFlat(iconSvg, entry.size), path.join(iosIconDir, entry.name)));
   }
   results.push(
     await write(

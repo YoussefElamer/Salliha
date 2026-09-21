@@ -139,6 +139,10 @@ export interface PrayerCalculationResult {
  * يحسب مواقيت الصلاة كـ«لحظات مطلقة» (UTC instants) اعتمادًا على زوال الشمس،
  * ثم يعرضها بمنطقة المدينة الزمنية. لا يعتمد على منطقة الجهاز الزمنية إطلاقًا،
  * ويتعامل مع التوقيت الصيفي بشكل صحيح لأن كل المواقيت محسوبة كفرق عن لحظة الزوال.
+ *
+ * الدقة: موضع الشمس (الميل ومعادلة الزمن) يُحسب تكراريًا عند لحظة كل صلاة
+ * بدل الاكتفاء بلحظة الظهيرة — الفرق يصل إلى دقيقة كاملة قرب الاعتدالين
+ * عندما يتغير ميل الشمس سريعًا خلال اليوم.
  */
 export function calculatePrayerTimes(params: {
   date: Date;
@@ -154,20 +158,42 @@ export function calculatePrayerTimes(params: {
   const { year, month, day } = getZonedParts(params.date, params.timeZone);
   const middayAnchor = Date.UTC(year, month - 1, day, 12, 0, 0);
   const jd = julianDay(year, month, day) - params.longitude / (15 * 24);
-  const { declination, equationOfTime } = sunPosition(jd);
-  const transitMs = middayAnchor - (params.longitude / 15) * 3_600_000 - equationOfTime * 3_600_000;
+  const noonSun = sunPosition(jd);
 
-  const atOffset = (hours: number, offsetMinutes = 0) => new Date(transitMs + hours * 3_600_000 + offsetMinutes * 60_000);
+  /** لحظة الزوال وفق معادلة الزمن عند إزاحة معينة (بالساعات عن منتصف النهار). */
+  const instantAt = (offsetHours: number): number => {
+    const sun = sunPosition(jd + (Number.isFinite(offsetHours) ? offsetHours : 0) / 24);
+    return middayAnchor - (params.longitude / 15) * 3_600_000 - sun.equationOfTime * 3_600_000 + offsetHours * 3_600_000;
+  };
 
-  const sunriseOffset = -hourAngleFor(-0.833, params.latitude, declination);
-  const sunsetOffset = hourAngleFor(-0.833, params.latitude, declination);
+  /**
+   * تحسين تكراري: نعيد حساب ميل الشمس عند اللحظة المقدرة للصلاة نفسها
+   * حتى يستقر الناتج (ثلاث تمريرات كافية لتقارب أقل من ثانية).
+   */
+  const refine = (initial: number, offsetFor: (declination: number) => number): number => {
+    let offset = initial;
+    for (let pass = 0; pass < 3; pass += 1) {
+      if (!Number.isFinite(offset)) return offset;
+      const sun = sunPosition(jd + offset / 24);
+      offset = offsetFor(sun.declination);
+    }
+    return offset;
+  };
+
+  const sunriseAngle = (declination: number) => -hourAngleFor(-0.833, params.latitude, declination);
+  const sunsetAngle = (declination: number) => hourAngleFor(-0.833, params.latitude, declination);
+  const fajrAngle = (declination: number) => -hourAngleFor(-method.fajrAngle, params.latitude, declination);
+  const ishaAngle = (declination: number) => hourAngleFor(-(method.ishaAngle ?? 17), params.latitude, declination);
   const asrFactor = params.madhhab === 'hanafi' ? 2 : 1;
-  const asrAngle = arccot(asrFactor + tan(Math.abs(params.latitude - declination)));
-  const asrOffset = hourAngleFor(asrAngle, params.latitude, declination);
-  const fajrOffset = -hourAngleFor(-method.fajrAngle, params.latitude, declination);
+  const asrAngle = (declination: number) => hourAngleFor(arccot(asrFactor + tan(Math.abs(params.latitude - declination))), params.latitude, declination);
+
+  const sunriseOffset = refine(sunriseAngle(noonSun.declination), sunriseAngle);
+  const sunsetOffset = refine(sunsetAngle(noonSun.declination), sunsetAngle);
+  const fajrOffset = refine(fajrAngle(noonSun.declination), fajrAngle);
   const ishaOffset = method.ishaInterval
     ? sunsetOffset + method.ishaInterval / 60
-    : hourAngleFor(-(method.ishaAngle ?? 17), params.latitude, declination);
+    : refine(ishaAngle(noonSun.declination), ishaAngle);
+  const asrOffset = refine(asrAngle(noonSun.declination), asrAngle);
 
   let fajrOffsetFinal = fajrOffset;
   let ishaOffsetFinal = ishaOffset;
@@ -184,13 +210,15 @@ export function calculatePrayerTimes(params: {
     ishaOffsetFinal = fallback.isha;
   }
 
+  const withOffset = (hours: number, manualMinutes = 0) => new Date(instantAt(hours) + manualMinutes * 60_000);
+
   const raw: Record<PrayerName, Date> = {
-    الفجر: atOffset(fajrOffsetFinal, params.offsets['الفجر'] ?? 0),
-    الشروق: atOffset(sunriseOffsetFinal, params.offsets['الشروق'] ?? 0),
-    الظهر: atOffset(0, params.offsets['الظهر'] ?? 0),
-    العصر: atOffset(Number.isFinite(asrOffset) ? asrOffset : 3.5, params.offsets['العصر'] ?? 0),
-    المغرب: atOffset(sunsetOffsetFinal, params.offsets['المغرب'] ?? 0),
-    العشاء: atOffset(ishaOffsetFinal, params.offsets['العشاء'] ?? 0)
+    الفجر: withOffset(fajrOffsetFinal, params.offsets['الفجر'] ?? 0),
+    الشروق: withOffset(sunriseOffsetFinal, params.offsets['الشروق'] ?? 0),
+    الظهر: withOffset(0, params.offsets['الظهر'] ?? 0),
+    العصر: withOffset(Number.isFinite(asrOffset) ? asrOffset : 3.5, params.offsets['العصر'] ?? 0),
+    المغرب: withOffset(sunsetOffsetFinal, params.offsets['المغرب'] ?? 0),
+    العشاء: withOffset(ishaOffsetFinal, params.offsets['العشاء'] ?? 0)
   };
 
   const now = params.now ?? new Date();

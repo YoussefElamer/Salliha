@@ -1,4 +1,5 @@
 import type { PrayerTime } from '../core/types';
+import { getAdhanSound } from './adhanSounds';
 
 /**
  * NativeAdhanService — جدولة الأذان عبر Capacitor Local Notifications مع fallback للمتصفح.
@@ -18,7 +19,7 @@ export interface NativeAdhanService {
   isSupported(): boolean;
   isCapacitor(): boolean;
   requestPermission(): Promise<NotificationPermission | 'unsupported'>;
-  scheduleDaily(times: PrayerTime[], opts: { prePrayerMinutes: number; enabled: Record<string, boolean>; silentMode: boolean }): Promise<AdhanScheduleResult>;
+  scheduleDaily(times: PrayerTime[], opts: { prePrayerMinutes: number; enabled: Record<string, boolean>; silentMode: boolean; adhanSoundId?: string }): Promise<AdhanScheduleResult>;
   cancelAll(): Promise<void>;
   getPending(): Promise<Array<{ id: string; title: string; scheduleAt: string }>>;
 }
@@ -43,7 +44,7 @@ class CapacitorAdhanService implements NativeAdhanService {
     }
   }
 
-  async scheduleDaily(times: PrayerTime[], opts: { prePrayerMinutes: number; enabled: Record<string, boolean>; silentMode: boolean }): Promise<AdhanScheduleResult> {
+  async scheduleDaily(times: PrayerTime[], opts: { prePrayerMinutes: number; enabled: Record<string, boolean>; silentMode: boolean; adhanSoundId?: string }): Promise<AdhanScheduleResult> {
     try {
       const mod = await import('@capacitor/local-notifications');
       const LN = mod.LocalNotifications;
@@ -80,7 +81,8 @@ class CapacitorAdhanService implements NativeAdhanService {
             body: opts.silentMode ? 'الوضع الصامت مفعّل.' : `حان وقت صلاة ${prayer.name} — صَلِّها.`,
             id: idCounter++,
             schedule: { at: new Date(prayerTime).toISOString() },
-            sound: opts.silentMode ? undefined : 'adhan.mp3',
+            // اسم ملف الصوت من res/raw حسب اختيار المستخدم (بدون ملف = صوت النظام الافتراضي).
+            sound: opts.silentMode ? undefined : getAdhanSound(opts.adhanSoundId ?? 'adhan-misr').rawName ?? undefined,
             smallIcon: 'ic_stat_icon',
           });
         }
@@ -139,7 +141,7 @@ class WebFallbackAdhanService implements NativeAdhanService {
     return Notification.requestPermission();
   }
 
-  async scheduleDaily(_times: PrayerTime[], _opts: { prePrayerMinutes: number; enabled: Record<string, boolean>; silentMode: boolean }): Promise<AdhanScheduleResult> {
+  async scheduleDaily(_times: PrayerTime[], _opts: { prePrayerMinutes: number; enabled: Record<string, boolean>; silentMode: boolean; adhanSoundId?: string }): Promise<AdhanScheduleResult> {
     // Web لا يستطيع جدولة في الخلفية بدقة — نعرض رسالة صادقة
     return {
       scheduled: 0,
