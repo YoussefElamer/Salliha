@@ -7,7 +7,7 @@ export function QiblaPage() {
   const [heading, setHeading] = useState<number | null>(null);
   const [permission, setPermission] = useState<'idle' | 'granted' | 'denied'>('idle');
   const location = prayerRepository.getLocation();
-  const coordinates = location.coordinates;
+  const coordinates = { latitude: location.latitude, longitude: location.longitude };
 
   const qibla = useMemo(
     () => calculateQibla(coordinates.latitude, coordinates.longitude),
