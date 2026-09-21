@@ -1,5 +1,5 @@
 import { Bookmark, BookmarkCheck, List, Minus, Play, Plus, Search, Type, X } from 'lucide-react';
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { memo, useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import type { Ayah } from '../core/types';
 import { formatArabicNumber, stripArabicDiacritics } from '../core/arabic';
 import { useAudio } from '../audio/AudioProvider';
@@ -8,61 +8,387 @@ import { settingsRepository } from '../settings/settingsRepository';
 import { quranRepository } from './QuranRepository';
 import { VerseActionSheet } from './VerseActionSheet';
 
+const TOTAL_SURAHS = 114;
+/** أقصى عدد سور تبقى معمرة في الصفحة معًا — يحافظ على سلاسة التمرير مع تلاوة متصلة. */
+const MAX_WINDOW_SPAN = 6;
+
 export interface QuranPageProps {
   /** آية مطلوب الانتقال إليها (من البحث أو العلامات). */
   target?: { surahId: number; ayahNumber: number } | null;
   onTargetHandled?: () => void;
 }
 
+/** نطاق السور المعروضة حاليًا (نافذة متحركة وسط المصحف المتصل). */
+interface SurahWindow {
+  start: number;
+  end: number;
+}
+
+/** انتقال معلّق إلى آية (0 لرقم الآية = عنوان السورة نفسها). */
+interface PendingJump {
+  surahId: number;
+  ayahNumber: number;
+  behavior: ScrollBehavior;
+}
+
+/** نافذة أولى حول السورة المطلوبة: سورة قبلها وبعدها مباشرة. */
+function windowAround(surahId: number): SurahWindow {
+  return { start: Math.max(1, surahId - 1), end: Math.min(TOTAL_SURAHS, surahId + 1) };
+}
+
+/**
+ * تبني النافذة التالية حول السورة الظاهرة الآن:
+ * - دائمًا السورة السابقة والتالية على الأقل (التلاوة متصلة للأمام والخلف).
+ * - تحميل مسبق عند الاقتراب من حافتي النافذة حتى لا تنقطع التلاوة أبدًا.
+ * - سقف ثابت لعدد السور المحمّلة حتى لا يثقل الـ DOM.
+ */
+function buildWindow(activeId: number, prev: SurahWindow, topClose: boolean, bottomClose: boolean): SurahWindow {
+  let start = Math.min(activeId - 1, topClose ? prev.start - 2 : prev.start);
+  let end = Math.max(activeId + 1, bottomClose ? prev.end + 2 : prev.end);
+  start = Math.max(1, start);
+  end = Math.min(TOTAL_SURAHS, end);
+  while (end - start + 1 > MAX_WINDOW_SPAN) {
+    if (activeId - start > end - activeId) start += 1;
+    else end -= 1;
+  }
+  if (start > end) return { start: activeId, end: activeId };
+  return { start, end };
+}
+
+/** ارتفاع الترويسة العلوية اللاصقة — يُتركز عليه لمعرفة السورة الظاهرة. */
+function stickyHeaderOffset(): number {
+  const header = document.querySelector('.app-header');
+  const height = header ? header.getBoundingClientRect().height : 0;
+  return height > 8 ? height + 8 : 64;
+}
+
+/** أول آية ظاهرة أسفل خط الترويسة (بحث ثنائي — الآيات مرتبة تصاعديًا في الصفحة). */
+function findTopVisibleAyah(container: HTMLElement, offset: number): HTMLElement | null {
+  const blocks = container.querySelectorAll<HTMLElement>('.ayah-block');
+  if (!blocks.length) return null;
+  let lo = 0;
+  let hi = blocks.length - 1;
+  let result: HTMLElement | null = null;
+  while (lo <= hi) {
+    const mid = (lo + hi) >> 1;
+    if (blocks[mid].getBoundingClientRect().bottom > offset) {
+      result = blocks[mid];
+      hi = mid - 1;
+    } else {
+      lo = mid + 1;
+    }
+  }
+  return result ?? blocks[0];
+}
+
+/** يراقب استقرار التمرير بعد الانتقال ثم يُطلق done — حتى لا تُحسب نافذة أثناء التحليق. */
+function watchScrollSettle(el: Element | null | undefined, done: () => void) {
+  let lastTop = el?.getBoundingClientRect().top ?? 0;
+  let stableTicks = 0;
+  let ticks = 0;
+  const tick = () => {
+    ticks += 1;
+    const top = el?.getBoundingClientRect().top ?? 0;
+    if (Math.abs(top - lastTop) < 2) stableTicks += 1;
+    else stableTicks = 0;
+    lastTop = top;
+    if (stableTicks >= 2 || ticks >= 20) {
+      done();
+      return;
+    }
+    window.setTimeout(tick, 180);
+  };
+  window.setTimeout(tick, 180);
+}
+
+interface AyahBlockProps {
+  ayah: Ayah;
+  showTashkeel: boolean;
+  isPlaying: boolean;
+  isBookmarked: boolean;
+  onSave: (ayah: Ayah) => void;
+  onOpenActions: (ayah: Ayah) => void;
+  onPause: () => void;
+}
+
+/** كتلة آية واحدة — مُממذَجة حتى لا يُعاد رسم المصحف كله مع كل تغيير صغير. */
+const AyahBlock = memo(function AyahBlock({ ayah, showTashkeel, isPlaying, isBookmarked, onSave, onOpenActions, onPause }: AyahBlockProps) {
+  const longPressTimer = useRef<number | null>(null);
+  const clearLongPress = () => {
+    if (longPressTimer.current !== null) {
+      window.clearTimeout(longPressTimer.current);
+      longPressTimer.current = null;
+    }
+  };
+  return (
+    <div
+      id={`ayah-${ayah.surahId}-${ayah.ayahNumber}`}
+      data-surah-id={ayah.surahId}
+      data-ayah-number={ayah.ayahNumber}
+      role="button"
+      tabIndex={0}
+      className={`ayah-block ${isPlaying ? 'is-playing' : ''}`}
+      onClick={() => onSave(ayah)}
+      onKeyDown={(event) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          onOpenActions(ayah);
+        }
+      }}
+      onContextMenu={(event) => {
+        event.preventDefault();
+        onOpenActions(ayah);
+      }}
+      onPointerDown={() => {
+        clearLongPress();
+        longPressTimer.current = window.setTimeout(() => onOpenActions(ayah), 380);
+      }}
+      onPointerUp={clearLongPress}
+      onPointerLeave={clearLongPress}
+    >
+      <span className="ayah-text">{showTashkeel ? ayah.text : stripForDisplay(ayah.text)}</span>
+      <span className="ayah-number">{formatArabicNumber(ayah.ayahNumber)}</span>
+      {isPlaying && (
+        <button
+          className="ayah-play-badge"
+          aria-label="إيقاف التشغيل"
+          onClick={(event) => {
+            event.stopPropagation();
+            onPause();
+          }}
+        >
+          <Play size={14} />
+        </button>
+      )}
+      {isBookmarked && <BookmarkCheck className="bookmark-indicator" size={16} />}
+    </div>
+  );
+});
+
 export function QuranPage({ target, onTargetHandled }: QuranPageProps) {
-  const last = bookmarkRepository.getReadingPosition();
-  const initial = target ?? last ?? { surahId: 1, ayahNumber: 1 };
-  const [surahId, setSurahId] = useState(initial.surahId);
+  // موضع القراءة الأخير يحدد نقطة البداية — والمصحف متصل من هناك.
+  const [initial] = useState(() => target ?? bookmarkRepository.getReadingPosition() ?? { surahId: 1, ayahNumber: 1 });
+  const [windowRange, setWindowRange] = useState<SurahWindow>(() => windowAround(initial.surahId));
+  const [activeSurahId, setActiveSurahId] = useState(initial.surahId);
   const [selectedAyah, setSelectedAyah] = useState<Ayah | null>(null);
   const [query, setQuery] = useState('');
   const [browserOpen, setBrowserOpen] = useState(false);
   const [fontPanelOpen, setFontPanelOpen] = useState(false);
   const [bookmarkVersion, setBookmarkVersion] = useState(0);
   const [reading, setReading] = useState(() => settingsRepository.getSettings().reading);
-  const longPressTimer = useRef<number | null>(null);
-  const pendingScroll = useRef<{ surahId: number; ayahNumber: number } | null>(null);
   const audio = useAudio();
 
+  const containerRef = useRef<HTMLElement | null>(null);
+  const windowRef = useRef<SurahWindow>(windowAround(initial.surahId));
+  const activeRef = useRef(initial.surahId);
+  const visiblePosRef = useRef({ surahId: initial.surahId, ayahNumber: Math.max(1, initial.ayahNumber) });
+  const anchorRef = useRef<{ el: HTMLElement; top: number } | null>(null);
+  const pendingScroll = useRef<PendingJump | null>(null);
+  const jumpSettling = useRef(false);
+  const handledTarget = useRef<string | null>(null);
+  const positionTimer = useRef<number | null>(null);
+  const lastSavedPos = useRef(`${visiblePosRef.current.surahId}:${visiblePosRef.current.ayahNumber}`);
+
   const surahs = useMemo(() => quranRepository.getSurahs(), []);
-  const surah = quranRepository.getSurah(surahId) ?? surahs[0];
+  const activeSurah = quranRepository.getSurah(activeSurahId) ?? surahs[0];
+  const surahsInWindow = useMemo(
+    () => surahs.filter((item) => item.surahId >= windowRange.start && item.surahId <= windowRange.end),
+    [surahs, windowRange]
+  );
+  const bookmarkKeys = useMemo(() => {
+    const keys = new Set<string>();
+    for (const item of bookmarkRepository.list()) keys.add(`${item.surahId}:${item.ayahNumber}`);
+    return keys;
+  }, [bookmarkVersion]);
   const searchResults = useMemo(() => (query.trim().length >= 2 ? quranRepository.searchDetailed(query, 15) : null), [query]);
 
-  const scrollToAyah = useCallback((surahNumber: number, ayahNumber: number) => {
-    requestAnimationFrame(() => {
-      document.getElementById(`ayah-${surahNumber}-${ayahNumber}`)?.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    });
+  const audioRef = useRef(audio);
+  audioRef.current = audio;
+  const handlePause = useCallback(() => {
+    audioRef.current.pause();
+  }, []);
+  const handleSave = useCallback((ayah: Ayah) => {
+    visiblePosRef.current = { surahId: ayah.surahId, ayahNumber: ayah.ayahNumber };
+    lastSavedPos.current = `${ayah.surahId}:${ayah.ayahNumber}`;
+    bookmarkRepository.saveReadingPosition({ surahId: ayah.surahId, ayahNumber: ayah.ayahNumber });
+  }, []);
+  const handleOpenActions = useCallback((ayah: Ayah) => setSelectedAyah(ayah), []);
+
+  /** ينقل إلى آية (أو لعنوان السورة عند ayahNumber = 0) داخل التلاوة المتصلة. */
+  const jumpTo = useCallback((surahId: number, ayahNumber: number, behavior: ScrollBehavior) => {
+    pendingScroll.current = { surahId, ayahNumber, behavior };
+    jumpSettling.current = false;
+    visiblePosRef.current = { surahId, ayahNumber: Math.max(1, ayahNumber) };
+    const next = windowAround(surahId);
+    anchorRef.current = null;
+    windowRef.current = next;
+    activeRef.current = surahId;
+    setActiveSurahId((prev) => (prev === surahId ? prev : surahId));
+    setWindowRange(next);
   }, []);
 
-  useEffect(() => {
-    if (!target) return;
-    setSurahId(target.surahId);
-    pendingScroll.current = target;
-    onTargetHandled?.();
-  }, [onTargetHandled, target]);
+  const openAyah = useCallback(
+    (ayah: Ayah) => {
+      jumpTo(ayah.surahId, ayah.ayahNumber, 'smooth');
+      setQuery('');
+    },
+    [jumpTo]
+  );
 
+  // الانتقال إلى هدف خارجي (بحث، اختصار، رابط).
+  useEffect(() => {
+    if (!target) {
+      handledTarget.current = null;
+      return;
+    }
+    const key = `${target.surahId}:${target.ayahNumber}`;
+    if (handledTarget.current === key) return;
+    handledTarget.current = key;
+    jumpTo(target.surahId, Math.max(1, target.ayahNumber), 'smooth');
+    onTargetHandled?.();
+  }, [jumpTo, onTargetHandled, target]);
+
+  // عند الفتح بلا هدف: نتابع من آخر موضع قراءة.
+  useEffect(() => {
+    if (target) return;
+    const saved = bookmarkRepository.getReadingPosition();
+    if (!saved || (saved.surahId === 1 && saved.ayahNumber <= 1)) return;
+    jumpTo(saved.surahId, saved.ayahNumber, 'auto');
+    // عند الفتح فقط — التغييرات اللاحقة تمر عبر target.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  // تنفيذ الانتقال المعلّق بعد توفّر العنصر المطلوب.
   useEffect(() => {
     const pending = pendingScroll.current;
-    if (!pending || pending.surahId !== surah.surahId) return;
+    if (!pending || jumpSettling.current) return;
+    if (pending.surahId < windowRange.start || pending.surahId > windowRange.end) return;
     const timer = window.setTimeout(() => {
-      scrollToAyah(pending.surahId, pending.ayahNumber);
-      pendingScroll.current = null;
+      const el =
+        pending.ayahNumber >= 1
+          ? document.getElementById(`ayah-${pending.surahId}-${pending.ayahNumber}`)
+          : document.getElementById(`surah-section-${pending.surahId}`);
+      el?.scrollIntoView?.({
+        behavior: pending.behavior,
+        block: pending.ayahNumber >= 1 ? 'center' : 'start'
+      });
+      jumpSettling.current = true;
+      watchScrollSettle(el, () => {
+        jumpSettling.current = false;
+        pendingScroll.current = null;
+      });
     }, 80);
     return () => window.clearTimeout(timer);
-  }, [scrollToAyah, surah.surahId, surah.verses]);
+  }, [windowRange]);
 
-  const savePosition = (ayah: Ayah) => bookmarkRepository.saveReadingPosition({ surahId: ayah.surahId, ayahNumber: ayah.ayahNumber });
+  const applyWindow = useCallback((next: SurahWindow) => {
+    const prev = windowRef.current;
+    windowRef.current = next;
+    if (next.start === prev.start && next.end === prev.end) return;
+    // مرساة تمرير: نثبّت السورة النشطة في مكانها عند إضافة/حذف سور فوقها.
+    if (!pendingScroll.current && next.start !== prev.start) {
+      const anchorEl = document.getElementById(`surah-section-${activeRef.current}`);
+      if (anchorEl) anchorRef.current = { el: anchorEl, top: anchorEl.getBoundingClientRect().top };
+    }
+    setWindowRange(next);
+  }, []);
 
-  const openAyah = (ayah: Ayah) => {
-    setSurahId(ayah.surahId);
-    savePosition(ayah);
-    pendingScroll.current = { surahId: ayah.surahId, ayahNumber: ayah.ayahNumber };
-    setQuery('');
-  };
+  // تعويض انزياح الصفحة بعد تغيّر السور المعروضة فوق موضع القراءة.
+  useLayoutEffect(() => {
+    const anchor = anchorRef.current;
+    anchorRef.current = null;
+    if (!anchor?.el?.isConnected) return;
+    const delta = anchor.el.getBoundingClientRect().top - anchor.top;
+    if (Math.abs(delta) > 1) {
+      const root = document.scrollingElement ?? document.documentElement;
+      root.scrollTop += delta;
+    }
+  }, [windowRange]);
+
+  /** مزامنة النافذة مع التمرير: السورة الظاهرة + تمديد/تقليص + حفظ الموضع. */
+  const syncWindowState = useCallback(() => {
+    if (pendingScroll.current) return;
+    const root = document.scrollingElement ?? document.documentElement;
+    // لا شيء يُمرَّر (أو بيئة بلا تخطيط مثل الاختبارات) — لا حاجة للمزامنة.
+    if (root.scrollHeight <= root.clientHeight + 4) return;
+    const container = containerRef.current;
+    if (!container) return;
+
+    const sections = Array.from(container.querySelectorAll<HTMLElement>('.surah-section'));
+    if (!sections.length) return;
+
+    const offset = stickyHeaderOffset();
+    let activeEl = sections[0];
+    for (const section of sections) {
+      if (section.getBoundingClientRect().top <= offset) activeEl = section;
+    }
+    const activeId = Number(activeEl.dataset.surahId);
+    if (Number.isFinite(activeId)) {
+      activeRef.current = activeId;
+      setActiveSurahId((prev) => (prev === activeId ? prev : activeId));
+    }
+
+    const vh = window.innerHeight || 800;
+    const startSentinel = document.getElementById('quran-start-sentinel');
+    const endSentinel = document.getElementById('quran-end-sentinel');
+    const topClose = startSentinel ? startSentinel.getBoundingClientRect().bottom > -vh * 1.5 : false;
+    const bottomClose = endSentinel ? endSentinel.getBoundingClientRect().top < vh * 2 : false;
+
+    applyWindow(buildWindow(activeRef.current, windowRef.current, topClose, bottomClose));
+
+    // حفظ موضع القراءة تلقائيًا (أعلى آية ظاهرة) — مع تأخير بسيط لتقليل الكتابة.
+    const topAyah = findTopVisibleAyah(container, offset);
+    if (topAyah) {
+      const surahId = Number(topAyah.dataset.surahId);
+      const ayahNumber = Number(topAyah.dataset.ayahNumber);
+      if (Number.isFinite(surahId) && Number.isFinite(ayahNumber)) {
+        visiblePosRef.current = { surahId, ayahNumber };
+        const key = `${surahId}:${ayahNumber}`;
+        if (key !== lastSavedPos.current) {
+          lastSavedPos.current = key;
+          if (positionTimer.current !== null) window.clearTimeout(positionTimer.current);
+          positionTimer.current = window.setTimeout(() => {
+            bookmarkRepository.saveReadingPosition({ surahId, ayahNumber });
+            positionTimer.current = null;
+          }, 700);
+        }
+      }
+    }
+  }, [applyWindow]);
+
+  // متابعة التمرير (وبعد كل تغيّر للنافذة) لضمان تلاوة متصلة بلا انقطاع.
+  useEffect(() => {
+    let queued = false;
+    const run = () => {
+      queued = false;
+      syncWindowState();
+    };
+    const onScroll = () => {
+      if (queued) return;
+      queued = true;
+      if (typeof window.requestAnimationFrame === 'function') window.requestAnimationFrame(run);
+      else window.setTimeout(run, 32);
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll, { passive: true });
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+      window.removeEventListener('resize', onScroll);
+    };
+  }, [syncWindowState]);
+
+  // بعد كل تغيّر في النافذة نعيد المزامنة مرة — لسلسلة التحميل المسبق حتى تبتعد الحافة.
+  useEffect(() => {
+    const timer = window.setTimeout(syncWindowState, 0);
+    return () => window.clearTimeout(timer);
+  }, [syncWindowState, windowRange]);
+
+  useEffect(
+    () => () => {
+      if (positionTimer.current !== null) window.clearTimeout(positionTimer.current);
+    },
+    []
+  );
 
   const updateReading = (patch: Partial<typeof reading>) => {
     const next = settingsRepository.updateSettings((current) => ({ ...current, reading: { ...current.reading, ...patch } })).reading;
@@ -79,9 +405,9 @@ export function QuranPage({ target, onTargetHandled }: QuranPageProps) {
           </button>
         </div>
         <button className="surah-current" onClick={() => setBrowserOpen(true)}>
-          <span className="ayah-number">{formatArabicNumber(surah.surahId)}</span>
-          <span>سورة {surah.name}</span>
-          <small>{formatArabicNumber(surah.ayahCount)} آية · {surah.revelationType === 'meccan' ? 'مكية' : 'مدنية'}</small>
+          <span className="ayah-number">{formatArabicNumber(activeSurah.surahId)}</span>
+          <span>سورة {activeSurah.name}</span>
+          <small>{formatArabicNumber(activeSurah.ayahCount)} آية · {activeSurah.revelationType === 'meccan' ? 'مكية' : 'مدنية'}</small>
         </button>
 
         <div className="search-box">
@@ -151,8 +477,9 @@ export function QuranPage({ target, onTargetHandled }: QuranPageProps) {
       </aside>
 
       <main
+        ref={containerRef}
         className={`mushaf-page card view-${reading.viewMode}`}
-        aria-label={`سورة ${surah.name}`}
+        aria-label="المصحف — تلاوة متصلة"
         style={
           {
             '--quran-font-scale': String(reading.quranFontScale),
@@ -161,65 +488,37 @@ export function QuranPage({ target, onTargetHandled }: QuranPageProps) {
           } as React.CSSProperties
         }
       >
-        <div className="mushaf-header">
-          <span>{formatArabicNumber(surah.surahId)}</span>
-          <h1>سورة {surah.name}</h1>
-          <span>{formatArabicNumber(surah.ayahCount)} آية</span>
-        </div>
+        <div id="quran-start-sentinel" className="reader-sentinel" aria-hidden="true" />
+        {surahsInWindow.map((item) => (
+          <section key={item.surahId} id={`surah-section-${item.surahId}`} className="surah-section" data-surah-id={item.surahId}>
+            <header className="mushaf-header" id={`surah-${item.surahId}`}>
+              <span className="ayah-number">{formatArabicNumber(item.surahId)}</span>
+              <h1>سورة {item.name}</h1>
+              <span>{formatArabicNumber(item.ayahCount)} آية</span>
+            </header>
 
-        {surah.surahId !== 1 && surah.surahId !== 9 && <p className="basmala">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</p>}
+            {item.surahId !== 1 && item.surahId !== 9 && <p className="basmala">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</p>}
 
-        <div className="mushaf-frame" key={surah.surahId}>
-          {surah.verses.map((ayah) => {
-            const isPlaying = audio.currentAyah?.id === ayah.id;
-            const isBookmarked = bookmarkRepository.isBookmarked(ayah.surahId, ayah.ayahNumber);
-            return (
-              <div
-                key={ayah.id}
-                id={`ayah-${ayah.surahId}-${ayah.ayahNumber}`}
-                role="button"
-                tabIndex={0}
-                className={`ayah-block ${isPlaying ? 'is-playing' : ''}`}
-                onClick={() => savePosition(ayah)}
-                onKeyDown={(event) => {
-                  if (event.key === 'Enter' || event.key === ' ') {
-                    event.preventDefault();
-                    setSelectedAyah(ayah);
-                  }
-                }}
-                onContextMenu={(event) => {
-                  event.preventDefault();
-                  setSelectedAyah(ayah);
-                }}
-                onPointerDown={() => {
-                  longPressTimer.current = window.setTimeout(() => setSelectedAyah(ayah), 380);
-                }}
-                onPointerUp={() => {
-                  if (longPressTimer.current) window.clearTimeout(longPressTimer.current);
-                }}
-                onPointerLeave={() => {
-                  if (longPressTimer.current) window.clearTimeout(longPressTimer.current);
-                }}
-              >
-                <span className="ayah-text">{reading.showTashkeel ? ayah.text : stripForDisplay(ayah.text)}</span>
-                <span className="ayah-number">{formatArabicNumber(ayah.ayahNumber)}</span>
-                {isPlaying && (
-                  <button
-                    className="ayah-play-badge"
-                    aria-label="إيقاف التشغيل"
-                    onClick={(event) => {
-                      event.stopPropagation();
-                      audio.pause();
-                    }}
-                  >
-                    <Play size={14} />
-                  </button>
-                )}
-                {isBookmarked && <BookmarkCheck className="bookmark-indicator" size={16} data-version={bookmarkVersion} />}
-              </div>
-            );
-          })}
-        </div>
+            <div className="mushaf-frame">
+              {item.verses.map((ayah) => (
+                <AyahBlock
+                  key={ayah.id}
+                  ayah={ayah}
+                  showTashkeel={reading.showTashkeel}
+                  isPlaying={audio.currentAyah?.id === ayah.id}
+                  isBookmarked={bookmarkKeys.has(`${ayah.surahId}:${ayah.ayahNumber}`)}
+                  onSave={handleSave}
+                  onOpenActions={handleOpenActions}
+                  onPause={handlePause}
+                />
+              ))}
+            </div>
+          </section>
+        ))}
+        <div id="quran-end-sentinel" className="reader-sentinel" aria-hidden="true" />
+        {windowRange.end === TOTAL_SURAHS && (
+          <p className="mushaf-end-mark">﴿ صَدَقَ ٱللَّهُ ٱلْعَظِيمُ ﴾ — تم المصحف بحمد الله</p>
+        )}
       </main>
 
       {browserOpen && (
@@ -236,11 +535,10 @@ export function QuranPage({ target, onTargetHandled }: QuranPageProps) {
               {surahs.map((item) => (
                 <button
                   key={item.surahId}
-                  className={item.surahId === surah.surahId ? 'active' : ''}
+                  className={item.surahId === activeSurah.surahId ? 'active' : ''}
                   onClick={() => {
-                    setSurahId(item.surahId);
+                    jumpTo(item.surahId, 0, 'smooth');
                     setBrowserOpen(false);
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
                   }}
                 >
                   <span className="ayah-number">{formatArabicNumber(item.surahId)}</span>
@@ -273,8 +571,9 @@ export function QuranPage({ target, onTargetHandled }: QuranPageProps) {
         className="bookmark-fab"
         aria-label="علامة على الموضع الحالي"
         onClick={() => {
-          const current = bookmarkRepository.getReadingPosition() ?? { surahId, ayahNumber: 1 };
-          bookmarkRepository.add(current.surahId, current.ayahNumber, `سورة ${surah.name}`);
+          const current = visiblePosRef.current;
+          const name = quranRepository.getSurah(current.surahId)?.name ?? activeSurah.name;
+          bookmarkRepository.add(current.surahId, Math.max(1, current.ayahNumber), `سورة ${name}`);
           setBookmarkVersion((value) => value + 1);
         }}
       >

@@ -275,10 +275,17 @@ input[type='checkbox'] { width: auto; min-height: 0; accent-color: var(--primary
 .font-panel { display: grid; gap: 0.4rem; padding: 0.7rem; border: 1px solid var(--border); border-radius: 0.95rem; background: var(--surface-strong); }
 
 .mushaf-page { padding: clamp(0.7rem, 2vw, 1.2rem); }
+/* التلاوة متصلة: كل سورة قسم متسلسل، والسورة التالية تأتي مباشرة بعدها. */
+.surah-section { scroll-margin-top: calc(4.3rem + env(safe-area-inset-top, 0px)); }
+.surah-section + .surah-section { margin-top: 1.6rem; }
+.reader-sentinel { height: 0; overflow: hidden; }
+.mushaf-end-mark { text-align: center; color: var(--muted); margin: 1.4rem 0 0.2rem; }
 .mushaf-header {
   display: flex; align-items: center; justify-content: space-between; gap: 0.6rem; text-align: center;
   border: 1px solid var(--border); border-radius: 1rem; padding: 0.6rem 0.8rem; margin-bottom: 0.8rem;
-  background: color-mix(in srgb, var(--accent), transparent 90%);
+  background: color-mix(in srgb, var(--accent), var(--surface-strong) 84%);
+  position: sticky; top: calc(4.05rem + env(safe-area-inset-top, 0px)); z-index: 10;
+  box-shadow: 0 6px 14px color-mix(in srgb, var(--text), transparent 93%);
 }
 .mushaf-header h1 { margin: 0; font-size: 1.2rem; }
 .basmala { text-align: center; font-family: var(--quran-font-family); font-size: calc(1.3rem * var(--quran-font-scale)); margin: 0.6rem 0 1rem; color: color-mix(in srgb, var(--text), transparent 15%); }

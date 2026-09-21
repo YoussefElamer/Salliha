@@ -77,8 +77,12 @@ describe('تطبيق صليها — فحص شامل للواجهة', () => {
     expect(ayahText?.textContent?.length).toBeGreaterThan(3);
     const fontFamily = document.documentElement.style.getPropertyValue('--quran-font-family');
     expect(fontFamily).toContain('Amiri Quran');
-    // نص المصحف الكامل موجود (٦٢٣٦ آية) وليس صفحات ناقصة.
-    expect(document.querySelectorAll('.ayah-block').length).toBe(7);
+    // الفاتحة كاملة (٧ آيات) داخل قسمها.
+    const fatiha = document.querySelector('.surah-section[data-surah-id="1"]');
+    expect(fatiha?.querySelectorAll('.ayah-block').length).toBe(7);
+    // والتلاوة متصلة: البقرة تأتي مباشرة بعد الفاتحة عند النزول.
+    const sections = [...document.querySelectorAll('.surah-section')].map((section) => Number((section as HTMLElement).dataset.surahId));
+    expect(sections).toEqual([1, 2]);
   });
 
   it('يعرض الأذكار بتصنيفات غير فارغة وعدّاد قابل للضغط', async () => {

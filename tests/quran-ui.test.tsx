@@ -97,6 +97,22 @@ describe('Quran UI — long press & VerseActionSheet', () => {
     expect(afterMinus).toBeGreaterThanOrEqual(0.85);
   });
 
+  it('يعرض السور متصلة: الفاتحة ثم البقرة بعدها مباشرة', async () => {
+    renderQuranPage();
+    const sections = [...document.querySelectorAll('.surah-section')];
+    expect(sections.length).toBeGreaterThanOrEqual(2);
+    expect(sections[0].getAttribute('data-surah-id')).toBe('1');
+    expect(sections[1].getAttribute('data-surah-id')).toBe('2');
+    // آخر آية في الفاتحة تسبق أول آية في البقرة في ترتيب المصحف المتصل.
+    const fatihaLast = document.getElementById('ayah-1-7');
+    const baqarahFirst = document.getElementById('ayah-2-1');
+    expect(fatihaLast).toBeTruthy();
+    expect(baqarahFirst).toBeTruthy();
+    expect(fatihaLast!.compareDocumentPosition(baqarahFirst!) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
+    // أول آية في البقرة موجودة فعلاً وليست صفحة ناقصة.
+    expect(baqarahFirst!.textContent).toContain('الٓمٓ');
+  });
+
   it('يبحث داخل المصحف ويعرض النتائج فورًا', async () => {
     renderQuranPage();
     const input = screen.getByLabelText('بحث في المصحف');
