@@ -1,4 +1,4 @@
-import { BookOpen, Bookmark, CalendarDays, Clock3, Headphones, MapPin, Play, Search, Sparkles, Target } from 'lucide-react';
+import { BookOpen, Bookmark, CalendarDays, Clock3, Compass, Headphones, MapPin, Play, Search, Sparkles, Target } from 'lucide-react';
 import { useEffect, useMemo, useState } from 'react';
 import type { AppRoute, RouteParams } from '../app/navigation';
 import { formatClock, formatHijriDate, formatPlaybackTime, formatArabicNumber } from '../core/arabic';
@@ -96,6 +96,7 @@ export function HomePage({ navigate }: { navigate: (route: AppRoute, params?: Ro
           <button onClick={() => navigate('adhkar')}><Sparkles /> الأذكار</button>
           <button onClick={() => navigate('space')}><Bookmark /> العلامات</button>
           <button onClick={() => navigate('hifz')}><Target /> الحفظ</button>
+          <button onClick={() => navigate('qibla')}><Compass /> القبلة</button>
         </div>
       </section>
 
