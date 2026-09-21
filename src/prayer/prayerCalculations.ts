@@ -3,21 +3,30 @@ import type { CalculationMethodId, Madhhab, PrayerName, PrayerSettings, PrayerTi
 export interface CalculationMethod {
   id: CalculationMethodId;
   label: string;
+  shortLabel: string;
   fajrAngle: number;
   ishaAngle?: number;
   ishaInterval?: number;
 }
 
 export const calculationMethods: CalculationMethod[] = [
-  { id: 'mwl', label: 'رابطة العالم الإسلامي', fajrAngle: 18, ishaAngle: 17 },
-  { id: 'egyptian', label: 'الهيئة المصرية العامة للمساحة', fajrAngle: 19.5, ishaAngle: 17.5 },
-  { id: 'ummAlQura', label: 'أم القرى', fajrAngle: 18.5, ishaInterval: 90 },
-  { id: 'karachi', label: 'جامعة العلوم الإسلامية كراتشي', fajrAngle: 18, ishaAngle: 18 },
-  { id: 'dubai', label: 'دبي', fajrAngle: 18.2, ishaAngle: 18.2 },
-  { id: 'moonsighting', label: 'Moonsighting Committee', fajrAngle: 18, ishaAngle: 18 }
+  { id: 'egyptian', label: 'الهيئة المصرية العامة للمساحة', shortLabel: 'مصر', fajrAngle: 19.5, ishaAngle: 17.5 },
+  { id: 'ummAlQura', label: 'أم القرى — مكة المكرمة', shortLabel: 'أم القرى', fajrAngle: 18.5, ishaInterval: 90 },
+  { id: 'mwl', label: 'رابطة العالم الإسلامي', shortLabel: 'رابطة العالم', fajrAngle: 18, ishaAngle: 17 },
+  { id: 'karachi', label: 'جامعة العلوم الإسلامية — كراتشي', shortLabel: 'كراتشي', fajrAngle: 18, ishaAngle: 18 },
+  { id: 'dubai', label: 'دبي — الإمارات', shortLabel: 'دبي', fajrAngle: 18.2, ishaAngle: 18.2 },
+  { id: 'moonsighting', label: 'Moonsighting Committee — أمريكا وكندا', shortLabel: 'Moonsighting', fajrAngle: 18, ishaAngle: 18 }
 ];
 
-const prayerOrder: PrayerName[] = ['الفجر', 'الشروق', 'الظهر', 'العصر', 'المغرب', 'العشاء'];
+export function getCalculationMethod(id: CalculationMethodId): CalculationMethod {
+  return calculationMethods.find((method) => method.id === id) ?? calculationMethods[0];
+}
+
+export const prayerOrder: PrayerName[] = ['الفجر', 'الشروق', 'الظهر', 'العصر', 'المغرب', 'العشاء'];
+
+/** الصلوات التي لها أذان (الشروق ليس صلاة). */
+export const adhanPrayers: PrayerName[] = prayerOrder.filter((name) => name !== 'الشروق');
+
 const degToRad = (degree: number) => (degree * Math.PI) / 180;
 const radToDeg = (radian: number) => (radian * 180) / Math.PI;
 const sin = (degree: number) => Math.sin(degToRad(degree));
@@ -31,7 +40,7 @@ const fixAngle = (angle: number) => fix(angle, 360);
 const fixHour = (hour: number) => fix(hour, 24);
 const arccot = (x: number) => radToDeg(Math.atan(1 / x));
 
-function getZonedParts(date: Date, timeZone: string) {
+export function getZonedParts(date: Date, timeZone: string) {
   const formatter = new Intl.DateTimeFormat('en-US', {
     timeZone,
     year: 'numeric',
@@ -42,7 +51,12 @@ function getZonedParts(date: Date, timeZone: string) {
     second: '2-digit',
     hour12: false
   });
-  const parts = Object.fromEntries(formatter.formatToParts(date).filter((part) => part.type !== 'literal').map((part) => [part.type, Number(part.value)]));
+  const parts = Object.fromEntries(
+    formatter
+      .formatToParts(date)
+      .filter((part) => part.type !== 'literal')
+      .map((part) => [part.type, Number(part.value)])
+  );
   return {
     year: parts.year,
     month: parts.month,
@@ -57,6 +71,12 @@ export function getTimeZoneOffsetHours(date: Date, timeZone: string): number {
   const parts = getZonedParts(date, timeZone);
   const asUtc = Date.UTC(parts.year, parts.month - 1, parts.day, parts.hour, parts.minute, parts.second);
   return (asUtc - date.getTime()) / 3_600_000;
+}
+
+/** اليوم المحلي (في منطقة زمنية معينة) الذي تنتمي إليه اللحظة المعطاة. */
+export function zonedDateKey(date: Date, timeZone: string): string {
+  const parts = getZonedParts(date, timeZone);
+  return `${parts.year}-${String(parts.month).padStart(2, '0')}-${String(parts.day).padStart(2, '0')}`;
 }
 
 function julianDay(year: number, month: number, day: number): number {
@@ -83,21 +103,43 @@ function sunPosition(julian: number) {
   return { declination, equationOfTime };
 }
 
-function timeFromAngle(noon: number, angle: number, latitude: number, declination: number, direction: 'before' | 'after'): number {
+function hourAngleFor(angle: number, latitude: number, declination: number): number {
   const numerator = sin(angle) - sin(latitude) * sin(declination);
   const denominator = cos(latitude) * cos(declination);
-  const hourAngle = arccos(numerator / denominator) / 15;
-  return direction === 'before' ? noon - hourAngle : noon + hourAngle;
+  const cosine = numerator / denominator;
+  // عند خطوط العرض العالية قد لا تصل الشمس للزاوية المطلوبة إطلاقًا — نعيد NaN لاستخدام قاعدة سُبع الليل.
+  if (!Number.isFinite(cosine) || cosine > 1 || cosine < -1) return Number.NaN;
+  return arccos(cosine) / 15;
 }
 
-function addMinutes(date: Date, minutes: number): Date {
-  return new Date(date.getTime() + minutes * 60_000);
+/** أقصى/أدنى ارتفاع للشمس لا يتحقق في خطوط العرض العالية (الشمس لا تغيب أو لا تشرق). */
+function seventhOfNightFallback(offsets: { sunrise?: number; sunset?: number; fajr?: number; isha?: number }) {
+  const sunrise = Number.isFinite(offsets.sunrise) ? (offsets.sunrise as number) : -6;
+  const sunset = Number.isFinite(offsets.sunset) ? (offsets.sunset as number) : 6;
+  const dayLength = Math.max(0, Math.min(24, sunset - sunrise));
+  const seventh = (24 - dayLength) / 7;
+  return {
+    sunrise,
+    sunset,
+    fajr: sunrise - seventh,
+    isha: sunset + seventh,
+    seventh
+  };
 }
 
-function zonedDateAtHour(year: number, month: number, day: number, hour: number, timeZoneOffset: number): Date {
-  return new Date(Date.UTC(year, month - 1, day, 0, 0, 0) + (hour - timeZoneOffset) * 3_600_000);
+
+export interface PrayerCalculationResult {
+  times: PrayerTime[];
+  dateKey: string;
+  timeZone: string;
+  coordinates: { latitude: number; longitude: number };
 }
 
+/**
+ * يحسب مواقيت الصلاة كـ«لحظات مطلقة» (UTC instants) اعتمادًا على زوال الشمس،
+ * ثم يعرضها بمنطقة المدينة الزمنية. لا يعتمد على منطقة الجهاز الزمنية إطلاقًا،
+ * ويتعامل مع التوقيت الصيفي بشكل صحيح لأن كل المواقيت محسوبة كفرق عن لحظة الزوال.
+ */
 export function calculatePrayerTimes(params: {
   date: Date;
   latitude: number;
@@ -108,38 +150,60 @@ export function calculatePrayerTimes(params: {
   offsets: PrayerSettings['offsets'];
   now?: Date;
 }): PrayerTime[] {
-  const method = calculationMethods.find((item) => item.id === params.method) ?? calculationMethods[0];
-  const dateParts = getZonedParts(params.date, params.timeZone);
-  const localNoon = new Date(Date.UTC(dateParts.year, dateParts.month - 1, dateParts.day, 12, 0, 0));
-  const tzOffset = getTimeZoneOffsetHours(localNoon, params.timeZone);
-  const jd = julianDay(dateParts.year, dateParts.month, dateParts.day) - params.longitude / (15 * 24);
+  const method = getCalculationMethod(params.method);
+  const { year, month, day } = getZonedParts(params.date, params.timeZone);
+  const middayAnchor = Date.UTC(year, month - 1, day, 12, 0, 0);
+  const jd = julianDay(year, month, day) - params.longitude / (15 * 24);
   const { declination, equationOfTime } = sunPosition(jd);
-  const noon = fixHour(12 + tzOffset - params.longitude / 15 - equationOfTime);
-  const sunrise = timeFromAngle(noon, -0.833, params.latitude, declination, 'before');
-  const sunset = timeFromAngle(noon, -0.833, params.latitude, declination, 'after');
+  const transitMs = middayAnchor - (params.longitude / 15) * 3_600_000 - equationOfTime * 3_600_000;
+
+  const atOffset = (hours: number, offsetMinutes = 0) => new Date(transitMs + hours * 3_600_000 + offsetMinutes * 60_000);
+
+  const sunriseOffset = -hourAngleFor(-0.833, params.latitude, declination);
+  const sunsetOffset = hourAngleFor(-0.833, params.latitude, declination);
   const asrFactor = params.madhhab === 'hanafi' ? 2 : 1;
   const asrAngle = arccot(asrFactor + tan(Math.abs(params.latitude - declination)));
-  const asr = timeFromAngle(noon, asrAngle, params.latitude, declination, 'after');
-  const fajr = timeFromAngle(noon, -method.fajrAngle, params.latitude, declination, 'before');
-  const isha = method.ishaInterval ? sunset + method.ishaInterval / 60 : timeFromAngle(noon, -(method.ishaAngle ?? 17), params.latitude, declination, 'after');
+  const asrOffset = hourAngleFor(asrAngle, params.latitude, declination);
+  const fajrOffset = -hourAngleFor(-method.fajrAngle, params.latitude, declination);
+  const ishaOffset = method.ishaInterval
+    ? sunsetOffset + method.ishaInterval / 60
+    : hourAngleFor(-(method.ishaAngle ?? 17), params.latitude, declination);
 
-  const raw: Record<PrayerName, number> = {
-    الفجر: fajr,
-    الشروق: sunrise,
-    الظهر: noon,
-    العصر: asr,
-    المغرب: sunset,
-    العشاء: isha
+  let fajrOffsetFinal = fajrOffset;
+  let ishaOffsetFinal = ishaOffset;
+  let sunriseOffsetFinal = sunriseOffset;
+  let sunsetOffsetFinal = sunsetOffset;
+  // خطوط العرض العالية: الأشعة قد تعجز عن بلوغ زوايا الفجر/العشاء أو حتى شروق الشمس وغروبها.
+  const degenerate =
+    ![fajrOffset, ishaOffset, sunriseOffset, sunsetOffset].every((value) => Number.isFinite(value)) || sunriseOffset >= sunsetOffset || fajrOffset >= sunriseOffset || ishaOffset <= sunsetOffset;
+  if (degenerate) {
+    const fallback = seventhOfNightFallback({ sunrise: sunriseOffset, sunset: sunsetOffset, fajr: fajrOffset, isha: ishaOffset });
+    sunriseOffsetFinal = fallback.sunrise;
+    sunsetOffsetFinal = fallback.sunset;
+    fajrOffsetFinal = fallback.fajr;
+    ishaOffsetFinal = fallback.isha;
+  }
+
+  const raw: Record<PrayerName, Date> = {
+    الفجر: atOffset(fajrOffsetFinal, params.offsets['الفجر'] ?? 0),
+    الشروق: atOffset(sunriseOffsetFinal, params.offsets['الشروق'] ?? 0),
+    الظهر: atOffset(0, params.offsets['الظهر'] ?? 0),
+    العصر: atOffset(Number.isFinite(asrOffset) ? asrOffset : 3.5, params.offsets['العصر'] ?? 0),
+    المغرب: atOffset(sunsetOffsetFinal, params.offsets['المغرب'] ?? 0),
+    العشاء: atOffset(ishaOffsetFinal, params.offsets['العشاء'] ?? 0)
   };
 
   const now = params.now ?? new Date();
-  const dates = prayerOrder.map((name) => {
-    const withOffset = raw[name] + (params.offsets[name] ?? 0) / 60;
-    return { name, time: zonedDateAtHour(dateParts.year, dateParts.month, dateParts.day, fixHour(withOffset), tzOffset) };
-  });
-  const nextIndex = dates.findIndex((item) => item.time.getTime() > now.getTime());
+  const dates = prayerOrder.map((name) => ({ name, time: raw[name] }));
+  const nextIndex = dates.findIndex((item) => item.name !== 'الشروق' && item.time.getTime() > now.getTime());
   const upcomingIndex = nextIndex === -1 ? -1 : nextIndex;
-  const currentIndex = nextIndex <= 0 ? -1 : nextIndex - 1;
+  let currentIndex = -1;
+  for (let index = dates.length - 1; index >= 0; index -= 1) {
+    if (dates[index].time.getTime() <= now.getTime()) {
+      currentIndex = index;
+      break;
+    }
+  }
 
   return dates.map((item, index) => ({
     name: item.name,
@@ -154,6 +218,22 @@ export function getNextPrayer(today: PrayerTime[], tomorrow: PrayerTime[], now =
   if (nextToday) return nextToday;
   const firstTomorrow = tomorrow.find((item) => item.name !== 'الشروق');
   if (firstTomorrow) return firstTomorrow;
-  const fallback = addMinutes(now, 24 * 60);
+  const fallback = new Date(now.getTime() + 24 * 60 * 60 * 1000);
   return { name: 'الفجر', time: fallback, iso: fallback.toISOString(), status: 'upcoming' };
+}
+
+/** الوقت المتبقي بصيغة «٣ ساعات و١٢ دقيقة» للعرض في الواجهة. */
+export function formatRemaining(target: Date, now: Date): string {
+  const diff = Math.max(0, target.getTime() - now.getTime());
+  const totalMinutes = Math.floor(diff / 60_000);
+  const hours = Math.floor(totalMinutes / 60);
+  const minutes = totalMinutes % 60;
+  const seconds = Math.floor((diff % 60_000) / 1000);
+  if (hours > 0) return `${hours} س ${minutes} د`;
+  if (minutes > 0) return `${minutes} د ${seconds} ث`;
+  return `${seconds} ث`;
+}
+
+export function formatClockInZone(date: Date, timeZone: string): string {
+  return new Intl.DateTimeFormat('en-GB', { hour: '2-digit', minute: '2-digit', hour12: false, timeZone }).format(date);
 }

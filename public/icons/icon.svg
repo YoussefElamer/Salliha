@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 512 512" role="img" aria-label="صليها — Salliha">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2f917e"/>
+      <stop offset="0.55" stop-color="#1f6f62"/>
+      <stop offset="1" stop-color="#0d3a32"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0.1" y1="0" x2="0.9" y2="1">
+      <stop offset="0" stop-color="#f6e3b0"/>
+      <stop offset="0.5" stop-color="#dcb466"/>
+      <stop offset="1" stop-color="#b98c33"/>
+    </linearGradient>
+    <linearGradient id="page" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fffefb"/>
+      <stop offset="1" stop-color="#e6dfcd"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.38" r="0.62">
+      <stop offset="0" stop-color="#f7e6b8" stop-opacity="0.34"/>
+      <stop offset="1" stop-color="#f7e6b8" stop-opacity="0"/>
+    </radialGradient>
+    <mask id="crescentMask">
+      <rect x="0" y="0" width="512" height="512" fill="black"/>
+      <circle cx="256" cy="212" r="76" fill="white"/>
+      <circle cx="292" cy="184" r="70" fill="black"/>
+    </mask>
+  </defs>
+
+  <rect width="512" height="512" rx="116" fill="url(#bg)"/>
+  <rect width="512" height="512" rx="116" fill="url(#glow)"/>
+  <circle cx="256" cy="252" r="188" fill="none" stroke="#f0d9a0" stroke-opacity="0.24" stroke-width="5"/>
+
+  <rect x="150" y="112" width="212" height="212" fill="url(#gold)" mask="url(#crescentMask)"/>
+
+  <path d="M116 330 C168 305 216 303 256 322 L256 414 C216 395 168 397 116 422 Z" fill="url(#page)"/>
+  <path d="M396 330 C344 305 296 303 256 322 L256 414 C296 395 344 397 396 422 Z" fill="url(#page)"/>
+  <path d="M256 322 L256 414" stroke="#cbc0a6" stroke-width="5" stroke-linecap="round"/>
+  <path d="M116 330 C168 305 216 303 256 322" fill="none" stroke="#c39a43" stroke-opacity="0.5" stroke-width="3"/>
+  <path d="M396 330 C344 305 296 303 256 322" fill="none" stroke="#c39a43" stroke-opacity="0.5" stroke-width="3"/>
+  <rect x="112" y="428" width="288" height="18" rx="9" fill="url(#gold)"/>
+</svg>

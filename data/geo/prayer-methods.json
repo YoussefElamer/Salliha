@@ -1,0 +1,31 @@
+{
+  "_note": "طريقة حساب المواقيت الافتراضية لكل دولة، مبنية على الطريقة السائدة/الرسمية في الدولة. المستخدم يستطيع تغييرها دائمًا من الإعدادات.",
+  "default": "mwl",
+  "methodsByCountry": {
+    "EG": "egyptian",
+    "SD": "egyptian",
+    "SY": "egyptian",
+    "JO": "egyptian",
+    "LB": "egyptian",
+    "PS": "egyptian",
+    "IQ": "egyptian",
+    "YE": "ummAlQura",
+    "SA": "ummAlQura",
+    "AE": "dubai",
+    "KW": "ummAlQura",
+    "QA": "ummAlQura",
+    "BH": "ummAlQura",
+    "OM": "ummAlQura",
+    "PK": "karachi",
+    "IN": "karachi",
+    "BD": "karachi",
+    "AF": "karachi",
+    "LK": "karachi",
+    "NP": "karachi",
+    "MV": "karachi",
+    "US": "moonsighting",
+    "CA": "moonsighting",
+    "GB": "moonsighting",
+    "IE": "moonsighting"
+  }
+}

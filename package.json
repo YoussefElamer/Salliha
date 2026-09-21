@@ -1,8 +1,8 @@
 {
   "name": "salliha",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
-  "description": "صَلِّها — Salliha: تطبيق إسلامي مجاني، بلا إعلانات، Offline-first قدر الإمكان.",
+  "description": "صليها — Salliha: تطبيق إسلامي مجاني، بلا إعلانات، يعمل بدون إنترنت، بمواقيت صلاة لكل دول العالم.",
   "type": "module",
   "scripts": {
     "data:build": "node scripts/build-data.mjs",
@@ -13,16 +13,23 @@
     "build": "npm run data:build && npm run validate:quran && npm run validate:data && npm run lint && vite build",
     "dev": "vite --host 0.0.0.0",
     "cap:sync": "npm run build && npx cap sync",
-    "cap:android": "npm run build && node scripts/ensure-cap-platform.mjs android && npx cap sync android",
+    "cap:android": "npm run build && node scripts/ensure-cap-platform.mjs android && npx cap sync android && node scripts/build-icons.mjs",
     "cap:ios": "npm run build && node scripts/ensure-cap-platform.mjs ios && npx cap sync ios",
     "android:debug": "npm run cap:android && cd android && ./gradlew assembleDebug",
-    "ios:simulator": "npm run cap:ios && xcodebuild -workspace ios/App/App.xcworkspace -scheme App -configuration Debug -sdk iphonesimulator -derivedDataPath build/ios CODE_SIGNING_ALLOWED=NO build"
+    "ios:simulator": "npm run cap:ios && xcodebuild -workspace ios/App/App.xcworkspace -scheme App -configuration Debug -sdk iphonesimulator -derivedDataPath build/ios CODE_SIGNING_ALLOWED=NO build",
+    "icons": "node scripts/build-icons.mjs",
+    "cap:prepare": "node scripts/build-icons.mjs && node scripts/ensure-cap-platform.mjs android && npx cap sync android"
   },
   "dependencies": {
     "@capacitor/android": "^8.5.2",
+    "@capacitor/app": "^8.1.1",
     "@capacitor/core": "^8.5.2",
+    "@capacitor/filesystem": "^8.1.3",
+    "@capacitor/haptics": "^8.0.2",
     "@capacitor/ios": "^8.5.2",
     "@capacitor/local-notifications": "^8.3.1",
+    "@capacitor/share": "^8.0.2",
+    "@capacitor/splash-screen": "^8.0.2",
     "@vitejs/plugin-react": "latest",
     "lucide-react": "latest",
     "react": "latest",
@@ -31,13 +38,21 @@
   },
   "devDependencies": {
     "@capacitor/cli": "^8.5.2",
+    "@fontsource-variable/cairo": "^5.3.0",
+    "@fontsource/amiri-quran": "^5.3.0",
+    "@fontsource/noto-naskh-arabic": "^5.3.0",
     "@testing-library/jest-dom": "latest",
     "@testing-library/react": "latest",
     "@types/node": "latest",
     "@types/react": "latest",
     "@types/react-dom": "latest",
+    "all-the-cities": "^3.1.0",
+    "city-timezones": "^1.3.4",
+    "countries-list": "^3.4.1",
     "jsdom": "latest",
+    "sharp": "^0.35.4",
     "typescript": "latest",
+    "tz-lookup": "^6.1.25",
     "vitest": "latest"
   },
   "engines": {

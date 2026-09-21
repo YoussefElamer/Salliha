@@ -1,19 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import '@fontsource-variable/cairo';
+import '@fontsource/amiri-quran/arabic-400.css';
+import '@fontsource/noto-naskh-arabic/arabic-400.css';
+import '@fontsource/noto-naskh-arabic/arabic-600.css';
 import { App } from './app/App';
 import './styles/global.css';
-
-ReactDOM.createRoot(document.getElementById('root')!).render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
 
 declare global {
   interface Window {
     Capacitor?: { isNativePlatform?: () => boolean };
   }
 }
+
+ReactDOM.createRoot(document.getElementById('root')!).render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>
+);
 
 const isNativeShell = window.Capacitor?.isNativePlatform?.() ?? false;
 

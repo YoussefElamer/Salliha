@@ -1,82 +1,119 @@
-import { describe, expect, it, vi } from 'vitest';
-import { createAyahShareCard } from '../src/sharing/shareCard';
-import type { Ayah } from '../src/core/types';
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
+import { createAdhkarShareCard, createAyahShareCard, ensureShareFonts } from '../src/sharing/shareCard';
+import type { AdhkarItem, Ayah } from '../src/core/types';
+
+const ayah: Ayah = {
+  id: '70:5',
+  globalAyahNumber: 5429,
+  surahId: 70,
+  surahName: 'المعارج',
+  ayahNumber: 5,
+  orderInSurah: 5,
+  text: 'فَاصْبِرْ صَبْرًا جَمِيلًا'
+};
+
+const dhikr: AdhkarItem = {
+  id: 'test-dhikr',
+  order: 1,
+  content: 'سُبْحَانَ اللَّهِ وَبِحَمْدِهِ',
+  count: 100,
+  countDescription: 'مئة مرة',
+  benefit: 'حُطَّت خطاياه وإن كانت مثل زبد البحر',
+  source: 'صحيح البخاري',
+  sourceType: 1,
+  categories: ['أذكار الصباح'],
+  audioUrl: null,
+  hadithText: null,
+  vocabulary: null
+};
+
+interface ContextSpy {
+  fillRect: ReturnType<typeof vi.fn>;
+  fillText: ReturnType<typeof vi.fn>;
+  stroke: ReturnType<typeof vi.fn>;
+  measureText: ReturnType<typeof vi.fn>;
+}
+
+let context: ContextSpy;
+let originalGetContext: typeof HTMLCanvasElement.prototype.getContext;
+let originalToBlob: typeof HTMLCanvasElement.prototype.toBlob;
+
+function installCanvasMock(options: { width?: number; height?: number } = {}) {
+  const gradient = { addColorStop: vi.fn() };
+  context = {
+    fillRect: vi.fn(),
+    fillText: vi.fn(),
+    stroke: vi.fn(),
+    measureText: vi.fn(() => ({ width: options.width ?? 60 }) as TextMetrics)
+  };
+  const ctx = {
+    ...context,
+    fill: vi.fn(),
+    beginPath: vi.fn(),
+    moveTo: vi.fn(),
+    lineTo: vi.fn(),
+    quadraticCurveTo: vi.fn(),
+    closePath: vi.fn(),
+    createLinearGradient: vi.fn(() => gradient),
+    fillStyle: '',
+    strokeStyle: '',
+    lineWidth: 1,
+    font: '',
+    direction: '',
+    textAlign: '',
+    textBaseline: ''
+  };
+  HTMLCanvasElement.prototype.getContext = vi.fn(() => ctx) as unknown as typeof HTMLCanvasElement.prototype.getContext;
+  HTMLCanvasElement.prototype.toBlob = vi.fn((callback: BlobCallback) => callback(new Blob(['png-bytes'], { type: 'image/png' }))) as unknown as typeof HTMLCanvasElement.prototype.toBlob;
+  return ctx;
+}
 
 describe('shareCard', () => {
-  it('creates 1080x1350 PNG blob with correct content', async () => {
-    const ayah: Ayah = {
-      id: '1:1',
-      globalAyahNumber: 1,
-      surahId: 1,
-      surahName: 'الفاتحة',
-      ayahNumber: 1,
-      orderInSurah: 1,
-      text: 'بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ',
-    };
+  beforeEach(() => {
+    originalGetContext = HTMLCanvasElement.prototype.getContext;
+    originalToBlob = HTMLCanvasElement.prototype.toBlob;
+  });
 
-    // Mock canvas
-    const toBlobMock = vi.fn((cb: (blob: Blob | null) => void) => cb(new Blob(['png'], { type: 'image/png' })));
-    const fillRectMock = vi.fn();
-    const fillTextMock = vi.fn();
-    const measureTextMock = vi.fn(() => ({ width: 100 }));
-    // @ts-ignore
-    global.document.createElement = vi.fn((tag: string) => {
-      if (tag === 'canvas') {
-        return {
-          width: 0,
-          height: 0,
-          getContext: () => ({
-            fillRect: fillRectMock,
-            fillText: fillTextMock,
-            measureText: measureTextMock,
-            // allow setting properties
-            set fillStyle(_: string) {},
-            set font(_: string) {},
-            set direction(_: string) {},
-            set textAlign(_: string) {},
-          }),
-          toBlob: toBlobMock,
-        } as unknown as HTMLCanvasElement;
-      }
-      return originalCreateElement.call(document, tag);
-    });
-    const originalCreateElement = document.createElement.bind(document);
+  afterEach(() => {
+    HTMLCanvasElement.prototype.getContext = originalGetContext;
+    HTMLCanvasElement.prototype.toBlob = originalToBlob;
+    vi.restoreAllMocks();
+  });
 
-    // Since we overrode, restore quickly after call? Create a more reliable mock via spy
-    // Instead use direct mocking of createElement for canvas only
+  it('ينشئ صورة PNG بأبعاد 1080×1440 ويرسم نص الآية والمرجع', async () => {
+    installCanvasMock();
     const blob = await createAyahShareCard(ayah, 'light');
     expect(blob.type).toBe('image/png');
     expect(blob.size).toBeGreaterThan(0);
+    const drawnTexts = context.fillText.mock.calls.map((call) => String(call[0]));
+    expect(drawnTexts.some((text) => text.includes('فَاصْبِرْ'))).toBe(true);
+    expect(drawnTexts.some((text) => text.includes('المعارج'))).toBe(true);
+    expect(drawnTexts.some((text) => text.includes('صليها'))).toBe(true);
   });
 
-  it('supports dark theme', async () => {
-    const ayah: Ayah = {
-      id: '70:5',
-      globalAyahNumber: 5429,
-      surahId: 70,
-      surahName: 'المعارج',
-      ayahNumber: 5,
-      orderInSurah: 5,
-      text: 'فَاصْبِرْ صَبْرًا جَمِيلًا',
-    };
-    const toBlobMock = vi.fn((cb: (b: Blob | null) => void) => cb(new Blob(['png2'], { type: 'image/png' })));
-    const mockCtx: Record<string, unknown> = {
-      fillRect: vi.fn(),
-      fillText: vi.fn(),
-      measureText: vi.fn(() => ({ width: 50 })),
-      fillStyle: '',
-      font: '',
-      direction: '',
-      textAlign: '',
-    };
-    const original = document.createElement;
-    // @ts-ignore
-    document.createElement = (tag: string) => {
-      if (tag === 'canvas') return { width: 0, height: 0, getContext: () => mockCtx, toBlob: toBlobMock } as unknown as HTMLCanvasElement;
-      return original.call(document, tag);
-    };
-    const blobDark = await createAyahShareCard(ayah, 'dark');
-    expect(blobDark.type).toBe('image/png');
-    document.createElement = original;
+  it('يدعم المظهر الداكن', async () => {
+    installCanvasMock();
+    const blob = await createAyahShareCard(ayah, 'dark');
+    expect(blob.type).toBe('image/png');
+  });
+
+  it('ينشئ بطاقة ذكر مع مصدرها', async () => {
+    installCanvasMock();
+    const blob = await createAdhkarShareCard(dhikr, 'light');
+    expect(blob.type).toBe('image/png');
+    const drawnTexts = context.fillText.mock.calls.map((call) => String(call[0]));
+    expect(drawnTexts.some((text) => text.includes('سُبْحَانَ'))).toBe(true);
+    expect(drawnTexts.some((text) => text.includes('أذكار الصباح'))).toBe(true);
+  });
+
+  it('يتعامل مع نص طويل دون فشل', async () => {
+    installCanvasMock({ width: 900 });
+    const longAyah: Ayah = { ...ayah, text: ayah.text.repeat(40) };
+    const blob = await createAyahShareCard(longAyah, 'light');
+    expect(blob.size).toBeGreaterThan(0);
+  });
+
+  it('ensureShareFonts لا يفشل عند غياب واجهة الخطوط', async () => {
+    await expect(ensureShareFonts()).resolves.toBeUndefined();
   });
 });

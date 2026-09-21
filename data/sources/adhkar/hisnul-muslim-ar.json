@@ -1,0 +1,1828 @@
+{
+  "meta": {
+    "title": "Hisnul Muslim",
+    "count": 298
+  },
+  "data": [
+    {
+      "id": "hisn_1",
+      "section": "المقدمة",
+      "arabic": "بسم الله الرحمن الرحيم",
+      "transliteration": "Bsm allh al-rḥmn al-rḥym"
+    },
+    {
+      "id": "hisn_2",
+      "section": "المقدمة",
+      "arabic": "إن الحمد لله ، نحمده ونستعينهُ ، ونستغفرهُ ونعوذُ باللهِ من شرورِ أنفسنا ، وسيئاتِ أعمالنا ، من يهده الله فلا مضل لهُ، ومن يضلل فلا هادي له ، وأشهد أن لا إله إلا الله وحده لا شريك لهُ،وأشهدُ أن محمداً عبدهُ ورسولهُ صلى الله عليه وعلى أله وأصحابه ومن تبعهم بإحسان إلى يوم الدين وسلم تسليما كثيراً ،أما بعد .",
+      "transliteration": "In al-ḥmd llh , nḥmdh wnstʿynhu , wnstghfrhu wnʿwdhu ballhi mn shrwri anfsna , wsyiati aʿmal-na , mn yhdh allh fal- mḍl lhu, wmn yḍll fal- hady lh , washhd an al- ilh ilal- allh wḥdh al- shryk lhu,washhdu an mḥmdan ʿbdhu wrswlhu ṣly allh ʿlyh wʿly al-h waṣḥabh wmn tbʿhm biḥsan ily ywm al-dyn wslm tslyma kthyran ,ama bʿd"
+    },
+    {
+      "id": "hisn_3",
+      "section": "المقدمة",
+      "arabic": "فهذا مختصر اختصرته من كتابي (( الذكرُ والدعاءُ والعلاج بالرقي من الكتاب والسنة )) اختصرت فيه قسم الأذكار ؛ ليكون خفيف الحمل في الأسفار .",
+      "transliteration": "Fhdha mkhtṣr akhtṣrth mn ktaby (( al-dhkru wal-dʿaʾu wal-ʿal-j bal-rqy mn al-ktab wal-sna )) akhtṣrt fyh qsm al-adhkar ; lykwn khfyf al-ḥml fy al-asfar"
+    },
+    {
+      "id": "hisn_4",
+      "section": "المقدمة",
+      "arabic": "وقد اقتصرت على متن الذكر ، واكتفيت في تخريجه بذكر مصدر أو مصدرين مما وجد في الأصل ،ومن أراد معرفة الصحابي أو زيادة في التخريج فعليه بالرجوع إلى الأصل.",
+      "transliteration": "Wqd aqtṣrt ʿly mtn al-dhkr , waktfyt fy tkhryjh bdhkr mṣdr aw mṣdryn mma wjd fy al-aṣl ,wmn arad mʿrfa al-ṣḥaby aw zyada fy al-tkhryj fʿlyh bal-rjwʿ ily al-aṣl"
+    },
+    {
+      "id": "hisn_5",
+      "section": "المقدمة",
+      "arabic": "وأسأل الله عز وجل بأسمائه الحسنى ، وصفاته العُلى أن يجعله خالصا لوجهه الكريم ، وأن ينفعني به في حياتي وبعد مماتي وأن ينفع به من قرأه ، أو طبعه ، أو كان سبباً في نشره إنه سبحانه ولي ذلك والقادر عليه. وصلى الله على نبينا محمد وعلى آله وأصحابه ومن تبعهم بإحسان إلى يوم الدين.",
+      "transliteration": "Wasal- allh ʿz wjl basmih al-ḥsny , wṣfath al-ʿul-y an yjʿlh khal-ṣa lwjhh al-krym , wan ynfʿny bh fy ḥyaty wbʿd mmaty wan ynfʿ bh mn qrah , aw ṭbʿh , aw kan sbban fy nshrh inh sbḥanh wly dhlk wal-qadr ʿlyh wṣly allh ʿly nbyna mḥmd wʿly ālh waṣḥabh wmn tbʿhm biḥsan ily ywm al-dyn"
+    },
+    {
+      "id": "hisn_6",
+      "section": "فضل الذكر",
+      "arabic": "قال الله تعالى:{ فَاذْكُرُونِي أَذْكُرْكُمْ وَاشْكُرُواْ لِي وَلاَ تَكْفُرُونِ }",
+      "transliteration": "Qal- allh tʿal-y:{ fādhkurūnī adhkurkum wāshkurūa lī walalā takfurūni }"
+    },
+    {
+      "id": "hisn_7",
+      "section": "فضل الذكر",
+      "arabic": "{ يَا أَيُّهَا الَّذِينَ آمَنُوا اذْكُرُوا اللَّهَ ذِكْراً كَثِيراً}",
+      "transliteration": "{ yā ayyuhā al-adhīna āmanūa adhkurūa Allāha dhikran kathīran}"
+    },
+    {
+      "id": "hisn_8",
+      "section": "فضل الذكر",
+      "arabic": "{ وَالذَّاكِرِينَ اللَّهَ كَثِيراً وَالذَّاكِرَاتِ أَعَدَّ اللَّهُ لَهُم مَّغْفِرَةً وَأَجْراً عَظِيماً}",
+      "transliteration": "{ wāl-dhhākirīna Allāha kathīran wāl-dhhākirāti aʿadda Allāhu lahum mmaghfiratan wajran ʿaẓīman}"
+    },
+    {
+      "id": "hisn_9",
+      "section": "فضل الذكر",
+      "arabic": "{ وَاذْكُر رَّبَّكَ فِي نَفْسِكَ تَضَرُّعاً وَخِيفَةً وَدُونَ الْجَهْرِ مِنَ الْقَوْلِ بِالْغُدُوِّ وَالآصَالِ وَلاَ تَكُن مِّنَ الْغَافِلِينَ }",
+      "transliteration": "{ wādhkur rrabbaka fī nafsika taḍarruʿan wakhīfatan wadūna al-jahri mina al-qawli bial-ghudūūi wāl-āṣāl-i walalā takun mmina al-ghāfil-īna }"
+    },
+    {
+      "id": "hisn_10",
+      "section": "فضل الذكر",
+      "arabic": "وقال صلى الله عليه وسلم : مثل الذي يذكر ربه والذي لا يذكر ربه مثل الحي والميت",
+      "transliteration": "Wqal- ṣly allh ʿlyh wslm : mthl al-dhy ydhkr rbh wal-dhy al- ydhkr rbh mthl al-ḥy wal-myt"
+    },
+    {
+      "id": "hisn_11",
+      "section": "فضل الذكر",
+      "arabic": "وقال صلى الله عليه وسلم : ألا أنبئكم بخير أعمالكم ،وأزكاها عند مليككم، وأرفعها في درجاتكم ، وخير لكم من إنفاق الذهب والورق ، وخير لكم من أن تلقوا عدوكم فتضربوا أعناقهم ويضربوا أعناقكم ؟ قالوا بلى .قال : ذكر الله تعالى",
+      "transliteration": "Wqal- ṣly allh ʿlyh wslm : alal- anbikm bkhyr aʿmal-km ,wazkaha ʿnd mlykkm, warfʿha fy drjatkm , wkhyr lkm mn infaq al-dhhb wal-wrq , wkhyr lkm mn an tlqwa ʿdwkm ftḍrbwa aʿnaqhm wyḍrbwa aʿnaqkm ? Qal-wa bly qal- : dhkr allh tʿal-y"
+    },
+    {
+      "id": "hisn_12",
+      "section": "فضل الذكر",
+      "arabic": "وقال صلى الله عليه وسلم : يقول الله تعالى : أنا عند ظن عبدي بي ، وأنا معه إذا ذكرني ، فإن ذكرني في نفسه ذكرتهُ في نفسي ، وإن ذكرني في ملأ ذكرته في ملأ خير منهم ،وإن تقرب إلي شبراً تقربت إليه ذراعاً ،وإن تقرب إلي ذراعاً تقربت إليه باعاً ، وإن أتاني يمشي أتيتهُ هرولة",
+      "transliteration": "Wqal- ṣly allh ʿlyh wslm : yqwl allh tʿal-y : ana ʿnd ẓn ʿbdy by , wana mʿh idha dhkrny , fin dhkrny fy nfsh dhkrthu fy nfsy , win dhkrny fy mla dhkrth fy mla khyr mnhm ,win tqrb ily shbran tqrbt ilyh dhraʿan ,win tqrb ily dhraʿan tqrbt ilyh baʿan , win atany ymshy atythu hrwla"
+    },
+    {
+      "id": "hisn_13",
+      "section": "فضل الذكر",
+      "arabic": "وعن عبد الله بن بسرٍ رضي الله عنهُ أن رجلاً قال : يا رسول الله إن شرائع الإسلام قد كثرت علي فأخبرني بشيءٍ أتشبث به. قال صلى الله عليه وسلم : لا يزال لسانك رطباً من ذكر الله",
+      "transliteration": "Wʿn ʿbd allh bn bsrin rḍy allh ʿnhu an rjalan qal- : ya rswl allh in shriʿ al-isal-m qd kthrt ʿly fakhbrny bshyʾin atshbth bh qal- ṣly allh ʿlyh wslm : al- yzal- lsank rṭban mn dhkr allh"
+    },
+    {
+      "id": "hisn_14",
+      "section": "فضل الذكر",
+      "arabic": "وقال صلى الله عليه وسلم: من قرأ حرفاً من كتاب الله فله به حسنة ،والحسنة بعشر أمثالها ، لا أقول : {الم } حرف؛ ولكن : ألف حرف ،ولام حرف ،وميم حرف",
+      "transliteration": "Wqal- ṣly allh ʿlyh wslm: mn qra ḥrfan mn ktab allh flh bh ḥsna ,wal-ḥsna bʿshr amthal-ha , al- aqwl : {al-m } ḥrf; wlkn : al-f ḥrf ,wal-m ḥrf ,wmym ḥrf"
+    },
+    {
+      "id": "hisn_15",
+      "section": "فضل الذكر",
+      "arabic": "وعن عقبة بن عامر رضي الله عنه قال : خرج رسول الله صلى الله عليه وسلم ونحن في الصفة فقال : أيكم يحب أن يغدو كل يوم إلى بطحان أو إلى العقيق فيأتي منه بناقتين كوماوين في غير إثم ولا قطيعة رحم ؟ فقلنا : يا رسول الله نحب ذلك . قال : أفلا يغدو أحدكم إلى المسجد فيعلم ، أو يقرأ آيتين من كتاب الله عز وجل خير له من ناقتين ، وثلاث خير لهُ من ثلاث ٍ، وأربع خير لهُ من أربع ، ومن أعدادهن من الإبل",
+      "transliteration": "Wʿn ʿqba bn ʿamr rḍy allh ʿnh qal- : khrj rswl allh ṣly allh ʿlyh wslm wnḥn fy al-ṣfa fqal- : aykm yḥb an yghdw kl ywm ily bṭḥan aw ily al-ʿqyq fyaty mnh bnaqtyn kwmawyn fy ghyr ithm wal- qṭyʿa rḥm ? Fqlna : ya rswl allh nḥb dhlk qal- : afal- yghdw aḥdkm ily al-msjd fyʿlm , aw yqra āytyn mn ktab allh ʿz wjl khyr lh mn naqtyn , wthal-th khyr lhu mn thal-th in, warbʿ khyr lhu mn arbʿ , wmn aʿdadhn mn al-ibl"
+    },
+    {
+      "id": "hisn_16",
+      "section": "فضل الذكر",
+      "arabic": "وقال صلى الله عليه وسلم: من قعد مقعداً لم يذكر الله فيه كانت عليه من الله ترة ومن اضطجع مضجعاً لم يذكر الله فيه كانت عليه من الله ترة",
+      "transliteration": "Wqal- ṣly allh ʿlyh wslm: mn qʿd mqʿdan lm ydhkr allh fyh kant ʿlyh mn allh tra wmn aḍṭjʿ mḍjʿan lm ydhkr allh fyh kant ʿlyh mn allh tra"
+    },
+    {
+      "id": "hisn_17",
+      "section": "فضل الذكر",
+      "arabic": "وقال صلى الله عليه وسلم : ما جلس قوم مجلساً لم يذكروا الله فيه ، ولم يصلوا على نبيهم إلا كان عليهم ترة ، فإن شاء عذبهم وإن شاء غفر لهم",
+      "transliteration": "Wqal- ṣly allh ʿlyh wslm : ma jls qwm mjlsan lm ydhkrwa allh fyh , wlm yṣlwa ʿly nbyhm ilal- kan ʿlyhm tra , fin shaʾ ʿdhbhm win shaʾ ghfr lhm"
+    },
+    {
+      "id": "hisn_18",
+      "section": "فضل الذكر",
+      "arabic": "وقال صلى الله عليه وسلم : ما من قوم يقومون من مجلس لا يذكرون الله فيه إلا قاموا عن مثل جيفة حمار وكان لهم حسرة",
+      "transliteration": "Wqal- ṣly allh ʿlyh wslm : ma mn qwm yqwmwn mn mjls al- ydhkrwn allh fyh ilal- qamwa ʿn mthl jyfa ḥmar wkan lhm ḥsra"
+    },
+    {
+      "id": "hisn_19",
+      "section": "أذكار الاستيقاظ من النوم",
+      "arabic": "الحَمْدُ لله الذِي أحْيَانا بَعْدَ مَا أمَاتَنَا* وإلَيْهِ النَشُور*",
+      "transliteration": "Al-ḥamdu llh al-dhī aḥyāna baʿda mā amātanā* wil-ayhi al-nashūr*"
+    },
+    {
+      "id": "hisn_20",
+      "section": "أذكار الاستيقاظ من النوم",
+      "arabic": "الحَمْدُ لله الذِي عَافَانِي في جَسَدِي ورَدَّ عَلَيَّ رُوحِي، وأَذِنَ لي بِذِكْرهِ",
+      "transliteration": "Al-ḥamdu llh al-dhī ʿāfānī fy jasadī wradda ʿal-ayya rūḥī, wadhina ly bidhikrhi"
+    },
+    {
+      "id": "hisn_21",
+      "section": "أذكار الاستيقاظ من النوم",
+      "arabic": "قال رسول الله صلى الله عليه وسلم مَنْ تَعَارَ مِنَ اللَّيْل* فقال حين يستيقظ : لا إلَهَ إلاَّ الله وحْدَهُ لا شَرِيكَ لَهُ، لَهُ المُلْكُ ولَهُ الحَمْدُ وهُوَ على كلِّ شيءٍ قَدير،سُبْحانَ الله والحَمْدُ لله ولا إله إلا الله والله أكبر ولا حَولَ ولا قُوةَ إلا بالله العلي العظيم ثم دعا: اللَّهُمَّ اغْفِرْ لي، غُفِرَ له ، قال الوليد: أو قال: دعا استُجيبَ لهُ، فإن قام فتوضأَ ثم صَلّى قُبِلَتْ صَلاتُهُ .",
+      "transliteration": "Qal- rswl allh ṣly allh ʿlyh wslm man taʿāra mina allayl* fqal- ḥyn ystyqẓ : al- ilaha ilallā allh wḥdahu al- sharīka lahu, lahu al-mul-ku wlahu al-ḥamdu whūa ʿly klli shyʾin qadyr,subḥana allh wal-ḥamdu llh wal- ilh ilal- allh wallh akbr wal- ḥawla wal- qūta ilal- ballh al-ʿly al-ʿẓym thm dʿa: Allāhumma aghfir ly, ghufira lh , qal- al-wlyd: aw qal-: dʿa astujyba lhu, fin qam ftwḍa thm ṣal-y qubil-at ṣalal-tuhu",
+      "english": "None has the right to be worshipped except Allah, alone, without partner, to Him belongs all sovereignty and praise, and He is over all things omnipotent."
+    },
+    {
+      "id": "hisn_22",
+      "section": "أذكار الاستيقاظ من النوم",
+      "arabic": "{إِنَّ فِي خَلْقِ السَّمَاوَاتِ وَالأَرْضِ وَاخْتِلاَفِ اللَّيْلِ وَالنَّهَارِ لآيَاتٍ لِّأُوْلِي الألْبَابِ *الَّذِينَ يَذْكُرُونَ اللّهَ قِيَاماً وَقُعُوداً وَعَلَىَ جُنُوبِهِمْ وَيَتَفَكَّرُونَ فِي خَلْقِ السَّمَاوَاتِ وَالأَرْضِ رَبَّنَا مَا خَلَقْتَ هَذا بَاطِلاً سُبْحَانَكَ فَقِنَا عَذَابَ النَّارِ*رَبَّنَا إِنَّكَ مَن تُدْخِلِ النَّارَ فَقَدْ أَخْزَيْتَهُ وَمَا لِلظَّالِمِينَ مِنْ أَنصَارٍ *رَّبَّنَا إِنَّنَا سَمِعْنَا مُنَادِياً يُنَادِي لِلإِيمَانِ أَنْ آمِنُواْ بِرَبِّكُمْ فَآمَنَّا رَبَّنَا فَاغْفِرْ لَنَا ذُنُوبَنَا وَكَفِّرْ عَنَّا سَيِّئَاتِنَا وَتَوَفَّنَا مَعَ الأبْرَارِ * رَبَّنَا وَآتِنَا مَا وَعَدتَّنَا عَلَى رُسُلِكَ وَلاَ تُخْزِنَا يَوْمَ الْقِيَامَةِ إِنَّكَ لاَ تُخْلِفُ الْمِيعَادَ *فَاسْتَجَابَ لَهُمْ رَبُّهُمْ أَنِّي لاَ أُضِيعُ عَمَلَ عَامِلٍ مِّنكُم مِّن ذَكَرٍ أَوْ أُنثَى بَعْضُكُم مِّن بَعْضٍ فَالَّذِينَ هَاجَرُواْ وَأُخْرِجُواْ مِن دِيَارِهِمْ وَأُوذُواْ فِي سَبِيلِي وَقَاتَلُواْ وَقُتِلُواْ لأُكَفِّرَنَّ عَنْهُمْ سَيِّئَاتِهِمْ وَلأُدْخِلَنَّهُمْ جَنَّاتٍ تَجْرِي مِن تَحْتِهَا الأَنْهَارُ ثَوَاباً مِّن عِندِ اللّهِ وَاللّهُ عِندَهُ حُسْنُ الثَّوَابِ *لاَ يَغُرَّنَّكَ تَقَلُّبُ الَّذِينَ كَفَرُواْ فِي الْبِلاَدِ *مَتَاعٌ قَلِيلٌ ثُمَّ مَأْوَاهُمْ جَهَنَّمُ وَبِئْسَ الْمِهَادُ *لَكِنِ الَّذِينَ اتَّقَوْاْ رَبَّهُمْ لَهُمْ جَنَّاتٌ تَجْرِي مِن تَحْتِهَا الأَنْهَارُ خَالِدِينَ فِيهَا نُزُلاً مِّنْ عِندِ اللّهِ وَمَا عِندَ اللّهِ خَيْرٌ لِّلأَبْرَارِ * وَإِنَّ مِنْ أَهْلِ الْكِتَابِ لَمَن يُؤْمِنُ بِاللّهِ وَمَا أُنزِلَ إِلَيْكُمْ وَمَا أُنزِلَ إِلَيْهِمْ خَاشِعِينَ لِلّهِ لاَ يَشْتَرُونَ بِآيَاتِ اللّهِ ثَمَناً قَلِيلاً أُوْلَئِكَ لَهُمْ أَجْرُهُمْ عِندَ رَبِّهِمْ إِنَّ اللّهَ سَرِيعُ الْحِسَابِ *يَا أَيُّهَا الَّذِينَ آمَنُواْ اصْبِرُواْ وَصَابِرُواْ وَرَابِطُواْ وَاتَّقُواْ اللّهَ لَعَلَّكُمْ تُفْلِحُونَ }",
+      "transliteration": "{īnna fī khal-qi assamāwāti wāl-arḍi wākhtilalāfi allayli wāl-nnahāri lāyātin llūlī al-al-bābi *al-adhīna yadhkurūna allha qīāman waquʿūdan waʿal-aya junūbihim wayatafakkarūna fī khal-qi assamāwāti wāl-arḍi rabbanā mā khal-aqta hadha bāṭilalan subḥānaka faqinā ʿadhāba annāri*rabbanā īnnaka man tudkhil-i annāra faqad akhzaytahu wamā lil-ẓẓāl-imīna min anṣārin *rrabbanā īnnanā samiʿnā munādīan yunādī lil-īmāni an āminūa birabbikum fāmannā rabbanā fāghfir lanā dhunūbanā wakaffir ʿannā sayyiiātinā watawaffanā maʿa al-abrāri * rabbanā wātinā mā waʿadttanā ʿal-ay rusul-ika walalā tukhzinā yawma al-qīāmati īnnaka alā tukhlifu al-mīʿāda *fāstajāba lahum rabbuhum anniy alā uḍīʿu ʿamal-a ʿāmil-in mminkum min dhakarin aw unthay baʿḍukum min baʿḍin fāl-adhīna hājarūa wukhrijūa min dīārihim wūdhūa fī sabīlī waqātal-ūa waqutil-ūa lukaffiranna ʿanhum sayyiiātihim wal-udkhil-annahum jannātin tajrī min taḥtihā al-anhāru thawāban min ʿindi allhi wāllhu ʿindahu ḥusnu al-thhawābi *alā yaghurrannaka taqal-ubu al-adhīna kafarūa fī al-bilalādi *matāʿun qal-īlun thumma mawāhum jahannamu wabisa al-mihādu *lakini al-adhīna attaqawa rabbahum lahum jannātun tajrī min taḥtihā al-anhāru khāl-idīna fīhā nuzulalan min ʿindi allhi wamā ʿinda allhi khayrun llilabrāri * winna min ahli al-kitābi laman yuminu biallhi wamā unzil-a īl-aykum wamā unzil-a īl-ayhim khāshiʿīna lil-hi alā yashtarūna biāyāti allhi thamanan qal-īalan ūlīka lahum ajruhum ʿinda rabbihim īnna allha sarīʿu al-ḥisābi *yā ayyuhā al-adhīna āmanūa aṣbirūa waṣābirūa warābiṭūa wāttaqūa allha laʿal-akum tufliḥūna }"
+    },
+    {
+      "id": "hisn_23",
+      "section": "دعاء لبس الثوب",
+      "arabic": "مَنْ لَبِسَ ثَوْباًً فقال: الحَمْدُ لله الذِي كَساني هذا( الثوب ) ورَزَقَنِيه مِنْ غَيْرِ حَوْلٍ مِنّي ولا قُوةٍ",
+      "transliteration": "Man labisa thawbanan fqal-: al-ḥamdu llh al-dhī kasany hdha( al-thwb ) wrazaqanīh min ghayri ḥawlin minny wal- qūtin"
+    },
+    {
+      "id": "hisn_24",
+      "section": "دعاء لبس الثوب الجديد",
+      "arabic": "اللَّهُمَّ لَكَ الحَمْدُ أَنْتَ كَسَوتَنِيه،أسْألك مِنْ خَيرِهِ وخَيْرَ ما صُنع لَهُ،وأعُوذُ بِكَ مِنْ شرِّه وشَرَّ ما صُنِعَ لَهُ",
+      "transliteration": "Allāhumma laka al-ḥamdu anta kasawtanīh,aal-k min khayrihi wkhayra ma ṣunʿ lahu,waʿūdhu bika min shrrih wsharra ma ṣuniʿa lahu"
+    },
+    {
+      "id": "hisn_25",
+      "section": "الدعاء لمن لبس ثوباً جديداً",
+      "arabic": "إلبِسْ جَدِيداً وعِشْ حميداً ومُتْ شهيداً",
+      "transliteration": "Il-bis jadīdan wʿish ḥmydan wmut shhydan"
+    },
+    {
+      "id": "hisn_26",
+      "section": "الدعاء لمن لبس ثوباً جديداً",
+      "arabic": "تُبْلي ويَخْلِفُ الله تعالى",
+      "transliteration": "Tubly wyakhlifu allh tʿal-y"
+    },
+    {
+      "id": "hisn_27",
+      "section": "ما يقول إذا وضع الثوب",
+      "arabic": "سِتْرُ ما بَيْنَ أعْيُن الجِنِّ وَعَوْرَاتِ بَني آدَمَ إذا وَضَعَ أحدُهُمْ ثَوْبَهُ أنْ يقول: بِسم الله",
+      "transliteration": "Sitru ma bayna aʿyun al-jinni waʿawrāti bany ādama idha waḍaʿa aḥduhum thawbahu an yqwl: bism allh"
+    },
+    {
+      "id": "hisn_28",
+      "section": "دعاء دخول الخلاء",
+      "arabic": "{بسم الله}، اللهُمَّ إنّي أعُوذُ بِكَ مِنَ الخُبْثِ والخبائِثِ",
+      "transliteration": "{bsm allh}, allhumma inny aʿūdhu bika mina al-khubthi wal-khbīthi"
+    },
+    {
+      "id": "hisn_29",
+      "section": "دعاء الخروج من الخلاء",
+      "arabic": "غُفْرانَكَ",
+      "transliteration": "Ghufranaka"
+    },
+    {
+      "id": "hisn_30",
+      "section": "الذكر قبل الوضوء",
+      "arabic": "بسم الله",
+      "transliteration": "Bsm allh"
+    },
+    {
+      "id": "hisn_31",
+      "section": "الذكر بعد الفراغ من الوضوء",
+      "arabic": "أشهد أن لا إله إلا الله وحده لا شريك له ، وأشهد أن محمداً عبده ورسوله",
+      "transliteration": "Ashhd an al- ilh ilal- allh wḥdh al- shryk lh , washhd an mḥmdan ʿbdh wrswlh"
+    },
+    {
+      "id": "hisn_32",
+      "section": "الذكر بعد الفراغ من الوضوء",
+      "arabic": "وزاد الترمذي بعد ذكر الشهادتين :اللهم اجعلني من التوابين واجعلني من المتطهرين",
+      "transliteration": "Wzad al-trmdhy bʿd dhkr al-shhadtyn :allhm ajʿlny mn al-twabyn wajʿlny mn al-mtṭhryn"
+    },
+    {
+      "id": "hisn_33",
+      "section": "الذكر بعد الفراغ من الوضوء",
+      "arabic": "سبحانك اللهم وبحمدك أشهد أن لا إله إلا أنت أستغفرك وأتوب إليك",
+      "transliteration": "Sbḥank allhm wbḥmdk ashhd an al- ilh ilal- ant astghfrk watwb ilyk"
+    },
+    {
+      "id": "hisn_34",
+      "section": "الذكر عند الخروج من المنزل",
+      "arabic": "بسم الله ، توكَّلْتُ على الله ، ولا حَوْلَ ولا قُوةَ إلا بالله",
+      "transliteration": "Bsm allh , twkkaltu ʿly allh , wal- ḥawla wal- qūta ilal- ballh"
+    },
+    {
+      "id": "hisn_35",
+      "section": "الذكر عند الخروج من المنزل",
+      "arabic": "اللهُمَ إني أعُوذُ بِكَ أن أَضِلَّ أوْ أُضَلَّ أَوْ أزِلَّ، أو أُزَلَّ، أوْ أظلِم أوْ أُظْلَم، أوْ أَجْهَلَ أوْ يُجْهَلَ عَلَيَّ",
+      "transliteration": "Allhuma iny aʿūdhu bika an aḍil-a aw uḍal-a aw azil-a, aw uzal-a, aw aẓlim aw uẓlam, aw ajhal-a aw yujhal-a ʿal-ayya"
+    },
+    {
+      "id": "hisn_36",
+      "section": "الذكر عند الدخول المنزل",
+      "arabic": "بسم الله ولجنا ،وبسم الله خرجنا ، وعلى ربنا توكلنا ، ثم ليسلم على أهله",
+      "transliteration": "Bsm allh wljna ,wbsm allh khrjna , wʿly rbna twklna , thm lyslm ʿly ahlh"
+    },
+    {
+      "id": "hisn_37",
+      "section": "دعاء الذهاب إلى المسجد",
+      "arabic": "اللهم اجعل في قلبي نوراً ، وفي لساني نوراً ، وفي سمعي نوراً ، وفي بصري نوراً ، ومن فوقي نوراً ، ومن تحتي نوراً ، وعن يميني نوراً ، وعن شمالي نوراً ، ومن أمامي نوراً ، ومن خلفي نوراً ، و اجعل في نفسي نوراً ، وأعظم لي نوراً ، وعظم لي نوراً ، واجعل لي نوراً ، واجعلني نوراً ، اللهم أعطني نوراً ، واجعل في عصبي نوراً ، وفي لحمي نوراً ، وفي دمي نوراً ، وفي شعري نوراً ، وفي بشري نوراً",
+      "transliteration": "Allhm ajʿl fy qlby nwran , wfy lsany nwran , wfy smʿy nwran , wfy bṣry nwran , wmn fwqy nwran , wmn tḥty nwran , wʿn ymyny nwran , wʿn shmal-y nwran , wmn amamy nwran , wmn khlfy nwran , ū ajʿl fy nfsy nwran , waʿẓm ly nwran , wʿẓm ly nwran , wajʿl ly nwran , wajʿlny nwran , allhm aʿṭny nwran , wajʿl fy ʿṣby nwran , wfy lḥmy nwran , wfy dmy nwran , wfy shʿry nwran , wfy bshry nwran"
+    },
+    {
+      "id": "hisn_38",
+      "section": "دعاء الذهاب إلى المسجد",
+      "arabic": "اللهم اجعل لي نوراً في قبري .. ونوراً في عظامي",
+      "transliteration": "Allhm ajʿl ly nwran fy qbry wnwran fy ʿẓamy"
+    },
+    {
+      "id": "hisn_39",
+      "section": "دعاء الذهاب إلى المسجد",
+      "arabic": "وزدني نوراً ، وزدني نوراً ، وزدني نوراً",
+      "transliteration": "Wzdny nwran , wzdny nwran , wzdny nwran"
+    },
+    {
+      "id": "hisn_40",
+      "section": "دعاء الذهاب إلى المسجد",
+      "arabic": "وهب لي نوراً على نوراً",
+      "transliteration": "Whb ly nwran ʿly nwran"
+    },
+    {
+      "id": "hisn_41",
+      "section": "دعاء دخول المسجد",
+      "arabic": "أعوذ بالله العظيم ،وبوجهه الكريم ،وسلطانه القديم ،من الشيطان الرجيم",
+      "transliteration": "Aʿwdh ballh al-ʿẓym ,wbwjhh al-krym ,wslṭanh al-qdym ,mn al-shyṭan al-rjym"
+    },
+    {
+      "id": "hisn_42",
+      "section": "دعاء دخول المسجد",
+      "arabic": "[ بسم الله ،والصلاة ] [ والسلام على رسول الله] ، اللهم افتح لي أبواب رحمتك",
+      "transliteration": "[ bsm allh ,wal-ṣalā ] [ wal-sal-m ʿly rswl allh] , allhm aftḥ ly abwab rḥmtk"
+    },
+    {
+      "id": "hisn_43",
+      "section": "دعاء الخروج من المسجد",
+      "arabic": "بسم الله والصلاة والسلام على رسول الله ،اللهم إني أسألك من فضلك، اللهم اعصمني من الشيطان الرجيم",
+      "transliteration": "Bsm allh wal-ṣalā wal-sal-m ʿly rswl allh ,allhm iny asal-k mn fḍlk, allhm aʿṣmny mn al-shyṭan al-rjym"
+    },
+    {
+      "id": "hisn_44",
+      "section": "أذكار الأذان",
+      "arabic": "يقول مثل ما يقول المؤذن إلا في حي على الصلاة ، وحي على الفلاح فيقول لا حول ولا قوة إلا بالله",
+      "transliteration": "Yqwl mthl ma yqwl al-mudhn ilal- fy ḥy ʿly al-ṣalā , wḥy ʿly al-fal-ḥ fyqwl al- ḥwl wal- qwa ilal- ballh"
+    },
+    {
+      "id": "hisn_45",
+      "section": "أذكار الأذان",
+      "arabic": "يقول وأنا أشهد أن لا إله إلا الله ، وحده لا شريك له ، وأن محمد عبده ورسوله ، رضيت بالله رباً ، وبمحمداً رسولاً وبالإسلام ديناً (( يقول ذلك عقب تشهد المؤذن))",
+      "transliteration": "Yqwl wana ashhd an al- ilh ilal- allh , wḥdh al- shryk lh , wan mḥmd ʿbdh wrswlh , rḍyt ballh rban , wbmḥmdan rswalan wbal-isal-m dynan (( yqwl dhlk ʿqb tshhd al-mudhn))"
+    },
+    {
+      "id": "hisn_46",
+      "section": "أذكار الأذان",
+      "arabic": "يصلي على النبي صلى الله عليه وسلم بعد فراغه من إجابة المؤذن",
+      "transliteration": "Yṣly ʿly al-nby ṣly allh ʿlyh wslm bʿd fraghh mn ijaba al-mudhn"
+    },
+    {
+      "id": "hisn_47",
+      "section": "أذكار الأذان",
+      "arabic": "اللهم رب هذه الدعوة التامة ،والصلاة القائمة، آت محمداً الوسيلة والفضيلة، وأبعثه مقاماً محموداً الذي وعدته، [ إنك لا تخلف الميعاد ]",
+      "transliteration": "Allhm rb hdhh al-dʿwa al-tama ,wal-ṣalā al-qimt, āt mḥmdan al-wsyla wal-fḍylt, wabʿthh mqaman mḥmwdan al-dhy wʿdth, [ ink al- tkhlf al-myʿad ]"
+    },
+    {
+      "id": "hisn_48",
+      "section": "أذكار الأذان",
+      "arabic": "يدعو لنفسه بين الأذان والإقامة فإن الدعاء حينئذٍ لا يرد",
+      "transliteration": "Ydʿw lnfsh byn al-adhan wal-iqama fin al-dʿaʾ ḥynidhin al- yrd"
+    },
+    {
+      "id": "hisn_49",
+      "section": "دعاء الاستفتاح",
+      "arabic": "اللهم باعد بيني وبين خطاياي كما باعدت بين المشرق والمغرب ، اللهم نقني من خطاياي كما ينقى الثوب الأبيض من الدنس اللهم اغسلني من خطاياي بالماء والثلج والبرد",
+      "transliteration": "Allhm baʿd byny wbyn khṭayay kma baʿdt byn al-mshrq wal-mghrb , allhm nqny mn khṭayay kma ynqy al-thwb al-abyḍ mn al-dns allhm aghslny mn khṭayay bal-maʾ wal-thlj wal-brd"
+    },
+    {
+      "id": "hisn_50",
+      "section": "دعاء الاستفتاح",
+      "arabic": "سبحانك اللهم وبحمد ك وتبارك اسمك وتعالى جدك، ولا أ له غيرك",
+      "transliteration": "Sbḥank allhm wbḥmd k wtbark asmk wtʿal-y jdk, wal- a lh ghyrk"
+    },
+    {
+      "id": "hisn_51",
+      "section": "دعاء الاستفتاح",
+      "arabic": "وجهت وجهي للذي فطر السموات والأرض حنيفاً وما أنا من المشركين ،إن صلاتي ونُسُكي ومحياي ومماتي لله رب العالمين ، لا شريك له وبذلك أمرت وأنا من المسلمين اللهم أنت الملك لا إله إلا أنت ، أنت ربي وأنا عبدك ، ظلمت نفسي ، واعترفت بذنبي ، فاغفر لي ذنوبي جميعاً ، إنه لا يغفر الذنوب إلا أنت ، واهدني لأحسن الأخلاق، لا يهدي لأحسنها إلا أنت ، واصرف عني سيئها لا يصرف عني سيئها إلا أنت لبيك وسعديك والخير كله بيديك ، والشر ليس إليك ، أنا بك وإليك ، تباركت وتعاليت أستغفرك وأتوب إليك",
+      "transliteration": "Wjht wjhy lldhy fṭr al-smwat wal-arḍ ḥnyfan wma ana mn al-mshrkyn ,in ṣal-ty wnusuky wmḥyay wmmaty llh rb al-ʿal-myn , al- shryk lh wbdhlk amrt wana mn al-mslmyn allhm ant al-mlk al- ilh ilal- ant , ant rby wana ʿbdk , ẓlmt nfsy , waʿtrft bdhnby , faghfr ly dhnwby jmyʿan , inh al- yghfr al-dhnwb ilal- ant , wahdny laḥsn al-akhal-q, al- yhdy laḥsnha ilal- ant , waṣrf ʿny syiha al- yṣrf ʿny syiha ilal- ant lbyk wsʿdyk wal-khyr klh bydyk , wal-shr lys ilyk , ana bk wil-yk , tbarkt wtʿal-yt astghfrk watwb ilyk"
+    },
+    {
+      "id": "hisn_52",
+      "section": "دعاء الاستفتاح",
+      "arabic": "اللهم رب جبرائيل وميكائيل وإسرافيل ، فاطر السموات والأرض ، عالم الغيب والشهادة ، أنت تحكم بين عبادك فيما كانوا فيه يختلفون اهدني لما اختلف فيه من الحق بإذنك إنك تهدي من تشاء إلى صراط مستقيم",
+      "transliteration": "Allhm rb jbrīl wmykīl wisrafyl , faṭr al-smwat wal-arḍ , ʿal-m al-ghyb wal-shhada , ant tḥkm byn ʿbadk fyma kanwa fyh ykhtlfwn ahdny lma akhtlf fyh mn al-ḥq bidhnk ink thdy mn tshaʾ ily ṣraṭ mstqym"
+    },
+    {
+      "id": "hisn_53",
+      "section": "دعاء الاستفتاح",
+      "arabic": "الله اكبر كبيرا، الله اكبر كبيرا، الله اكبر كبيرا، والحمد لله كثيرا، والحمد لله كثيرا، والحمد لله كثيرا، وسبحان الله بكرةً وأصيلا ثلاثا أعوذ بالله من الشيطان الرجيم : من نفخه، ونفثه ،و همزه",
+      "transliteration": "Allh akbr kbyra, allh akbr kbyra, allh akbr kbyra, wal-ḥmd llh kthyra, wal-ḥmd llh kthyra, wal-ḥmd llh kthyra, wsbḥan allh bkrtan waṣyal- thal-tha aʿwdh ballh mn al-shyṭan al-rjym : mn nfkhh, wnfthh ,w hmzh"
+    },
+    {
+      "id": "hisn_54",
+      "section": "دعاء الاستفتاح",
+      "arabic": "كان النبي صلى الله عليه وسلم إذا قام من الليل يتهجد قال: اللهم لك الحمد أنت نور السموات والأرض ومن فيهن ، ولك الحمد أنت قيمُ السموات والأرض ومن فيهن [ ولك الحمد أنت رب السموات والأرض ومن فيهن ]، [ ولك الحمد لك ملك السموات والأرض ومن فيهن ] [ ولك الحمد أنت ملك السموات والأرض] [ ولك الحمد] أنت الحق ، ووعدك الحق ، وقولك الحق ،ولقاؤك الحق ، والجنة حق ، والنار حق ، والنبيّون حق ومحمد صلى الله عليه وسلم حق والساعة حق ] [اللهم لك أسلمت ، وعليك توكلت ، وبك آمنت ، وإليك أنبت ، وبك خاصمت ، وإليك حاكمت ، فاغفر لي ما قدمت وما أخرت ، وأسررت، وما أعلنت ] [ أنت المقدم ،وأنت المؤخر لا إله إلا أنت ] [أنت إلهي لا إله إلا أنت]",
+      "transliteration": "Kan al-nby ṣly allh ʿlyh wslm idha qam mn allyl ythjd qal-: allhm lk al-ḥmd ant nwr al-smwat wal-arḍ wmn fyhn , wlk al-ḥmd ant qymu al-smwat wal-arḍ wmn fyhn [ wlk al-ḥmd ant rb al-smwat wal-arḍ wmn fyhn ], [ wlk al-ḥmd lk mlk al-smwat wal-arḍ wmn fyhn ] [ wlk al-ḥmd ant mlk al-smwat wal-arḍ] [ wlk al-ḥmd] ant al-ḥq , wwʿdk al-ḥq , wqwlk al-ḥq ,wlquk al-ḥq , wal-jna ḥq , wal-nar ḥq , wal-nbyywn ḥq wmḥmd ṣly allh ʿlyh wslm ḥq wal-saʿa ḥq ] [allhm lk aslmt , wʿlyk twklt , wbk āmnt , wil-yk anbt , wbk khaṣmt , wil-yk ḥakmt , faghfr ly ma qdmt wma akhrt , wasrrt, wma aʿlnt ] [ ant al-mqdm ,want al-mukhr al- ilh ilal- ant ] [ant ilhy al- ilh ilal- ant]"
+    },
+    {
+      "id": "hisn_55",
+      "section": "دعاء الركوع",
+      "arabic": "سبحان ربي العظيم ثلاث مرات",
+      "transliteration": "Sbḥan rby al-ʿẓym thal-th mrat"
+    },
+    {
+      "id": "hisn_56",
+      "section": "دعاء الركوع",
+      "arabic": "سبحانك اللهم ربنا وبحمدك ، اللهم اغفر لي",
+      "transliteration": "Sbḥank allhm rbna wbḥmdk , allhm aghfr ly"
+    },
+    {
+      "id": "hisn_57",
+      "section": "دعاء الركوع",
+      "arabic": "سبوح قدوس رب الملائكة والروح",
+      "transliteration": "Sbwḥ qdws rb al-malika wal-rwḥ"
+    },
+    {
+      "id": "hisn_58",
+      "section": "دعاء الركوع",
+      "arabic": "اللهم لك ركعت وبك آمنت ،ولك أسلمت خشع لك سمعي وبصري ودمي ولحمي وعظمي وعصبي،وما استقل به قدمي",
+      "transliteration": "Allhm lk rkʿt wbk āmnt ,wlk aslmt khshʿ lk smʿy wbṣry wdmy wlḥmy wʿẓmy wʿṣby,wma astql bh qdmy"
+    },
+    {
+      "id": "hisn_59",
+      "section": "دعاء الركوع",
+      "arabic": "سبحان ذي الجبروت والملكوت والكبرياء والعظمة",
+      "transliteration": "Sbḥan dhy al-jbrwt wal-mlkwt wal-kbryaʾ wal-ʿẓma"
+    },
+    {
+      "id": "hisn_60",
+      "section": "دعاء الرفع من الركوع",
+      "arabic": "سمع الله لمن حمده",
+      "transliteration": "Smʿ allh lmn ḥmdh"
+    },
+    {
+      "id": "hisn_61",
+      "section": "دعاء الرفع من الركوع",
+      "arabic": "ربنا ولك الحمد ، حمداً كثيراً طيباً مباركاً فيه",
+      "transliteration": "Rbna wlk al-ḥmd , ḥmdan kthyran ṭyban mbarkan fyh"
+    },
+    {
+      "id": "hisn_62",
+      "section": "دعاء الرفع من الركوع",
+      "arabic": "....ملء السموات وملء الأرض وما بينهما ، وملء ما شئت من شئ بعد .أهل الثناء والمجد،أحق ما قال العبد، وكلنا لك عبد ، اللهم لا مانع لما أعطيت ولا معطي لما منعت ولا ينفع ذا الجد منك الجد",
+      "transliteration": "Mlʾ al-smwat wmlʾ al-arḍ wma bynhma , wmlʾ ma shit mn shi bʿd ahl al-thnaʾ wal-mjd,aḥq ma qal- al-ʿbd, wklna lk ʿbd , allhm al- manʿ lma aʿṭyt wal- mʿṭy lma mnʿt wal- ynfʿ dha al-jd mnk al-jd"
+    },
+    {
+      "id": "hisn_63",
+      "section": "دعاء السجود",
+      "arabic": "سبحان ربي الأعلى ، ثلاث مرات .",
+      "transliteration": "Sbḥan rby al-aʿly , thal-th mrat"
+    },
+    {
+      "id": "hisn_64",
+      "section": "دعاء السجود",
+      "arabic": "سبحانك اللهم ربنا وبحمدك ، اللهم اغفر لي",
+      "transliteration": "Sbḥank allhm rbna wbḥmdk , allhm aghfr ly"
+    },
+    {
+      "id": "hisn_65",
+      "section": "دعاء السجود",
+      "arabic": "سبوح قدوس رب الملائكة والروح",
+      "transliteration": "Sbwḥ qdws rb al-malika wal-rwḥ"
+    },
+    {
+      "id": "hisn_66",
+      "section": "دعاء السجود",
+      "arabic": "اللهم لك سجدت وبك آمنت ولك أسلمت،سجد وجهي للذي خلقه وصوره وشق سمعه وبصره تبارك الله أحسن الخالقين",
+      "transliteration": "Allhm lk sjdt wbk āmnt wlk aslmt,sjd wjhy lldhy khlqh wṣwrh wshq smʿh wbṣrh tbark allh aḥsn al-khal-qyn"
+    },
+    {
+      "id": "hisn_67",
+      "section": "دعاء السجود",
+      "arabic": "سبحان ذي الجبروت والملكوت ، والكبرياء والعظمة",
+      "transliteration": "Sbḥan dhy al-jbrwt wal-mlkwt , wal-kbryaʾ wal-ʿẓma"
+    },
+    {
+      "id": "hisn_68",
+      "section": "دعاء السجود",
+      "arabic": "اللهم اغفر لي ذنبي كله ، دقه وجله ،وأوله وآخره ،وعلانيته وسره",
+      "transliteration": "Allhm aghfr ly dhnby klh , dqh wjlh ,wawlh wākhrh ,wʿal-nyth wsrh"
+    },
+    {
+      "id": "hisn_69",
+      "section": "دعاء السجود",
+      "arabic": "اللهم إني أعوذ برضاك من سخطك وبمعافاتك من عقوبتك،وأعوذ بك منك لا أحصي ثناء عليك أنت كما أثنيت على نفسك",
+      "transliteration": "Allhm iny aʿwdh brḍak mn skhṭk wbmʿafatk mn ʿqwbtk,waʿwdh bk mnk al- aḥṣy thnaʾ ʿlyk ant kma athnyt ʿly nfsk"
+    },
+    {
+      "id": "hisn_70",
+      "section": "دعاء الجلسة بين السجدتين",
+      "arabic": "رب اغفر لي رب اغفر لي",
+      "transliteration": "Rb aghfr ly rb aghfr ly"
+    },
+    {
+      "id": "hisn_71",
+      "section": "دعاء الجلسة بين السجدتين",
+      "arabic": "اللهم اغفر لي ، وارحمني ،واهدني ، واجبرني، وعافني،وارزقني ، وارفعني",
+      "transliteration": "Allhm aghfr ly , warḥmny ,wahdny , wajbrny, wʿafny,warzqny , warfʿny"
+    },
+    {
+      "id": "hisn_72",
+      "section": "دعاء سجود التلاوة",
+      "arabic": "سجد وجهي للذي خلقه ، وشق سمعه وبصره بحوله وقوته { فتبارك الله أحسن الخالقين }",
+      "transliteration": "Sjd wjhy lldhy khlqh , wshq smʿh wbṣrh bḥwlh wqwth { ftbark allh aḥsn al-khal-qyn }"
+    },
+    {
+      "id": "hisn_73",
+      "section": "دعاء سجود التلاوة",
+      "arabic": "اللهم أكتب لي بها عندك أجراً ، وضع عني بها وزراً ، واجعلها لي عندك ذخراً ، وتقبلها مني كما تقبلتها من عبدك داود",
+      "transliteration": "Allhm aktb ly bha ʿndk ajran , wḍʿ ʿny bha wzran , wajʿlha ly ʿndk dhkhran , wtqblha mny kma tqbltha mn ʿbdk dawd"
+    },
+    {
+      "id": "hisn_74",
+      "section": "التشهد",
+      "arabic": "التحيات لله ، والصلوات ، والطيبات ، السلام عليك أيها النبي ورحمة الله وبركاته ، السلام علينا وعلى عباد الله الصالحين ،أشهد أن لا إله إلا الله ، وأشهد أن محمداً عبده ورسوله",
+      "transliteration": "Al-tḥyat llh , wal-ṣlwat , wal-ṭybat , al-sal-m ʿlyk ayha al-nby wrḥma allh wbrkath , al-sal-m ʿlyna wʿly ʿbad allh al-ṣal-ḥyn ,ashhd an al- ilh ilal- allh , washhd an mḥmdan ʿbdh wrswlh"
+    },
+    {
+      "id": "hisn_75",
+      "section": "الصلاة على النبي صلى الله عليه وسلم بعد التشهد",
+      "arabic": "اللهم صل على محمد وعلى آل محمد ، كما صليت على إبراهيم ، وعلى آل إبراهيم ، إنك حميد مجيد ، اللهم بارك على محمد وعلى آل محمد كما باركت على إبراهيم ، وعلى آل إبراهيم إنك حميد مجيد",
+      "transliteration": "Allhm ṣl ʿly mḥmd wʿly āl mḥmd , kma ṣlyt ʿly ibrahym , wʿly āl ibrahym , ink ḥmyd mjyd , allhm bark ʿly mḥmd wʿly āl mḥmd kma barkt ʿly ibrahym , wʿly āl ibrahym ink ḥmyd mjyd"
+    },
+    {
+      "id": "hisn_76",
+      "section": "الصلاة على النبي صلى الله عليه وسلم بعد التشهد",
+      "arabic": "اللهم صل على محمد وعلى أزواجه وذريته،كما صليت على آل إبراهيم، وبارك على محمد وعلى أزواجه وذريته كما باركت على آل إبراهيم إنك حميد مجيد",
+      "transliteration": "Allhm ṣl ʿly mḥmd wʿly azwajh wdhryth,kma ṣlyt ʿly āl ibrahym, wbark ʿly mḥmd wʿly azwajh wdhryth kma barkt ʿly āl ibrahym ink ḥmyd mjyd"
+    },
+    {
+      "id": "hisn_77",
+      "section": "الدعاء بعد التشهد الأخير وقبل السلام",
+      "arabic": "اللهم إني أعوذ بك من عذاب القبر،ومن عذاب جهنم،ومن فتنة المحيا والممات ،ومن شر فتنة المسيح الدجال",
+      "transliteration": "Allhm iny aʿwdh bk mn ʿdhab al-qbr,wmn ʿdhab jhnm,wmn ftna al-mḥya wal-mmat ,wmn shr ftna al-msyḥ al-djal-"
+    },
+    {
+      "id": "hisn_78",
+      "section": "الدعاء بعد التشهد الأخير وقبل السلام",
+      "arabic": "اللهم إني أعوذ بك من عذاب القبر،وأعوذ بك من فتنة المسيح الدجال،وأعوذ بك من فتنة المحيا والممات، اللهم إني أعوذ بك من المأثم والمغرم",
+      "transliteration": "Allhm iny aʿwdh bk mn ʿdhab al-qbr,waʿwdh bk mn ftna al-msyḥ al-djal-,waʿwdh bk mn ftna al-mḥya wal-mmat, allhm iny aʿwdh bk mn al-mathm wal-mghrm"
+    },
+    {
+      "id": "hisn_79",
+      "section": "الدعاء بعد التشهد الأخير وقبل السلام",
+      "arabic": "اللهم إني ظلمت نفسي ظلماً كثيراً ، ولا يغفر الذنوب إلا أنت ، فاغفر لي مغفرة من عندك وارحمني إنك أنت الغفور الرحيم",
+      "transliteration": "Allhm iny ẓlmt nfsy ẓlman kthyran , wal- yghfr al-dhnwb ilal- ant , faghfr ly mghfra mn ʿndk warḥmny ink ant al-ghfwr al-rḥym"
+    },
+    {
+      "id": "hisn_80",
+      "section": "الدعاء بعد التشهد الأخير وقبل السلام",
+      "arabic": "اللهم اغفر لي ما قدمت وما أخرت وما أسررت وما أعلنت وما أسرفت وما أنت أعلم به مني أنت المقدم وأنت المؤخر لا إله إلا أنت",
+      "transliteration": "Allhm aghfr ly ma qdmt wma akhrt wma asrrt wma aʿlnt wma asrft wma ant aʿlm bh mny ant al-mqdm want al-mukhr al- ilh ilal- ant"
+    },
+    {
+      "id": "hisn_81",
+      "section": "الدعاء بعد التشهد الأخير وقبل السلام",
+      "arabic": "اللهم أعني على ذكرك ، وشكرك وحسن عبادتك",
+      "transliteration": "Allhm aʿny ʿly dhkrk , wshkrk wḥsn ʿbadtk"
+    },
+    {
+      "id": "hisn_82",
+      "section": "الدعاء بعد التشهد الأخير وقبل السلام",
+      "arabic": "اللهم إني أعوذ بك من البخل وأعوذ بك من الجبن ، وأعوذ بك من أن أرد إلى أرذل العمر ، وأعوذ بك من فتنة الدنيا وأعوذ بك من عذاب القبر",
+      "transliteration": "Allhm iny aʿwdh bk mn al-bkhl waʿwdh bk mn al-jbn , waʿwdh bk mn an ard ily ardhl al-ʿmr , waʿwdh bk mn ftna al-dnya waʿwdh bk mn ʿdhab al-qbr"
+    },
+    {
+      "id": "hisn_83",
+      "section": "الدعاء بعد التشهد الأخير وقبل السلام",
+      "arabic": "اللهم إني أسألك الجنة وأعوذ بك من النار",
+      "transliteration": "Allhm iny asal-k al-jna waʿwdh bk mn al-nar"
+    },
+    {
+      "id": "hisn_84",
+      "section": "الدعاء بعد التشهد الأخير وقبل السلام",
+      "arabic": "اللهم بعلمك الغيب وقدرتك على الخلق أحيني ما علمت الحياة خيراً لي وتوفني إذا علمت الوفاة خيراً لي ، اللهم إني أسألك خشيتك في الغيب والشهادة ، وأسألك كلمة الحق في الرضا والغضب ، وأسألك القصد في الغنى والفقر ، وأسألك نعيماً لا ينفد ، وأسألك قرة عين لا تنقطع ، وأسألك الرضا بعد القضاء ، وأسألك برد العيش بعد الموت ، وأسألك لذة النظر إلى وجهك والشوق إلى لقائك من غير ضرَّاء مضرة ولا فتنة مضلة ، اللهم زينا بزينة الإيمان ، واجعلنا هداة مهتدين",
+      "transliteration": "Allhm bʿlmk al-ghyb wqdrtk ʿly al-khlq aḥyny ma ʿlmt al-ḥyā khyran ly wtwfny idha ʿlmt al-wfā khyran ly , allhm iny asal-k khshytk fy al-ghyb wal-shhada , wasal-k klma al-ḥq fy al-rḍa wal-ghḍb , wasal-k al-qṣd fy al-ghny wal-fqr , wasal-k nʿyman al- ynfd , wasal-k qra ʿyn al- tnqṭʿ , wasal-k al-rḍa bʿd al-qḍaʾ , wasal-k brd al-ʿysh bʿd al-mwt , wasal-k ldha al-nẓr ily wjhk wal-shwq ily lqik mn ghyr ḍrrāʾ mḍra wal- ftna mḍla , allhm zyna bzyna al-īman , wajʿlna hdā mhtdyn"
+    },
+    {
+      "id": "hisn_85",
+      "section": "الدعاء بعد التشهد الأخير وقبل السلام",
+      "arabic": "اللهم إني أسألك يا الله بأنك الواحد الأحد الصمد الذي لم يلد ولم يولد ولم يكن له كفواً أحد أن تغفر لي ذنوبي إنك أنت الغفور الرحيم",
+      "transliteration": "Allhm iny asal-k ya allh bank al-waḥd al-aḥd al-ṣmd al-dhy lm yld wlm ywld wlm ykn lh kfwan aḥd an tghfr ly dhnwby ink ant al-ghfwr al-rḥym"
+    },
+    {
+      "id": "hisn_86",
+      "section": "الدعاء بعد التشهد الأخير وقبل السلام",
+      "arabic": "اللهم إني أسألك بأن لك الحمد ، لا إله إلا أنت وحدك لا شريك لك ، المنان ، يا بديع السموات والأرض يا ذا الجلال والإكرام يا حي يا قيوم إني أسألك الجنة وأعوذ بك من النار",
+      "transliteration": "Allhm iny asal-k ban lk al-ḥmd , al- ilh ilal- ant wḥdk al- shryk lk , al-mnan , ya bdyʿ al-smwat wal-arḍ ya dha al-jall- wal-ikram ya ḥy ya qywm iny asal-k al-jna waʿwdh bk mn al-nar"
+    },
+    {
+      "id": "hisn_87",
+      "section": "الدعاء بعد التشهد الأخير وقبل السلام",
+      "arabic": "اللهم إني أسألك بأني أشهد أنك أنت الله لا إله إلا أنت،الأحد الصمد الذي لم يلد ولم يولد ولم يكن له كفواً أحد",
+      "transliteration": "Allhm iny asal-k bany ashhd ank ant allh al- ilh ilal- ant,al-aḥd al-ṣmd al-dhy lm yld wlm ywld wlm ykn lh kfwan aḥd"
+    },
+    {
+      "id": "hisn_88",
+      "section": "الأذكار بعد السلام من الصلاة",
+      "arabic": "أستغفر الله ثلاثاً .. اللهم أنت السلام ، ومنك السلام ، تباركت يا ذا الجلال والإكرام",
+      "transliteration": "Astghfr allh thal-than allhm ant al-sal-m , wmnk al-sal-m , tbarkt ya dha al-jall- wal-ikram"
+    },
+    {
+      "id": "hisn_89",
+      "section": "الأذكار بعد السلام من الصلاة",
+      "arabic": "لَا إِلَهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ اللَّهُمَّ لَا مَانِعَ لِمَا أَعْطَيْتَ وَلَا مُعْطِيَ لِمَا مَنَعْتَ وَلَا يَنْفَعُ ذَا الْجَدِّ مِنْكَ الْجَدُّ",
+      "transliteration": "Lā ilāha illā Allāhu waḥdahu lā sharīka lahu lahu al-mul-ku wal-ahu al-ḥamdu wahūa ʿal-ay kul-i shayʾin qadīrun Allāhumma lā māniʿa limā aʿṭayta wal-ā muʿṭīa limā manaʿta wal-ā yanfaʿu dhā al-jaddi minka al-jaddu",
+      "english": "None has the right to be worshipped except Allah, alone, without partner, to Him belongs all sovereignty and praise, and He is over all things omnipotent."
+    },
+    {
+      "id": "hisn_90",
+      "section": "الأذكار بعد السلام من الصلاة",
+      "arabic": "لا إله إلا الله وحده لا شريك له،له الملك وله الحمد وهو على كل شئ قدير،لا حول ولا قوة إلا بالله،لا إله إلا الله،ولا نعبد إلا إياه ، له النعمة وله الفضل ،وله الثناء الحسن،لا إله إلا الله مخلصين له الدين ولو كره الكافرون",
+      "transliteration": "Al- ilh ilal- allh wḥdh al- shryk lh,lh al-mlk wlh al-ḥmd whw ʿly kl shi qdyr,al- ḥwl wal- qwa ilal- ballh,al- ilh ilal- allh,wal- nʿbd ilal- īah , lh al-nʿma wlh al-fḍl ,wlh al-thnaʾ al-ḥsn,al- ilh ilal- allh mkhlṣyn lh al-dyn wlw krh al-kafrwn"
+    },
+    {
+      "id": "hisn_91",
+      "section": "الأذكار بعد السلام من الصلاة",
+      "arabic": "سبحان الله ، والحمد لله ، والله أكبر ( ثلاثاً وثلاثين ) لا إله إلا الله وحده لا شريك له ، له الملك وله الحمد وهو على كل شيء قدير",
+      "transliteration": "Sbḥan allh , wal-ḥmd llh , wallh akbr ( thal-than wthal-thyn ) al- ilh ilal- allh wḥdh al- shryk lh , lh al-mlk wlh al-ḥmd whw ʿly kl shyʾ qdyr",
+      "english": "None has the right to be worshipped except Allah, alone, without partner, to Him belongs all sovereignty and praise, and He is over all things omnipotent."
+    },
+    {
+      "id": "hisn_92",
+      "section": "الأذكار بعد السلام من الصلاة",
+      "arabic": "بسم الله الرحمن الرحيم{ قُلْ هُوَ اللَّهُ أَحَدٌ*اللَّهُ الصَّمَدُ*لَمْ يَلِدْ وَلَمْ يُولَدْ * وَلَمْ يَكُن لَّهُ كُفُواً أَحَدٌ} بسم الله الرحمن الرحيم {قُلْ أَعُوذُ بِرَبِّ الْفَلَقِ * مِن شَرِّ مَا خَلَقَ *وَمِن شَرِّ غَاسِقٍ إِذَا وَقَبَ * وَمِن شَرِّ النَّفَّاثَاتِ فِي الْعُقَدِ * وَمِن شَرِّ حَاسِدٍ إِذَا حَسَدَ } بسم الله الرحمن الرحيم{ قُلْ أَعُوذُ بِرَبِّ النَّاسِ * مَلِكِ النَّاسِ * إِلَهِ النَّاسِ *مِن شَرِّ الْوَسْوَاسِ الْخَنَّاسِ * الَّذِي يُوَسْوِسُ فِي صُدُورِ النَّاسِ * مِنَ الْجِنَّةِ وَالنَّاسِ }بعد كل صلاة مرة واحدة , وبعد صلاة المغرب والفجر ثلاث مرات",
+      "transliteration": "Bsm allh al-rḥmn al-rḥym{ qul- huwa Allāhu aḥadun*Allāhu aṣ-ṣamadu*lam yal-id wal-am yūlad * wal-am yakun llahu kufūan aḥadun} bsm allh al-rḥmn al-rḥym {qul- aʿūdhu birabbi al-fal-aqi * min sharri mā khal-aqa *wamin sharri ghāsiqin īdhā waqaba * wamin sharri annaffāthāti fī al-ʿuqadi * wamin sharri ḥāsidin īdhā ḥasada } bsm allh al-rḥmn al-rḥym{ qul- aʿūdhu birabbi annāsi * mal-iki annāsi * īlillāhi annāsi *min sharri al-waswāsi al-khannāsi * al-adhī yūaswisu fī ṣudūri annāsi * mina al-jinnati wāl-nnāsi }bʿd kl ṣalā mra waḥda , wbʿd ṣalā al-mghrb wal-fjr thal-th mrat"
+    },
+    {
+      "id": "hisn_93",
+      "section": "الأذكار بعد السلام من الصلاة",
+      "arabic": "{ اللّهُ لاَ إِلَهَ إِلاَّ هُوَ الْحَيُّ الْقَيُّومُ لاَ تَأْخُذُهُ سِنَةٌ وَلاَ نَوْمٌ لَّهُ مَا فِي السَّمَاوَاتِ وَمَا فِي الأَرْضِ مَن ذَا الَّذِي يَشْفَعُ عِنْدَهُ إِلاَّ بِإِذْنِهِ يَعْلَمُ مَا بَيْنَ أَيْدِيهِمْ وَمَا خَلْفَهُمْ وَلاَ يُحِيطُونَ بِشَيْءٍ مِّنْ عِلْمِهِ إِلاَّ بِمَا شَاء وَسِعَ كُرْسِيُّهُ السَّمَاوَاتِ وَالأَرْضَ وَلاَ يَؤُودُهُ حِفْظُهُمَا وَهُوَ الْعَلِيُّ الْعَظِيمُ }عقب كل صلاة",
+      "transliteration": "{ allhu alā ilāha īlallā huwa al-ḥayyu al-qayyuwmu alā takhudhuhu sinatun walalā nawmun llahu mā fī assamāwāti wamā fī al-arḍi man dhā al-adhī yashfaʿu ʿindahu īlallā bidhnihi yaʿlamu mā bayna aydīhim wamā khal-fahum walalā yuḥīṭūna bishayʾin min ʿil-mihi īlallā bimā shāʾ wasiʿa kursīīuhu assamāwāti wāl-arḍa walalā yūduhu ḥifẓuhumā wahūa al-ʿal-īīu al-ʿaẓīmu }ʿqb kl ṣalā"
+    },
+    {
+      "id": "hisn_94",
+      "section": "الأذكار بعد السلام من الصلاة",
+      "arabic": "لا إله إلا الله وحده لا شريك له ، له الملك وله الحمد ، يحيي ويميت وهو على كل شئ قدير عشر مرات بعد صلاة المغرب والصبح",
+      "transliteration": "Al- ilh ilal- allh wḥdh al- shryk lh , lh al-mlk wlh al-ḥmd , yḥyy wymyt whw ʿly kl shi qdyr ʿshr mrat bʿd ṣalā al-mghrb wal-ṣbḥ"
+    },
+    {
+      "id": "hisn_95",
+      "section": "الأذكار بعد السلام من الصلاة",
+      "arabic": "اللهم إني أسألك علماً نافعاً ، ورزقاً طيباً ، وعملاً متقبلاً بعد السلام من صلاة الفجر",
+      "transliteration": "Allhm iny asal-k ʿlman nafʿan , wrzqan ṭyban , wʿmalan mtqbalan bʿd al-sal-m mn ṣalā al-fjr",
+      "english": "O Allah, I ask You for knowledge which is beneficial and sustenance which is good, and deeds which are acceptable."
+    },
+    {
+      "id": "hisn_96",
+      "section": "دعاء صلاة الاستخارة",
+      "arabic": "قال جابر بن عبد الله رضي الله عنهما : كان رسول الله صلى الله عليه وسلم ، يُعلمنا الاستخارة في الأمور كلها كما يعلمُنا السورة من القرآن ، يقول : إذا هم أحدكم بالأمر فليركع ركعتين من غير الفريضة ، ثم ليقل : اللهم إني أستخيرك بعلمك ، وأستقدرك بقدرتك ، وأسألك من فضلك العظيم فإنك تقدِرُ ولا أقدِرُ ، وتعلم ولا أعلم ، وأنت علام الغيوب ، اللهم إن كنت تعلم أن هذا الأمر -يسمي حاجته خير لي في ديني ومعاشي وعاقبة أمري أو قال : عاجلة وآجله فاقدره لي ويسره لي ، ثم بارك لي فيه ، وإن كنت تعلم أن هذا الأمر شر لي في ديني ومعاشي وعاقبة أمري أو قال : عاجله وآجله فاصرفه عني واصرفني عنه ، واقدر لي الخير حيث كان ، ثم ارضني به",
+      "transliteration": "Qal- jabr bn ʿbd allh rḍy allh ʿnhma : kan rswl allh ṣly allh ʿlyh wslm , yuʿlmna alal-stkhara fy al-amwr klha kma yʿlmuna al-swra mn al-qrān , yqwl : idha hm aḥdkm bal-amr flyrkʿ rkʿtyn mn ghyr al-fryḍa , thm lyql : allhm iny astkhyrk bʿlmk , wastqdrk bqdrtk , wasal-k mn fḍlk al-ʿẓym fink tqdiru wal- aqdiru , wtʿlm wal- aʿlm , want ʿal-m al-ghywb , allhm in knt tʿlm an hdha al-amr -ysmy ḥajth khyr ly fy dyny wmʿashy wʿaqba amry aw qal- : ʿajla wājlh faqdrh ly wysrh ly , thm bark ly fyh , win knt tʿlm an hdha al-amr shr ly fy dyny wmʿashy wʿaqba amry aw qal- : ʿajlh wājlh faṣrfh ʿny waṣrfny ʿnh , waqdr ly al-khyr ḥyth kan , thm arḍny bh"
+    },
+    {
+      "id": "hisn_97",
+      "section": "دعاء صلاة الاستخارة",
+      "arabic": "وما ندم من استخار الخالق ، وشاور المخلوقين المؤمنين وتثبت في أمره ، فقد قال سبحانه{ وَشَاوِرْهُمْ فِي الأَمْرِ فَإِذَا عَزَمْتَ فَتَوَكَّلْ عَلَى اللّهِ}",
+      "transliteration": "Wma ndm mn astkhar al-khal-q , wshawr al-mkhlwqyn al-mumnyn wtthbt fy amrh , fqd qal- sbḥanh{ washāwirhum fī al-amri fīdhā ʿazamta fatawakkal ʿal-ay allhi}"
+    },
+    {
+      "id": "hisn_98",
+      "section": "أذكار الصباح والمساء",
+      "arabic": "الحمد لله وحده ، والصلاة والسلام على من لا نبي بعده",
+      "transliteration": "Al-ḥmd llh wḥdh , wal-ṣalā wal-sal-m ʿly mn al- nby bʿdh",
+      "english": "All praise is due to Allah alone, and peace and blessings be upon him after whom there is no other Prophet."
+    },
+    {
+      "id": "hisn_99",
+      "section": "أذكار الصباح والمساء",
+      "arabic": "أعوذ بالله من الشيطان الرجيم { اللّهُ لاَ إِلَهَ إِلاَّ هُوَ الْحَيُّ الْقَيُّومُ لاَ تَأْخُذُهُ سِنَةٌ وَلاَ نَوْمٌ لَّهُ مَا فِي السَّمَاوَاتِ وَمَا فِي الأَرْضِ مَن ذَا الَّذِي يَشْفَعُ عِنْدَهُ إِلاَّ بِإِذْنِهِ يَعْلَمُ مَا بَيْنَ أَيْدِيهِمْ وَمَا خَلْفَهُمْ وَلاَ يُحِيطُونَ بِشَيْءٍ مِّنْ عِلْمِهِ إِلاَّ بِمَا شَاء وَسِعَ كُرْسِيُّهُ السَّمَاوَاتِ وَالأَرْضَ وَلاَ يَؤُودُهُ حِفْظُهُمَا وَهُوَ الْعَلِيُّ الْعَظِيمُ }",
+      "transliteration": "Aʿwdh ballh mn al-shyṭan al-rjym { allhu alā ilāha īlallā huwa al-ḥayyu al-qayyuwmu alā takhudhuhu sinatun walalā nawmun llahu mā fī assamāwāti wamā fī al-arḍi man dhā al-adhī yashfaʿu ʿindahu īlallā bidhnihi yaʿlamu mā bayna aydīhim wamā khal-fahum walalā yuḥīṭūna bishayʾin min ʿil-mihi īlallā bimā shāʾ wasiʿa kursīīuhu assamāwāti wāl-arḍa walalā yūduhu ḥifẓuhumā wahūa al-ʿal-īīu al-ʿaẓīmu }"
+    },
+    {
+      "id": "hisn_100",
+      "section": "أذكار الصباح والمساء",
+      "arabic": "بسم الله الرحمن الرحيم{ قُلْ هُوَ اللَّهُ أَحَدٌ*اللَّهُ الصَّمَدُ*لَمْ يَلِدْ وَلَمْ يُولَدْ * وَلَمْ يَكُن لَّهُ كُفُواً أَحَدٌ} بسم الله الرحمن الرحيم {قُلْ أَعُوذُ بِرَبِّ الْفَلَقِ * مِن شَرِّ مَا خَلَقَ *وَمِن شَرِّ غَاسِقٍ إِذَا وَقَبَ * وَمِن شَرِّ النَّفَّاثَاتِ فِي الْعُقَدِ * وَمِن شَرِّ حَاسِدٍ إِذَا حَسَدَ } بسم الله الرحمن الرحيم{ قُلْ أَعُوذُ بِرَبِّ النَّاسِ * مَلِكِ النَّاسِ * إِلَهِ النَّاسِ *مِن شَرِّ الْوَسْوَاسِ الْخَنَّاسِ * الَّذِي يُوَسْوِسُ فِي صُدُورِ النَّاسِ * مِنَ الْجِنَّةِ وَالنَّاسِ }( ثلاث مرات )",
+      "transliteration": "Bsm allh al-rḥmn al-rḥym{ qul- huwa Allāhu aḥadun*Allāhu aṣ-ṣamadu*lam yal-id wal-am yūlad * wal-am yakun llahu kufūan aḥadun} bsm allh al-rḥmn al-rḥym {qul- aʿūdhu birabbi al-fal-aqi * min sharri mā khal-aqa *wamin sharri ghāsiqin īdhā waqaba * wamin sharri annaffāthāti fī al-ʿuqadi * wamin sharri ḥāsidin īdhā ḥasada } bsm allh al-rḥmn al-rḥym{ qul- aʿūdhu birabbi annāsi * mal-iki annāsi * īlillāhi annāsi *min sharri al-waswāsi al-khannāsi * al-adhī yūaswisu fī ṣudūri annāsi * mina al-jinnati wāl-nnāsi }( thal-th mrat )"
+    },
+    {
+      "id": "hisn_101",
+      "section": "أذكار الصباح والمساء",
+      "arabic": "أصبحنا وأصبح الملك لله ، والحمد لله، لا إله إلا الله وحده لا شريك له، له الملك وله الحمد وهو على كل شيء قدير، ربِّ أسألك خير ما في هذا اليوم وخير ما بعده وأعوذ بك من شر ما في هذا اليوم وشر ما بعده ربِّ أعوذ بك من الكسل وسوء الكبر، ربَّ أعوذ بك من عذابٍ في النار وعذاب في القبر وإذا أمسي قال ذلك أيضا : أمسينا وأمسي الملك لله .",
+      "transliteration": "Aṣbḥna waṣbḥ al-mlk llh , wal-ḥmd llh, al- ilh ilal- allh wḥdh al- shryk lh, lh al-mlk wlh al-ḥmd whw ʿly kl shyʾ qdyr, rbbi asal-k khyr ma fy hdha al-ywm wkhyr ma bʿdh waʿwdh bk mn shr ma fy hdha al-ywm wshr ma bʿdh rbbi aʿwdh bk mn al-ksl wswʾ al-kbr, rbba aʿwdh bk mn ʿdhabin fy al-nar wʿdhab fy al-qbr widha amsy qal- dhlk ayḍa : amsyna wamsy al-mlk llh",
+      "english": "We have reached the morning and at this very time unto Allah belongs all sovereignty, and all praise is for Allah. None has the right to be worshipped except Allah, alone, without partner, to Him belongs all sovereignty and praise, and He is over all things omnipotent. My Lord, I ask You for the good of this day and the good of what follows it and I take refuge in You from the evil of this day and the evil of what follows it. My Lord, I take refuge in You from laziness and senility. My Lord, I take refuge in You from torment in the Fire and punishment in the grave."
+    },
+    {
+      "id": "hisn_102",
+      "section": "أذكار الصباح والمساء",
+      "arabic": "اللهم بك أصبحنا وبك أمسينا وبك نحيا وبك نموت وإليك النشور وإذا أمسي فليقل : اللهم بك أمسينا، وبك أصبحنا، وبك نحيا وبك نموت، وإليك المصير .",
+      "transliteration": "Allhm bk aṣbḥna wbk amsyna wbk nḥya wbk nmwt wil-yk al-nshwr widha amsy flyql : allhm bk amsyna, wbk aṣbḥna, wbk nḥya wbk nmwt, wil-yk al-mṣyr",
+      "english": "O Allah, by Your leave we have reached the morning and by Your leave we have reached the evening, by Your leave we live and die and unto You is our resurrection"
+    },
+    {
+      "id": "hisn_103",
+      "section": "أذكار الصباح والمساء",
+      "arabic": "اللهم أنت ربي لا إله إلا أنت خَلَقتني وأنا عَبْدُك وأنا على عهدك ووعدك ما استطعت أعوذ بك من شر ما صنعت أبوء لك بنعمتك علي وأبوء بذنبي فاغفر لي فإنه لا يغفر الذنوب إلا أنت",
+      "transliteration": "Allhm ant rby al- ilh ilal- ant khal-aqtny wana ʿabduk wana ʿly ʿhdk wwʿdk ma astṭʿt aʿwdh bk mn shr ma ṣnʿt abwʾ lk bnʿmtk ʿly wabwʾ bdhnby faghfr ly finh al- yghfr al-dhnwb ilal- ant",
+      "english": "O Allah, You are my Lord, none has the right to be worshipped except You, You created me and I am Your servant and I abide to Your covenant and promise as best I can, I take refuge in You from the evil of which I have committed.  I acknowledge Your favour upon me and I acknowledge my sin, so forgive me, for verily none can forgive sin except You."
+    },
+    {
+      "id": "hisn_104",
+      "section": "أذكار الصباح والمساء",
+      "arabic": "اللهم إني أصبحت أشهدك وأشهد حملة عرشك ، وملائكتك وجميع خلقك ، أنك أنت الله لا إله إلا أنت وحدك لا شريك لك ، وأن محمداً عبدك ورسولك ( أربع مرات )",
+      "transliteration": "Allhm iny aṣbḥt ashhdk washhd ḥmla ʿrshk , wmaliktk wjmyʿ khlqk , ank ant allh al- ilh ilal- ant wḥdk al- shryk lk , wan mḥmdan ʿbdk wrswlk ( arbʿ mrat )",
+      "english": "O Allah, verily I have reached the morning and call on You, the bearers of Your throne, Your angels, and all of Your creation to witness that You are Allah, none has the right to be worshipped except You, alone, without partner, and that Muhammad is Your Servant and Messenger."
+    },
+    {
+      "id": "hisn_105",
+      "section": "أذكار الصباح والمساء",
+      "arabic": "اللهم ما أصبح بي من نعمة أو بأحد من خلقك فمنك وحدك لا شريك لك ، فلك الحمد ولك الشكر",
+      "transliteration": "Allhm ma aṣbḥ by mn nʿma aw baḥd mn khlqk fmnk wḥdk al- shryk lk , flk al-ḥmd wlk al-shkr",
+      "english": "O Allah, what blessing I or any of Your creation have risen upon is from You alone, without partner. So for You is all praise and unto You all thanks."
+    },
+    {
+      "id": "hisn_106",
+      "section": "أذكار الصباح والمساء",
+      "arabic": "اللهم عافني في بَدَني، اللهم عافني في سمعي، اللهم عافني في بصري، لا إله إلا أنت .اللهم إني أعوذ بك من الكفر، والفقر، اللهم إني أعوذ بك من عذاب القبر لا إله إلا أنت ( ثلاث مرات )",
+      "transliteration": "Allhm ʿafny fy badany, allhm ʿafny fy smʿy, allhm ʿafny fy bṣry, al- ilh ilal- ant allhm iny aʿwdh bk mn al-kfr, wal-fqr, allhm iny aʿwdh bk mn ʿdhab al-qbr al- ilh ilal- ant ( thal-th mrat )"
+    },
+    {
+      "id": "hisn_107",
+      "section": "أذكار الصباح والمساء",
+      "arabic": "حسبي الله لا إله إلا هو عليه توكلت وهو رب العرش العظيم (سبع مرات )",
+      "transliteration": "ḥsby allh al- ilh ilal- hw ʿlyh twklt whw rb al-ʿrsh al-ʿẓym (sbʿ mrat )",
+      "english": "Allah is Sufficient for me, none has the right to be worshipped except Him, upon Him I rely and He is Lord of the exalted throne."
+    },
+    {
+      "id": "hisn_108",
+      "section": "أذكار الصباح والمساء",
+      "arabic": "اللهم إني أسألك العفو والعافية في الدنيا والآخرة، اللهم إني أسألك العفو والعافية في ديني ودنياي وأهلي ومالي،اللهم استر عوراتي وآمن روعاتي، اللهم احفظني من بين يديَّ ومن خلفي وعن يميني وعن شمالي ومن فوقي وأعوذ بعظمتك أن أغتال من تحتي",
+      "transliteration": "Allhm iny asal-k al-ʿfw wal-ʿafya fy al-dnya wal-ākhrt, allhm iny asal-k al-ʿfw wal-ʿafya fy dyny wdnyay wahly wmal-y,allhm astr ʿwraty wāmn rwʿaty, allhm aḥfẓny mn byn ydyya wmn khlfy wʿn ymyny wʿn shmal-y wmn fwqy waʿwdh bʿẓmtk an aghtal- mn tḥty",
+      "english": "O Allah, I ask You for pardon and well-being in this life and the next. O Allah, I ask You for pardon and well-being in my religious and worldly affairs, and my family and my wealth. O Allah, veil my weaknesses and set at ease my dismay. O Allah, preserve me from the front and from behind and on my right and on my left and from above, and I take refuge with You lest I be swallowed up by the earth."
+    },
+    {
+      "id": "hisn_109",
+      "section": "أذكار الصباح والمساء",
+      "arabic": "اللهم عَالِمَ الغيب والشَّهادة، فاطر السموات والأرض، رب كل شيء ومليكه، أشهد أن لا إله إلا أنت أعوذ بك من شر نفسي ومن شر الشيطان وشركه وأن اقترف على نفسي سوءًا أو أجُره إلى مسلم",
+      "transliteration": "Allhm ʿāl-ima al-ghyb wal-shhahadt, faṭr al-smwat wal-arḍ, rb kl shyʾ wmlykh, ashhd an al- ilh ilal- ant aʿwdh bk mn shr nfsy wmn shr al-shyṭan wshrkh wan aqtrf ʿly nfsy swʾana aw ajurh ily mslm"
+    },
+    {
+      "id": "hisn_110",
+      "section": "أذكار الصباح والمساء",
+      "arabic": "بسم الله الذي لا يضرُّ مع اسمه شيء في الأرض ولا في السماء وهو السميع العليم ( ثلاث مرات )",
+      "transliteration": "Bsm allh al-dhy al- yḍrru mʿ asmh shyʾ fy al-arḍ wal- fy al-smaʾ whw al-smyʿ al-ʿlym ( thal-th mrat )",
+      "english": "In the name of Allah with whose name nothing is harmed on earth nor in the heavens and He is The All-Seeing, The All-Knowing."
+    },
+    {
+      "id": "hisn_111",
+      "section": "أذكار الصباح والمساء",
+      "arabic": "رضيت بالله رباً ، وبالإسلام ديناً وبمحمد صلى الله عليه وسلم نبياً ( ثلاث مرات )",
+      "transliteration": "Rḍyt ballh rban , wbal-isal-m dynan wbmḥmd ṣly allh ʿlyh wslm nbyan ( thal-th mrat )"
+    },
+    {
+      "id": "hisn_112",
+      "section": "أذكار الصباح والمساء",
+      "arabic": "يا حي يا قيوم برحمتك أستغيث أصلح لي شأني كُله ولا تَكِلْني إلى نفسي طرفة عين",
+      "transliteration": "Ya ḥy ya qywm brḥmtk astghyth aṣlḥ ly shany kul-h wal- takil-ny ily nfsy ṭrfa ʿyn",
+      "english": "O Ever Living, O Self-Subsisting and Supporter of all, by Your mercy I seek assistance, rectify for me all of my affairs and do not leave me to myself, even for the blink of an eye."
+    },
+    {
+      "id": "hisn_113",
+      "section": "أذكار الصباح والمساء",
+      "arabic": "أصبحنا وأصبح الملك لله رب العالمين ، اللهم إني أسألك خير هذا اليوم : فتحه، ونصره ،ونوره ،وبركته، وهداه، وأعوذ بك من شر ما فيه وشر ما بعده",
+      "transliteration": "Aṣbḥna waṣbḥ al-mlk llh rb al-ʿal-myn , allhm iny asal-k khyr hdha al-ywm : ftḥh, wnṣrh ,wnwrh ,wbrkth, whdah, waʿwdh bk mn shr ma fyh wshr ma bʿdh",
+      "english": "We have reached the morning and at this very time all sovereignty belongs to Allah, Lord of the worlds. O Allah, I ask You for the good of this day, its triumphs and its victories, its light and its blessings and its guidance, and I take refuge in You from the evil of this day and the evil that follows it."
+    },
+    {
+      "id": "hisn_114",
+      "section": "أذكار الصباح والمساء",
+      "arabic": "أصبحنا على فطرة الإسلام وعلى كلمة الإخلاص، وعلى دين نبيَّنا محمد صلى الله عليه وسلم وعلى ملَّة أبينا إبراهيم حنيفاً مسلماً وما كان من المشركين",
+      "transliteration": "Aṣbḥna ʿly fṭra al-isal-m wʿly klma al-ikhal-ṣ, wʿly dyn nbyyana mḥmd ṣly allh ʿlyh wslm wʿly mllaa abyna ibrahym ḥnyfan mslman wma kan mn al-mshrkyn"
+    },
+    {
+      "id": "hisn_115",
+      "section": "أذكار الصباح والمساء",
+      "arabic": "من قال :سبحان الله وبحمده( مائة مرة )",
+      "transliteration": "Mn qal- :sbḥan allh wbḥmdh( mia mra )",
+      "english": "How perfect Allah is and I praise Him."
+    },
+    {
+      "id": "hisn_116",
+      "section": "أذكار الصباح والمساء",
+      "arabic": "لا إله إلا الله وحده لا شريك له ،له الملك وله الحمد وهو على كل شيء قدير( عشر مرات) ( أو مرة واحدة عند الكسل)",
+      "transliteration": "Al- ilh ilal- allh wḥdh al- shryk lh ,lh al-mlk wlh al-ḥmd whw ʿly kl shyʾ qdyr( ʿshr mrat) ( aw mra waḥda ʿnd al-ksl)",
+      "english": "None has the right to be worshipped except Allah, alone, without partner, to Him belongs all sovereignty and praise, and He is over all things omnipotent."
+    },
+    {
+      "id": "hisn_117",
+      "section": "أذكار الصباح والمساء",
+      "arabic": "لا إله إلا الله وحده لا شريك له ،له الملك وله الحمد وهو على كل شيء قدير(مائة مرة إذا أصبح )",
+      "transliteration": "Al- ilh ilal- allh wḥdh al- shryk lh ,lh al-mlk wlh al-ḥmd whw ʿly kl shyʾ qdyr(mia mra idha aṣbḥ )",
+      "english": "None has the right to be worshipped except Allah, alone, without partner, to Him belongs all sovereignty and praise, and He is over all things omnipotent."
+    },
+    {
+      "id": "hisn_118",
+      "section": "أذكار الصباح والمساء",
+      "arabic": "سبحان الله وبحمده عدد خلقهِ ورِضَا نفسِهِ وزِنُة عَرشِهِ ومِداد كلماته( ثلاث مرات إذا أصبح )",
+      "transliteration": "Sbḥan allh wbḥmdh ʿdd khlqhi wriḍā nfsihi wzinua ʿarshihi wmidad klmath( thal-th mrat idha aṣbḥ )",
+      "english": "How perfect Allah is and I praise Him by the number of His creation and His pleasure, and by the weight of His throne, and the ink of His words."
+    },
+    {
+      "id": "hisn_119",
+      "section": "أذكار الصباح والمساء",
+      "arabic": "اللهم إني أسألك علماً نافعاً ، ورزقاً طيباً ، وعملاً متقبلاً ( إذا أصبح )",
+      "transliteration": "Allhm iny asal-k ʿlman nafʿan , wrzqan ṭyban , wʿmalan mtqbalan ( idha aṣbḥ )",
+      "english": "O Allah, I ask You for knowledge which is beneficial and sustenance which is good, and deeds which are acceptable."
+    },
+    {
+      "id": "hisn_120",
+      "section": "أذكار الصباح والمساء",
+      "arabic": "أستغفر الله وأتوب إليه (مائة مرة في اليوم )",
+      "transliteration": "Astghfr allh watwb ilyh (mia mra fy al-ywm )",
+      "english": "I seek Allaah’s forgiveness and I turn to Him in repentance."
+    },
+    {
+      "id": "hisn_121",
+      "section": "أذكار الصباح والمساء",
+      "arabic": "أعوذ بكلمات الله التامات من شر ما خلق ( ثلاث مرات إذا أمسى)",
+      "transliteration": "Aʿwdh bklmat allh al-tamat mn shr ma khlq ( thal-th mrat idha amsy)",
+      "english": "I take refuge in Allah’s perfect words from the evil He has created."
+    },
+    {
+      "id": "hisn_122",
+      "section": "أذكار الصباح والمساء",
+      "arabic": "اللهم صل وسلم على نبينا محمد (عشر مرات )",
+      "transliteration": "Allhm ṣl wslm ʿly nbyna mḥmd (ʿshr mrat )",
+      "english": "O Allaah, send prayers and peace upon our Prophet Muhammad."
+    },
+    {
+      "id": "hisn_123",
+      "section": "أذكار النوم",
+      "arabic": "يجمع كفيه ثم ينفث فيهما فيقرأ:بسم الله الرحمن الرحيم { قُلْ هُوَ اللَّهُ أَحَدٌ*اللَّهُ الصَّمَدُ*لَمْ يَلِدْ وَلَمْ يُولَدْ*وَلَمْ يَكُن لَّهُ كُفُواً أَحَدٌ} بسم الله الرحمن الرحيم {قُلْ أَعُوذُ بِرَبِّ الْفَلَقِ*مِن شَرِّ مَا خَلَقَ*وَمِن شَرِّ غَاسِقٍ إِذَا وَقَبَ*وَمِن شَرِّ النَّفَّاثَاتِ فِي الْعُقَدِ * وَمِن شَرِّ حَاسِدٍ إِذَا حَسَدَ } بسم الله الرحمن الرحيم { قُلْ أَعُوذُ بِرَبِّ النَّاسِ * مَلِكِ النَّاسِ * إِلَهِ النَّاسِ *مِن شَرِّ الْوَسْوَاسِ الْخَنَّاسِ * الَّذِي يُوَسْوِسُ فِي صُدُورِ النَّاسِ * مِنَ الْجِنَّةِ وَالنَّاسِ } ثم يمسح بهما ما استطاع من جسده يبدأبهما على رأسه ووجهه وما أقبل من جسده ( يفعل ذلك ثلاث مرات )",
+      "transliteration": "Yjmʿ kfyh thm ynfth fyhma fyqra:bsm allh al-rḥmn al-rḥym { qul- huwa Allāhu aḥadun*Allāhu aṣ-ṣamadu*lam yal-id wal-am yūlad*wal-am yakun llahu kufūan aḥadun} bsm allh al-rḥmn al-rḥym {qul- aʿūdhu birabbi al-fal-aqi*min sharri mā khal-aqa*wamin sharri ghāsiqin īdhā waqaba*wamin sharri annaffāthāti fī al-ʿuqadi * wamin sharri ḥāsidin īdhā ḥasada } bsm allh al-rḥmn al-rḥym { qul- aʿūdhu birabbi annāsi * mal-iki annāsi * īlillāhi annāsi *min sharri al-waswāsi al-khannāsi * al-adhī yūaswisu fī ṣudūri annāsi * mina al-jinnati wāl-nnāsi } thm ymsḥ bhma ma astṭaʿ mn jsdh ybdabhma ʿly rash wwjhh wma aqbl mn jsdh ( yfʿl dhlk thal-th mrat )"
+    },
+    {
+      "id": "hisn_124",
+      "section": "أذكار النوم",
+      "arabic": "{ اللّهُ لاَ إِلَهَ إِلاَّ هُوَ الْحَيُّ الْقَيُّومُ لاَ تَأْخُذُهُ سِنَةٌ وَلاَ نَوْمٌ لَّهُ مَا فِي السَّمَاوَاتِ وَمَا فِي الأَرْضِ مَن ذَا الَّذِي يَشْفَعُ عِنْدَهُ إِلاَّ بِإِذْنِهِ يَعْلَمُ مَا بَيْنَ أَيْدِيهِمْ وَمَا خَلْفَهُمْ وَلاَ يُحِيطُونَ بِشَيْءٍ مِّنْ عِلْمِهِ إِلاَّ بِمَا شَاء وَسِعَ كُرْسِيُّهُ السَّمَاوَاتِ وَالأَرْضَ وَلاَ يَؤُودُهُ حِفْظُهُمَا وَهُوَ الْعَلِيُّ الْعَظِيمُ }",
+      "transliteration": "{ allhu alā ilāha īlallā huwa al-ḥayyu al-qayyuwmu alā takhudhuhu sinatun walalā nawmun llahu mā fī assamāwāti wamā fī al-arḍi man dhā al-adhī yashfaʿu ʿindahu īlallā bidhnihi yaʿlamu mā bayna aydīhim wamā khal-fahum walalā yuḥīṭūna bishayʾin min ʿil-mihi īlallā bimā shāʾ wasiʿa kursīīuhu assamāwāti wāl-arḍa walalā yūduhu ḥifẓuhumā wahūa al-ʿal-īīu al-ʿaẓīmu }"
+    },
+    {
+      "id": "hisn_125",
+      "section": "أذكار النوم",
+      "arabic": "{ آمَنَ الرَّسُولُ بِمَا أُنزِلَ إِلَيْهِ مِن رَّبِّهِ وَالْمُؤْمِنُونَ كُلٌّ آمَنَ بِاللّهِ وَمَلآئِكَتِهِ وَكُتُبِهِ وَرُسُلِهِ لاَ نُفَرِّقُ بَيْنَ أَحَدٍ مِّن رُّسُلِهِ وَقَالُواْ سَمِعْنَا وَأَطَعْنَا غُفْرَانَكَ رَبَّنَا وَإِلَيْكَ الْمَصِيرُ * لاَ يُكَلِّفُ اللّهُ نَفْساً إِلاَّ وُسْعَهَا لَهَا مَا كَسَبَتْ وَعَلَيْهَا مَا اكْتَسَبَتْ رَبَّنَا لاَ تُؤَاخِذْنَا إِن نَّسِينَا أَوْ أَخْطَأْنَا رَبَّنَا وَلاَ تَحْمِلْ عَلَيْنَا إِصْراً كَمَا حَمَلْتَهُ عَلَى الَّذِينَ مِن قَبْلِنَا رَبَّنَا وَلاَ تُحَمِّلْنَا مَا لاَ طَاقَةَ لَنَا بِهِ وَاعْفُ عَنَّا وَاغْفِرْ لَنَا وَارْحَمْنَا أَنتَ مَوْلاَنَا فَانصُرْنَا عَلَى الْقَوْمِ الْكَافِرِينَ }",
+      "transliteration": "{ āmana arrasūlu bimā unzil-a īl-ayhi min rrabbihi wāl-muminūna kul-unn āmana biallhi wamal-āīkatihi wakutubihi warusul-ihi alā nufarriqu bayna aḥadin min rrusul-ihi waqāl-ūa samiʿnā waṭaʿnā ghufrānaka rabbanā wīl-ayka al-maṣīru * alā yukal-ifu allhu nafsan īlallā wusʿahā lahā mā kasabat waʿal-ayhā mā aktasabat rabbanā alā tuākhidhnā īn nnasīnā aw akhṭanā rabbanā walalā taḥmil- ʿal-aynā īṣran kamā ḥamal-tahu ʿal-ay al-adhīna min qablinā rabbanā walalā tuḥammilnā mā alā ṭāqata lanā bihi wāʿfu ʿannā wāghfir lanā wārḥamnā anta mawalānā fānṣurnā ʿal-ay al-qawmi al-kāfirīna }"
+    },
+    {
+      "id": "hisn_126",
+      "section": "أذكار النوم",
+      "arabic": "باسمك ربي وضعت جنبي وبك أرفعه إن أمسكت نفسي فارحمها، وإن أرسلتها فاحفظها بما تحفظ به عبادك الصالحين",
+      "transliteration": "Basmk rby wḍʿt jnby wbk arfʿh in amskt nfsy farḥmha, win arsltha faḥfẓha bma tḥfẓ bh ʿbadk al-ṣal-ḥyn"
+    },
+    {
+      "id": "hisn_127",
+      "section": "أذكار النوم",
+      "arabic": "اللهم خَلَقْتَ نفسي وأنت توفَّاها لك مماتها ومَحْياها، إن أحييتها فاحفظها وإن أمتها فاغفر لها، اللهم إني أسألك العافية",
+      "transliteration": "Allhm khal-aqta nfsy want twffāha lk mmatha wmaḥyaha, in aḥyytha faḥfẓha win amtha faghfr lha, allhm iny asal-k al-ʿafya"
+    },
+    {
+      "id": "hisn_128",
+      "section": "أذكار النوم",
+      "arabic": "اللهم قني عذابك يوم تبعث عبادك ( ثلاث مرات )",
+      "transliteration": "Allhm qny ʿdhabk ywm tbʿth ʿbadk ( thal-th mrat )"
+    },
+    {
+      "id": "hisn_129",
+      "section": "أذكار النوم",
+      "arabic": "باسمِكَ اللهم أموت وأحيا",
+      "transliteration": "Basmika allhm amwt waḥya"
+    },
+    {
+      "id": "hisn_130",
+      "section": "أذكار النوم",
+      "arabic": "سبحان الله ( ثلاثاً وثلاثين ) والحمد لله ( ثلاثاً وثلاثين ) والله أكبر ( أربعاً وثلاثين )",
+      "transliteration": "Sbḥan allh ( thal-than wthal-thyn ) wal-ḥmd llh ( thal-than wthal-thyn ) wallh akbr ( arbʿan wthal-thyn )"
+    },
+    {
+      "id": "hisn_131",
+      "section": "أذكار النوم",
+      "arabic": "اللهم ربَّ السموات السبع،ورب العرش العظيم،ربنا ورب كل شيء، فالق الحب والنوى، ومُنزل التوراة والإنجيل والفرقان، أعوذ بك من شر كل شيء أنت آخذٌ بناصيته،اللهم أنت الأول فليس قبلك شيء،وأنت الآخر فليس بعدك شيء، وأنت الظاهر فليس فوقك شيء، وأنت الباطن فليس دونك شيء، اقض عنا الدَّيْنَ واغننا من الفقر",
+      "transliteration": "Allhm rbba al-smwat al-sbʿ,wrb al-ʿrsh al-ʿẓym,rbna wrb kl shyʾ, fal-q al-ḥb wal-nwy, wmunzl al-twrā wal-injyl wal-frqan, aʿwdh bk mn shr kl shyʾ ant ākhdhun bnaṣyth,allhm ant al-awl flys qblk shyʾ,want al-ākhr flys bʿdk shyʾ, want al-ẓahr flys fwqk shyʾ, want al-baṭn flys dwnk shyʾ, aqḍ ʿna addayna waghnna mn al-fqr"
+    },
+    {
+      "id": "hisn_132",
+      "section": "أذكار النوم",
+      "arabic": "الحمد لله الذي أطعمنا وسقانا وكفانا وآوانا فكم ممن لا كافي له ولا مؤوي",
+      "transliteration": "Al-ḥmd llh al-dhy aṭʿmna wsqana wkfana wāwana fkm mmn al- kafy lh wal- mūy"
+    },
+    {
+      "id": "hisn_133",
+      "section": "أذكار النوم",
+      "arabic": "اللهم عالم الغيب والشهادة، فاطر السموات والأرض، رب كل شيء ومليكه أشهد أن لا إله إلا أنت أعوذ بك من شر نفسي، ومن شر الشيطان وشركه وأن أقترف على نفسي سوءًا أو أجرَّه إلى مسلم",
+      "transliteration": "Allhm ʿal-m al-ghyb wal-shhadt, faṭr al-smwat wal-arḍ, rb kl shyʾ wmlykh ashhd an al- ilh ilal- ant aʿwdh bk mn shr nfsy, wmn shr al-shyṭan wshrkh wan aqtrf ʿly nfsy swʾana aw ajrrah ily mslm",
+      "english": "(O Allah, Knower of the unseen and the seen, Creator of the heavens and the Earth, Lord and Sovereign of all things, I bear witness that none has the right to be worshipped except You. I take refuge in You from the evil of my soul and from the evil and shirk of the devil, and from committing wrong against my soul or bringing such upon another Muslim.)(shirk: to associate others with Allah in those things which are specific to Him.  This can occur in (1) belief, e.g. to believe that other than Allah has the power to benefit or harm, (2) speech, e.g. to swear by other than Allah and (3) action, e.g. to bow or prostrate to other than Allah.)"
+    },
+    {
+      "id": "hisn_134",
+      "section": "أذكار النوم",
+      "arabic": "يقرأ { ألم } تنزيل السجدة، و { تبارك الذي بيده الملك }",
+      "transliteration": "Yqra { al-m } tnzyl al-sjdt, ū { tbark al-dhy bydh al-mlk }"
+    },
+    {
+      "id": "hisn_135",
+      "section": "أذكار النوم",
+      "arabic": "اللهم أسلمت نفسي إليك، وفوضت أمري إليك وألجأت ظهري إليك رهبةً ورغبةً إليك، لا ملجأ ولا منجا منك إلا إليك، آمنت بكتابك الذي أنزلت وبنبيك الذي أرسلت",
+      "transliteration": "Allhm aslmt nfsy ilyk, wfwḍt amry ilyk wal-jat ẓhry ilyk rhbtan wrghbtan ilyk, al- mlja wal- mnja mnk ilal- ilyk, āmnt bktabk al-dhy anzlt wbnbyk al-dhy arslt"
+    },
+    {
+      "id": "hisn_136",
+      "section": "الدعاء إذا تقلب ليلاً",
+      "arabic": "لا إله إلا الله الواحد القهار، ربُّ السموات والأرض وما بينهما العزيز الغفار",
+      "transliteration": "Al- ilh ilal- allh al-waḥd al-qhar, rbbu al-smwat wal-arḍ wma bynhma al-ʿzyz al-ghfar"
+    },
+    {
+      "id": "hisn_137",
+      "section": "دعاء القلق والفزع في النوم ومن بلي بالوحشة",
+      "arabic": "أعوذ بكلمات الله التَّامَّة من غضبه وعقابه، وشر عباده، ومن همزات الشياطين وأنْ يحضرون",
+      "transliteration": "Aʿwdh bklmat allh attāmmaa mn ghḍbh wʿqabh, wshr ʿbadh, wmn hmzat al-shyaṭyn wan yḥḍrwn"
+    },
+    {
+      "id": "hisn_138",
+      "section": "ما يفعل من رأى الرؤيا أو الحلم",
+      "arabic": "ينفث عن يساره ( ثلاثاً )",
+      "transliteration": "Ynfth ʿn ysarh ( thal-than )"
+    },
+    {
+      "id": "hisn_139",
+      "section": "ما يفعل من رأى الرؤيا أو الحلم",
+      "arabic": "يستعيذ بالله من الشيطان ومن شر ما رأى ( ثلاث مرات )",
+      "transliteration": "Ystʿydh ballh mn al-shyṭan wmn shr ma ray ( thal-th mrat )"
+    },
+    {
+      "id": "hisn_140",
+      "section": "ما يفعل من رأى الرؤيا أو الحلم",
+      "arabic": "لا يحدث بها أحدا ً",
+      "transliteration": "Al- yḥdth bha aḥda an"
+    },
+    {
+      "id": "hisn_141",
+      "section": "ما يفعل من رأى الرؤيا أو الحلم",
+      "arabic": "يتحول عن جنبه الذي كان عليه",
+      "transliteration": "Ytḥwl ʿn jnbh al-dhy kan ʿlyh"
+    },
+    {
+      "id": "hisn_142",
+      "section": "ما يفعل من رأى الرؤيا أو الحلم",
+      "arabic": "يقوم يصلي إن أراد ذلك",
+      "transliteration": "Yqwm yṣly in arad dhlk"
+    },
+    {
+      "id": "hisn_143",
+      "section": "دعاء قنوت الوتر",
+      "arabic": "اللهم اهدني فيمن هديت ، وعافني فيمن عافيت ، وتولني فيمن توليت ، وبارك لي فيما أعطيت ، وقني شر ما قضيت ، فإنك تقضي ولا يقضى عليك ، إنه لا يذل من واليت ،[ ولا يعز من عاديت ] تباركت ربنا وتعاليت",
+      "transliteration": "Allhm ahdny fymn hdyt , wʿafny fymn ʿafyt , wtwlny fymn twlyt , wbark ly fyma aʿṭyt , wqny shr ma qḍyt , fink tqḍy wal- yqḍy ʿlyk , inh al- ydhl mn wal-yt ,[ wal- yʿz mn ʿadyt ] tbarkt rbna wtʿal-yt"
+    },
+    {
+      "id": "hisn_144",
+      "section": "دعاء قنوت الوتر",
+      "arabic": "اللهم إني أعوذ برضاك من سخطك وأعوذ بمعافاتك من عقوبتك ، وأعوذ بك منك لا أحصي ثناء عليك ، أنت كما أثنيت على نفسك",
+      "transliteration": "Allhm iny aʿwdh brḍak mn skhṭk waʿwdh bmʿafatk mn ʿqwbtk , waʿwdh bk mnk al- aḥṣy thnaʾ ʿlyk , ant kma athnyt ʿly nfsk"
+    },
+    {
+      "id": "hisn_145",
+      "section": "دعاء قنوت الوتر",
+      "arabic": "اللهم إياك نعبد ، ولك نُصلي ونسجد ، وإليك نسعى ونحفدُ ، نرجُو رحمتك ، ونخشى عذابك ، إن عذابك بالكافرين ملحق ، اللهم إنا نستعينك ، ونستغفرك ، ونثني عليك الخير ، ولا نكفرك ، ونؤمن بك ونخضع لك ، ونخلع من يكفرك",
+      "transliteration": "Allhm īak nʿbd , wlk nuṣly wnsjd , wil-yk nsʿy wnḥfdu , nrjū rḥmtk , wnkhshy ʿdhabk , in ʿdhabk bal-kafryn mlḥq , allhm ina nstʿynk , wnstghfrk , wnthny ʿlyk al-khyr , wal- nkfrk , wnumn bk wnkhḍʿ lk , wnkhlʿ mn ykfrk"
+    },
+    {
+      "id": "hisn_146",
+      "section": "الذكر عقب السلام من الوتر",
+      "arabic": "كان رسول الله صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ يقرأ في الوتر :( سَبِّحِ اسْمَ رَبِّكَ الْأَعْلَى ) و ( وَقُلْ يَا أَيُّهَا الْكَافِرُونَ ) و ( وَقُلْ هُوَ اللَّهُ أَحَدٌ ). فإذا سلم قال سبحان الملك القدوس [ رب الملائكة والروح ] ثلاث مرات والثالثة يجهر بها ويمد بها صوته",
+      "transliteration": "Kan rswl allh ṣal-ay Allāhu ʿal-ayhi wasal-ama yqra fy al-wtr :( sabbiḥi asma rabbika alaʿlay ) ū ( waqul- yā ayyuhā al-kāfirūna ) ū ( waqul- huwa Allāhu aḥadun ) fidha slm qal- sbḥan al-mlk al-qdws [ rb al-malika wal-rwḥ ] thal-th mrat wal-thal-tha yjhr bha wymd bha ṣwth"
+    },
+    {
+      "id": "hisn_147",
+      "section": "دعاء الهم والحزن",
+      "arabic": "اللهم إني عبدك ابن عبدك ابن أمتك ناصيتي بيدك،ماضِ في حكمك ، عدل في قضاؤك ،أسألك بكل اسم هو لك سميت به نفسك أو أنزلته في كتابك ، أو علمته أحداً من خلقك أو استأثرت به في علم الغيب عندك أن تجعل القرآن ربيع قلبي ، ونور صدري ،وجلاء حزني وذهاب همي",
+      "transliteration": "Allhm iny ʿbdk abn ʿbdk abn amtk naṣyty bydk,maḍi fy ḥkmk , ʿdl fy qḍuk ,asal-k bkl asm hw lk smyt bh nfsk aw anzlth fy ktabk , aw ʿlmth aḥdan mn khlqk aw astathrt bh fy ʿlm al-ghyb ʿndk an tjʿl al-qrān rbyʿ qlby , wnwr ṣdry ,wjal-ʾ ḥzny wdhhab hmy"
+    },
+    {
+      "id": "hisn_148",
+      "section": "دعاء الهم والحزن",
+      "arabic": "اللهم إني أعوذ بك من الهم والحزن ، والعجز والكسل والبخل والجبن ، وضلع الدين وغلبة الرجال",
+      "transliteration": "Allhm iny aʿwdh bk mn al-hm wal-ḥzn , wal-ʿjz wal-ksl wal-bkhl wal-jbn , wḍlʿ al-dyn wghlba al-rjal-"
+    },
+    {
+      "id": "hisn_149",
+      "section": "دعاء الكرب",
+      "arabic": "لا إله إلا الله العظيم الحليم ، لا إله إلا الله رب العرش العظيم ، لا إله إلا الله رب السموات ورب العرش الكريم",
+      "transliteration": "Al- ilh ilal- allh al-ʿẓym al-ḥlym , al- ilh ilal- allh rb al-ʿrsh al-ʿẓym , al- ilh ilal- allh rb al-smwat wrb al-ʿrsh al-krym"
+    },
+    {
+      "id": "hisn_150",
+      "section": "دعاء الكرب",
+      "arabic": "اللهم رحمتك أرجو فلا تكلني إلى نفسي طرفة عين ِ وأصلح لي شأني كله لا إله إلا أنت",
+      "transliteration": "Allhm rḥmtk arjw fal- tklny ily nfsy ṭrfa ʿyn i waṣlḥ ly shany klh al- ilh ilal- ant"
+    },
+    {
+      "id": "hisn_151",
+      "section": "دعاء الكرب",
+      "arabic": "لا إله إلا أنت سبحانك إني كنت من الظالمين",
+      "transliteration": "Al- ilh ilal- ant sbḥank iny knt mn al-ẓal-myn"
+    },
+    {
+      "id": "hisn_152",
+      "section": "دعاء الكرب",
+      "arabic": "الله الله ربي لا أشرك به شيئاً",
+      "transliteration": "Allh allh rby al- ashrk bh shyian"
+    },
+    {
+      "id": "hisn_153",
+      "section": "دعاء لقاء العدو وذي السلطان",
+      "arabic": "اللهم إنا نجعلك في نحورهم ونعوذ بك من شرورهم",
+      "transliteration": "Allhm ina njʿlk fy nḥwrhm wnʿwdh bk mn shrwrhm"
+    },
+    {
+      "id": "hisn_154",
+      "section": "دعاء لقاء العدو وذي السلطان",
+      "arabic": "اللهم أنت عضُدي وأنت نصيري ، بك أحولُ ،وبك أصولُ ، وبك أُقاتلُ",
+      "transliteration": "Allhm ant ʿḍudy want nṣyry , bk aḥwlu ,wbk aṣwlu , wbk uqatlu"
+    },
+    {
+      "id": "hisn_155",
+      "section": "دعاء لقاء العدو وذي السلطان",
+      "arabic": "حسبنا الله ونعم الوكيل",
+      "transliteration": "ḥsbna allh wnʿm al-wkyl"
+    },
+    {
+      "id": "hisn_156",
+      "section": "دعاء من خاف ظلم السلطان",
+      "arabic": "اللهم رب السموات السبع ،ورب العرش العظيم ،كن لي جاراً من فلان بن فلان ، وأحزابه من خلائقك ؛ أن يفرط على أحد منهم أو يطغى ، عز جارك ،وجل ثناؤك ،ولا إله إلا أنت",
+      "transliteration": "Allhm rb al-smwat al-sbʿ ,wrb al-ʿrsh al-ʿẓym ,kn ly jaran mn fal-n bn fal-n , waḥzabh mn khaliqk ; an yfrṭ ʿly aḥd mnhm aw yṭghy , ʿz jark ,wjl thnuk ,wal- ilh ilal- ant"
+    },
+    {
+      "id": "hisn_157",
+      "section": "دعاء من خاف ظلم السلطان",
+      "arabic": "الله أكبر، الله أعز من خلقه جميعاً ، الله أعز مما أخاف وأحذر ،أعوذ بالله الذي لا إله إلا هو ، الممسك السموات السبع أن يقعن على الأرض إلا بإذنه ،من شر عبدك فلان ،وجنوده وأتباعه وأشياعه ، من الجن والأنس ، اللهم كن لي جاراً من شرهم ، جل ثناؤك وعز جارك ، وتبارك اسمك ، ولا إله غيرك ( ثلاث مرات )",
+      "transliteration": "Allh akbr, allh aʿz mn khlqh jmyʿan , allh aʿz mma akhaf waḥdhr ,aʿwdh ballh al-dhy al- ilh ilal- hw , al-mmsk al-smwat al-sbʿ an yqʿn ʿly al-arḍ ilal- bidhnh ,mn shr ʿbdk fal-n ,wjnwdh watbaʿh washyaʿh , mn al-jn wal-ans , allhm kn ly jaran mn shrhm , jl thnuk wʿz jark , wtbark asmk , wal- ilh ghyrk ( thal-th mrat )"
+    },
+    {
+      "id": "hisn_158",
+      "section": "الدعاء على العدو",
+      "arabic": "اللهم منزل الكتاب ، سريع الحساب ،اهزم الأحزاب ،اللهم اهزمهم وزلزلهم",
+      "transliteration": "Allhm mnzl al-ktab , sryʿ al-ḥsab ,ahzm al-aḥzab ,allhm ahzmhm wzlzlhm"
+    },
+    {
+      "id": "hisn_159",
+      "section": "ما يقول من خاف قوماً",
+      "arabic": "اللهم اكفنيهم بما شئت",
+      "transliteration": "Allhm akfnyhm bma shit"
+    },
+    {
+      "id": "hisn_160",
+      "section": "دعاء من أصابه شك في الإيمان",
+      "arabic": "يستعيذ بالله",
+      "transliteration": "Ystʿydh ballh"
+    },
+    {
+      "id": "hisn_161",
+      "section": "دعاء من أصابه شك في الإيمان",
+      "arabic": "ينتهي عما شك فيه",
+      "transliteration": "Ynthy ʿma shk fyh"
+    },
+    {
+      "id": "hisn_162",
+      "section": "دعاء من أصابه شك في الإيمان",
+      "arabic": "يقول آمنت بالله ورسله",
+      "transliteration": "Yqwl āmnt ballh wrslh"
+    },
+    {
+      "id": "hisn_163",
+      "section": "دعاء من أصابه شك في الإيمان",
+      "arabic": "يقرأ قوله تعالى { هُوَ الْأَوَّلُ وَالْآخِرُ وَالظَّاهِرُ وَالْبَاطِنُ وَهُوَ بِكُلِّ شَيْءٍ عَلِيمٌ }",
+      "transliteration": "Yqra qwlh tʿal-y { huwa alawwalu wāl-ākhiru wāl-ẓẓāhiru wāl-bāṭinu wahūa bikul-i shayʾin ʿal-īmun }"
+    },
+    {
+      "id": "hisn_164",
+      "section": "الدعاء قضاء الدين",
+      "arabic": "اللهم اكفني بحلالك عن حرامك ، وأغنني بفضلك عمن سواك",
+      "transliteration": "Allhm akfny bḥall-k ʿn ḥramk , waghnny bfḍlk ʿmn swak"
+    },
+    {
+      "id": "hisn_165",
+      "section": "الدعاء قضاء الدين",
+      "arabic": "اللهم إني أعوذ بك من الهم والحزن ، والعجز والكسل ،والبخل والجبن وضلع الدين وغلبة الرجال",
+      "transliteration": "Allhm iny aʿwdh bk mn al-hm wal-ḥzn , wal-ʿjz wal-ksl ,wal-bkhl wal-jbn wḍlʿ al-dyn wghlba al-rjal-"
+    },
+    {
+      "id": "hisn_166",
+      "section": "دعاء الوسوسة في الصلاة والقراءة",
+      "arabic": "أعوذ بالله من الشيطان الرجيم واتفل على يسارك ( ثلاثاً )",
+      "transliteration": "Aʿwdh ballh mn al-shyṭan al-rjym watfl ʿly ysark ( thal-than )"
+    },
+    {
+      "id": "hisn_167",
+      "section": "دعاء من استصعب عليه أمر",
+      "arabic": "اللهم لا سهل إلا ما جعلته سهلاً وأنت تجعل الحزن إذا شئت سهلاً",
+      "transliteration": "Allhm al- shl ilal- ma jʿlth shalan want tjʿl al-ḥzn idha shit shalan"
+    },
+    {
+      "id": "hisn_168",
+      "section": "ما يقول ويفعل من أذنب ذنباً",
+      "arabic": "ما من عبدٍ يذنب ذنباً فيحسن الطهور ، ثم يقوم فيصلي ركعتين ، ثم يستغفر الله إلا غفر الله لهُ",
+      "transliteration": "Ma mn ʿbdin ydhnb dhnban fyḥsn al-ṭhwr , thm yqwm fyṣly rkʿtyn , thm ystghfr allh ilal- ghfr allh lhu"
+    },
+    {
+      "id": "hisn_169",
+      "section": "دعاء طرد الشيطان ووساوسه",
+      "arabic": "الاستعاذة بالله منه",
+      "transliteration": "Alal-stʿadha ballh mnh"
+    },
+    {
+      "id": "hisn_170",
+      "section": "دعاء طرد الشيطان ووساوسه",
+      "arabic": "الأذان",
+      "transliteration": "Al-adhan"
+    },
+    {
+      "id": "hisn_171",
+      "section": "دعاء طرد الشيطان ووساوسه",
+      "arabic": "الأذكار وقراءة القرآن",
+      "transliteration": "Al-adhkar wqraʾa al-qrān"
+    },
+    {
+      "id": "hisn_172",
+      "section": "الدعاء حينما يقع مالا يرضاه أو غلب على أمره",
+      "arabic": "قدر الله وما شاء فعل",
+      "transliteration": "Qdr allh wma shaʾ fʿl"
+    },
+    {
+      "id": "hisn_173",
+      "section": "الدعاء حينما يقع مالا يرضاه أو غلب على أمره",
+      "arabic": "إذا غلبك أمر فقل : حسبي الله ونعم الوكيل",
+      "transliteration": "Idha ghlbk amr fql : ḥsby allh wnʿm al-wkyl"
+    },
+    {
+      "id": "hisn_174",
+      "section": "تهنئة المولود له وجوابه",
+      "arabic": "بارك الله لك في الموهوب لك ،وشكرت الواهب، وبلغ أشدهُ، ورزقت برهُ .ويردُ عليه المهنأ فيقول : بارك الله لك وبارك عليك ، وجزاك الله خيراً ، ورزقك الله مثله، وأجزل ثوابك",
+      "transliteration": "Bark allh lk fy al-mwhwb lk ,wshkrt al-wahb, wblgh ashdhu, wrzqt brhu wyrdu ʿlyh al-mhna fyqwl : bark allh lk wbark ʿlyk , wjzak allh khyran , wrzqk allh mthlh, wajzl thwabk"
+    },
+    {
+      "id": "hisn_175",
+      "section": "ما يعوذ به الأولاد",
+      "arabic": "كان رسول الله صلى الله عليه وسلم يعوذ الحسن والحسين أعيذكما بكلمات الله التامة ، من كل شيطان وهامة ، ومن كل عينِ لامة",
+      "transliteration": "Kan rswl allh ṣly allh ʿlyh wslm yʿwdh al-ḥsn wal-ḥsyn aʿydhkma bklmat allh al-tama , mn kl shyṭan whama , wmn kl ʿyni al-ma"
+    },
+    {
+      "id": "hisn_176",
+      "section": "الدعاء للمريض في عيادته",
+      "arabic": "لا بأس طهور إن شاء الله",
+      "transliteration": "Al- bas ṭhwr in shaʾ allh"
+    },
+    {
+      "id": "hisn_177",
+      "section": "الدعاء للمريض في عيادته",
+      "arabic": "أسأل الله العظيم رب العرش العظيم أن يشفيك ( سبع مرات )",
+      "transliteration": "Asal- allh al-ʿẓym rb al-ʿrsh al-ʿẓym an yshfyk ( sbʿ mrat )"
+    },
+    {
+      "id": "hisn_178",
+      "section": "فضل عيادة المريض",
+      "arabic": "قال صلى الله عليه وسلم : إذا عاد الرجل أخاه المسلم مشى في خرافة الجنة حتى يجلس فإذا جلس غمرته الرحمة ، فإن كان غدوة صلى عليه سبعون ألف ملك حتى يمسي ، وإن كان مساء صلى عليه سبعون ألف ملك حتى يصبح",
+      "transliteration": "Qal- ṣly allh ʿlyh wslm : idha ʿad al-rjl akhah al-mslm mshy fy khrafa al-jna ḥty yjls fidha jls ghmrth al-rḥma , fin kan ghdwa ṣly ʿlyh sbʿwn al-f mlk ḥty ymsy , win kan msaʾ ṣly ʿlyh sbʿwn al-f mlk ḥty yṣbḥ"
+    },
+    {
+      "id": "hisn_179",
+      "section": "دعاء المريض الذي يئس من حياته",
+      "arabic": "اللهم اغفر لي وارحمني والحقني بالرفيق الأعلى",
+      "transliteration": "Allhm aghfr ly warḥmny wal-ḥqny bal-rfyq al-aʿly"
+    },
+    {
+      "id": "hisn_180",
+      "section": "دعاء المريض الذي يئس من حياته",
+      "arabic": "جعل النبي صلى الله عليه وسلم يدخل يديه في الماء فيمسح بهما وجههُ ويقول : لا إله إلا الله إن للموت لسكرات",
+      "transliteration": "Jʿl al-nby ṣly allh ʿlyh wslm ydkhl ydyh fy al-maʾ fymsḥ bhma wjhhu wyqwl : al- ilh ilal- allh in llmwt lskrat"
+    },
+    {
+      "id": "hisn_181",
+      "section": "دعاء المريض الذي يئس من حياته",
+      "arabic": "لا إله إلا الله والله أكبر ، لا إله إلا الله وحده ، لا إله إلا الله وحده لا شريك لهُ ، لا إله إلا الله لهُ الملك ولهُ الحمد ، لا إله إلا الله ولا حول ولا قوة إلا بالله",
+      "transliteration": "Al- ilh ilal- allh wallh akbr , al- ilh ilal- allh wḥdh , al- ilh ilal- allh wḥdh al- shryk lhu , al- ilh ilal- allh lhu al-mlk wlhu al-ḥmd , al- ilh ilal- allh wal- ḥwl wal- qwa ilal- ballh"
+    },
+    {
+      "id": "hisn_182",
+      "section": "تلقين المحتضر",
+      "arabic": "من كان آخر كلامه لا إله إلا الله دخل الجنة",
+      "transliteration": "Mn kan ākhr kal-mh al- ilh ilal- allh dkhl al-jna"
+    },
+    {
+      "id": "hisn_183",
+      "section": "دعاء من أصيب بمصيبة",
+      "arabic": "إنا لله وإنا إليه راجعون اللهم أجرني في مصيبتي وأخلف لي خيراً منها",
+      "transliteration": "Ina llh wina ilyh rajʿwn allhm ajrny fy mṣybty wakhlf ly khyran mnha"
+    },
+    {
+      "id": "hisn_184",
+      "section": "الدعاء عند إغماض الميت",
+      "arabic": "اللهم اغفر لفلان ( باسمه ) ورفع درجته في المهديين، واخلفه في عقبه في الغابرين، واغفر لنا وله يا رب العالمين ،وافسح له في قبره ونور له فيه",
+      "transliteration": "Allhm aghfr lfal-n ( basmh ) wrfʿ drjth fy al-mhdyyn, wakhlfh fy ʿqbh fy al-ghabryn, waghfr lna wlh ya rb al-ʿal-myn ,wafsḥ lh fy qbrh wnwr lh fyh"
+    },
+    {
+      "id": "hisn_185",
+      "section": "الدعاء للميت في الصلاة عليه",
+      "arabic": "اللهم اغفر له وارحمه، وعافه ،واعف عنه ،وأكرم نُزُله ، ووسع مُدخلهُ ، واغسله بالماء والثلج والبرد ، ونقه من الخطايا كما ينقى الثوب الأبيض من الدنس ، وأبدله داراً خيراً من داره ، وأهلاً خيراً من أهله وزوجاً خيراً من زوجه، وأدخله الجنة ،وأعذه من عذاب القبر ( ومن عذاب النار )",
+      "transliteration": "Allhm aghfr lh warḥmh, wʿafh ,waʿf ʿnh ,wakrm nuzul-h , wwsʿ mudkhlhu , waghslh bal-maʾ wal-thlj wal-brd , wnqh mn al-khṭaya kma ynqy al-thwb al-abyḍ mn al-dns , wabdlh daran khyran mn darh , wahalan khyran mn ahlh wzwjan khyran mn zwjh, wadkhlh al-jna ,waʿdhh mn ʿdhab al-qbr ( wmn ʿdhab al-nar )"
+    },
+    {
+      "id": "hisn_186",
+      "section": "الدعاء للميت في الصلاة عليه",
+      "arabic": "اللهم اغفر لحينا وميتنا ، وشاهدنا وغائبنا ، وصغيرنا وكبيرنا ، وذكرنا وأُنثانا ، اللهم من أحييته منا فأحيه على الإسلام ، ومن توفيته منا فتوفه على الإيمان ، اللهم لا تحرمنا أجره ولا تضلنا بعده",
+      "transliteration": "Allhm aghfr lḥyna wmytna , wshahdna wghibna , wṣghyrna wkbyrna , wdhkrna wunthana , allhm mn aḥyyth mna faḥyh ʿly al-isal-m , wmn twfyth mna ftwfh ʿly al-īman , allhm al- tḥrmna ajrh wal- tḍlna bʿdh"
+    },
+    {
+      "id": "hisn_187",
+      "section": "الدعاء للميت في الصلاة عليه",
+      "arabic": "اللهم إن فلان بن فلان في ذمتك،وحبل جوارك،فقه من فتنة القبر وعذاب النار،وأنت أهل الوفاء والحق .فاغفر له وارحمهُ إنك أنت الغفور الرحيم",
+      "transliteration": "Allhm in fal-n bn fal-n fy dhmtk,wḥbl jwark,fqh mn ftna al-qbr wʿdhab al-nar,want ahl al-wfaʾ wal-ḥq faghfr lh warḥmhu ink ant al-ghfwr al-rḥym"
+    },
+    {
+      "id": "hisn_188",
+      "section": "الدعاء للميت في الصلاة عليه",
+      "arabic": "اللهم عبدك وابن عبدك وابن أمتك احتاج إلى رحمتك ،وأنت غني عن عذابه،إن كان مُحسناً فزده في حسناته، وإن كان مُسيئاً فتجاوز عنه",
+      "transliteration": "Allhm ʿbdk wabn ʿbdk wabn amtk aḥtaj ily rḥmtk ,want ghny ʿn ʿdhabh,in kan muḥsnan fzdh fy ḥsnath, win kan musyian ftjawz ʿnh"
+    },
+    {
+      "id": "hisn_189",
+      "section": "الدعاء للفرط في الصلاة عليه",
+      "arabic": "اللهم أعذه من عذاب القبر",
+      "transliteration": "Allhm aʿdhh mn ʿdhab al-qbr"
+    },
+    {
+      "id": "hisn_190",
+      "section": "الدعاء للفرط في الصلاة عليه",
+      "arabic": "أن قال : اللهم اجعله فرطاً وذخراً لوالديه ،وشفيعاً مجاباً .اللهم ثقل به موازينها وأعظم به أجورهما ، وألحقهُ بصالح المؤمنين ، واجعلهُ في كفالة إبراهيم ، وقه برحمتك عذاب الجحيم ، وأبدله داراً خيراً من داره ، وأهلاً خيراً من أهله ، اللهم اغفر لاسلافنا ، وأفراطنا ، ومن سبقنا بالإيمان فحسن",
+      "transliteration": "An qal- : allhm ajʿlh frṭan wdhkhran lwal-dyh ,wshfyʿan mjaban allhm thql bh mwazynha waʿẓm bh ajwrhma , wal-ḥqhu bṣal-ḥ al-mumnyn , wajʿlhu fy kfal-a ibrahym , wqh brḥmtk ʿdhab al-jḥym , wabdlh daran khyran mn darh , wahalan khyran mn ahlh , allhm aghfr al-sal-fna , wafraṭna , wmn sbqna bal-īman fḥsn"
+    },
+    {
+      "id": "hisn_191",
+      "section": "الدعاء للفرط في الصلاة عليه",
+      "arabic": "اللهم اجعله لنا فرطاً ،وسلفاً وأجراً",
+      "transliteration": "Allhm ajʿlh lna frṭan ,wslfan wajran"
+    },
+    {
+      "id": "hisn_192",
+      "section": "دعاء التعزية",
+      "arabic": "إن لله ما أخذ وله ما أعطى . وكل شيء عنده بأجل مُسمى ...فلتصبر ولتحتسب",
+      "transliteration": "In llh ma akhdh wlh ma aʿṭy wkl shyʾ ʿndh bajl musmy fltṣbr wltḥtsb"
+    },
+    {
+      "id": "hisn_193",
+      "section": "دعاء التعزية",
+      "arabic": "وإن قال : أعظم الله أجرك ،وأحسن عزاءك وغفر لميتك فحسن",
+      "transliteration": "Win qal- : aʿẓm allh ajrk ,waḥsn ʿzaʾk wghfr lmytk fḥsn"
+    },
+    {
+      "id": "hisn_194",
+      "section": "الدعاء عند إدخال الميت القبر",
+      "arabic": "بسم الله وعلى سُنة رسول الله",
+      "transliteration": "Bsm allh wʿly suna rswl allh"
+    },
+    {
+      "id": "hisn_195",
+      "section": "الدعاء بعد دفن الميت",
+      "arabic": "اللهم اغفر له اللهم ثبته",
+      "transliteration": "Allhm aghfr lh allhm thbth"
+    },
+    {
+      "id": "hisn_196",
+      "section": "دعاء زيارة القبور",
+      "arabic": "السلام عليكم أهل الديار ، من المؤمنين والمسلمين، وإنا إن شاء الله بكم لاحقون [ ويرحم الله المُستقدمين منا والمستأخرين ] أسأل الله لنا ولكم العافية",
+      "transliteration": "Al-sal-m ʿlykm ahl al-dyar , mn al-mumnyn wal-mslmyn, wina in shaʾ allh bkm al-ḥqwn [ wyrḥm allh al-mustqdmyn mna wal-mstakhryn ] asal- allh lna wlkm al-ʿafya"
+    },
+    {
+      "id": "hisn_197",
+      "section": "دعاء الريح",
+      "arabic": "اللهم إني أسألك خيرها ، وأعوذ بك من شرها",
+      "transliteration": "Allhm iny asal-k khyrha , waʿwdh bk mn shrha"
+    },
+    {
+      "id": "hisn_198",
+      "section": "دعاء الريح",
+      "arabic": "اللهم إني أسألك خيرها ، وخير ما فيها ، وخير ما أُرسلت به ، وأعوذ بك من شرها وشر ما فيها وشر ما أرسلت به",
+      "transliteration": "Allhm iny asal-k khyrha , wkhyr ma fyha , wkhyr ma urslt bh , waʿwdh bk mn shrha wshr ma fyha wshr ma arslt bh"
+    },
+    {
+      "id": "hisn_199",
+      "section": "دعاء الرعد",
+      "arabic": "سبحان الذي يُسبح الرعد بحمده والملائكة من خيفته",
+      "transliteration": "Sbḥan al-dhy yusbḥ al-rʿd bḥmdh wal-malika mn khyfth"
+    },
+    {
+      "id": "hisn_200",
+      "section": "من أدعية الاستسقاء",
+      "arabic": "اللهم اسقنا غيثاً مغيثاً مريئاً مَريعاً نافعاً غير ضار ، عاجلاً غير آجل",
+      "transliteration": "Allhm asqna ghythan mghythan mryian maryʿan nafʿan ghyr ḍar , ʿajalan ghyr ājl"
+    },
+    {
+      "id": "hisn_201",
+      "section": "من أدعية الاستسقاء",
+      "arabic": "اللهم أغثنا ، اللهم أغثنا ، اللهم أغثنا",
+      "transliteration": "Allhm aghthna , allhm aghthna , allhm aghthna"
+    },
+    {
+      "id": "hisn_202",
+      "section": "من أدعية الاستسقاء",
+      "arabic": "اللهم اسق عبادك وبهائمك ، وانشر رحمتك وأحيي بلدك الميت",
+      "transliteration": "Allhm asq ʿbadk wbhimk , wanshr rḥmtk waḥyy bldk al-myt"
+    },
+    {
+      "id": "hisn_203",
+      "section": "الدعاء إذا نزل المطر",
+      "arabic": "اللهم صيباً نافعاً",
+      "transliteration": "Allhm ṣyban nafʿan"
+    },
+    {
+      "id": "hisn_204",
+      "section": "الذكر بعد نزول المطر",
+      "arabic": "مُطرنا بفضل الله ورحمته",
+      "transliteration": "Muṭrna bfḍl allh wrḥmth"
+    },
+    {
+      "id": "hisn_205",
+      "section": "من أدعية الاستصحاء",
+      "arabic": "اللهم حوالينا ولا علينا ، اللهم على الآكامِ والظرابِ وبُطون الأودية ، ومنابت الشجر",
+      "transliteration": "Allhm ḥwal-yna wal- ʿlyna , allhm ʿly al-ākami wal-ẓrabi wbuṭwn al-awdya , wmnabt al-shjr"
+    },
+    {
+      "id": "hisn_206",
+      "section": "دعاء رؤية الهلال",
+      "arabic": "الله أكبر ،اللهم أهلِه علينا بالأمن والإيمان ، والسلامة والإسلام ،والتوفيق لما تحب ربنا وترضى ، ربنا وربك الله",
+      "transliteration": "Allh akbr ,allhm ahlih ʿlyna bal-amn wal-īman , wal-sal-ma wal-isal-m ,wal-twfyq lma tḥb rbna wtrḍy , rbna wrbk allh"
+    },
+    {
+      "id": "hisn_207",
+      "section": "الدعاء عند إفطار الصائم",
+      "arabic": "ذَهبَ الظَّمأُ، وابتلَّت العروقُ وثَبَتَ الأجرُ إنْ شاء الله",
+      "transliteration": "Dhahba aẓ-ẓamu, wabtllat al-ʿrwqu wthabata al-ajru in shaʾ allh"
+    },
+    {
+      "id": "hisn_208",
+      "section": "الدعاء عند إفطار الصائم",
+      "arabic": "اللهم إني أسألك برحمتك التي وسعت كل شيءٍ أن تغفر لي",
+      "transliteration": "Allhm iny asal-k brḥmtk al-ty wsʿt kl shyʾin an tghfr ly"
+    },
+    {
+      "id": "hisn_209",
+      "section": "الدعاء قبل الطعام",
+      "arabic": "إذا أكل أحدكم الطعام فليقل: بِسم الله، فإن نسي في أوله فليقل: بِسمِ الله في أوله وآخره",
+      "transliteration": "Idha akl aḥdkm al-ṭʿam flyql: bism allh, fin nsy fy awlh flyql: bismi allh fy awlh wākhrh"
+    },
+    {
+      "id": "hisn_210",
+      "section": "الدعاء قبل الطعام",
+      "arabic": "من أطعمه الله الطعام فليقل: اللهم بارك لنا فيه وأطعمنا خيراً منه. ومن سقاه الله لبناً فليقل: اللهم بارك لنا فيه وزدنا منه",
+      "transliteration": "Mn aṭʿmh allh al-ṭʿam flyql: allhm bark lna fyh waṭʿmna khyran mnh wmn sqah allh lbnan flyql: allhm bark lna fyh wzdna mnh"
+    },
+    {
+      "id": "hisn_211",
+      "section": "الدعاء عند الفراغ من الطعام",
+      "arabic": "الحمد لله الذي أطعمني هذا ،وزرقنيه ،من غير حول مني ولا قوة",
+      "transliteration": "Al-ḥmd llh al-dhy aṭʿmny hdha ,wzrqnyh ,mn ghyr ḥwl mny wal- qwa"
+    },
+    {
+      "id": "hisn_212",
+      "section": "الدعاء عند الفراغ من الطعام",
+      "arabic": "الحمدُ لله حمداً كثيراً طيباً مباركاً فيهِ، غيْرَ [مَكْفيٍّ ولا] مُوَدَّع، ولا مُستَغنَى عَنْهُ ربّنا",
+      "transliteration": "Al-ḥmdu llh ḥmdan kthyran ṭyban mbarkan fyhi, ghyra [makfyinn wal-] mūaddaʿ, wal- mustaghnay ʿanhu rbbna"
+    },
+    {
+      "id": "hisn_213",
+      "section": "دعاء الضيف لصاحب الطعام",
+      "arabic": "اللهُمَّ بَارِكْ لَهُم فيما رَزَقتهْمْ، واغْفِر لهم وارحَمْهُم",
+      "transliteration": "Allhumma bārik lahum fyma razaqthm, waghfir lhm warḥamhum"
+    },
+    {
+      "id": "hisn_214",
+      "section": "الدعاء لمن سقاه أو إذا أراد ذلك",
+      "arabic": "اللهُمَّ أَطْعِمْ مَنْ أطْعَمَني وأَسْقِ مَنْ سْقَاني",
+      "transliteration": "Allhumma aṭʿim man aṭʿamany wasqi man sqāny"
+    },
+    {
+      "id": "hisn_215",
+      "section": "الدعاء إذا أفطر عند أهل بيت",
+      "arabic": "أَفطَر عِنْدَكُم الصائِمونَ ، وأكل طعامَكُمُ الأبْرارُ ، وصلت عليكُمُ الملائِكَةُ",
+      "transliteration": "Afṭar ʿindakum al-ṣīmwna , wakl ṭʿamakumu al-abraru , wṣlt ʿlykumu al-malīkatu"
+    },
+    {
+      "id": "hisn_216",
+      "section": "دعاء الصائم إذا حضر الطعام ولم يفطر",
+      "arabic": "إذا دُعي أحدكم فليجب ، فإن كان صائماً فليصل وإن كان مفطراً فليطعم ومعنى فليصل أي فليدع",
+      "transliteration": "Idha duʿy aḥdkm flyjb , fin kan ṣiman flyṣl win kan mfṭran flyṭʿm wmʿny flyṣl ay flydʿ"
+    },
+    {
+      "id": "hisn_217",
+      "section": "ما يقول الصائم إذا سابه أحد",
+      "arabic": "إني صائم ، إني صائم",
+      "transliteration": "Iny ṣim , iny ṣim"
+    },
+    {
+      "id": "hisn_218",
+      "section": "الدعاء عند رؤية باكورة الثمر",
+      "arabic": "اللهم بارك لنا في ثمرنا ، وبارك لنا في مدينتنا وبارك لنا في صاعنا ، وبارك لنا في مدنا",
+      "transliteration": "Allhm bark lna fy thmrna , wbark lna fy mdyntna wbark lna fy ṣaʿna , wbark lna fy mdna"
+    },
+    {
+      "id": "hisn_219",
+      "section": "دعاء العطاس",
+      "arabic": "إذا عطس أحدكم فليقل الحمد لله ،وليقل له أخوهُ أو صاحبهُ : يرحمك الله ،فإذا قال لهُ :يرحمك الله ،فليقل :يهديكم الله ويصلح بالكم",
+      "transliteration": "Idha ʿṭs aḥdkm flyql al-ḥmd llh ,wlyql lh akhwhu aw ṣaḥbhu : yrḥmk allh ,fidha qal- lhu :yrḥmk allh ,flyql :yhdykm allh wyṣlḥ bal-km"
+    },
+    {
+      "id": "hisn_220",
+      "section": "ما يقالُ للكافر إذا عطس فحمد الله",
+      "arabic": "يهديكم الله ويصلح بالكم",
+      "transliteration": "Yhdykm allh wyṣlḥ bal-km"
+    },
+    {
+      "id": "hisn_221",
+      "section": "الدعاء للمتزوج",
+      "arabic": "بارك الله لك ، وبارك عليك ، وجمع بينكما في خير",
+      "transliteration": "Bark allh lk , wbark ʿlyk , wjmʿ bynkma fy khyr"
+    },
+    {
+      "id": "hisn_222",
+      "section": "دعاء المتزوج لنفسه ودعاء شراء الدابة",
+      "arabic": "إذا تزوج أحدكم امرأة ،أو إذا اشترى خادماً فليقل : اللهم إني أسألك خيرها وخير ما جبلتها عليه وأعوذ بك من شرها وشر ما جبلتها عليه ، وإذا اشترى بعيراً فليأخذ بذروة سنامه وليقل مثل ذلك",
+      "transliteration": "Idha tzwj aḥdkm amrā ,aw idha ashtry khadman flyql : allhm iny asal-k khyrha wkhyr ma jbltha ʿlyh waʿwdh bk mn shrha wshr ma jbltha ʿlyh , widha ashtry bʿyran flyakhdh bdhrwa snamh wlyql mthl dhlk"
+    },
+    {
+      "id": "hisn_223",
+      "section": "الدعاء قبل إتيان الزوجة",
+      "arabic": "بسم الله ، اللهم جنبنا الشيطان وجنب الشيطان ما رزقتنا",
+      "transliteration": "Bsm allh , allhm jnbna al-shyṭan wjnb al-shyṭan ma rzqtna"
+    },
+    {
+      "id": "hisn_224",
+      "section": "دعاء الغضب",
+      "arabic": "أعوذ بالله من الشيطان الرجيم",
+      "transliteration": "Aʿwdh ballh mn al-shyṭan al-rjym",
+      "english": "Allah! There is none worthy of worship but He, the Ever-Living, the One Who sustains and protects all that exists. Neither slumber nor sleep overtakes Him. To Him belongs whatever is in the heavens and whatever is on the earth. Who is he that can intercede with Him except with His Permission? He knows what happens to them in this world, and what will happen to them in the Hereafter. And they will never encompass anything of His Knowledge except that which He wills. His Throne extends over the heavens and the earth, and He feels no fatigue in guarding and preserving them. And He is the Most High, the Most Great."
+    },
+    {
+      "id": "hisn_225",
+      "section": "دعاء من رأى مبتلى",
+      "arabic": "الحمد لله الذي عافاني مما ابتلاك به ، وفضلني على كثير ممن خلق تفضيلاً",
+      "transliteration": "Al-ḥmd llh al-dhy ʿafany mma abtal-k bh , wfḍlny ʿly kthyr mmn khlq tfḍyalan"
+    },
+    {
+      "id": "hisn_226",
+      "section": "ما يقال في المجلس",
+      "arabic": "عن ابن عمر قال : كان يعد لرسول الله صلى الله عليه وسلم في المجلس الواحد مائة مرة من قبل أن يقوم رب اغفر لي وتب علي إنك أنت التواب الغفور",
+      "transliteration": "ʿn abn ʿmr qal- : kan yʿd lrswl allh ṣly allh ʿlyh wslm fy al-mjls al-waḥd mia mra mn qbl an yqwm rb aghfr ly wtb ʿly ink ant al-twab al-ghfwr"
+    },
+    {
+      "id": "hisn_227",
+      "section": "كفارة المجلس ومايختم به المجالس",
+      "arabic": "سبحانك اللهم وبحمدك ، أشهد أن لا إله إلا أنت أستغفرك وأتوب إليك",
+      "transliteration": "Sbḥank allhm wbḥmdk , ashhd an al- ilh ilal- ant astghfrk watwb ilyk"
+    },
+    {
+      "id": "hisn_228",
+      "section": "الدعاء لمن قال غفر الله لك",
+      "arabic": "ولك",
+      "transliteration": "Wlk"
+    },
+    {
+      "id": "hisn_229",
+      "section": "الدعاء لمن صنع إليك معروفاً",
+      "arabic": "جَزَاكَ الله خيراً",
+      "transliteration": "Jazāka allh khyran"
+    },
+    {
+      "id": "hisn_230",
+      "section": "ما يعصم به من الدجال",
+      "arabic": "من حفظ عشر آيات من أول سورة الكهف عصم من الدجال والاستعاذة بالله من فتنتة عقب التشهد الأخير من كل صلاة",
+      "transliteration": "Mn ḥfẓ ʿshr āyat mn awl swra al-khf ʿṣm mn al-djal- walal-stʿadha ballh mn ftnta ʿqb al-tshhd al-akhyr mn kl ṣalā"
+    },
+    {
+      "id": "hisn_231",
+      "section": "الدعاء لمن قال إني أحبك في الله",
+      "arabic": "أحبك الذي أحببتني له ُ",
+      "transliteration": "Aḥbk al-dhy aḥbbtny lh u"
+    },
+    {
+      "id": "hisn_232",
+      "section": "الدعاء لمن عرض عليك ماله",
+      "arabic": "بارك الله لك في أهلك ومالك",
+      "transliteration": "Bark allh lk fy ahlk wmal-k"
+    },
+    {
+      "id": "hisn_233",
+      "section": "الدعاء لمن أقرض عند القضاء",
+      "arabic": "بارك الله لك في أهلك ومالك إنما جزاء السلف الحمد والأداء",
+      "transliteration": "Bark allh lk fy ahlk wmal-k inma jzaʾ al-slf al-ḥmd wal-adaʾ"
+    },
+    {
+      "id": "hisn_234",
+      "section": "دعاء الخوف من الشرك",
+      "arabic": "اللهم إني أعوذ بك أن أشرك بك وأنا أعلم ، وأستغفرك لما لا أعلم",
+      "transliteration": "Allhm iny aʿwdh bk an ashrk bk wana aʿlm , wastghfrk lma al- aʿlm"
+    },
+    {
+      "id": "hisn_235",
+      "section": "الدعاء لمن قال بارك الله فيك",
+      "arabic": "وفيك بارك الله",
+      "transliteration": "Wfyk bark allh"
+    },
+    {
+      "id": "hisn_236",
+      "section": "دعاء كراهية الطيرة",
+      "arabic": "اللهم لا طير إلا طيرك ، ولا خير إلا خيرك ،ولا إله غيرك",
+      "transliteration": "Allhm al- ṭyr ilal- ṭyrk , wal- khyr ilal- khyrk ,wal- ilh ghyrk"
+    },
+    {
+      "id": "hisn_237",
+      "section": "دعاء ركوب الدابة",
+      "arabic": "بسم الله. الحمد لله. {سُبْحانَ الَّذِي سَخَّرَ لَنَا هَذَا وَمَا كُنَّا لَهُ مُقْرِنِينَ * وَإِنَّا إِلَى رَبِّنَا لَمُنقَلِبُونَ} الحمد لله ، الحمد لله ، الحمد لله ، الله اكبر ، الله اكبر ، الله اكبر ، سبحانك اللهم إني ظلمت نفسي فاغفر لي ، فإنه لا يغفر الذنوب إلا أنت",
+      "transliteration": "Bsm allh al-ḥmd llh {subḥana al-adhī sakhhara lanā hadhā wamā kunnā lahu muqrinīna * wīnnā īl-ay rabbinā lamunqal-ibūna} al-ḥmd llh , al-ḥmd llh , al-ḥmd llh , allh akbr , allh akbr , allh akbr , sbḥank allhm iny ẓlmt nfsy faghfr ly , finh al- yghfr al-dhnwb ilal- ant"
+    },
+    {
+      "id": "hisn_238",
+      "section": "دعاء السفر",
+      "arabic": "الله أكبر، الله أكبر، الله أكبر،{سُبْحانَ الَّذِي سَخَّرَ لَنَا هَذَا وَمَا كُنَّا لَهُ مُقْرِنِينَ * وَإِنَّا إِلَى رَبِّنَا لَمُنقَلِبُونَ} اللهم إنا نسألُكَ في سفرنا هذا البرَّ والتقوى، ومن العمل ما ترضى، اللهم هون علينا سفرنا هذا واطو عنا بعده، اللهم أنت الصاحب في السفر، والخليفة في الأهل، اللهم إني أعوذ بك من وعْثاءِ السفر، وكآبة المنظر وسوء المنقلب في المال والأهل وإذا رجع قالهن وزاد فيهن آيبون، تائبون، عابدون، لربنا حامدون",
+      "transliteration": "Allh akbr, allh akbr, allh akbr,{subḥana al-adhī sakhhara lanā hadhā wamā kunnā lahu muqrinīna * wīnnā īl-ay rabbinā lamunqal-ibūna} allhm ina nsal-uka fy sfrna hdha al-brra wal-tqwy, wmn al-ʿml ma trḍy, allhm hwn ʿlyna sfrna hdha waṭw ʿna bʿdh, allhm ant al-ṣaḥb fy al-sfr, wal-khlyfa fy al-ahl, allhm iny aʿwdh bk mn wʿthaʾi al-sfr, wkāba al-mnẓr wswʾ al-mnqlb fy al-mal- wal-ahl widha rjʿ qal-hn wzad fyhn āybwn, tibwn, ʿabdwn, lrbna ḥamdwn"
+    },
+    {
+      "id": "hisn_239",
+      "section": "دعاء دخول القرية أو البلدة",
+      "arabic": "اللهم رب السموات السبع وما أظللن ، ورب الأرضين السبع وما أقللن ،ورب الشياطين وما أضللن ، ورب الرياح وما ذرين.أسألك خير هذه القرية وخير أهلها ، وخير ما فيها،وأعوذ بك من شرها،وشر أهلها ، وشر ما فيها",
+      "transliteration": "Allhm rb al-smwat al-sbʿ wma aẓlln , wrb al-arḍyn al-sbʿ wma aqlln ,wrb al-shyaṭyn wma aḍlln , wrb al-ryaḥ wma dhrynasal-k khyr hdhh al-qrya wkhyr ahlha , wkhyr ma fyha,waʿwdh bk mn shrha,wshr ahlha , wshr ma fyha"
+    },
+    {
+      "id": "hisn_240",
+      "section": "دعاء دخول السوق",
+      "arabic": "لا إله إلا الله وحده لا شريك له ، له الملك وله الحمد ، يُحيي ويُميت ، وهو حي لا يموت ، بيده الخير وهو على كل شئ قدير",
+      "transliteration": "Al- ilh ilal- allh wḥdh al- shryk lh , lh al-mlk wlh al-ḥmd , yuḥyy wyumyt , whw ḥy al- ymwt , bydh al-khyr whw ʿly kl shi qdyr"
+    },
+    {
+      "id": "hisn_241",
+      "section": "الدعاء إذا تعس المركوب",
+      "arabic": "بسم الله",
+      "transliteration": "Bsm allh"
+    },
+    {
+      "id": "hisn_242",
+      "section": "دعاء المسافر للمقيم",
+      "arabic": "أستودعُكَ الله الذي لا تضيع ودائعه",
+      "transliteration": "Astwdʿuka allh al-dhy al- tḍyʿ wdiʿh"
+    },
+    {
+      "id": "hisn_243",
+      "section": "دعاء المقيم للمسافر",
+      "arabic": "أستودع الله دينك وأمانتك ،وخواتيم عملك",
+      "transliteration": "Astwdʿ allh dynk wamantk ,wkhwatym ʿmlk"
+    },
+    {
+      "id": "hisn_244",
+      "section": "دعاء المقيم للمسافر",
+      "arabic": "زوَّدك الله التقوى، وغفر ذْنبك ويسَّر لك الخير حيث ما كنت",
+      "transliteration": "Zwwadk allh al-tqwy, wghfr dhnbk wyssar lk al-khyr ḥyth ma knt"
+    },
+    {
+      "id": "hisn_245",
+      "section": "التكبير والتسبيح في سير السفر",
+      "arabic": "قال جابر رضي الله عنه : كنا إذا صعدنا كبرنا ، وإذا نزلنا سبحنا",
+      "transliteration": "Qal- jabr rḍy allh ʿnh : kna idha ṣʿdna kbrna , widha nzlna sbḥna"
+    },
+    {
+      "id": "hisn_246",
+      "section": "دعاء المسافر إذا أسحر",
+      "arabic": "سَمعَ سَامعً بحمد الله وحُسنِ بلائه علينا، ربنا صاحبنا ، وأفضِل علينا عائذا بالله من النار",
+      "transliteration": "Samʿa sāmʿan bḥmd allh wḥusni balih ʿlyna, rbna ṣaḥbna , wafḍil- ʿlyna ʿidha ballh mn al-nar"
+    },
+    {
+      "id": "hisn_247",
+      "section": "الدعاء إذا نزل منزلا في سفر أو غيره",
+      "arabic": "أعوذ بكلمات الله التامات من شر ما خلق",
+      "transliteration": "Aʿwdh bklmat allh al-tamat mn shr ma khlq",
+      "english": "I take refuge in Allah’s perfect words from the evil He has created."
+    },
+    {
+      "id": "hisn_248",
+      "section": "ذكر الرجوع من السفر",
+      "arabic": "يكبر على كل شرف ثلاث تكبيرات ثم يقول : لا إله إلا الله وحده لا شريك لهُ ،لهُ الملك ، ولهُ الحمدُ وهو على كل شيءٍ قدير ، آيبون ،تائبون ، عابدون ، لربنا حامدون ،صدق الله وعده،ونصر عبده،وهزم الأحزاب وحده",
+      "transliteration": "Ykbr ʿly kl shrf thal-th tkbyrat thm yqwl : al- ilh ilal- allh wḥdh al- shryk lhu ,lhu al-mlk , wlhu al-ḥmdu whw ʿly kl shyʾin qdyr , āybwn ,tibwn , ʿabdwn , lrbna ḥamdwn ,ṣdq allh wʿdh,wnṣr ʿbdh,whzm al-aḥzab wḥdh",
+      "english": "None has the right to be worshipped except Allah, alone, without partner, to Him belongs all sovereignty and praise, and He is over all things omnipotent."
+    },
+    {
+      "id": "hisn_249",
+      "section": "ما يقول ويفعل من أتاه أمر يسره أو يكرهه",
+      "arabic": "كان صلى الله عليه وسلم إذا أتاه الأمر يسره قال : الحمد لله الذي بنعمته تتم الصالحات و إذا أتاه أمر يكرهه قال : الحمد لله على كل حال",
+      "transliteration": "Kan ṣly allh ʿlyh wslm idha atah al-amr ysrh qal- : al-ḥmd llh al-dhy bnʿmth ttm al-ṣal-ḥat ū idha atah amr ykrhh qal- : al-ḥmd llh ʿly kl ḥal-"
+    },
+    {
+      "id": "hisn_250",
+      "section": "فضل الصلاة على النبي صلى الله عليه وسلم",
+      "arabic": "قال صلى الله عليه وسلم من صلى علي صلاة صلى الله عليه بها عشراً",
+      "transliteration": "Qal- ṣly allh ʿlyh wslm mn ṣly ʿly ṣalā ṣly allh ʿlyh bha ʿshran"
+    },
+    {
+      "id": "hisn_251",
+      "section": "فضل الصلاة على النبي صلى الله عليه وسلم",
+      "arabic": "وقال صلى الله عليه وسلم : لا تجعلوا قبري عيداً وصلوا علي ؛ فإن صلاتكم تبلغني حيث كنتم",
+      "transliteration": "Wqal- ṣly allh ʿlyh wslm : al- tjʿlwa qbry ʿydan wṣlwa ʿly ; fin ṣal-tkm tblghny ḥyth kntm"
+    },
+    {
+      "id": "hisn_252",
+      "section": "فضل الصلاة على النبي صلى الله عليه وسلم",
+      "arabic": "وقال صلى الله عليه وسلم : البخيل من ذكرت عندهُ فلم يصل علي",
+      "transliteration": "Wqal- ṣly allh ʿlyh wslm : al-bkhyl mn dhkrt ʿndhu flm yṣl ʿly"
+    },
+    {
+      "id": "hisn_253",
+      "section": "فضل الصلاة على النبي صلى الله عليه وسلم",
+      "arabic": "وقال صلى الله عليه وسلم إن لله ملائكة سياحين في الأرض يبلغوني من أمتي السلام",
+      "transliteration": "Wqal- ṣly allh ʿlyh wslm in llh malika syaḥyn fy al-arḍ yblghwny mn amty al-sal-m"
+    },
+    {
+      "id": "hisn_254",
+      "section": "فضل الصلاة على النبي صلى الله عليه وسلم",
+      "arabic": "وقال صلى الله عليه وسلم ما من أحدٍ يسلِّمُ عليَّ إلَّا ردَّ اللَّهُ عليَّ روحي حتَّى أردَّ عليْهِ السَّلامَ",
+      "transliteration": "Wqal- ṣly allh ʿlyh wslm ma mn aḥdin ysllimu ʿlyya il-ā rdda Allāhu ʿlyya rwḥy ḥttay ardda ʿlyhi assaal-ma"
+    },
+    {
+      "id": "hisn_255",
+      "section": "إفشاء السلام",
+      "arabic": "قال رسول الله صلى الله عليه وسلم : لا تدخلوا الجنة حتى تؤمنوا ، ولا تؤمنوا حتى تحابوا ، أو لا أدلكم على شيءٍ إذا فعلتموه تحاببتم ، أفشوا السلام بينكم",
+      "transliteration": "Qal- rswl allh ṣly allh ʿlyh wslm : al- tdkhlwa al-jna ḥty tumnwa , wal- tumnwa ḥty tḥabwa , aw al- adlkm ʿly shyʾin idha fʿltmwh tḥabbtm , afshwa al-sal-m bynkm"
+    },
+    {
+      "id": "hisn_256",
+      "section": "إفشاء السلام",
+      "arabic": "ثلاث من جمعهن فقد جمع الإيمان : الإنصاف من نفسك ، وبذل السلام للعالم ،والإنفاق من الإقتار",
+      "transliteration": "Thal-th mn jmʿhn fqd jmʿ al-īman : al-inṣaf mn nfsk , wbdhl al-sal-m llʿal-m ,wal-infaq mn al-iqtar"
+    },
+    {
+      "id": "hisn_257",
+      "section": "إفشاء السلام",
+      "arabic": "وعن عبد الله بن عمر رضي الله عنهما : أن رجلاً سأل النبي صلى الله عليه وسلم أي الإسلام خير قال : تطعم الطعام وتقرأ السلام على من عرفت ومن لم تعرف",
+      "transliteration": "Wʿn ʿbd allh bn ʿmr rḍy allh ʿnhma : an rjalan sal- al-nby ṣly allh ʿlyh wslm ay al-isal-m khyr qal- : tṭʿm al-ṭʿam wtqra al-sal-m ʿly mn ʿrft wmn lm tʿrf"
+    },
+    {
+      "id": "hisn_258",
+      "section": "كيف يرد السلام على الكافر إذا سلم",
+      "arabic": "إذا سلم عليكم أهل الكتاب فقولوا : وعليكم",
+      "transliteration": "Idha slm ʿlykm ahl al-ktab fqwlwa : wʿlykm"
+    },
+    {
+      "id": "hisn_259",
+      "section": "دعاء صياح الديك ونهيق الحمار",
+      "arabic": "إذا سمعتم صياح الديكة ، فاسألوا الله من فضله فإنها رأت ملكاً وإذا سمعتم نهيق الحمار ، فتعوذوا بالله من الشيطان فإنه رأى شيطاناً",
+      "transliteration": "Idha smʿtm ṣyaḥ al-dyka , fasal-wa allh mn fḍlh finha rat mlkan widha smʿtm nhyq al-ḥmar , ftʿwdhwa ballh mn al-shyṭan finh ray shyṭanan"
+    },
+    {
+      "id": "hisn_260",
+      "section": "دعاء نباح الكلاب بالليل",
+      "arabic": "إذا سمعتم نُباح الكلاب ونهيق الحمير بالليل فتعوذوا بالله منهن فإنهن يرين ما لا ترون",
+      "transliteration": "Idha smʿtm nubaḥ al-kal-b wnhyq al-ḥmyr ballyl ftʿwdhwa ballh mnhn finhn yryn ma al- trwn"
+    },
+    {
+      "id": "hisn_261",
+      "section": "الدعاء لمن سببته",
+      "arabic": "قال صلى الله عليه وسلم: اللَّهُم فأيما مؤمن سببته فاجعل ذلك له قربة إليك يوم القيامة",
+      "transliteration": "Qal- ṣly allh ʿlyh wslm: Allāhum fayma mumn sbbth fajʿl dhlk lh qrba ilyk ywm al-qyama"
+    },
+    {
+      "id": "hisn_262",
+      "section": "ما يقول المسلم إذا مدح المسلم",
+      "arabic": "قال صلى الله عليه وسلم : إذا كان أحدكم مادحاً صاحبه لا محالة فليقل : أحسبُ فلاناً والله حسيبهُ ولا أزكي على الله أحداً ، أحسبهُ – إن كان يعلم ذاك – كذا وكذا",
+      "transliteration": "Qal- ṣly allh ʿlyh wslm : idha kan aḥdkm madḥan ṣaḥbh al- mḥal-a flyql : aḥsbu fal-nan wallh ḥsybhu wal- azky ʿly allh aḥdan , aḥsbhu in kan yʿlm dhak kdha wkdha"
+    },
+    {
+      "id": "hisn_263",
+      "section": "ما يقول المسلم إذا زكي",
+      "arabic": "اللهم لا تؤاخذني بما يقولون ، واغفر لي مالا يعلمون [واجعلني خيراً مما يظنون]",
+      "transliteration": "Allhm al- tuakhdhny bma yqwlwn , waghfr ly malal- yʿlmwn [wajʿlny khyran mma yẓnwn]"
+    },
+    {
+      "id": "hisn_264",
+      "section": "كيف يلبي المحرم في الحج أو العمرة",
+      "arabic": "لبيك اللهم لبيك ، لبيك لا شريك لك لبيك ، إن الحمد والنعمة لك والملك ، لا شريك لك",
+      "transliteration": "Lbyk allhm lbyk , lbyk al- shryk lk lbyk , in al-ḥmd wal-nʿma lk wal-mlk , al- shryk lk"
+    },
+    {
+      "id": "hisn_265",
+      "section": "التكبيرة إذا أتي الركن الأسود",
+      "arabic": "طاف النبي صلى الله عليه وسلم بالبيت على بعير كلما أتي الركن أشار إليه بشيء عنده وكبر",
+      "transliteration": "ṭaf al-nby ṣly allh ʿlyh wslm bal-byt ʿly bʿyr klma aty al-rkn ashar ilyh bshyʾ ʿndh wkbr"
+    },
+    {
+      "id": "hisn_266",
+      "section": "الدعاء بين الركن اليماني والحجر الأسود",
+      "arabic": "{ رَبَّنَا آتِنَا فِي الدُّنْيَا حَسَنَةً وَفِي الآخِرَةِ حَسَنَةً وَقِنَا عَذَابَ النَّارِ}",
+      "transliteration": "{ rabbanā ātinā fī addunyā ḥasanatan wafī al-ākhirati ḥasanatan waqinā ʿadhāba annāri}"
+    },
+    {
+      "id": "hisn_267",
+      "section": "دعاء الوقوف على الصفا والمروة",
+      "arabic": "فلما دنا صلى الله عليه وسلم من الصفا قرأ: { إِنَّ الصَّفَا وَالْمَرْوَةَ مِن شَعَآئِرِ اللّهِ } أبدأ بما بدأ الله به فبدأ بالصفا فرقي عليه حتى رأى البيت فاستقبل القبلة ، فوحد الله وكبره وقال : لا إله إلا الله وحده لا شريك لهُ ، لهُ الملك ولهُ الحمد وهو على كل شيءٍ قدير ، لا إله إلا الله وحده ، أنجز وعده ، ونصر عبده ، وهزم الأحزاب وحده ثم دعا بين ذلك . قال مثل هذا ثلاث مرات الحديث وفيه ففعل على المروة كما فعل على الصفا",
+      "transliteration": "Flma dna ṣly allh ʿlyh wslm mn al-ṣfa qra: { īnna aṣ-ṣafā wāl-marwata min shaʿāīri allhi } abda bma bda allh bh fbda bal-ṣfa frqy ʿlyh ḥty ray al-byt fastqbl al-qbla , fwḥd allh wkbrh wqal- : al- ilh ilal- allh wḥdh al- shryk lhu , lhu al-mlk wlhu al-ḥmd whw ʿly kl shyʾin qdyr , al- ilh ilal- allh wḥdh , anjz wʿdh , wnṣr ʿbdh , whzm al-aḥzab wḥdh thm dʿa byn dhlk qal- mthl hdha thal-th mrat al-ḥdyth wfyh ffʿl ʿly al-mrwa kma fʿl ʿly al-ṣfa",
+      "english": "None has the right to be worshipped except Allah, alone, without partner, to Him belongs all sovereignty and praise, and He is over all things omnipotent."
+    },
+    {
+      "id": "hisn_268",
+      "section": "الدعاء يوم عرفة",
+      "arabic": "خير الدعاء دعاء يوم عرفة ، وخيرُ ما قلت أنا والنبيُّون من قبلي : لا إله إلا الله وحدهُ لا شريك لهُ ، لهُ الملكُ ولهُ الحمدُ وهو على كل شيء قدير",
+      "transliteration": "Khyr al-dʿaʾ dʿaʾ ywm ʿrfa , wkhyru ma qlt ana wal-nbyyuwn mn qbly : al- ilh ilal- allh wḥdhu al- shryk lhu , lhu al-mlku wlhu al-ḥmdu whw ʿly kl shyʾ qdyr",
+      "english": "None has the right to be worshipped except Allah, alone, without partner, to Him belongs all sovereignty and praise, and He is over all things omnipotent."
+    },
+    {
+      "id": "hisn_269",
+      "section": "الذكر عند المشعر الحرام",
+      "arabic": "ركب صلى الله عليه وسلم القصواء حتى أتى المشعر الحرام فاستقبل القبلة ( فدعاه ُ، وكبرهُ ،وهللهُ ، ووحدهُ) فلم يزل واقفاً حتى أسفر جداً فدفع قبل أن تطلع الشمس",
+      "transliteration": "Rkb ṣly allh ʿlyh wslm al-qṣwaʾ ḥty aty al-mshʿr al-ḥram fastqbl al-qbla ( fdʿah u, wkbrhu ,whllhu , wwḥdhu) flm yzl waqfan ḥty asfr jdan fdfʿ qbl an tṭlʿ al-shms"
+    },
+    {
+      "id": "hisn_270",
+      "section": "التكبيرة عند رمي الجمار مع كل حصاة",
+      "arabic": "يكبر كلما رمى بحصاة عند الجمار الثلاث ثم يتقدم، ويقف يدعو مستقبل القبلة، رافعاً يديه بعد الجمرة الأولى والثانية، أما جمرة العقبة فيرميها ويكبر عند كل حصاة وينصرف ولا يقف عندها",
+      "transliteration": "Ykbr klma rmy bḥṣā ʿnd al-jmar al-thal-th thm ytqdm, wyqf ydʿw mstqbl al-qblt, rafʿan ydyh bʿd al-jmra al-awly wal-thanyt, ama jmra al-ʿqba fyrmyha wykbr ʿnd kl ḥṣā wynṣrf wal- yqf ʿndha"
+    },
+    {
+      "id": "hisn_271",
+      "section": "ما يقول عند التعجب والأمر السار",
+      "arabic": "سبحان الله",
+      "transliteration": "Sbḥan allh"
+    },
+    {
+      "id": "hisn_272",
+      "section": "ما يقول عند التعجب والأمر السار",
+      "arabic": "الله أكبر",
+      "transliteration": "Allh akbr"
+    },
+    {
+      "id": "hisn_273",
+      "section": "ما يفعل من أتاه أمر يسره",
+      "arabic": "كان النبي صلى الله عليه وسلم إذا أتاه أمر يسرهُ أو يسرُّ به خر ساجداً شكراً لله تبارك وتعالى",
+      "transliteration": "Kan al-nby ṣly allh ʿlyh wslm idha atah amr ysrhu aw ysrru bh khr sajdan shkran llh tbark wtʿal-y"
+    },
+    {
+      "id": "hisn_274",
+      "section": "ما يقول من أحس وجعاً في جسده",
+      "arabic": "ضع يدك على الذي تألم من جسدك وقل: بسم الله ، ثلاثاً وقل سبع مرات : أعوذ بالله وقدرته من شر ما أجد وأحاذر",
+      "transliteration": "ḍʿ ydk ʿly al-dhy tal-m mn jsdk wql: bsm allh , thal-than wql sbʿ mrat : aʿwdh ballh wqdrth mn shr ma ajd waḥadhr"
+    },
+    {
+      "id": "hisn_275",
+      "section": "دعاء من خشي أن يصيب شيئاً بعينه",
+      "arabic": "إذا رأى أحدكم من أخيه ، أو من نفسه ، أومن ماله ما يعجبهُ [فليدع لهُ بالبركة ] فإن العين حقٌّ",
+      "transliteration": "Idha ray aḥdkm mn akhyh , aw mn nfsh , awmn mal-h ma yʿjbhu [flydʿ lhu bal-brka ] fin al-ʿyn ḥqunn"
+    },
+    {
+      "id": "hisn_276",
+      "section": "ما يقال عند الفزع",
+      "arabic": "لا إله إلا الله",
+      "transliteration": "Al- ilh ilal- allh",
+      "english": "We have reached the morning and at this very time unto Allah belongs all sovereignty, and all praise is for Allah. None has the right to be worshipped except Allah, alone, without partner, to Him belongs all sovereignty and praise, and He is over all things omnipotent. My Lord, I ask You for the good of this day and the good of what follows it and I take refuge in You from the evil of this day and the evil of what follows it. My Lord, I take refuge in You from laziness and senility. My Lord, I take refuge in You from torment in the Fire and punishment in the grave."
+    },
+    {
+      "id": "hisn_277",
+      "section": "ما يقول عند الذبح أو النحر",
+      "arabic": "بسم الله والله أكبر [ اللهم منك ولك ] اللهم تقبل مني",
+      "transliteration": "Bsm allh wallh akbr [ allhm mnk wlk ] allhm tqbl mny"
+    },
+    {
+      "id": "hisn_278",
+      "section": "ما يقول لرد كيد مردة الشياطين",
+      "arabic": "أعوذ بكلمات الله التامات التي لا يجاوزهن بر ولا فاجر من شر ما خلق ، وبرأ وذرأ ومن شر ما ينزل من السماء ، ومن شر ما يعرج فيها ، ومن شر ما ذرأ في الأرض ، ومن شر ما يخرج منها ، ومن شر فتن الليل والنهار ، ومن شر كل طارق إلا طارقاً يطرق بخير يا رحمن",
+      "transliteration": "Aʿwdh bklmat allh al-tamat al-ty al- yjawzhn br wal- fajr mn shr ma khlq , wbra wdhra wmn shr ma ynzl mn al-smaʾ , wmn shr ma yʿrj fyha , wmn shr ma dhra fy al-arḍ , wmn shr ma ykhrj mnha , wmn shr ftn allyl wal-nhar , wmn shr kl ṭarq ilal- ṭarqan yṭrq bkhyr ya rḥmn"
+    },
+    {
+      "id": "hisn_279",
+      "section": "الاستغفار والتوبة",
+      "arabic": "قال رسول الله صلى الله عيه وسلم : والله إني لاستغفر الله وأتوب إليه في اليوم أكثر من سبعين مرة",
+      "transliteration": "Qal- rswl allh ṣly allh ʿyh wslm : wallh iny al-stghfr allh watwb ilyh fy al-ywm akthr mn sbʿyn mra"
+    },
+    {
+      "id": "hisn_280",
+      "section": "الاستغفار والتوبة",
+      "arabic": "وقال صلى الله عيه وسلم : يا أيها الناس توبوا إلى الله فإني أتوب في اليوم إليه مائة مرةً",
+      "transliteration": "Wqal- ṣly allh ʿyh wslm : ya ayha al-nas twbwa ily allh finy atwb fy al-ywm ilyh mia mrtan"
+    },
+    {
+      "id": "hisn_281",
+      "section": "الاستغفار والتوبة",
+      "arabic": "وقال صلى الله عيه وسلم : من قال أستغفر الله العظيم الذي لا إله إلا هو الحي القيوم وأتوب إليه ، غفر الله لهُ وإن كان فر من الزحف",
+      "transliteration": "Wqal- ṣly allh ʿyh wslm : mn qal- astghfr allh al-ʿẓym al-dhy al- ilh ilal- hw al-ḥy al-qywm watwb ilyh , ghfr allh lhu win kan fr mn al-zḥf"
+    },
+    {
+      "id": "hisn_282",
+      "section": "الاستغفار والتوبة",
+      "arabic": "وقال صلى الله عيه وسلم : أقرب ما يكون الربُّ من العبد في جوف الليل الآخر فإن استطعت أن تكون ممن يذكر الله في تلك الساعة فكن",
+      "transliteration": "Wqal- ṣly allh ʿyh wslm : aqrb ma ykwn al-rbbu mn al-ʿbd fy jwf allyl al-ākhr fin astṭʿt an tkwn mmn ydhkr allh fy tlk al-saʿa fkn"
+    },
+    {
+      "id": "hisn_283",
+      "section": "الاستغفار والتوبة",
+      "arabic": "وقال صلى الله عيه وسلم : أقرب ما يكون العبد من ربه وهو ساجد فأكثروا الدعاء",
+      "transliteration": "Wqal- ṣly allh ʿyh wslm : aqrb ma ykwn al-ʿbd mn rbh whw sajd fakthrwa al-dʿaʾ"
+    },
+    {
+      "id": "hisn_284",
+      "section": "الاستغفار والتوبة",
+      "arabic": "وقال صلى الله عيه وسلم : إنه ليغان على قلبي وإني لاستغفرُ الله في اليوم مائة مرة",
+      "transliteration": "Wqal- ṣly allh ʿyh wslm : inh lyghan ʿly qlby winy al-stghfru allh fy al-ywm mia mra"
+    },
+    {
+      "id": "hisn_285",
+      "section": "فضل التسبيح والتحميد ، والتهليل ، والتكبير",
+      "arabic": "قال صلى الله عيه وسلم من قال سبحان الله وبحمده في يوم مائة مرة حطت خطاياه ولو كانت مثل زبد البحر",
+      "transliteration": "Qal- ṣly allh ʿyh wslm mn qal- sbḥan allh wbḥmdh fy ywm mia mra ḥṭt khṭayah wlw kant mthl zbd al-bḥr",
+      "english": "How perfect Allah is and I praise Him."
+    },
+    {
+      "id": "hisn_286",
+      "section": "فضل التسبيح والتحميد ، والتهليل ، والتكبير",
+      "arabic": "وقال صلى الله عيه وسلم : من قال لا إله إلا وحده لا شريك لهُ ، لهُ الملك ، ولهُ الحمدُ ، وهو على كل شيء قدير عشر مرات . كان كمن أعتق أربعة أنفس من ولد إسماعيل",
+      "transliteration": "Wqal- ṣly allh ʿyh wslm : mn qal- al- ilh ilal- wḥdh al- shryk lhu , lhu al-mlk , wlhu al-ḥmdu , whw ʿly kl shyʾ qdyr ʿshr mrat kan kmn aʿtq arbʿa anfs mn wld ismaʿyl"
+    },
+    {
+      "id": "hisn_287",
+      "section": "فضل التسبيح والتحميد ، والتهليل ، والتكبير",
+      "arabic": "وقال صلى الله عيه وسلم : كلمتان خفيفتان على اللسان ، ثقيلتان في الميزان حبيبتان إلى الرحمن : سبحان الله وبحمده سبحان الله العظيم",
+      "transliteration": "Wqal- ṣly allh ʿyh wslm : klmtan khfyftan ʿly allsan , thqyltan fy al-myzan ḥbybtan ily al-rḥmn : sbḥan allh wbḥmdh sbḥan allh al-ʿẓym",
+      "english": "How perfect Allah is and I praise Him."
+    },
+    {
+      "id": "hisn_288",
+      "section": "فضل التسبيح والتحميد ، والتهليل ، والتكبير",
+      "arabic": "وقال صلى الله عيه وسلم : لأن أقول سبحان الله ، والحمد لله ،ولا إله إلا الله ، والله أكبر ،أحب إلى مما طلعت عليه الشمس",
+      "transliteration": "Wqal- ṣly allh ʿyh wslm : lan aqwl sbḥan allh , wal-ḥmd llh ,wal- ilh ilal- allh , wallh akbr ,aḥb ily mma ṭlʿt ʿlyh al-shms"
+    },
+    {
+      "id": "hisn_289",
+      "section": "فضل التسبيح والتحميد ، والتهليل ، والتكبير",
+      "arabic": "وقال صلى الله عيه وسلم: أيعجز أحدكم أن يكسب كل يوم ألف حسنةفسأله سائل من جلسائه كيف يكسب أحدنا ألف حسنة ؟ قال : يسبح مائة تسبيحة ، فيكتب له ألف حسنة أو يحط عنه ُ ألف خطيئة",
+      "transliteration": "Wqal- ṣly allh ʿyh wslm: ayʿjz aḥdkm an yksb kl ywm al-f ḥsntfsal-h sil- mn jlsih kyf yksb aḥdna al-f ḥsna ? Qal- : ysbḥ mia tsbyḥa , fyktb lh al-f ḥsna aw yḥṭ ʿnh u al-f khṭyia"
+    },
+    {
+      "id": "hisn_290",
+      "section": "فضل التسبيح والتحميد ، والتهليل ، والتكبير",
+      "arabic": "من قال سبحان الله العظيم وبحمده غرست له نخلة في الجنة",
+      "transliteration": "Mn qal- sbḥan allh al-ʿẓym wbḥmdh ghrst lh nkhla fy al-jna"
+    },
+    {
+      "id": "hisn_291",
+      "section": "فضل التسبيح والتحميد ، والتهليل ، والتكبير",
+      "arabic": "وقال صلى الله عيه وسلم: يا عبد الله بن قيس ألا أدلك على كنز من كنوز الجنة ؟ فقلت:بلى يا رسول الله ، قال : قل لا حول ولا قوة إلا بالله",
+      "transliteration": "Wqal- ṣly allh ʿyh wslm: ya ʿbd allh bn qys alal- adlk ʿly knz mn knwz al-jna ? Fqlt:bly ya rswl allh , qal- : ql al- ḥwl wal- qwa ilal- ballh"
+    },
+    {
+      "id": "hisn_292",
+      "section": "فضل التسبيح والتحميد ، والتهليل ، والتكبير",
+      "arabic": "وقال صلى الله عيه وسلم: أحب الكلام إلى الله أربعٌ : سبحان الله ، والحمد لله ، ولا إله إلا الله ، والله أكبر ، لا يضرك بأيهنَّ بدأت",
+      "transliteration": "Wqal- ṣly allh ʿyh wslm: aḥb al-kal-m ily allh arbʿun : sbḥan allh , wal-ḥmd llh , wal- ilh ilal- allh , wallh akbr , al- yḍrk bayhnna bdat"
+    },
+    {
+      "id": "hisn_293",
+      "section": "فضل التسبيح والتحميد ، والتهليل ، والتكبير",
+      "arabic": "جاء أعرابي إلى رسول الله صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ فقال: علمني كلاماً أقوله : قال قل لا إله إلا الله وحده لا شريك لهً ،الله أكبرُ كبيراً ، والحمد لله كثيراً ، سبحان الله رب العالمين ،لا حول ولا قوة إلا بالله العزيز الحكيم قال فهؤلاء لربي فما لي ؟ قال : قل: اللهم اغفر لي ،وارحمني ،واهدني وارزقني",
+      "transliteration": "Jaʾ aʿraby ily rswl allh ṣal-ay Allāhu ʿal-ayhi wasal-ama fqal-: ʿlmny kal-man aqwlh : qal- ql al- ilh ilal- allh wḥdh al- shryk lhan ,allh akbru kbyran , wal-ḥmd llh kthyran , sbḥan allh rb al-ʿal-myn ,al- ḥwl wal- qwa ilal- ballh al-ʿzyz al-ḥkym qal- fhulal-ʾ lrby fma ly ? Qal- : ql: allhm aghfr ly ,warḥmny ,wahdny warzqny"
+    },
+    {
+      "id": "hisn_294",
+      "section": "فضل التسبيح والتحميد ، والتهليل ، والتكبير",
+      "arabic": "كان الرجل إذا أسلم علمه النبي صلى الله عليه وسلم الصلاة ثم أمره أن يدعو بهؤلاء الكلمات : اللهم اغفر لي، وارحمني ،واهدني ، وعافني وارزقني",
+      "transliteration": "Kan al-rjl idha aslm ʿlmh al-nby ṣly allh ʿlyh wslm al-ṣalā thm amrh an ydʿw bhulal-ʾ al-klmat : allhm aghfr ly, warḥmny ,wahdny , wʿafny warzqny"
+    },
+    {
+      "id": "hisn_295",
+      "section": "فضل التسبيح والتحميد ، والتهليل ، والتكبير",
+      "arabic": "إن أفضل الذكر لا إله إلا الله",
+      "transliteration": "In afḍl al-dhkr al- ilh ilal- allh"
+    },
+    {
+      "id": "hisn_296",
+      "section": "فضل التسبيح والتحميد ، والتهليل ، والتكبير",
+      "arabic": "الباقيات الصالحات : سبحان الله والحمد لله ، ولا إله إلا الله ،والله أكبر ،و لا حول ولا قوة إلا بالله",
+      "transliteration": "Al-baqyat al-ṣal-ḥat : sbḥan allh wal-ḥmd llh , wal- ilh ilal- allh ,wallh akbr ,w al- ḥwl wal- qwa ilal- ballh"
+    },
+    {
+      "id": "hisn_297",
+      "section": "كيف كان النبي صلى الله عليه وسلم يسبح ؟",
+      "arabic": "عن عبد الله بن عمرو رضي الله عنهما قال : رأيت النبي صلى الله عليه وسلم يعقد التسبيح بيمينه",
+      "transliteration": "ʿn ʿbd allh bn ʿmrw rḍy allh ʿnhma qal- : rayt al-nby ṣly allh ʿlyh wslm yʿqd al-tsbyḥ bymynh"
+    },
+    {
+      "id": "hisn_298",
+      "section": "من أنواع الخير والآداب الجامعة",
+      "arabic": "إذا كان جنح الليل – أو أمسيتم – فكفوا صبيانكم ؛ فإن الشياطين تنتشر حينئذ ، فإذا ذهب ساعة من الليل فخلوهم ،وأغلقوا الأبواب واذكروا اسم الله ؛ فإن الشيطان لا يفتح باباً مغلقاً ، وأوكوا قربكم واذكروا اسم الله ، وخمروا آنيتكم واذكروا اسم الله ، ولو أن تعرضوا عليها شيئاً ، وأطفئوا مصابيحكم",
+      "transliteration": "Idha kan jnḥ allyl aw amsytm fkfwa ṣbyankm ; fin al-shyaṭyn tntshr ḥynidh , fidha dhhb saʿa mn allyl fkhlwhm ,waghlqwa al-abwab wadhkrwa asm allh ; fin al-shyṭan al- yftḥ baban mghlqan , wawkwa qrbkm wadhkrwa asm allh , wkhmrwa ānytkm wadhkrwa asm allh , wlw an tʿrḍwa ʿlyha shyian , waṭfiwa mṣabyḥkm"
+    }
+  ]
+}
