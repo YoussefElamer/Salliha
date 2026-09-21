@@ -14,7 +14,7 @@ const defaults: AdhanSettings = {
 };
 
 export function getAdhanSettings(): AdhanSettings {
-  return { ...defaults, ...(storage.get<AdhanSettings>(KEY) ?? {}) };
+  return { ...defaults, ...(storage.get<AdhanSettings>(KEY, defaults) ?? {}) };
 }
 
 export function saveAdhanSettings(settings: AdhanSettings): void {
