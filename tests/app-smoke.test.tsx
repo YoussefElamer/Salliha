@@ -78,7 +78,7 @@ describe('تطبيق صليها — فحص شامل للواجهة', () => {
     const fontFamily = document.documentElement.style.getPropertyValue('--quran-font-family');
     expect(fontFamily).toContain('Amiri Quran');
     // نص المصحف الكامل موجود (٦٢٣٦ آية) وليس صفحات ناقصة.
-    expect(document.querySelectorAll('.ayah-block').length).toBe(7);
+    expect(document.querySelectorAll('.ayah-block').length).toBe(6236);
   });
 
   it('يعرض الأذكار بتصنيفات غير فارغة وعدّاد قابل للضغط', async () => {
