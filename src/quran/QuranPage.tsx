@@ -59,7 +59,7 @@ export function QuranPage({ target, onTargetHandled }: QuranPageProps) {
   useEffect(() => {
     if (reading.viewMode !== 'flow') return;
     const sections = Array.from(document.querySelectorAll<HTMLElement>('[data-quran-surah]'));
-    if (!sections.length) return;
+    if (!sections.length || typeof IntersectionObserver === 'undefined') return;
     const observer = new IntersectionObserver((entries) => {
       const visible = entries
         .filter((entry) => entry.isIntersecting)
