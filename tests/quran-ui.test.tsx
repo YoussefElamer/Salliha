@@ -18,7 +18,7 @@ function renderQuranPage() {
 describe('Quran UI — long press & VerseActionSheet', () => {
   beforeEach(() => {
     localStorage.clear();
-    localStorage.setItem('salliha:settings:v1', JSON.stringify({ ...defaultSettings, onboardingComplete: true }));
+    localStorage.setItem('salliha:settings:v1', JSON.stringify({ ...defaultSettings, onboardingComplete: true, reading: { ...defaultSettings.reading, viewMode: 'ayahList' } }));
     vi.useFakeTimers();
   });
   afterEach(() => {
