@@ -71,7 +71,8 @@ if (fs.existsSync(androidRes)) {
     results.push(await write(await sharp(splashBuffer).resize(Math.round(width * 1.6)).png().toBuffer(), path.join(androidRes, `drawable-land-${density}`, 'splash.png')));
     results.push(await write(await sharp(splashBuffer).resize(width).png().toBuffer(), path.join(androidRes, `drawable-${density}`, 'splash.png')));
   }
-  results.push(await write(await sharp(splashBuffer).resize(1080).png().toBuffer(), path.join(androidRes, 'drawable', 'splash.png')));\n  results.push(await write(await resize(foregroundSvg, 48), path.join(androidRes, 'drawable', 'ic_stat_icon.png')));
+  results.push(await write(await sharp(splashBuffer).resize(1080).png().toBuffer(), path.join(androidRes, 'drawable', 'splash.png')));
+  results.push(await write(await resize(foregroundSvg, 48), path.join(androidRes, 'drawable', 'ic_stat_icon.png')));
 }
 
 /* ---------- iOS ---------- */
