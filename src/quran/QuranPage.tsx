@@ -24,13 +24,22 @@ export function QuranPage({ target, onTargetHandled }: QuranPageProps) {
   const [fontPanelOpen, setFontPanelOpen] = useState(false);
   const [bookmarkVersion, setBookmarkVersion] = useState(0);
   const [reading, setReading] = useState(() => settingsRepository.getSettings().reading);
+  const [centerGlobalAyah, setCenterGlobalAyah] = useState(initial.ayahNumber);
   const longPressTimer = useRef<number | null>(null);
   const pendingScroll = useRef<{ surahId: number; ayahNumber: number } | null>(null);
   const audio = useAudio();
 
   const surahs = useMemo(() => quranRepository.getSurahs(), []);
+  const allAyat = useMemo(() => surahs.flatMap((item) => item.verses), [surahs]);
   const surah = quranRepository.getSurah(surahId) ?? surahs[0];
-  const visibleSurahs = reading.viewMode === 'flow' ? surahs : [surah];
+  const virtualWindow = useMemo(() => {
+    if (reading.viewMode !== 'flow') return { start: 0, end: allAyat.length, items: allAyat, before: 0, after: 0 };
+    const center = Math.max(1, Math.min(allAyat.length, centerGlobalAyah));
+    const radius = 90;
+    const start = Math.max(0, center - radius - 1);
+    const end = Math.min(allAyat.length, center + radius);
+    return { start, end, items: allAyat.slice(start, end), before: start, after: allAyat.length - end };
+  }, [allAyat, centerGlobalAyah, reading.viewMode]);
   const searchResults = useMemo(() => (query.trim().length >= 2 ? quranRepository.searchDetailed(query, 15) : null), [query]);
 
   const scrollToAyah = useCallback((surahNumber: number, ayahNumber: number) => {
@@ -42,6 +51,8 @@ export function QuranPage({ target, onTargetHandled }: QuranPageProps) {
   useEffect(() => {
     if (!target) return;
     setSurahId(target.surahId);
+    const targetAyah = quranRepository.getAyah(target.surahId, target.ayahNumber);
+    if (targetAyah) setCenterGlobalAyah(targetAyah.globalAyahNumber);
     pendingScroll.current = target;
     onTargetHandled?.();
   }, [onTargetHandled, target]);
@@ -57,21 +68,23 @@ export function QuranPage({ target, onTargetHandled }: QuranPageProps) {
   }, [scrollToAyah, surah.surahId, surah.verses]);
 
   useEffect(() => {
-    if (reading.viewMode !== 'flow') return;
-    const sections = Array.from(document.querySelectorAll<HTMLElement>('[data-quran-surah]'));
-    if (!sections.length || typeof IntersectionObserver === 'undefined') return;
+    if (reading.viewMode !== 'flow' || typeof IntersectionObserver === 'undefined') return;
+    const nodes = Array.from(document.querySelectorAll<HTMLElement>('[data-global-ayah]'));
+    if (!nodes.length) return;
     const observer = new IntersectionObserver((entries) => {
       const visible = entries
         .filter((entry) => entry.isIntersecting)
-        .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
-      if (visible) {
-        const nextId = Number((visible.target as HTMLElement).dataset.quranSurah);
-        if (Number.isFinite(nextId) && nextId !== surahId) setSurahId(nextId);
-      }
-    }, { rootMargin: '-18% 0px -60% 0px', threshold: [0.1, 0.35, 0.7] });
-    sections.forEach((section) => observer.observe(section));
+        .sort((a, b) => Math.abs(a.boundingClientRect.top - window.innerHeight * 0.38) - Math.abs(b.boundingClientRect.top - window.innerHeight * 0.38))[0];
+      if (!visible) return;
+      const global = Number((visible.target as HTMLElement).dataset.globalAyah);
+      if (!Number.isFinite(global)) return;
+      setCenterGlobalAyah((current) => Math.abs(current - global) >= 8 ? global : current);
+      const currentAyah = allAyat[global - 1];
+      if (currentAyah && currentAyah.surahId !== surahId) setSurahId(currentAyah.surahId);
+    }, { rootMargin: '-25% 0px -55% 0px', threshold: [0.1, 0.35, 0.7] });
+    nodes.forEach((node) => observer.observe(node));
     return () => observer.disconnect();
-  }, [reading.viewMode, surahs.length, surahId]);
+  }, [allAyat, reading.viewMode, surahId, virtualWindow.start, virtualWindow.end]);
 
   const savePosition = (ayah: Ayah) => bookmarkRepository.saveReadingPosition({ surahId: ayah.surahId, ayahNumber: ayah.ayahNumber });
 
@@ -186,75 +199,78 @@ export function QuranPage({ target, onTargetHandled }: QuranPageProps) {
         </div>
 
         <div className="mushaf-continuous">
-          {visibleSurahs.map((currentSurah) => (
-            <section
-              key={currentSurah.surahId}
-              data-quran-surah={currentSurah.surahId}
-              className="mushaf-surah-section"
-              aria-label={`سورة ${currentSurah.name}`}
-            >
-              <div className="mushaf-header">
-                <span>{formatArabicNumber(currentSurah.surahId)}</span>
-                <h2>سورة {currentSurah.name}</h2>
-                <span>{formatArabicNumber(currentSurah.ayahCount)} آية</span>
-              </div>
-              {currentSurah.surahId !== 1 && currentSurah.surahId !== 9 && (
-                <p className="basmala">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</p>
-              )}
-              <div className="mushaf-frame">
-                {currentSurah.verses.map((ayah) => {
-                  const isPlaying = audio.currentAyah?.id === ayah.id;
-                  const isBookmarked = bookmarkRepository.isBookmarked(ayah.surahId, ayah.ayahNumber);
-                  return (
-                    <div
-                      key={ayah.id}
-                      id={`ayah-${ayah.surahId}-${ayah.ayahNumber}`}
-                      role="button"
-                      tabIndex={0}
-                      className={`ayah-block ${isPlaying ? 'is-playing' : ''}`}
-                      onClick={() => savePosition(ayah)}
-                      onKeyDown={(event) => {
-                        if (event.key === 'Enter' || event.key === ' ') {
-                          event.preventDefault();
-                          setSelectedAyah(ayah);
-                        }
-                      }}
-                      onContextMenu={(event) => {
-                        event.preventDefault();
-                        setSelectedAyah(ayah);
-                      }}
-                      onPointerDown={() => {
-                        longPressTimer.current = window.setTimeout(() => setSelectedAyah(ayah), 380);
-                      }}
-                      onPointerUp={() => {
-                        if (longPressTimer.current) window.clearTimeout(longPressTimer.current);
-                      }}
-                      onPointerLeave={() => {
-                        if (longPressTimer.current) window.clearTimeout(longPressTimer.current);
-                      }}
-                    >
-                      <span className="ayah-text">{reading.showTashkeel ? ayah.text : stripForDisplay(ayah.text)}</span>
-                      <span className="ayah-number">{formatArabicNumber(ayah.ayahNumber)}</span>
-                      {isPlaying && (
-                        <button
-                          className="ayah-play-badge"
-                          aria-label="إيقاف التشغيل"
-                          onClick={(event) => {
-                            event.stopPropagation();
-                            audio.pause();
-                          }}
-                        >
-                          <Play size={14} />
-                        </button>
-                      )}
-                      {isBookmarked && <BookmarkCheck className="bookmark-indicator" size={16} data-version={bookmarkVersion} />}
+          {reading.viewMode === 'flow' && virtualWindow.before > 0 && (
+            <div className="quran-virtual-spacer" style={{ height: `${virtualWindow.before * 118}px` }} aria-hidden="true" />
+          )}
+
+          {reading.viewMode === 'flow'
+            ? Array.from(
+                virtualWindow.items.reduce((groups, ayah) => {
+                  const current = groups[groups.length - 1];
+                  if (!current || current.surahId !== ayah.surahId) groups.push({ surahId: ayah.surahId, verses: [ayah] });
+                  else current.verses.push(ayah);
+                  return groups;
+                }, [] as Array<{ surahId: number; verses: Ayah[] }>)
+              ).map((group) => {
+                const currentSurah = quranRepository.getSurah(group.surahId)!;
+                return (
+                  <section key={group.surahId} data-quran-surah={group.surahId} className="mushaf-surah-section" aria-label={`سورة ${currentSurah.name}`}>
+                    <div className="mushaf-header">
+                      <span>{formatArabicNumber(currentSurah.surahId)}</span>
+                      <h2>سورة {currentSurah.name}</h2>
+                      <span>{formatArabicNumber(currentSurah.ayahCount)} آية</span>
                     </div>
-                  );
-                })}
-              </div>
-            </section>
-          ))}
-        </div>
+                    {group.verses[0]?.ayahNumber === 1 && currentSurah.surahId !== 1 && currentSurah.surahId !== 9 && (
+                      <p className="basmala">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</p>
+                    )}
+                    <div className="mushaf-frame">
+                      {group.verses.map((ayah) => (
+                        <AyahRow
+                          key={ayah.id}
+                          ayah={ayah}
+                          showTashkeel={reading.showTashkeel}
+                          isPlaying={audio.currentAyah?.id === ayah.id}
+                          isBookmarked={bookmarkRepository.isBookmarked(ayah.surahId, ayah.ayahNumber)}
+                          onSelect={setSelectedAyah}
+                          onSave={savePosition}
+                          audio={audio}
+                          longPressTimer={longPressTimer}
+                        />
+                      ))}
+                    </div>
+                  </section>
+                );
+              })
+            : (
+              <section data-quran-surah={surah.surahId} className="mushaf-surah-section" aria-label={`سورة ${surah.name}`}>
+                <div className="mushaf-header">
+                  <span>{formatArabicNumber(surah.surahId)}</span>
+                  <h2>سورة {surah.name}</h2>
+                  <span>{formatArabicNumber(surah.ayahCount)} آية</span>
+                </div>
+                {surah.surahId !== 1 && surah.surahId !== 9 && <p className="basmala">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</p>}
+                <div className="mushaf-frame">
+                  {surah.verses.map((ayah) => (
+                    <AyahRow
+                      key={ayah.id}
+                      ayah={ayah}
+                      showTashkeel={reading.showTashkeel}
+                      isPlaying={audio.currentAyah?.id === ayah.id}
+                      isBookmarked={bookmarkRepository.isBookmarked(ayah.surahId, ayah.ayahNumber)}
+                      onSelect={setSelectedAyah}
+                      onSave={savePosition}
+                      audio={audio}
+                      longPressTimer={longPressTimer}
+                    />
+                  ))}
+                </div>
+              </section>
+            )}
+
+          {reading.viewMode === 'flow' && virtualWindow.after > 0 && (
+            <div className="quran-virtual-spacer" style={{ height: `${virtualWindow.after * 118}px` }} aria-hidden="true" />
+          )}
+        </div>/div>
       </main>
 
       {browserOpen && (
@@ -315,6 +331,73 @@ export function QuranPage({ target, onTargetHandled }: QuranPageProps) {
       >
         <Bookmark size={20} />
       </button>
+    </div>
+  );
+}
+
+function AyahRow({
+  ayah,
+  showTashkeel,
+  isPlaying,
+  isBookmarked,
+  onSelect,
+  onSave,
+  audio,
+  longPressTimer
+}: {
+  ayah: Ayah;
+  showTashkeel: boolean;
+  isPlaying: boolean;
+  isBookmarked: boolean;
+  onSelect: (ayah: Ayah) => void;
+  onSave: (ayah: Ayah) => void;
+  audio: ReturnType<typeof useAudio>;
+  longPressTimer: React.MutableRefObject<number | null>;
+}) {
+  return (
+    <div
+      key={ayah.id}
+      id={`ayah-${ayah.surahId}-${ayah.ayahNumber}`}
+      data-global-ayah={ayah.globalAyahNumber}
+      role="button"
+      tabIndex={0}
+      className={`ayah-block ${isPlaying ? 'is-playing' : ''}`}
+      onClick={() => onSave(ayah)}
+      onKeyDown={(event) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          onSelect(ayah);
+        }
+      }}
+      onContextMenu={(event) => {
+        event.preventDefault();
+        onSelect(ayah);
+      }}
+      onPointerDown={() => {
+        longPressTimer.current = window.setTimeout(() => onSelect(ayah), 380);
+      }}
+      onPointerUp={() => {
+        if (longPressTimer.current) window.clearTimeout(longPressTimer.current);
+      }}
+      onPointerLeave={() => {
+        if (longPressTimer.current) window.clearTimeout(longPressTimer.current);
+      }}
+    >
+      <span className="ayah-text">{showTashkeel ? ayah.text : stripForDisplay(ayah.text)}</span>
+      <span className="ayah-number">{formatArabicNumber(ayah.ayahNumber)}</span>
+      {isPlaying && (
+        <button
+          className="ayah-play-badge"
+          aria-label="إيقاف التشغيل"
+          onClick={(event) => {
+            event.stopPropagation();
+            audio.pause();
+          }}
+        >
+          <Play size={14} />
+        </button>
+      )}
+      {isBookmarked && <BookmarkCheck className="bookmark-indicator" size={16} />}
     </div>
   );
 }
