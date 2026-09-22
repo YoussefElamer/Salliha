@@ -36,7 +36,8 @@
     "lucide-react": "latest",
     "react": "latest",
     "react-dom": "latest",
-    "vite": "latest"
+    "vite": "latest",
+    "@capacitor/geolocation": "^8.0.0"
   },
   "devDependencies": {
     "@capacitor/cli": "^8.5.2",
