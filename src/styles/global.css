@@ -517,3 +517,8 @@ details summary { cursor: pointer; font-weight: 600; color: var(--text); }
 .compass-west { left: 5%; top: 50%; transform: translateY(-50%); }
 .qibla-arrow { position: absolute; left: 50%; top: 50%; width: 4rem; height: 8.5rem; display: flex; align-items: flex-start; justify-content: center; transform-origin: 50% 100%; color: var(--primary); transition: transform 0.25s ease-out; }
 .qibla-center { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 3.5rem; height: 3.5rem; display: grid; place-items: center; border-radius: 50%; background: var(--surface-strong); border: 1px solid var(--border); color: var(--accent); }
+
+.mushaf-continuous { display: grid; gap: 1.5rem; }
+.mushaf-surah-section { scroll-margin-top: 1.25rem; padding: 1.5rem 0; border-bottom: 1px solid var(--border); }
+.mushaf-surah-section:last-child { border-bottom: 0; }
+.mushaf-surah-section .mushaf-header { position: sticky; top: 0.5rem; z-index: 2; backdrop-filter: blur(14px); background: color-mix(in srgb, var(--surface-strong), transparent 12%); border-radius: 1rem; padding: 0.8rem 1rem; }
