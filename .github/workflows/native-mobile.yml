@@ -65,6 +65,12 @@ jobs:
       - name: Generate Capacitor Android project
         run: node scripts/ensure-cap-platform.mjs android
 
+      - name: Prepare native Android assets and permissions
+        run: |
+          node scripts/build-icons.mjs
+          npm run native:permissions
+          npm run native:adhan
+
       - name: Sync web assets to Android
         run: npx cap sync android
 
@@ -101,6 +107,12 @@ jobs:
 
       - name: Generate Capacitor iOS project
         run: node scripts/ensure-cap-platform.mjs ios
+
+      - name: Prepare native iOS assets and permissions
+        run: |
+          node scripts/build-icons.mjs
+          npm run native:permissions
+          npm run native:adhan
 
       - name: Sync web assets to iOS
         run: npx cap sync ios
