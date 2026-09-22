@@ -270,7 +270,7 @@ export function QuranPage({ target, onTargetHandled }: QuranPageProps) {
           {reading.viewMode === 'flow' && virtualWindow.after > 0 && (
             <div className="quran-virtual-spacer" style={{ height: `${virtualWindow.after * 118}px` }} aria-hidden="true" />
           )}
-        </div>/div>
+        </div>
       </main>
 
       {browserOpen && (
