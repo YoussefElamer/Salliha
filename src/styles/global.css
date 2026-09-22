@@ -522,3 +522,6 @@ details summary { cursor: pointer; font-weight: 600; color: var(--text); }
 .mushaf-surah-section { scroll-margin-top: 1.25rem; padding: 1.5rem 0; border-bottom: 1px solid var(--border); }
 .mushaf-surah-section:last-child { border-bottom: 0; }
 .mushaf-surah-section .mushaf-header { position: sticky; top: 0.5rem; z-index: 2; backdrop-filter: blur(14px); background: color-mix(in srgb, var(--surface-strong), transparent 12%); border-radius: 1rem; padding: 0.8rem 1rem; }
+
+.quran-virtual-spacer { width: 100%; pointer-events: none; contain: strict; }
+.mushaf-surah-section { content-visibility: auto; contain-intrinsic-size: 900px; }
