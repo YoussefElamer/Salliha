@@ -8,6 +8,7 @@ import { prayerRepository } from './PrayerRepository';
 import { notificationService } from '../notifications/NotificationService';
 import { nativeAdhanService } from '../notifications/NativeAdhanService';
 import { rescheduleAdhan } from '../notifications/adhanScheduler';
+import { requestPreciseLocation } from '../geo/nativeLocation';
 import { adhanSounds, getAdhanPreviewUrl } from '../audio/adhanSounds';
 import { getAdhanSettings, saveAdhanSettings } from '../settings/adhanSettings';
 
@@ -42,25 +43,23 @@ export function PrayerPage() {
 
   const useMyLocation = () => {
     setError('');
-    if (!navigator.geolocation) {
-      setError('تحديد الموقع غير مدعوم على هذا الجهاز. اختر مدينتك يدويًا من القائمة.');
-      return;
-    }
     setLocationBusy(true);
-    navigator.geolocation.getCurrentPosition(
-      (position) => {
-        const resolved = prayerRepository.refreshAutoLocation({ coordinates: { latitude: position.coords.latitude, longitude: position.coords.longitude } });
-        setSettings(prayerRepository.getSettings());
-        save({ ...prayerRepository.getSettings(), locationMode: 'auto', coordinates: { latitude: position.coords.latitude, longitude: position.coords.longitude }, resolved: { ...resolved, updatedAt: new Date().toISOString() } });
-        setPermissionMessage(`تم تحديد الموقع: ${resolved.name} — ${resolved.countryAr}`);
-        setLocationBusy(false);
-      },
-      () => {
-        setError('لم نحصل على إذن الموقع. لا مشكلة — المواقيت تعمل بالمدينة المكتشفة تلقائيًا من منطقة الجهاز الزمنية، أو اختر مدينتك يدويًا.');
-        setLocationBusy(false);
-      },
-      { enableHighAccuracy: false, timeout: 12_000, maximumAge: 30 * 60 * 1000 }
-    );
+    void requestPreciseLocation().then((result) => {
+      if (result.ok) {
+        const resolved = prayerRepository.getLocation();
+        save({
+          ...prayerRepository.getSettings(),
+          locationMode: 'auto',
+          coordinates: { latitude: resolved.latitude, longitude: resolved.longitude },
+          resolved: { ...resolved, updatedAt: new Date().toISOString() }
+        });
+        setPermissionMessage(result.message);
+        setError('');
+      } else {
+        setError(result.message);
+      }
+      setLocationBusy(false);
+    });
   };
 
   const requestNotifications = async () => {
