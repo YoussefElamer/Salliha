@@ -2,6 +2,7 @@ import { render, screen, fireEvent, waitFor, cleanup } from '@testing-library/re
 import { afterEach, beforeAll, beforeEach, describe, expect, it, vi } from 'vitest';
 import { App } from '../src/app/App';
 import { defaultSettings } from '../src/settings/defaults';
+import { quranRepository } from '../src/quran/QuranRepository';
 
 // jsdom لا يدعم matchMedia أو scrollIntoView — نضيف أبسط بديل كافٍ للاختبار.
 beforeAll(() => {
@@ -77,8 +78,18 @@ describe('تطبيق صليها — فحص شامل للواجهة', () => {
     expect(ayahText?.textContent?.length).toBeGreaterThan(3);
     const fontFamily = document.documentElement.style.getPropertyValue('--quran-font-family');
     expect(fontFamily).toContain('Amiri Quran');
-    // نص المصحف الكامل موجود (٦٢٣٦ آية) وليس صفحات ناقصة.
-    expect(document.querySelectorAll('.ayah-block').length).toBe(6236);
+    // البيانات كاملة، لكن العرض الافتراضي يرسم نافذة محدودة فقط لتحسين الأداء.
+    const allAyat = quranRepository.getSurahs().flatMap((surah) => surah.verses);
+    expect(allAyat).toHaveLength(6236);
+    const rendered = [...document.querySelectorAll<HTMLElement>('.ayah-block')];
+    expect(rendered.length).toBeGreaterThan(0);
+    expect(rendered.length).toBeLessThanOrEqual(181);
+    expect(rendered[0].id).toBe('ayah-1-1');
+    for (const [index, node] of rendered.entries()) {
+      expect(node.dataset.globalAyah).toBe(String(allAyat[index].globalAyahNumber));
+      expect(node.querySelector('.ayah-text')?.textContent).toBe(allAyat[index].text);
+    }
+    expect(document.querySelector('.quran-virtual-spacer')).toBeInTheDocument();
   });
 
   it('يعرض الأذكار بتصنيفات غير فارغة وعدّاد قابل للضغط', async () => {

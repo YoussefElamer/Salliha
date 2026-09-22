@@ -1,35 +1,68 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { setTimeout as delay } from 'node:timers/promises';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const raw = 'https://raw.githubusercontent.com/Kiwifu/adhan-mp3/main/';
-const sounds = [
-  ['abdulbasit-egypt', 'Abdulbasit_Abdusamad_1_-_Egypt_(عبد_الباسط_عبد_الصمد_-_مصر).mp3', 'Abdulbasit_Abdusamad_6_-_Fajr_Egypt_(عبد_الباسط_عبد_الصمد_-_فجر_مصر).mp3'],
-  ['ahmad-nuinaa-egypt', 'Ahmed_Nuinaa_1_-_Egypt_(أحمد_نعينع_-_مصر).mp3', 'Adhan_Fajr_Cairo_Egypt_(أذان_الفجر_القاهرة_مصر).mp3'],
-  ['haram-makki', 'Adhan_Al_Haram_Al_Maki_(أذان_الحرم_المكي).mp3', 'Adhan_Fajr_Al_Haram_Al_Maki_(أذان_الفجر_الحرم_المكي).mp3'],
-  ['haram-madani', 'Adhan_Al_Haram_Al_Madani_-_Al_Madinah_1_(أذان_الحرم_المدني_-_المدينة_المنورة).mp3', 'Adhan_Fajr_Al_Haram_Al_Madani_(أذان_الفجر_الحرم_المدني).mp3'],
-  ['makkah', 'Adhan_Al_Haram_Al_Maki_(أذان_الحرم_المكي).mp3', 'Adhan_Fajr_Al_Haram_Al_Maki_(أذان_الفجر_الحرم_المكي).mp3'],
-  ['riyadh', 'Adhan_Riyadh_Saudi_Arabia_(أذان_الرياض_السعودية).mp3', 'Adhan_Fajr_Al_Haram_Al_Maki_(أذان_الفجر_الحرم_المكي).mp3']
-];
+// Keep preview URLs, notification filenames and bundled assets in sync.
+const sounds = JSON.parse(fs.readFileSync(path.join(root, 'src/audio/adhan-sounds.json'), 'utf8'));
 
 async function download(url, destination) {
-  if (fs.existsSync(destination)) return;
-  const response = await fetch(url);
-  if (!response.ok) throw new Error(`Failed to download ${url}: HTTP ${response.status}`);
-  const buffer = Buffer.from(await response.arrayBuffer());
-  fs.mkdirSync(path.dirname(destination), { recursive: true });
-  fs.writeFileSync(destination, buffer);
+  if (fs.existsSync(destination) && fs.statSync(destination).size > 0) return;
+  for (let attempt = 1; attempt <= 3; attempt += 1) {
+    let buffer;
+    try {
+      const response = await fetch(url, { signal: AbortSignal.timeout(60_000) });
+      if (!response.ok) {
+        const error = new Error(`Failed to download ${url}: HTTP ${response.status}`);
+        error.retryable = response.status === 429 || response.status >= 500;
+        throw error;
+      }
+      buffer = Buffer.from(await response.arrayBuffer());
+      if (!buffer.length) throw new Error(`Empty audio download: ${url}`);
+    } catch (error) {
+      if (error.retryable === false || attempt === 3) throw error;
+      console.warn(`Audio download attempt ${attempt} failed; retrying: ${error.message}`);
+      await delay(attempt * 1000);
+      continue;
+    }
+    fs.mkdirSync(path.dirname(destination), { recursive: true });
+    // Never leave a partial file that a later run would treat as cached audio.
+    fs.writeFileSync(`${destination}.tmp`, buffer);
+    fs.renameSync(`${destination}.tmp`, destination);
+    return;
+  }
 }
 
 async function main() {
-  const androidRaw = path.join(root, 'android', 'app', 'src', 'main', 'res', 'raw');
-  const iosResources = path.join(root, 'ios', 'App', 'App', 'Resources');
-  for (const [id, normal, fajr] of sounds) {
-    await download(raw + encodeURIComponent(normal).replace(/%2F/g, '/').replace(/%28/g, '(').replace(/%29/g, ')'), path.join(androidRaw, `adhan_${id}.mp3`));
-    await download(raw + encodeURIComponent(fajr).replace(/%2F/g, '/').replace(/%28/g, '(').replace(/%29/g, ')'), path.join(androidRaw, `adhan_${id}_fajr.mp3`));
-    await download(raw + encodeURIComponent(normal).replace(/%2F/g, '/').replace(/%28/g, '(').replace(/%29/g, ')'), path.join(iosResources, `adhan_${id}.mp3`));
-    await download(raw + encodeURIComponent(fajr).replace(/%2F/g, '/').replace(/%28/g, '(').replace(/%29/g, ')'), path.join(iosResources, `adhan_${id}_fajr.mp3`));
+  const destinations = [];
+  if (fs.existsSync(path.join(root, 'android/app/src/main/AndroidManifest.xml'))) {
+    destinations.push(path.join(root, 'android/app/src/main/res/raw'));
+  }
+  if (fs.existsSync(path.join(root, 'ios/App/App/Info.plist'))) {
+    destinations.push(path.join(root, 'ios/App/App/Resources'));
+  }
+  if (!destinations.length) {
+    console.log('No native projects found; generate a Capacitor platform before preparing Adhan audio.');
+    return;
+  }
+  for (const sound of sounds) {
+    for (const [source, filename] of [[sound.normal, sound.normalFile], [sound.fajr, sound.fajrFile]]) {
+      if (!/^adhan_[a-z0-9_]+\.mp3$/.test(filename)) {
+        throw new Error(`Invalid Android audio resource filename: ${filename}`);
+      }
+      for (const directory of destinations) {
+        await download(raw + encodeURIComponent(source), path.join(directory, filename));
+      }
+    }
+    // Remove filenames produced by the old script, which Android cannot compile.
+    for (const directory of destinations) {
+      for (const suffix of ['', '_fajr']) {
+        const legacy = `adhan_${sound.id}${suffix}.mp3`;
+        if (legacy.includes('-')) fs.rmSync(path.join(directory, legacy), { force: true });
+      }
+    }
   }
   console.log('Prepared native Adhan audio assets.');
 }
