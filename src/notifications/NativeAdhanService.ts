@@ -54,8 +54,9 @@ class CapacitorAdhanService implements NativeAdhanService {
       const mod = await import('@capacitor/local-notifications');
       const LN = mod.LocalNotifications;
 
+      const channelId = `adhan-v2-${getAdhanSettings().soundId}`;
       await LN.createChannel({
-        id: `adhan-${getAdhanSettings().soundId}`,
+        id: channelId,
         name: 'أذان صليها',
         description: 'تنبيهات مواقيت الصلاة بصوت الأذان المختار',
         importance: 5,
@@ -95,7 +96,7 @@ class CapacitorAdhanService implements NativeAdhanService {
               id: idCounter++,
               schedule: { at: preAt.toISOString() },
               smallIcon: 'ic_stat_icon',
-              channelId: `adhan-${getAdhanSettings().soundId}`,
+              channelId,
               isExactNotification: true,
               allowWhileIdle: true,
             });
