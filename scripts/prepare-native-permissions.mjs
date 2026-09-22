@@ -16,9 +16,14 @@ function patchAndroid() {
   ];
   const additions = permissions.filter((permission) => !text.includes(`android:name="${permission}"`))
     .map((permission) => `    <uses-permission android:name="${permission}" />`)
-    .join('\n');
-  if (additions) text = text.replace(/<manifest[^>]*>\s*/, (match) => `${match}${additions}\n`);\n  if (!text.includes('android.hardware.location.gps')) {
-    text = text.replace(/<manifest[^>]*>\s*/, (match) => `${match}    <uses-feature android:name="android.hardware.location.gps" android:required="false" />\n`);
+    .join('
+');
+  if (additions) text = text.replace(/<manifest[^>]*>\s*/, (match) => `${match}${additions}
+`);
+
+  if (!text.includes('android.hardware.location.gps')) {
+    text = text.replace(/<manifest[^>]*>\s*/, (match) => `${match}    <uses-feature android:name="android.hardware.location.gps" android:required="false" />
+`);
   }
   fs.writeFileSync(file, text);
 }
@@ -33,7 +38,9 @@ function patchIos() {
   ];
   for (const [key, value] of entries) {
     if (text.includes(`<key>${key}</key>`)) continue;
-    text = text.replace('</dict>', `  <key>${key}</key>\n  <string>${value}</string>\n</dict>`);
+    text = text.replace('</dict>', `  <key>${key}</key>
+  <string>${value}</string>
+</dict>`);
   }
   fs.writeFileSync(file, text);
 }
