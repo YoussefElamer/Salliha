@@ -17,7 +17,9 @@ function patchAndroid() {
   const additions = permissions.filter((permission) => !text.includes(`android:name="${permission}"`))
     .map((permission) => `    <uses-permission android:name="${permission}" />`)
     .join('\n');
-  if (additions) text = text.replace(/<manifest[^>]*>\s*/, (match) => `${match}${additions}\n`);
+  if (additions) text = text.replace(/<manifest[^>]*>\s*/, (match) => `${match}${additions}\n`);\n  if (!text.includes('android.hardware.location.gps')) {
+    text = text.replace(/<manifest[^>]*>\s*/, (match) => `${match}    <uses-feature android:name="android.hardware.location.gps" android:required="false" />\n`);
+  }
   fs.writeFileSync(file, text);
 }
 
