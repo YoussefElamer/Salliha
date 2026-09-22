@@ -5,6 +5,7 @@ import { deviceTimeZone, listCountries, searchCities } from '../geo/cities';
 import { prayerRepository } from '../prayer/PrayerRepository';
 import { nativeAdhanService } from '../notifications/NativeAdhanService';
 import { rescheduleAdhan } from '../notifications/adhanScheduler';
+import { requestPreciseLocation } from '../geo/nativeLocation';
 
 const themes: Array<{ id: ThemeMode; label: string; icon: typeof Sun }> = [
   { id: 'light', label: 'فاتح', icon: Sun },
@@ -29,19 +30,21 @@ export function Onboarding({
 
   const requestLocation = () => {
     setLocationMessage('جارٍ طلب إذن الموقع…');
-    if (!navigator.geolocation) {
-      setLocationMessage('تحديد الموقع غير مدعوم هنا — يمكنك اختيار المدينة يدويًا.');
-      return;
-    }
-    navigator.geolocation.getCurrentPosition(
-      (position) => {
-        const resolved = prayerRepository.refreshAutoLocation({ coordinates: { latitude: position.coords.latitude, longitude: position.coords.longitude } });
-        setSettings((current) => ({ ...current, prayer: { ...current.prayer, locationMode: 'auto', coordinates: { latitude: position.coords.latitude, longitude: position.coords.longitude }, resolved: { ...resolved, updatedAt: new Date().toISOString() } } }));
-        setLocationMessage(`تم السماح بالموقع: ${resolved.name} — ${resolved.countryAr}`);
-      },
-      () => setLocationMessage('لم يتم منح إذن الموقع. يمكنك الاستمرار واختيار مدينتك يدويًا.'),
-      { enableHighAccuracy: false, timeout: 12000, maximumAge: 30 * 60 * 1000 }
-    );
+    void requestPreciseLocation().then((result) => {
+      setLocationMessage(result.message);
+      if (result.ok) {
+        const resolved = prayerRepository.getLocation();
+        setSettings((current) => ({
+          ...current,
+          prayer: {
+            ...current.prayer,
+            locationMode: 'auto',
+            coordinates: { latitude: resolved.latitude, longitude: resolved.longitude },
+            resolved: { ...resolved, updatedAt: new Date().toISOString() }
+          }
+        }));
+      }
+    });
   };
 
   const requestNotifications = async () => {
