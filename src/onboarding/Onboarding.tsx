@@ -60,19 +60,22 @@ export function Onboarding({
   };
 
   const useMyLocation = () => {
-    setLocationMessage('جارٍ تحديد موقعك…');
-    if (!navigator.geolocation) {
-      setLocationMessage('تحديد الموقع غير مدعوم هنا — سنستخدم المنطقة الزمنية لجهازك.');
-      return;
-    }
-    navigator.geolocation.getCurrentPosition(
-      (position) => {
-        const resolved = prayerRepository.refreshAutoLocation({ coordinates: { latitude: position.coords.latitude, longitude: position.coords.longitude } });
-        setLocationMessage(`تم: ${resolved.name} — ${resolved.countryAr}`);
-      },
-      () => setLocationMessage('لم يتم منح إذن الموقع. لا مشكلة — سنستخدم المدينة المكتشفة من منطقة جهازك الزمنية، ويمكنك تغييرها من الإعدادات.'),
-      { timeout: 10_000, maximumAge: 60 * 60 * 1000 }
-    );
+    setLocationMessage('جارٍ طلب إذن الموقع من النظام…');
+    void requestPreciseLocation().then((result) => {
+      setLocationMessage(result.message);
+      if (result.ok) {
+        const resolved = prayerRepository.getLocation();
+        setSettings((current) => ({
+          ...current,
+          prayer: {
+            ...current.prayer,
+            locationMode: 'auto',
+            coordinates: { latitude: resolved.latitude, longitude: resolved.longitude },
+            resolved: { ...resolved, updatedAt: new Date().toISOString() }
+          }
+        }));
+      }
+    });
   };
 
   return (
