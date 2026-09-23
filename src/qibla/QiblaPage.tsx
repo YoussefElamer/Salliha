@@ -2,12 +2,23 @@ import { Compass, LocateFixed, Navigation, RefreshCw } from 'lucide-react';
 import { useEffect, useMemo, useState } from 'react';
 import { calculateQibla, directionLabel, normalizeHeading } from './qibla';
 import { prayerRepository } from '../prayer/PrayerRepository';
+import { requestPreciseLocation } from '../geo/nativeLocation';
 
 export function QiblaPage() {
   const [heading, setHeading] = useState<number | null>(null);
   const [permission, setPermission] = useState<'idle' | 'granted' | 'denied'>('idle');
+  const [locationBusy, setLocationBusy] = useState(false);
+  const [locationMessage, setLocationMessage] = useState('');
   const location = prayerRepository.getLocation();
   const coordinates = { latitude: location.latitude, longitude: location.longitude };
+
+  const handleRequestLocation = async () => {
+    setLocationBusy(true);
+    setLocationMessage('جارٍ طلب إذن الموقع لتحديد زاوية القبلة بدقة…');
+    const result = await requestPreciseLocation();
+    setLocationBusy(false);
+    setLocationMessage(result.message);
+  };
 
   const qibla = useMemo(
     () => calculateQibla(coordinates.latitude, coordinates.longitude),
@@ -75,9 +86,20 @@ export function QiblaPage() {
 
       <section className="card">
         <div className="section-heading"><h2>موقع الحساب</h2><LocateFixed size={20} /></div>
-        <p className="muted">{location.name} — {location.countryAr}</p>
+        <p className="muted">
+          {location.name} — {location.countryAr} {location.source === 'gps' ? '(إحداثيات GPS دقيقة)' : '(تقريبي من المنطقة الزمنية)'}
+        </p>
         <p className="muted">الإحداثيات: {coordinates.latitude.toFixed(4)}, {coordinates.longitude.toFixed(4)}</p>
         <p className="muted">زاوية القبلة: {Math.round(qibla)}° ({directionLabel(qibla)})</p>
+
+        {location.source === 'timezone' && (
+          <div style={{ marginTop: '0.8rem' }}>
+            <button className="secondary-button" onClick={() => void handleRequestLocation()} disabled={locationBusy}>
+              <LocateFixed size={16} /> {locationBusy ? 'جارٍ طلب الإذن والتحديد…' : 'تحديد إحداثيات موقعي بدقة عبر GPS'}
+            </button>
+          </div>
+        )}
+        {locationMessage && <p className="state-note">{locationMessage}</p>}
       </section>
     </div>
   );

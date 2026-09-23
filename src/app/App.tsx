@@ -3,6 +3,7 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import { AdhkarPage } from '../adhkar/AdhkarPage';
 import { AudioPage } from '../audio/AudioPage';
 import { AudioProvider } from '../audio/AudioProvider';
+import { AdhanProvider, useAdhan } from '../audio/AdhanProvider';
 import { HomePage } from '../home/HomePage';
 import { Onboarding } from '../onboarding/Onboarding';
 import { PrayerPage } from '../prayer/PrayerPage';
@@ -17,6 +18,9 @@ import { StatsPage } from '../stats/StatsPage';
 import { useSettings } from '../settings/useSettings';
 import { getGeoMetadata } from '../geo/cities';
 import { mainNavItems, moreNavItems, type AppRoute, type RouteState } from './navigation';
+import { prayerRepository } from '../prayer/PrayerRepository';
+import { getAdhanSettings } from '../settings/adhanSettings';
+import { notificationService } from '../notifications/NotificationService';
 
 interface BeforeInstallPromptEvent extends Event {
   prompt: () => Promise<void>;
@@ -44,7 +48,59 @@ function isStandaloneDisplay(): boolean {
   return window.matchMedia?.('(display-mode: standalone)').matches || (navigator as Navigator & { standalone?: boolean }).standalone === true;
 }
 
+/**
+ * مراقب أوقات الصلاة عند فتح التطبيق:
+ * عند دخول وقت الصلاة يطلق أذان الصلاة داخل التطبيق دون انقطاع.
+ */
+function InAppPrayerAdhanWatcher() {
+  const { playAdhan } = useAdhan();
+  const lastTriggeredRef = useRef<Set<string>>(new Set());
+
+  useEffect(() => {
+    const checkPrayerTimes = () => {
+      const now = new Date();
+      const settings = prayerRepository.getSettings();
+      if (!settings.notificationsEnabled || settings.silentMode) return;
+
+      const todayTimes = prayerRepository.getTodayTimes(now);
+      const currentTimeMs = now.getTime();
+      const dateKey = `${now.getFullYear()}-${now.getMonth() + 1}-${now.getDate()}`;
+
+      for (const prayer of todayTimes) {
+        if (prayer.name === 'الشروق') continue;
+        if (!settings.adhanEnabled[prayer.name]) continue;
+
+        const prayerTimeMs = prayer.time.getTime();
+        const diffMs = currentTimeMs - prayerTimeMs;
+        const triggerKey = `${dateKey}-${prayer.name}`;
+
+        // إذا حان وقت الصلاة خلال آخر 45 ثانية ولم يسبق إطلاق الأذان اليوم لهذه الصلاة
+        if (diffMs >= 0 && diffMs <= 45_000 && !lastTriggeredRef.current.has(triggerKey)) {
+          lastTriggeredRef.current.add(triggerKey);
+          const soundId = getAdhanSettings().soundId;
+          playAdhan(soundId, prayer.name, false);
+          void notificationService.notifyPrayer(prayer).catch(() => {});
+          break;
+        }
+      }
+    };
+
+    const interval = window.setInterval(checkPrayerTimes, 5000);
+    return () => window.clearInterval(interval);
+  }, [playAdhan]);
+
+  return null;
+}
+
 export function App() {
+  return (
+    <AdhanProvider>
+      <AppShell />
+    </AdhanProvider>
+  );
+}
+
+function AppShell() {
   const { settings, setSettings } = useSettings();
   const [route, setRoute] = useState<RouteState>(() => initialRoute());
   const [moreOpen, setMoreOpen] = useState(false);
@@ -103,6 +159,7 @@ export function App() {
 
   return (
     <AudioProvider>
+      <InAppPrayerAdhanWatcher />
       <div className="app-shell">
         <header className="app-header">
           <button className="brand" onClick={() => navigate('home')} aria-label="صليها — الرئيسية">

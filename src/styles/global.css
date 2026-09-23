@@ -525,3 +525,269 @@ details summary { cursor: pointer; font-weight: 600; color: var(--text); }
 
 .quran-virtual-spacer { width: 100%; pointer-events: none; contain: strict; }
 .mushaf-surah-section { content-visibility: auto; contain-intrinsic-size: 900px; }
+
+/* ===== مشغل الأذان العائم الموحد ===== */
+.adhan-floating-bar {
+  position: fixed;
+  z-index: 56;
+  inset-inline: clamp(0.6rem, 3vw, 1.6rem);
+  bottom: calc(var(--bottom-nav-height) + env(safe-area-inset-bottom, 0px) + 0.4rem);
+  background: color-mix(in srgb, var(--surface-strong), var(--primary) 12%);
+  border: 1.5px solid color-mix(in srgb, var(--primary), var(--accent) 30%);
+  border-radius: 1.15rem;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.22);
+  backdrop-filter: blur(18px);
+  overflow: hidden;
+  animation: slideUpAdhan 0.28s ease-out;
+}
+
+@keyframes slideUpAdhan {
+  from { transform: translateY(100%); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.adhan-floating-progress {
+  height: 0.3rem;
+  background: color-mix(in srgb, var(--primary), transparent 82%);
+}
+
+.adhan-floating-progress span {
+  display: block;
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent), var(--primary));
+  transition: width 0.25s linear;
+}
+
+.adhan-floating-content {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.55rem 0.85rem;
+}
+
+.adhan-floating-icon {
+  display: grid;
+  place-items: center;
+  width: 2.3rem;
+  height: 2.3rem;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--accent), transparent 80%);
+  color: var(--accent);
+  flex-shrink: 0;
+}
+
+.adhan-floating-icon .pulse-icon {
+  animation: pulseScale 1.4s infinite ease-in-out;
+}
+
+@keyframes pulseScale {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.18); }
+}
+
+.adhan-floating-info {
+  display: grid;
+  gap: 0.15rem;
+  text-align: start;
+  flex: 1;
+  min-width: 0;
+}
+
+.adhan-floating-info strong {
+  font-size: 0.95rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: var(--text);
+}
+
+.adhan-floating-info small {
+  font-size: 0.8rem;
+  color: var(--muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.adhan-floating-error {
+  font-size: 0.78rem;
+  color: var(--danger);
+}
+
+.adhan-floating-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  flex-shrink: 0;
+}
+
+.adhan-stop-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: color-mix(in srgb, var(--danger), transparent 85%);
+  color: var(--danger);
+  border: 1px solid color-mix(in srgb, var(--danger), transparent 60%);
+  border-radius: 0.75rem;
+  padding: 0.4rem 0.75rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.adhan-stop-button:hover {
+  background: var(--danger);
+  color: #fff;
+}
+
+/* ===== قائمة أصوات الأذان ===== */
+.adhan-sounds-grid {
+  display: grid;
+  gap: 0.65rem;
+  margin-top: 0.5rem;
+}
+
+.adhan-sound-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.75rem 0.9rem;
+  border: 1.5px solid var(--border);
+  border-radius: 1rem;
+  background: var(--surface-strong);
+  transition: all 0.18s ease;
+  cursor: pointer;
+}
+
+.adhan-sound-card:hover {
+  border-color: var(--primary);
+  background: color-mix(in srgb, var(--primary), transparent 96%);
+}
+
+.adhan-sound-card.active {
+  border-color: var(--primary);
+  background: color-mix(in srgb, var(--primary), transparent 91%);
+  box-shadow: 0 4px 14px color-mix(in srgb, var(--primary), transparent 85%);
+}
+
+.adhan-sound-main {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex: 1;
+  min-width: 0;
+}
+
+.adhan-radio-mark {
+  width: 1.25rem;
+  height: 1.25rem;
+  border-radius: 50%;
+  border: 2px solid var(--border);
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  transition: all 0.15s ease;
+}
+
+.adhan-sound-card.active .adhan-radio-mark {
+  border-color: var(--primary);
+  background: var(--primary);
+}
+
+.adhan-radio-inner {
+  width: 0.45rem;
+  height: 0.45rem;
+  border-radius: 50%;
+  background: #fff;
+}
+
+.adhan-sound-details {
+  display: grid;
+  gap: 0.15rem;
+  text-align: start;
+}
+
+.adhan-sound-title {
+  font-size: 0.96rem;
+  font-weight: 700;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.adhan-active-badge {
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 0.15rem 0.45rem;
+  border-radius: 999px;
+  background: var(--primary);
+  color: #fff;
+}
+
+.adhan-sound-desc {
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
+.adhan-sound-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  flex-shrink: 0;
+}
+
+.adhan-preview-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  border-radius: 0.75rem;
+  padding: 0.45rem 0.75rem;
+  font-size: 0.84rem;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.adhan-preview-btn:hover {
+  background: color-mix(in srgb, var(--primary), transparent 90%);
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.adhan-preview-btn.playing {
+  background: var(--primary);
+  color: #fff;
+  border-color: transparent;
+}
+
+/* بطاقة تنبيه إذن الموقع */
+.location-prompt-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  padding: 1rem;
+  border-radius: 1.15rem;
+  background: color-mix(in srgb, var(--accent), transparent 92%);
+  border: 1.5px dashed color-mix(in srgb, var(--accent), transparent 45%);
+  margin-bottom: 0.9rem;
+}
+
+.location-prompt-header {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.location-prompt-text {
+  font-size: 0.88rem;
+  color: var(--muted);
+  line-height: 1.55;
+  margin: 0;
+}

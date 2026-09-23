@@ -1,4 +1,4 @@
-import { BookOpen, Bookmark, CalendarDays, Clock3, Compass, Headphones, MapPin, Play, Search, Sparkles, Target } from 'lucide-react';
+import { BookOpen, Bookmark, CalendarDays, Clock3, Compass, Headphones, LocateFixed, MapPin, Play, Search, Sparkles, Target } from 'lucide-react';
 import { useEffect, useMemo, useState } from 'react';
 import type { AppRoute, RouteParams } from '../app/navigation';
 import { formatClock, formatHijriDate, formatPlaybackTime, formatArabicNumber } from '../core/arabic';
@@ -8,9 +8,12 @@ import { prayerRepository } from '../prayer/PrayerRepository';
 import { formatRemaining } from '../prayer/prayerCalculations';
 import { adhkarRepository } from '../adhkar/AdhkarRepository';
 import { useAudio } from '../audio/AudioProvider';
+import { requestPreciseLocation } from '../geo/nativeLocation';
 
 export function HomePage({ navigate }: { navigate: (route: AppRoute, params?: RouteParams) => void }) {
   const [tick, setTick] = useState(() => new Date());
+  const [locationBusy, setLocationBusy] = useState(false);
+  const [locationMessage, setLocationMessage] = useState('');
   const audio = useAudio();
 
   useEffect(() => {
@@ -18,8 +21,16 @@ export function HomePage({ navigate }: { navigate: (route: AppRoute, params?: Ro
     return () => window.clearInterval(timer);
   }, []);
 
+  const handleRequestLocation = async () => {
+    setLocationBusy(true);
+    setLocationMessage('جارٍ طلب إذن الموقع من النظام وتحديده…');
+    const result = await requestPreciseLocation();
+    setLocationBusy(false);
+    setLocationMessage(result.message);
+  };
+
   const minuteKey = Math.floor(tick.getTime() / 60_000);
-  const location = useMemo(() => prayerRepository.getLocation(), [minuteKey]);
+  const location = useMemo(() => prayerRepository.getLocation(), [minuteKey, locationBusy]);
   const times = useMemo(() => prayerRepository.getTodayTimes(tick), [minuteKey, location]);
   const next = useMemo(() => prayerRepository.getNextPrayer(tick), [minuteKey, location]);
   const readingPosition = bookmarkRepository.getReadingPosition() ?? { surahId: 1, ayahNumber: 1 };
@@ -33,6 +44,27 @@ export function HomePage({ navigate }: { navigate: (route: AppRoute, params?: Ro
 
   return (
     <div className="page-grid">
+      {location.source === 'timezone' && (
+        <section className="location-prompt-card full-span" role="region" aria-label="طلب إذن الموقع">
+          <div className="location-prompt-header">
+            <LocateFixed size={18} />
+            <span>طلب إذن الموقع لحساب دقيق للمواقيت والقبلة</span>
+          </div>
+          <p className="location-prompt-text">
+            يتم حساب المواقيت بناءً على المنطقة الزمنية للجهاز ({location.name} — {location.countryAr}). اضغط هنا لمنح التطبيق صلاحية الموقع وحساب الأوقات بدقة لإحداثياتك.
+          </p>
+          <div className="inline-actions">
+            <button className="primary-button" onClick={() => void handleRequestLocation()} disabled={locationBusy}>
+              <LocateFixed size={16} /> {locationBusy ? 'جارٍ طلب الإذن…' : 'طلب إذن الموقع وتحديده بدقة'}
+            </button>
+            <button className="secondary-button" onClick={() => navigate('prayer')}>
+              اختيار مدينة يدويًا
+            </button>
+          </div>
+          {locationMessage && <p className="state-note">{locationMessage}</p>}
+        </section>
+      )}
+
       <section className="hero-card" aria-labelledby="next-prayer-title">
         <div className="hero-topline">
           <MapPin size={18} /> {location.name} — {location.countryAr}

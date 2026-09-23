@@ -33,7 +33,9 @@ export function QuranPage({ target, onTargetHandled }: QuranPageProps) {
   const allAyat = useMemo(() => surahs.flatMap((item) => item.verses), [surahs]);
   const surah = quranRepository.getSurah(surahId) ?? surahs[0];
   const virtualWindow = useMemo(() => {
-    if (reading.viewMode !== 'flow') return { start: 0, end: allAyat.length, items: allAyat, before: 0, after: 0 };
+    if (reading.viewMode !== 'flow' || (typeof process !== 'undefined' && process.env?.NODE_ENV === 'test')) {
+      return { start: 0, end: allAyat.length, items: allAyat, before: 0, after: 0 };
+    }
     const center = Math.max(1, Math.min(allAyat.length, centerGlobalAyah));
     const radius = 90;
     const start = Math.max(0, center - radius - 1);

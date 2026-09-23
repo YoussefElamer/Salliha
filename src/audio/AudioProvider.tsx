@@ -181,6 +181,8 @@ export function AudioProvider({ children }: { children: ReactNode }) {
       return;
     }
     if (state.isPlaying) {
+      // إيقاف تشغيل الأذان إن كان يعمل حتى لا يتداخلا
+      window.dispatchEvent(new CustomEvent('salliha:stop-adhan'));
       audio.play().catch(() => {
         setError('تعذر بدء التشغيل. تحقق من الاتصال بالإنترنت.');
         dispatch({ type: 'PAUSE' });
@@ -189,6 +191,13 @@ export function AudioProvider({ children }: { children: ReactNode }) {
       audio.pause();
     }
   }, [currentAyah, state.isPlaying]);
+
+  // إيقاف تلاوة القرآن عند تشغيل الأذان
+  useEffect(() => {
+    const onStopQuran = () => dispatch({ type: 'PAUSE' });
+    window.addEventListener('salliha:stop-quran', onStopQuran);
+    return () => window.removeEventListener('salliha:stop-quran', onStopQuran);
+  }, []);
 
   useEffect(() => {
     const audio = audioRef.current;

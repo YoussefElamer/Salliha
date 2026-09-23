@@ -1,4 +1,4 @@
-import { Bell, BellOff, CalendarDays, Compass, LocateFixed, MapPin, Moon, Search, Settings2, Smartphone, Volume2, X } from 'lucide-react';
+import { Bell, BellOff, CalendarDays, Compass, LocateFixed, MapPin, Moon, Play, Search, Settings2, Smartphone, Volume2, VolumeX, X } from 'lucide-react';
 import { useEffect, useMemo, useState } from 'react';
 import type { CalculationMethodChoice, PrayerName, PrayerSettings } from '../core/types';
 import { formatHijriDate, formatClock } from '../core/arabic';
@@ -9,8 +9,9 @@ import { notificationService } from '../notifications/NotificationService';
 import { nativeAdhanService } from '../notifications/NativeAdhanService';
 import { rescheduleAdhan } from '../notifications/adhanScheduler';
 import { requestPreciseLocation } from '../geo/nativeLocation';
-import { adhanSounds, getAdhanPreviewUrl } from '../audio/adhanSounds';
+import { adhanSounds, getAdhanSound } from '../audio/adhanSounds';
 import { getAdhanSettings, saveAdhanSettings } from '../settings/adhanSettings';
+import { useAdhan } from '../audio/AdhanProvider';
 
 const prayerNames: PrayerName[] = ['الفجر', 'الشروق', 'الظهر', 'العصر', 'المغرب', 'العشاء'];
 
@@ -23,7 +24,9 @@ export function PrayerPage() {
   const [settingsOpen, setSettingsOpen] = useState(false);
   const [locationBusy, setLocationBusy] = useState(false);
   const [adhanSoundId, setAdhanSoundId] = useState(() => getAdhanSettings().soundId);
-  const [previewingSound, setPreviewingSound] = useState<string | null>(null);
+  const [previewPrayerType, setPreviewPrayerType] = useState<PrayerName>('الظهر');
+
+  const { isPlaying, soundId: activePlayingSoundId, prayerName: activePlayingPrayerName, toggleAdhan } = useAdhan();
 
   useEffect(() => {
     const timer = window.setInterval(() => setTick(new Date()), 1000);
@@ -80,22 +83,15 @@ export function PrayerPage() {
   const changeAdhanSound = async (soundId: string) => {
     setAdhanSoundId(soundId);
     saveAdhanSettings({ ...getAdhanSettings(), soundId });
+    const selectedObj = getAdhanSound(soundId);
+    setPermissionMessage(`تم اختيار صوت الأذان: ${selectedObj.name}`);
     if (settings.notificationsEnabled) {
       const msg = await rescheduleAdhan().catch(() => '');
-      if (msg) setPermissionMessage(msg);
+      if (msg) setPermissionMessage(`تم اختيار صوت: ${selectedObj.name}. ${msg}`);
     }
   };
 
-  const previewAdhan = (soundId: string) => {
-    const url = getAdhanPreviewUrl(soundId, 'الظهر');
-    const audio = new Audio(url);
-    setPreviewingSound(soundId);
-    audio.onended = () => setPreviewingSound(null);
-    audio.onerror = () => setPreviewingSound(null);
-    void audio.play().catch(() => setPreviewingSound(null));
-  };
-
-  const toggleAdhan = async (name: PrayerName, checked: boolean) => {
+  const toggleAdhanPrayer = async (name: PrayerName, checked: boolean) => {
     const nextSettings = { ...settings, adhanEnabled: { ...settings.adhanEnabled, [name]: checked } };
     save(nextSettings);
     if (nextSettings.notificationsEnabled) {
@@ -106,11 +102,28 @@ export function PrayerPage() {
 
   return (
     <div className="page-grid">
+      {location.source === 'timezone' && (
+        <section className="location-prompt-card full-span" role="region" aria-label="طلب إذن الموقع">
+          <div className="location-prompt-header">
+            <LocateFixed size={20} />
+            <span>طلب إذن الموقع لمواقيت أكثر دقة</span>
+          </div>
+          <p className="location-prompt-text">
+            المواقيت معروضة حاليًا بناءً على المنطقة الزمنية لجهازك ({location.name} — {location.countryAr}). لتحديد مواقيت الصلاة والقبلة بدقة تامة لإحداثياتك الحالية، اضغط على زر طلب إذن الموقع.
+          </p>
+          <div className="inline-actions">
+            <button className="primary-button" onClick={useMyLocation} disabled={locationBusy}>
+              <LocateFixed size={18} /> {locationBusy ? 'جارٍ طلب الإذن وتحديد الموقع…' : 'السماح بصلاحية الموقع وتحديده بدقة'}
+            </button>
+          </div>
+        </section>
+      )}
+
       <section className="hero-card compact">
         <div className="hero-topline">
           <MapPin size={18} />
           {location.name} — {location.countryAr}
-          {location.source === 'gps' ? ' (من موقعك)' : location.source === 'manual' ? ' (اختيار يدوي)' : ' (تلقائي من منطقة الجهاز)'}
+          {location.source === 'gps' ? ' (من موقعك بدقة GPS)' : location.source === 'manual' ? ' (اختيار يدوي)' : ' (تلقائي من منطقة الجهاز)'}
         </div>
         <h1>الصلاة القادمة: {next.name}</h1>
         <div className="countdown">{formatRemaining(next.time, tick)}</div>
@@ -158,6 +171,73 @@ export function PrayerPage() {
         <p className="source-note">
           طريقة الحساب المستخدمة: {method.label} — المنطقة الزمنية: {location.timezone}. المواقيت تُحسب على الجهاز بدون إنترنت، وتُعرض بتوقيت المدينة المختارة لا بتوقيت جهازك.
         </p>
+      </section>
+
+      {/* اختيار أصوات الأذان والمؤذنين */}
+      <section className="card settings-panel" aria-label="أصوات الأذان">
+        <div className="section-heading">
+          <h2><Volume2 size={20} /> صوت الأذان والمؤذن</h2>
+          <span className="muted">{adhanSounds.length} أصوات متاحة</span>
+        </div>
+        <p className="muted">
+          اختر المؤذن المفضل لأذان وتنبيهات الصلوات. يمكنك الاستماع لصوت الأذان العادي أو أذان الفجر وتجربته، ويستمر التشغيل دون انقطاع أثناء تنقلك داخل التطبيق.
+        </p>
+
+        <div className="segmented" style={{ marginBottom: '0.85rem' }}>
+          <button
+            className={previewPrayerType === 'الظهر' ? 'active' : ''}
+            onClick={() => setPreviewPrayerType('الظهر')}
+          >
+            أذان باقي الصلوات (الظهر)
+          </button>
+          <button
+            className={previewPrayerType === 'الفجر' ? 'active' : ''}
+            onClick={() => setPreviewPrayerType('الفجر')}
+          >
+            أذان الفجر (الصلاة خير من النوم)
+          </button>
+        </div>
+
+        <div className="adhan-sounds-grid">
+          {adhanSounds.map((sound) => {
+            const isSelected = sound.id === adhanSoundId;
+            const isPlayingThis = isPlaying && activePlayingSoundId === sound.id && activePlayingPrayerName === previewPrayerType;
+
+            return (
+              <div
+                key={sound.id}
+                className={`adhan-sound-card ${isSelected ? 'active' : ''}`}
+                onClick={() => void changeAdhanSound(sound.id)}
+                role="button"
+                tabIndex={0}
+                aria-pressed={isSelected}
+              >
+                <div className="adhan-sound-main">
+                  <div className="adhan-radio-mark" aria-hidden="true">
+                    {isSelected && <span className="adhan-radio-inner" />}
+                  </div>
+                  <div className="adhan-sound-details">
+                    <span className="adhan-sound-title">
+                      {sound.name}
+                      {isSelected && <span className="adhan-active-badge">المختار</span>}
+                    </span>
+                    <small className="adhan-sound-desc">{sound.nameEn}</small>
+                  </div>
+                </div>
+                <div className="adhan-sound-actions" onClick={(e) => e.stopPropagation()}>
+                  <button
+                    className={`adhan-preview-btn ${isPlayingThis ? 'playing' : ''}`}
+                    onClick={() => toggleAdhan(sound.id, previewPrayerType)}
+                    aria-label={isPlayingThis ? 'إيقاف الأذان' : `استماع لأذان ${sound.name}`}
+                  >
+                    {isPlayingThis ? <VolumeX size={16} /> : <Play size={16} />}
+                    <span>{isPlayingThis ? 'إيقاف' : 'استماع'}</span>
+                  </button>
+                </div>
+              </div>
+            );
+          })}
+        </div>
       </section>
 
       {settingsOpen && (
@@ -224,7 +304,7 @@ export function PrayerPage() {
           {adhanPrayers.map((name) => (
             <label key={name} className="toggle-row">
               <span>{name}</span>
-              <input type="checkbox" checked={settings.adhanEnabled[name]} onChange={(event) => void toggleAdhan(name, event.target.checked)} />
+              <input type="checkbox" checked={settings.adhanEnabled[name]} onChange={(event) => void toggleAdhanPrayer(name, event.target.checked)} />
             </label>
           ))}
         </div>

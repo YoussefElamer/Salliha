@@ -1,4 +1,4 @@
-import { Bell, Check, Download, Gauge, Info, Monitor, Moon, Palette, RotateCcw, ShieldCheck, Sun, Trash2, Type, Upload, Vibrate } from 'lucide-react';
+import { Bell, Check, Download, Gauge, Info, LocateFixed, Monitor, Moon, Palette, Play, RotateCcw, ShieldCheck, Sun, Trash2, Type, Upload, Vibrate, Volume2, VolumeX } from 'lucide-react';
 import { useRef, useState } from 'react';
 import type { AppRoute, RouteParams } from '../app/navigation';
 import type { AppSettings, ThemeMode } from '../core/types';
@@ -10,6 +10,11 @@ import { adhkarRepository } from '../adhkar/AdhkarRepository';
 import { settingsRepository } from './settingsRepository';
 import { APP_VERSION } from './defaults';
 import { quranRepository } from '../quran/QuranRepository';
+import { adhanSounds, getAdhanSound } from '../audio/adhanSounds';
+import { getAdhanSettings, saveAdhanSettings } from './adhanSettings';
+import { useAdhan } from '../audio/AdhanProvider';
+import { requestPreciseLocation } from '../geo/nativeLocation';
+import { rescheduleAdhan } from '../notifications/adhanScheduler';
 
 const themes: Array<{ id: ThemeMode; label: string; icon: typeof Sun }> = [
   { id: 'light', label: 'فاتح', icon: Sun },
@@ -27,9 +32,43 @@ export function SettingsPage({
   navigate: (route: AppRoute, params?: RouteParams) => void;
 }) {
   const [message, setMessage] = useState('');
+  const [adhanSoundId, setAdhanSoundId] = useState(() => getAdhanSettings().soundId);
+  const [locationBusy, setLocationBusy] = useState(false);
   const fileInput = useRef<HTMLInputElement | null>(null);
   const geo = getGeoMetadata();
   const location = prayerRepository.getLocation();
+  const { isPlaying, soundId: activePlayingSoundId, toggleAdhan } = useAdhan();
+
+  const handleSoundChange = async (newSoundId: string) => {
+    setAdhanSoundId(newSoundId);
+    saveAdhanSettings({ ...getAdhanSettings(), soundId: newSoundId });
+    const selected = getAdhanSound(newSoundId);
+    setMessage(`تم اختيار صوت الأذان: ${selected.name}`);
+    if (settings.prayer.notificationsEnabled) {
+      await rescheduleAdhan().catch(() => {});
+    }
+  };
+
+  const handleRequestLocation = () => {
+    setLocationBusy(true);
+    setMessage('جارٍ طلب صلاحية الموقع…');
+    void requestPreciseLocation().then((result) => {
+      setLocationBusy(false);
+      setMessage(result.message);
+      if (result.ok) {
+        const resolved = prayerRepository.getLocation();
+        setSettings((current) => ({
+          ...current,
+          prayer: {
+            ...current.prayer,
+            locationMode: 'auto',
+            coordinates: { latitude: resolved.latitude, longitude: resolved.longitude },
+            resolved: { ...resolved, updatedAt: new Date().toISOString() }
+          }
+        }));
+      }
+    });
+  };
 
   const exportBackup = () => {
     const blob = new Blob([settingsRepository.exportLocalBackup()], { type: 'application/json' });
@@ -167,11 +206,61 @@ export function SettingsPage({
       <section className="card settings-panel">
         <h2><Bell size={18} /> الصلاة والأذان</h2>
         <p className="muted">
-          الموقع الحالي: {location.name} — {location.countryAr} ({location.timezone}) · طريقة الحساب: {settings.prayer.calculationMethod === 'auto' ? `تلقائية (${location.method})` : location.method}
+          الموقع الحالي: {location.name} — {location.countryAr} ({location.timezone}) {location.source === 'gps' ? '· عبر GPS' : '· عبر المنطقة الزمنية (تقريبي)'} · طريقة الحساب: {settings.prayer.calculationMethod === 'auto' ? `تلقائية (${location.method})` : location.method}
         </p>
-        <button className="secondary-button" onClick={() => navigate('prayer')}>
-          تعديل المدينة وطريقة الحساب والإشعارات
-        </button>
+
+        {location.source === 'timezone' && (
+          <div className="location-prompt-card" style={{ marginBottom: '0.8rem' }}>
+            <div className="location-prompt-header">
+              <LocateFixed size={18} />
+              <span>طلب صلاحية الموقع لتحديد دقيق</span>
+            </div>
+            <p className="location-prompt-text">
+              الموقع الحالي يعتمد على توقيت الجهاز فقط. اضغط أدناه لطلب صلاحية الموقع وحساب مواقيت الصلاة بإحداثياتك بدقة.
+            </p>
+            <button className="primary-button" onClick={handleRequestLocation} disabled={locationBusy}>
+              <LocateFixed size={16} /> {locationBusy ? 'جارٍ طلب الصلاحية…' : 'طلب إذن الموقع وتحديده بدقة'}
+            </button>
+          </div>
+        )}
+
+        <label>
+          صوت الأذان والمؤذن
+          <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
+            <select
+              value={adhanSoundId}
+              onChange={(e) => void handleSoundChange(e.target.value)}
+              style={{ flex: 1 }}
+            >
+              {adhanSounds.map((sound) => (
+                <option key={sound.id} value={sound.id}>
+                  {sound.name}
+                </option>
+              ))}
+            </select>
+            <button
+              className={`adhan-preview-btn ${isPlaying && activePlayingSoundId === adhanSoundId ? 'playing' : ''}`}
+              onClick={() => toggleAdhan(adhanSoundId, 'الظهر')}
+              type="button"
+              aria-label="تجربة صوت الأذان"
+            >
+              {isPlaying && activePlayingSoundId === adhanSoundId ? <VolumeX size={16} /> : <Play size={16} />}
+              <span>{isPlaying && activePlayingSoundId === adhanSoundId ? 'إيقاف' : 'تجربة'}</span>
+            </button>
+          </div>
+        </label>
+
+        <div className="inline-actions">
+          <button className="secondary-button" onClick={() => navigate('prayer')}>
+            فتح صفحة المواقيت والإشعارات
+          </button>
+          {location.source !== 'timezone' && (
+            <button className="secondary-button" onClick={handleRequestLocation} disabled={locationBusy}>
+              <LocateFixed size={16} /> {locationBusy ? 'جارٍ التحديث…' : 'تحديث الموقع بدقة'}
+            </button>
+          )}
+        </div>
+
         <label className="toggle-row">
           <span><Vibrate size={18} /> اهتزاز عند العدّ والأذكار</span>
           <input
