@@ -11,6 +11,7 @@ import { rescheduleAdhan } from '../notifications/adhanScheduler';
 import { requestPreciseLocation } from '../geo/nativeLocation';
 import { adhanSounds, getAdhanPreviewUrl } from '../audio/adhanSounds';
 import { getAdhanSettings, saveAdhanSettings } from '../settings/adhanSettings';
+import { getCustomAdhan, isCustomAdhanSupported, removeCustomAdhan, saveCustomAdhanFile } from '../audio/customAdhanSound';
 
 const prayerNames: PrayerName[] = ['الفجر', 'الشروق', 'الظهر', 'العصر', 'المغرب', 'العشاء'];
 
@@ -24,6 +25,8 @@ export function PrayerPage() {
   const [locationBusy, setLocationBusy] = useState(false);
   const [adhanSoundId, setAdhanSoundId] = useState(() => getAdhanSettings().soundId);
   const [previewingSound, setPreviewingSound] = useState<string | null>(null);
+  const [customAdhanName, setCustomAdhanName] = useState(() => getAdhanSettings().customFileName);
+  const [customAdhanUrl, setCustomAdhanUrl] = useState<string | null>(null);
 
   useEffect(() => {
     const timer = window.setInterval(() => setTick(new Date()), 1000);
@@ -77,9 +80,42 @@ export function PrayerPage() {
     }
   };
 
+  useEffect(() => {
+    void getCustomAdhan().then((result) => {
+      if (result) {
+        setCustomAdhanName(result.name);
+        setCustomAdhanUrl(result.uri);
+      }
+    });
+  }, []);
+
+  const chooseCustomAdhan = async (file: File) => {
+    try {
+      const uri = await saveCustomAdhanFile(file);
+      setCustomAdhanName(file.name);
+      setCustomAdhanUrl(uri);
+      setAdhanSoundId('custom');
+      saveAdhanSettings({ ...getAdhanSettings(), soundId: 'custom', customFileName: file.name, customUri: uri });
+      if (settings.notificationsEnabled) await rescheduleAdhan();
+      setPermissionMessage('تم حفظ صوت الأذان المخصص وسيُستخدم في التنبيهات القادمة.');
+    } catch (error) {
+      setPermissionMessage(error instanceof Error ? error.message : 'تعذر حفظ ملف الأذان.');
+    }
+  };
+
+  const clearCustomAdhan = async () => {
+    await removeCustomAdhan();
+    setCustomAdhanName('');
+    setCustomAdhanUrl(null);
+    const nextSound = adhanSounds[0].id;
+    setAdhanSoundId(nextSound);
+    saveAdhanSettings({ ...getAdhanSettings(), soundId: nextSound, customFileName: '', customUri: '' });
+    if (settings.notificationsEnabled) await rescheduleAdhan();
+  };
+
   const changeAdhanSound = async (soundId: string) => {
     setAdhanSoundId(soundId);
-    saveAdhanSettings({ ...getAdhanSettings(), soundId });
+    saveAdhanSettings({ ...getAdhanSettings(), soundId, customFileName: getAdhanSettings().customFileName, customUri: getAdhanSettings().customUri });
     if (settings.notificationsEnabled) {
       const msg = await rescheduleAdhan().catch(() => '');
       if (msg) setPermissionMessage(msg);
@@ -233,12 +269,47 @@ export function PrayerPage() {
 
         <label>
           صوت الأذان
-          <select value={adhanSoundId} onChange={(event) => void changeAdhanSound(event.target.value)}>
+          <select value={adhanSoundId === 'custom' ? 'custom' : adhanSoundId} onChange={(event) => void changeAdhanSound(event.target.value)}>
             {adhanSounds.map((sound) => (
               <option key={sound.id} value={sound.id}>{sound.name}</option>
             ))}
+            {customAdhanName && <option value="custom">صوتي — {customAdhanName}</option>}
           </select>
         </label>
+
+        {isCustomAdhanSupported() && (
+          <div className="custom-adhan-box">
+            <strong>صوت أذان من جهازك</strong>
+            <p className="muted">اختر ملف MP3 أو M4A أو ملفًا صوتيًا مدعومًا. في Android سيتم حفظه كصوت إشعار أصلي ليستمر مع التطبيق في الخلفية.</p>
+            <input
+              id="custom-adhan-file"
+              type="file"
+              accept="audio/*"
+              onChange={(event) => {
+                const file = event.target.files?.[0];
+                if (file) void chooseCustomAdhan(file);
+                event.currentTarget.value = '';
+              }}
+            />
+            {customAdhanName && (
+              <div className="inline-actions">
+                <span className="muted">{customAdhanName}</span>
+                {customAdhanUrl && (
+                  <button
+                    className="secondary-button"
+                    onClick={() => {
+                      const audio = new Audio(customAdhanUrl);
+                      void audio.play().catch(() => {});
+                    }}
+                  >
+                    <Volume2 size={18} /> تجربة صوتي
+                  </button>
+                )}
+                <button className="secondary-button" onClick={() => void clearCustomAdhan()}>حذف الصوت المخصص</button>
+              </div>
+            )}
+          </div>
+        )}
 
         <div className="inline-actions">
           <button className="secondary-button" onClick={() => previewAdhan(adhanSoundId)} disabled={previewingSound === adhanSoundId}>
