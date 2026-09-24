@@ -35,10 +35,12 @@ class CapacitorAdhanService implements NativeAdhanService {
       const result = await mod.LocalNotifications.requestPermissions();
       const granted = (result as { display?: string }).display === 'granted';
       if (!granted) return 'denied';
-      const exact = await mod.LocalNotifications.checkExactNotificationSetting().catch(() => ({ value: 'granted' }));
+      let exact = await mod.LocalNotifications.checkExactNotificationSetting().catch(() => ({ value: 'granted' }));
       if ((exact as { value?: string }).value === 'denied') {
         await mod.LocalNotifications.changeExactNotificationSetting().catch(() => {});
+        exact = await mod.LocalNotifications.checkExactNotificationSetting().catch(() => ({ value: 'denied' }));
       }
+      if ((exact as { value?: string }).value === 'denied') return 'denied';
       return 'granted';
     } catch {
       // fallback to web permission
