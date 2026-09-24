@@ -12,11 +12,10 @@ if (!allowed.has(platform)) {
 
 if (fs.existsSync(platform)) {
   console.log(`Capacitor platform already exists: ${platform}`);
-  process.exit(0);
+} else {
+  console.log(`Adding Capacitor platform: ${platform}`);
+  execFileSync('npx', ['cap', 'add', platform], { stdio: 'inherit' });
 }
-
-console.log(`Adding Capacitor platform: ${platform}`);
-execFileSync('npx', ['cap', 'add', platform], { stdio: 'inherit' });
 
 if (platform === 'android') {
   const root = new URL('../', import.meta.url).pathname;
