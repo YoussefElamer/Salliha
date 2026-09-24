@@ -1,7 +1,6 @@
 import type { PrayerTime } from '../core/types';
 import { getAdhanSettings } from '../settings/adhanSettings';
 import { getAdhanSoundForPrayer } from '../audio/adhanSounds';
-import { getAdhanSettings } from '../settings/adhanSettings';
 import { CustomAdhanSound } from '../audio/customAdhanSound';
 
 /**
