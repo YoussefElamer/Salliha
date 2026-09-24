@@ -5,6 +5,7 @@ interface CustomAdhanSoundPlugin {
   save(options: { name: string; base64: string; mimeType: string }): Promise<{ uri: string }>;
   get(): Promise<{ uri: string; name: string }>;
   remove(): Promise<void>;
+  configureChannels(options: { uri: string }): Promise<void>;
 }
 
 const CustomAdhanSound = registerPlugin<CustomAdhanSoundPlugin>('CustomAdhanSound');
