@@ -6,11 +6,15 @@ const KEY = 'adhan-settings:v1';
 export interface AdhanSettings {
   soundId: string;
   permissionPrompted: boolean;
+  customFileName: string;
+  customUri: string;
 }
 
 const defaults: AdhanSettings = {
   soundId: DEFAULT_ADHAN_SOUND_ID,
-  permissionPrompted: false
+  permissionPrompted: false,
+  customFileName: '',
+  customUri: ''
 };
 
 export function getAdhanSettings(): AdhanSettings {
