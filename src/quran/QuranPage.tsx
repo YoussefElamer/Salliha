@@ -188,7 +188,7 @@ export function QuranPage({ target, onTargetHandled }: QuranPageProps) {
           {
             '--quran-font-scale': String(reading.quranFontScale),
             '--quran-line-height': String(reading.quranLineHeight),
-            '--quran-font-family': reading.quranFontFamily === 'amiriQuran' ? '"Amiri Quran", "Noto Naskh Arabic", serif' : '"Noto Naskh Arabic", "Amiri Quran", serif'
+            '--quran-font-family': reading.quranFontFamily === 'amiriQuran' ? '"Amiri Quran", serif' : '"Noto Naskh Arabic", serif'
           } as React.CSSProperties
         }
       >
