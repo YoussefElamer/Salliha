@@ -218,8 +218,33 @@ export function PrayerPage() {
         </div>
         <label>
           تنبيه قبل الصلاة بالدقائق
-          <input type="number" min={0} max={60} value={settings.prePrayerMinutes} onChange={(event) => save({ ...settings, prePrayerMinutes: Number(event.target.value) })} />
+          <input
+            type="number"
+            min={0}
+            max={60}
+            value={settings.prePrayerMinutes}
+            onChange={(event) => {
+              const nextSettings = { ...settings, prePrayerMinutes: Number(event.target.value) };
+              save(nextSettings);
+              if (nextSettings.notificationsEnabled) void rescheduleAdhan();
+            }}
+          />
         </label>
+
+        <label>
+          صوت الأذان
+          <select value={adhanSoundId} onChange={(event) => void changeAdhanSound(event.target.value)}>
+            {adhanSounds.map((sound) => (
+              <option key={sound.id} value={sound.id}>{sound.name}</option>
+            ))}
+          </select>
+        </label>
+
+        <div className="inline-actions">
+          <button className="secondary-button" onClick={() => previewAdhan(adhanSoundId)} disabled={previewingSound === adhanSoundId}>
+            <Volume2 size={18} /> {previewingSound === adhanSoundId ? 'جاري تشغيل الأذان…' : 'تجربة الأذان'}
+          </button>
+        </div>
         <div className="toggles-list">
           {adhanPrayers.map((name) => (
             <label key={name} className="toggle-row">
@@ -230,7 +255,15 @@ export function PrayerPage() {
         </div>
         <label className="toggle-row">
           <span><Moon size={18} /> وضع صامت (بدون صوت أذان)</span>
-          <input type="checkbox" checked={settings.silentMode} onChange={(event) => save({ ...settings, silentMode: event.target.checked })} />
+          <input
+            type="checkbox"
+            checked={settings.silentMode}
+            onChange={(event) => {
+              const nextSettings = { ...settings, silentMode: event.target.checked };
+              save(nextSettings);
+              if (nextSettings.notificationsEnabled) void rescheduleAdhan();
+            }}
+          />
         </label>
         <label className="toggle-row">
           <span><Smartphone size={18} /> اهتزاز</span>
