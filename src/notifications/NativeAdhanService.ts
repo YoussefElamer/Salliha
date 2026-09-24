@@ -54,15 +54,38 @@ class CapacitorAdhanService implements NativeAdhanService {
       const mod = await import('@capacitor/local-notifications');
       const LN = mod.LocalNotifications;
 
-      const channelId = `adhan-v2-${getAdhanSettings().soundId}`;
-      await LN.createChannel({
-        id: channelId,
-        name: 'أذان صليها',
-        description: 'تنبيهات مواقيت الصلاة بصوت الأذان المختار',
-        importance: 5,
-        visibility: 1,
-        sound: getAdhanSoundForPrayer(getAdhanSettings().soundId, 'الظهر')
-      }).catch(() => {});
+      const soundId = getAdhanSettings().soundId;
+      const normalChannelId = `adhan-v3-${soundId}-normal`;
+      const fajrChannelId = `adhan-v3-${soundId}-fajr`;
+      const reminderChannelId = 'adhan-v3-reminder-silent';
+
+      // Android 8+ binds notification sound to the channel, not the notification.
+      // Reminders therefore need their own silent channel, and Fajr needs its own sound channel.
+      await Promise.all([
+        LN.createChannel({
+          id: normalChannelId,
+          name: 'أذان الصلاة',
+          description: 'الأذان في وقت الصلاة',
+          importance: 5,
+          visibility: 1,
+          sound: getAdhanSoundForPrayer(soundId, 'الظهر')
+        }).catch(() => {}),
+        LN.createChannel({
+          id: fajrChannelId,
+          name: 'أذان الفجر',
+          description: 'أذان الفجر',
+          importance: 5,
+          visibility: 1,
+          sound: getAdhanSoundForPrayer(soundId, 'الفجر')
+        }).catch(() => {}),
+        LN.createChannel({
+          id: reminderChannelId,
+          name: 'تذكير الصلاة',
+          description: 'تنبيه اقتراب الصلاة بدون أذان',
+          importance: 3,
+          visibility: 1
+        }).catch(() => {})
+      ]);
 
       // Cancel previous
       const pending = await LN.getPending().catch(() => ({ notifications: [] as Array<{ id: number }> }));
@@ -74,12 +97,12 @@ class CapacitorAdhanService implements NativeAdhanService {
         title: string;
         body: string;
         id: number;
-        schedule: { at: string };
+        schedule: { at: Date; allowWhileIdle?: boolean };
         sound?: string;
         smallIcon?: string;
         channelId?: string;
         isExactNotification?: boolean;
-        allowWhileIdle?: boolean;
+        isExactMandatory?: boolean;
       }> = [];
       let idCounter = 1000;
       for (const prayer of times) {
@@ -94,22 +117,24 @@ class CapacitorAdhanService implements NativeAdhanService {
               title: `تذكير: ${prayer.name} بعد ${opts.prePrayerMinutes} دقائق`,
               body: opts.silentMode ? 'الوضع الصامت مفعّل — تنبيه صامت.' : `حان وقت الاستعداد لصلاة ${prayer.name}.`,
               id: idCounter++,
-              schedule: { at: preAt.toISOString() },
+              schedule: { at: preAt, allowWhileIdle: true },
               smallIcon: 'ic_stat_icon',
-              channelId,
+              channelId: reminderChannelId,
               isExactNotification: true,
-              allowWhileIdle: true,
+              isExactMandatory: true,
             });
           }
         }
         // Main adhan — only if future
-        if (prayerTime > Date.now()) {
+        if (!opts.silentMode && prayerTime > Date.now()) {
           notifications.push({
             title: `حان وقت ${prayer.name}`,
             body: opts.silentMode ? 'الوضع الصامت مفعّل.' : `حان وقت صلاة ${prayer.name} — صَلِّها.`,
             id: idCounter++,
-            schedule: { at: new Date(prayerTime).toISOString() },
-            sound: opts.silentMode ? undefined : getAdhanSoundForPrayer(getAdhanSettings().soundId, prayer.name),
+            schedule: { at: new Date(prayerTime), allowWhileIdle: true },
+            channelId: prayer.name === 'الفجر' ? fajrChannelId : normalChannelId,
+            isExactNotification: true,
+            isExactMandatory: true,
             smallIcon: 'ic_stat_icon',
           });
         }
@@ -118,7 +143,15 @@ class CapacitorAdhanService implements NativeAdhanService {
       // iOS limit 64 — we schedule only today + tomorrow (max ~10)
       const toSchedule = notifications.slice(0, 20);
       if (toSchedule.length > 0) {
-        await LN.schedule({ notifications: toSchedule as unknown as Parameters<typeof LN.schedule>[0]['notifications'] });
+        const result = await LN.schedule({ notifications: toSchedule as unknown as Parameters<typeof LN.schedule>[0]['notifications'] });
+        const warning = (result as { warning?: { message?: string } }).warning;
+        if (warning?.message) {
+          return {
+            scheduled: toSchedule.length,
+            platform: 'capacitor',
+            message: `تمت الجدولة، لكن النظام لم يمنح الأذونات الدقيقة: ${warning.message}`
+          };
+        }
       }
 
       return {
