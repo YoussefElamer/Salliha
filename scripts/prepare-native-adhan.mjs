@@ -16,20 +16,24 @@ const sounds = [
 async function download(url, destination) {
   if (fs.existsSync(destination)) return;
   const response = await fetch(url);
-  if (!response.ok) throw new Error(`Failed to download ${url}: HTTP ${response.status}`);
+  if (!response.ok) {
+    console.warn(`⚠️ Skipping unavailable native adhan asset: HTTP ${response.status} ${url}`);
+    return false;
+  }
   const buffer = Buffer.from(await response.arrayBuffer());
   fs.mkdirSync(path.dirname(destination), { recursive: true });
   fs.writeFileSync(destination, buffer);
+  return true;
 }
 
 async function main() {
   const androidRaw = path.join(root, 'android', 'app', 'src', 'main', 'res', 'raw');
   const iosResources = path.join(root, 'ios', 'App', 'App', 'Resources');
   for (const [id, normal, fajr] of sounds) {
-    await download(raw + encodeURIComponent(normal).replace(/%2F/g, '/').replace(/%28/g, '(').replace(/%29/g, ')'), path.join(androidRaw, `adhan_${id}.mp3`));
-    await download(raw + encodeURIComponent(fajr).replace(/%2F/g, '/').replace(/%28/g, '(').replace(/%29/g, ')'), path.join(androidRaw, `adhan_${id}_fajr.mp3`));
-    await download(raw + encodeURIComponent(normal).replace(/%2F/g, '/').replace(/%28/g, '(').replace(/%29/g, ')'), path.join(iosResources, `adhan_${id}.mp3`));
-    await download(raw + encodeURIComponent(fajr).replace(/%2F/g, '/').replace(/%28/g, '(').replace(/%29/g, ')'), path.join(iosResources, `adhan_${id}_fajr.mp3`));
+    await download(raw + encodeURIComponent(normal).replace(/%2F/g, '/').replace(/%28/g, '(').replace(/%29/g, ')'), path.join(androidRaw, `adhan_${id}.mp3`)).catch((error) => { console.warn(error); });
+    await download(raw + encodeURIComponent(fajr).replace(/%2F/g, '/').replace(/%28/g, '(').replace(/%29/g, ')'), path.join(androidRaw, `adhan_${id}_fajr.mp3`)).catch((error) => { console.warn(error); });
+    await download(raw + encodeURIComponent(normal).replace(/%2F/g, '/').replace(/%28/g, '(').replace(/%29/g, ')'), path.join(iosResources, `adhan_${id}.mp3`)).catch((error) => { console.warn(error); });
+    await download(raw + encodeURIComponent(fajr).replace(/%2F/g, '/').replace(/%28/g, '(').replace(/%29/g, ')'), path.join(iosResources, `adhan_${id}_fajr.mp3`)).catch((error) => { console.warn(error); });
   }
   console.log('Prepared native Adhan audio assets.');
 }
