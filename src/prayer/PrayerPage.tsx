@@ -115,7 +115,8 @@ export function PrayerPage() {
 
   const changeAdhanSound = async (soundId: string) => {
     setAdhanSoundId(soundId);
-    saveAdhanSettings({ ...getAdhanSettings(), soundId, customFileName: getAdhanSettings().customFileName, customUri: getAdhanSettings().customUri });
+    const currentAdhan = getAdhanSettings();
+    saveAdhanSettings({ ...currentAdhan, soundId, customFileName: soundId === 'custom' ? currentAdhan.customFileName : '', customUri: soundId === 'custom' ? currentAdhan.customUri : '' });
     if (settings.notificationsEnabled) {
       const msg = await rescheduleAdhan().catch(() => '');
       if (msg) setPermissionMessage(msg);
