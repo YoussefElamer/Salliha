@@ -297,7 +297,7 @@ input[type='checkbox'] { width: auto; min-height: 0; accent-color: var(--primary
 .view-ayahList .ayah-block { display: block; border-radius: 0.95rem; padding: 0.6rem 0.7rem; border: 1px solid transparent; }
 .view-ayahList .ayah-block:hover { border-color: var(--border); background: color-mix(in srgb, var(--primary), transparent 94%); }
 .ayah-block:hover, .ayah-block:focus-visible, .ayah-block.is-playing { background: color-mix(in srgb, var(--primary), transparent 86%); }
-.ayah-text { font-family: var(--quran-font-family); font-size: calc(1.35rem * var(--quran-font-scale)); }
+.ayah-text { font-family: var(--quran-font-family); font-size: calc(1.35rem * var(--quran-font-scale)); direction: rtl; unicode-bidi: plaintext; font-kerning: normal; font-variant-ligatures: contextual common-ligatures; font-feature-settings: "kern" 1, "liga" 1, "calt" 1; font-synthesis: none; }
 .view-ayahList .ayah-text { display: block; line-height: var(--quran-line-height); }
 .ayah-number {
   display: inline-grid; place-items: center; min-width: 1.85rem; height: 1.85rem; margin-inline: 0.3rem;
