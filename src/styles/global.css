@@ -525,3 +525,6 @@ details summary { cursor: pointer; font-weight: 600; color: var(--text); }
 
 .quran-virtual-spacer { width: 100%; pointer-events: none; contain: strict; }
 .mushaf-surah-section { content-visibility: auto; contain-intrinsic-size: 900px; }
+
+.custom-adhan-box { border: 1px solid var(--border); border-radius: 1rem; padding: 0.9rem; display: grid; gap: 0.7rem; background: var(--surface-muted); }
+.custom-adhan-box input[type='file'] { width: 100%; padding: 0.65rem; border: 1px dashed var(--border); border-radius: 0.8rem; background: var(--surface); }
