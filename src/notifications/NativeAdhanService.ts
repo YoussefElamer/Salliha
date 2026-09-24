@@ -1,6 +1,8 @@
 import type { PrayerTime } from '../core/types';
 import { getAdhanSettings } from '../settings/adhanSettings';
 import { getAdhanSoundForPrayer } from '../audio/adhanSounds';
+import { getAdhanSettings } from '../settings/adhanSettings';
+import { CustomAdhanSound } from '../audio/customAdhanSound';
 
 /**
  * NativeAdhanService — جدولة الأذان عبر Capacitor Local Notifications مع fallback للمتصفح.
@@ -56,10 +58,16 @@ class CapacitorAdhanService implements NativeAdhanService {
       const mod = await import('@capacitor/local-notifications');
       const LN = mod.LocalNotifications;
 
-      const soundId = getAdhanSettings().soundId;
-      const normalChannelId = `adhan-v3-${soundId}-normal`;
-      const fajrChannelId = `adhan-v3-${soundId}-fajr`;
+      const adhanSettings = getAdhanSettings();
+      const soundId = adhanSettings.soundId;
+      const hasCustomSound = Boolean(adhanSettings.customUri);
+      const normalChannelId = hasCustomSound ? 'adhan-v3-custom-normal' : `adhan-v3-${soundId}-normal`;
+      const fajrChannelId = hasCustomSound ? 'adhan-v3-custom-fajr' : `adhan-v3-${soundId}-fajr`;
       const reminderChannelId = 'adhan-v3-reminder-silent';
+
+      if (hasCustomSound) {
+        await CustomAdhanSound.configureChannels({ uri: adhanSettings.customUri }).catch(() => {});
+      }
 
       // Android 8+ binds notification sound to the channel, not the notification.
       // Reminders therefore need their own silent channel, and Fajr needs its own sound channel.
